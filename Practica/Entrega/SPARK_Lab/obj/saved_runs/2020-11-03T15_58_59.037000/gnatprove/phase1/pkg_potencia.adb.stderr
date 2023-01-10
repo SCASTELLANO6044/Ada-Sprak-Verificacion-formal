@@ -1,0 +1,2 @@
+pkg_potencia.adb:5:23: value not in range of type "Standard.Positive"
+pkg_potencia.adb:5:23: "Constraint_Error" would have been raised at run time

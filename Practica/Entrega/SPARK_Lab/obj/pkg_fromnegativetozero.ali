@@ -1,0 +1,47 @@
+V "GNAT Lib v2021"
+A -gnatA
+A -g
+A -fstack-check=specific
+A -gnata
+A -gnato
+A -gnat12
+A -gnatwa
+A -gnateE
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_IMPLICIT_CONDITIONALS
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_ASPECT_SPECIFICATIONS
+RV NO_IMPLEMENTATION_PRAGMAS
+
+U pkg_fromnegativetozero%b  pkg_fromnegativetozero.adb  b7e7d4d7 NE OO PK
+Z system.assertions%s	s-assert.adb		s-assert.ali
+
+U pkg_fromnegativetozero%s  pkg_fromnegativetozero.ads  a45b5a79 EE NE OO PK
+
+D ada.ads		20210520051132 76789da1 ada%s
+D a-assert.ads		20210520051128 a718b65c ada.assertions%s
+D a-unccon.ads		20210520051130 0e9b276f ada.unchecked_conversion%s
+D pkg_fromnegativetozero.ads  20210708095212 a45b5a79 pkg_fromnegativetozero%s
+D pkg_fromnegativetozero.adb  20210708095218 13bc8eae pkg_fromnegativetozero%b
+D system.ads		20210520051136 2ffa5114 system%s
+D s-assert.ads		20210520051132 6a49a4e4 system.assertions%s
+D s-exctab.ads		20210520051132 54135002 system.exception_table%s
+D s-stalib.ads		20210520051134 472fbca8 system.standard_library%s
+G a e
+G c Z s b [fromnegativetozero pkg_fromnegativetozero 7 14 none]
+G c Z s s [t_vecIP pkg_fromnegativetozero 3 9 none]
+X 4 pkg_fromnegativetozero.ads
+1K9*Pkg_fromNegativeToZero 17l5 17e27 5|1b14 23l5 23t27
+3A9*T_Vec(integer)<integer> 7r47 5|3r47
+5i4*zero{natural} 11r29 12r33 5|11r23 17r44
+7U14*fromNegativeToZero 7=34 5|3b14 21l8 21t26
+7a34 Vec{3A9} 12r20 12r28 13r19 13r43 13r66 14r34 14r47 5|3b34 9r18 10r13
+. 11m13 14r42 16r35 17r35
+14i29 i{integer} 14r51
+X 5 pkg_fromnegativetozero.adb
+5i7 i{positive} 9r13 10r17 11r17 14r32 15r43 16r39 17r39 19m10 19r15
+

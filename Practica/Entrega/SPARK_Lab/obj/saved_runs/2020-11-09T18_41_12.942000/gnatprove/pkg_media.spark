@@ -1,0 +1,88 @@
+{
+  "spark": [
+    {
+      "name": "Pkg_Media",
+      "sloc": [
+        {
+          "file": "pkg_media.ads",
+          "line": 1
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "Pkg_Media.Media",
+      "sloc": [
+        {
+          "file": "pkg_media.ads",
+          "line": 5
+        }
+      ],
+      "spark": "all"
+    }
+  ],
+  "flow": [
+    {
+      "file": "pkg_media.ads",
+      "line": 8,
+      "col": 8,
+      "rule": "GLOBAL_WRONG",
+      "severity": "info",
+      "entity": {
+        "name": "Pkg_Media.Media",
+        "sloc": [
+          {
+            "file": "pkg_media.ads",
+            "line": 5
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    },
+    {
+      "file": "pkg_media.ads",
+      "line": 9,
+      "col": 8,
+      "rule": "DEPENDS_WRONG",
+      "severity": "info",
+      "entity": {
+        "name": "Pkg_Media.Media",
+        "sloc": [
+          {
+            "file": "pkg_media.ads",
+            "line": 5
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    }
+  ],
+  "assumptions": [
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Pkg_Media.Media",
+          "sloc": [
+            {
+              "file": "pkg_media.ads",
+              "line": 5
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "timings": {
+    "globals/properties (advanced)": 3.61899990821257E-04,
+    "flow analysis": 1.67539995163679E-03,
+    "marking": 3.08699993183836E-04,
+    "globals (basic)": 2.21399997826666E-04
+  }
+}

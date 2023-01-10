@@ -1,0 +1,4 @@
+pkg_moda.ads:10:30: constant "cero" cannot act as output
+pkg_moda.ads:11:08: constant "cero" is missing from output dependence list
+pkg_moda.ads:11:33: constant "cero" cannot appear in dependence relation
+pkg_moda.ads:11:33: "cero" is not part of the input or output set of subprogram "Moda"

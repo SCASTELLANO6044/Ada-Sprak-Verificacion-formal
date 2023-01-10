@@ -1,0 +1,103 @@
+V "GNAT Lib v2021"
+M P W=b
+A -gnatA
+A -g
+A -fstack-check=specific
+A -gnata
+A -gnato
+A -gnat12
+A -gnatwa
+A -gnateE
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTIONS
+RV NO_IO
+RV NO_IMPLEMENTATION_PRAGMAS
+
+U tests_divide%b	tests_divide.adb	f356e753 NE OO SU
+W ada%s			ada.ads			ada.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W pkg_divide%s		pkg_divide.adb		pkg_divide.ali
+W system%s		system.ads		system.ali
+W system.assertions%s	s-assert.adb		s-assert.ali
+
+D ada.ads		20210520051132 76789da1 ada%s
+D a-assert.ads		20210520051128 a718b65c ada.assertions%s
+D a-except.ads		20210520051128 946f3014 ada.exceptions%s
+D a-ioexce.ads		20210520051128 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20210520051130 119b8fb3 ada.streams%s
+D a-string.ads		20210520051130 90ac6797 ada.strings%s
+D a-sttebu.ads		20210520051130 18209c64 ada.strings.text_buffers%s
+D a-stuten.ads		20210520051130 808c40ad ada.strings.utf_encoding%s
+D a-tags.ads		20210520051130 9eaa38c6 ada.tags%s
+D a-textio.ads		20210520051130 aef4d56d ada.text_io%s
+D a-unccon.ads		20210520051130 0e9b276f ada.unchecked_conversion%s
+D interfac.ads		20210520051132 edec285f interfaces%s
+D i-cstrea.ads		20210520051132 e53d8b8e interfaces.c_streams%s
+D pkg_divide.ads	20220922083436 d18aa021 pkg_divide%s
+D system.ads		20210520051136 2ffa5114 system%s
+D s-assert.ads		20210520051132 6a49a4e4 system.assertions%s
+D s-crtl.ads		20210520051132 0ebbdb71 system.crtl%s
+D s-exctab.ads		20210520051132 54135002 system.exception_table%s
+D s-ficobl.ads		20210520051132 078245e4 system.file_control_block%s
+D s-parame.ads		20210520051134 4752c4cb system.parameters%s
+D s-putima.ads		20210520051134 4e095881 system.put_images%s
+D s-secsta.ads		20210520051134 9b3ab94b system.secondary_stack%s
+D s-soflin.ads		20210520051134 a7318a92 system.soft_links%s
+D s-stache.ads		20210520051134 a37c21ec system.stack_checking%s
+D s-stalib.ads		20210520051134 472fbca8 system.standard_library%s
+D s-stoele.ads		20210520051134 2dc34a04 system.storage_elements%s
+D s-stoele.adb		20210520051134 ed88f8fb system.storage_elements%b
+D s-traent.ads		20210520051134 26a8d361 system.traceback_entries%s
+D s-unstyp.ads		20210520051134 2b077493 system.unsigned_types%s
+D s-wchcon.ads		20210520051136 1b7d22d2 system.wch_con%s
+D tests_divide.adb	20220923085156 e66136fb tests_divide%b
+D unchconv.ads		20210520051136 ca2f9e18 unchecked_conversion%s
+G a e
+G c Z b b [tests_divide standard 8 11 none]
+G r c none [tests_divide standard 8 11 none] [divide pkg_divide 7 14 none]
+X 1 ada.ads
+16K9*Ada 20e8 31|4r6 4r29
+X 10 a-textio.ads
+58K13*Text_IO 725e16 31|4w10 4r33
+463U14*Put 31|14s7 29s7 44s7 59s7 74s7 89s7 104s7
+506U14*Put_Line 31|22s7 37s7 52s7 67s7 82s7 97s7 107s7 110s10 114s4
+X 14 pkg_divide.ads
+1K9*Pkg_Divide 25e15 31|5w6 5r29
+4i4*Last_Quotient{integer} 31|19r22 34r22 49r22 64r22 79r22 94r22
+5i4*Last_Remainder{integer} 31|20r22 35r22 50r22 65r22 80r22 95r22
+7U14*Divide 31|16s7 31s7 46s7 61s7 76s7 91s7 106s7
+X 15 system.ads
+37K9*System 193e11 31|6r6 109r12
+X 16 s-assert.ads
+43K16*Assertions 52e22 31|6w13 109r19
+45X4*Assert_Failure 31|109r30
+X 31 tests_divide.adb
+8U11*Tests_Divide 8b11 122l5 122t17
+10U14 Test_1 10b14 23l8 23t14 115s4
+11i7 Quotient{integer} 16m22 17r22 19r38
+12i7 Remainder{integer} 16m32 18r22 20r39
+25U14 Test_2 25b14 38l8 38t14 116s4
+26i7 Quotient{integer} 31m22 32r22 34r38
+27i7 Remainder{integer} 31m32 33r22 35r39
+40U14 Test_3 40b14 53l8 53t14 117s4
+41i7 Quotient{integer} 46m23 47r22 49r38
+42i7 Remainder{integer} 46m33 48r22 50r39
+55U14 Test_4 55b14 68l8 68t14 118s4
+56i7 Quotient{integer} 61m23 62r22 64r38
+57i7 Remainder{integer} 61m33 63r22 65r39
+70U14 Test_5 70b14 83l8 83t14 119s4
+71i7 Quotient{integer} 76m24 77r22 79r38
+72i7 Remainder{integer} 76m34 78r22 80r39
+85U14 Test_6 85b14 98l8 98t14 120s4
+86i7 Quotient{integer} 91m21 92r22 94r38
+87i7 Remainder{integer} 91m31 93r22 95r39
+100U14 Test_7 100b14 111l8 111t14 121s4
+101i7 Quotient{integer} 106m21
+102i7 Remainder{integer} 106m31
+

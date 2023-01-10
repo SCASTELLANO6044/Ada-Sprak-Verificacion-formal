@@ -1,0 +1,1 @@
+pkg_substracttenaddten.adb:25:50: medium: overflow check might fail (e.g. when Vec'Loop_Entry = (1 => -10, 1073741824 => 0, Positive'Last => 0, others => 1) and j = 2147483647)[#0]

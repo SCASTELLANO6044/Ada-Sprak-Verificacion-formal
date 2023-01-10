@@ -1,0 +1,2 @@
+pkg_potencia.ads:8:49: iterated component is an Ada 202x feature
+pkg_potencia.ads:8:49: compile with -gnat2020

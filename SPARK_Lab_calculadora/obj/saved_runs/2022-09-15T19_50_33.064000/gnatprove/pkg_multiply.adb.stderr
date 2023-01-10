@@ -1,0 +1,4 @@
+pkg_multiply.adb:11:23: warning: "Result" may be referenced before it has a value [enabled by default]
+pkg_multiply.adb:11:23: high: "Result" is not initialized[#2]
+pkg_multiply.ads:7:07: medium: "Result" might not be initialized in "Multiply"[#0]
+pkg_multiply.ads:14:19: medium: "Result" might not be initialized[#1]

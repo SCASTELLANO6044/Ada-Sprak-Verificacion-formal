@@ -1,0 +1,2 @@
+pkg_fromnegativetozero.adb:19:17: medium: overflow check might fail (e.g. when i = Positive'Last)[#0]
+pkg_fromnegativetozero.ads:13:19: medium: postcondition might fail (e.g. when Vec = (3 => 0, others => 2) and Vec'First = 1 and Vec'Last = 2)[#1]

@@ -1,0 +1,41 @@
+V "GNAT Lib v2021"
+A -gnatA
+A -g
+A -fstack-check=specific
+A -gnata
+A -gnato
+A -gnat12
+A -gnatwa
+A -gnateE
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_IMPLEMENTATION_ASPECT_SPECIFICATIONS
+RV NO_IMPLEMENTATION_PRAGMAS
+
+U example%b		example.adb		9af9c1d2 NE OO PK
+Z system.assertions%s	s-assert.adb		s-assert.ali
+
+U example%s		example.ads		c04fc805 EE NE OO PK
+
+D ada.ads		20210520051132 76789da1 ada%s
+D a-assert.ads		20210520051128 a718b65c ada.assertions%s
+D a-unccon.ads		20210520051130 0e9b276f ada.unchecked_conversion%s
+D example.ads		20220914200012 c04fc805 example%s
+D example.adb		20220914192016 5ab609d7 example%b
+D system.ads		20210520051136 2ffa5114 system%s
+D s-assert.ads		20210520051132 6a49a4e4 system.assertions%s
+D s-exctab.ads		20210520051132 54135002 system.exception_table%s
+D s-stalib.ads		20210520051134 472fbca8 system.standard_library%s
+G a e
+G c Z s b [next_value example 8 13 none]
+G c Z s b [next_value example 14 14 none]
+X 4 example.ads
+4K9*Example 20l5 20e12 5|2b14 14l5 14t12
+8V13*Next_Value{integer} 8>25 5|4b13 7l8 7t18
+8i25 X{integer} 10r40 11r18 12r38 5|4b25 6r14
+14U14*Next_Value 14=26 5|9b14 12l8 12t18
+14i26 X{integer} 16r19 16r24 17r18 18r18 18r22 5|9b26 11m7 11r10
+

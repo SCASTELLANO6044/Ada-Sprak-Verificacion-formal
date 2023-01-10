@@ -1,0 +1,43 @@
+V "GNAT Lib v2021"
+A -gnatA
+A -g
+A -fstack-check=specific
+A -gnata
+A -gnato
+A -gnat12
+A -gnatwa
+A -gnateE
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_IMPLEMENTATION_ASPECT_SPECIFICATIONS
+RV NO_IMPLEMENTATION_ATTRIBUTES
+RV NO_IMPLEMENTATION_PRAGMAS
+
+U pkg_addtenxtimes%b	pkg_addtenxtimes.adb	49b5173b NE OO PK
+Z system.assertions%s	s-assert.adb		s-assert.ali
+
+U pkg_addtenxtimes%s	pkg_addtenxtimes.ads	95669c28 EE NE OO PK
+
+D ada.ads		20210520051132 76789da1 ada%s
+D a-assert.ads		20210520051128 a718b65c ada.assertions%s
+D a-unccon.ads		20210520051130 0e9b276f ada.unchecked_conversion%s
+D pkg_addtenxtimes.ads	20201111101036 95669c28 pkg_addtenxtimes%s
+D pkg_addtenxtimes.adb	20201109131432 dcd38b13 pkg_addtenxtimes%b
+D system.ads		20210520051136 2ffa5114 system%s
+D s-assert.ads		20210520051132 6a49a4e4 system.assertions%s
+D s-exctab.ads		20210520051132 54135002 system.exception_table%s
+D s-stalib.ads		20210520051134 472fbca8 system.standard_library%s
+G a e
+G c Z s b [addtenxtimes pkg_addtenxtimes 5 13 none]
+X 4 pkg_addtenxtimes.ads
+1K9*Pkg_addTenXTimes 13l5 13e21 5|1b14 21l5 21t21
+3i4*N{positive} 9r28 10r47 11r32 11r43 12r38 5|9r17 12r14 14r23 15r59
+5V13*addTenXTimes{positive} 5>27 10r20 12r16 5|3b13 19l8 19t20
+5i27 X{natural} 10r44 11r15 12r42 5|3b27 8r10 13r21
+X 5 pkg_addtenxtimes.adb
+5i7 Res{positive} 12m7 14m10 14r17 15r32 15r38 18r14
+13i11 i{integer} 15r55
+

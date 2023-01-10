@@ -1,0 +1,89 @@
+{
+  "spark": [
+    {
+      "name": "Pkg_substractTenAddTen",
+      "sloc": [
+        {
+          "file": "pkg_substracttenaddten.ads",
+          "line": 1
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "Pkg_substractTenAddTen.substractTenAddTen",
+      "sloc": [
+        {
+          "file": "pkg_substracttenaddten.ads",
+          "line": 5
+        }
+      ],
+      "spark": "all"
+    }
+  ],
+  "flow": [
+    {
+      "file": "pkg_substracttenaddten.ads",
+      "line": 10,
+      "col": 8,
+      "rule": "GLOBAL_WRONG",
+      "severity": "info",
+      "entity": {
+        "name": "Pkg_substractTenAddTen.substractTenAddTen",
+        "sloc": [
+          {
+            "file": "pkg_substracttenaddten.ads",
+            "line": 5
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    },
+    {
+      "file": "pkg_substracttenaddten.ads",
+      "line": 11,
+      "col": 8,
+      "rule": "DEPENDS_WRONG",
+      "severity": "info",
+      "entity": {
+        "name": "Pkg_substractTenAddTen.substractTenAddTen",
+        "sloc": [
+          {
+            "file": "pkg_substracttenaddten.ads",
+            "line": 5
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    }
+  ],
+  "assumptions": [
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Pkg_substractTenAddTen.substractTenAddTen",
+          "sloc": [
+            {
+              "file": "pkg_substracttenaddten.ads",
+              "line": 5
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "timings": {
+    "globals (advanced)": 2.83900008071214E-04,
+    "flow analysis": 1.64589995983988E-03,
+    "marking": 1.27099992823787E-04,
+    "properties (advanced)": 1.77999991137767E-05,
+    "globals (basic)": 2.90800002403557E-04
+  }
+}

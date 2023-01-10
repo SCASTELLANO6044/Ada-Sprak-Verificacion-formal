@@ -1,0 +1,16 @@
+pkg_media.ads:11:42: range attribute cannot be used in expression
+pkg_media.ads:13:16: missing ";"
+pkg_media.ads:14:23: missing ";"
+pkg_media.ads:16:16: statement expected
+pkg_media.ads:18:27: missing ";"
+pkg_media.ads:19:19: no "if" for this "then"
+pkg_media.ads:20:14: statement expected
+pkg_media.ads:22:26: missing ";"
+pkg_media.ads:23:20: identifier expected
+pkg_media.ads:27:01: "end loop;" expected for "loop" at line 23
+pkg_media.ads:27:01: "end if;" expected for "if" at line 21
+pkg_media.ads:27:01: "end loop;" expected for "loop" at line 20
+pkg_media.ads:27:01: "end if;" expected for "if" at line 19
+pkg_media.ads:27:01: "end if;" expected for "if" at line 17
+pkg_media.ads:27:01: "end loop;" expected for "loop" at line 16
+pkg_media.ads:27:01: "end if;" expected for "if" at line 13

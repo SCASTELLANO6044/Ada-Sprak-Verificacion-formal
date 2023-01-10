@@ -1,0 +1,2 @@
+pkg_potencia.adb:17:24: medium: overflow check might fail (e.g. when N = -2 and Res = 2) [possible explanation: loop at line 15 should mention Res in a loop invariant][#0]
+pkg_potencia.adb:18:20: medium: overflow check might fail (e.g. when i = Positive'Last)[#1]

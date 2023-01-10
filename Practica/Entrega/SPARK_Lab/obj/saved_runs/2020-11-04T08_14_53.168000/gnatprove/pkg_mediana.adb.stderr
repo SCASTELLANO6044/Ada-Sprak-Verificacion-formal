@@ -1,0 +1,1 @@
+pkg_mediana.adb:5:29: medium: array index check might fail (e.g. when Vec = (others => 2) and Vec'First = 2 and Vec'Last = 3)[#0]

@@ -1,0 +1,2 @@
+pkg_divide.adb:4:07: warning: formal parameter "Dividend" is not referenced
+pkg_divide.adb:5:07: warning: formal parameter "Divisor" is not referenced

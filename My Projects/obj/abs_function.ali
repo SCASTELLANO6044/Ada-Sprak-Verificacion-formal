@@ -1,0 +1,23 @@
+V "GNAT Lib v2021"
+A -gnatA
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_IMPLEMENTATION_PRAGMAS
+
+U abs_function%b	abs_function.adb	f23475aa NE OO PK IL
+
+U abs_function%s	abs_function.ads	d748b6a5 EE NE OO PK IL
+
+D abs_function.ads	20220914155224 d748b6a5 abs_function%s
+D abs_function.adb	20220914153526 257cc30f abs_function%b
+D system.ads		20210520051136 2ffa5114 system%s
+G a e
+G c Z s b [abs_value abs_function 3 13 none]
+X 1 abs_function.ads
+1K9*Abs_function 10l5 10e17 2|1b14 12l8 12t20
+3V13*abs_value{integer} 3>24 2|3b13 10l11 10t20
+3i24 n{integer} 2|3b24 5r13 6r21 8r20
+

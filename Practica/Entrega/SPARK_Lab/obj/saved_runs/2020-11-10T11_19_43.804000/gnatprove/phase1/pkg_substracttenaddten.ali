@@ -1,0 +1,55 @@
+V "GNAT Lib v2020"
+A -x
+A ada
+A -gnatA
+A -g
+A -fstack-check
+A -gnata
+A -gnato
+A -gnat12
+A -gnatwa
+A -gnateE
+A -gnatc
+P GP FX
+
+RN
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_ASPECT_SPECIFICATIONS
+RV NO_IMPLEMENTATION_ATTRIBUTES
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+
+U pkg_substracttenaddten%b  pkg_substracttenaddten.adb  24e64b42 OO PK
+
+U pkg_substracttenaddten%s  pkg_substracttenaddten.ads  ab3aeb18 OO PK
+
+D pkg_substracttenaddten.ads  20201110111934 ab3aeb18 pkg_substracttenaddten%s
+D pkg_substracttenaddten.adb  20201110111620 8fdca05a pkg_substracttenaddten%b
+D system.ads		20200819050648 32a08138 system%s
+G a Z
+X 1 pkg_substracttenaddten.ads
+1K9*Pkg_substractTenAddTen 38l5 38e27 2|1b14 24l5 24t27
+3A9*T_Vec(integer)<integer> 7r47 2|3r47
+5i4*ten{positive} 10r29 11r33 13r93 16r44 20r48 24r48 27r41 30r44 34r47 36r47
+. 2|8r29 12r32 13r64 17r32 18r64
+7U14*substractTenAddTen 7=34 2|3b14 22l8 22t26
+7a34 Vec{3A9} 11r20 11r28 13r15 13r39 13r62 13r73 15r19 16r18 18r35 19r23
+. 20r22 22r32 22r53 23r24 24r23 26r20 27r19 27r28 29r38 30r22 30r31 32r34
+. 32r55 33r31 34r25 34r34 36r25 36r34 2|3b34 7r10 8m10 8r20 11r24 12m13 12r23
+. 13r35 13r44 16r20 16r41 17m13 17r23 18r35 18r44
+18i25 i{integer} 19r27 20r26
+22i26 j{integer} 23r28 24r27
+29i28 i{integer} 30r26 30r39
+32i28 j{integer} 33r26 34r29 34r42 36r29 36r42
+X 2 pkg_substracttenaddten.adb
+11i14 i{integer} 12r17 12r27 13r39 13r59
+16i14 j{integer} 17r17 17r27 18r39 18r59
+
+QQ SPARKVERSION SPARK Community 2020 (20200818)
+GG EK_DIRECT_CALLS pkg_substracttenaddten__substracttenaddten 0
+GG EK_GLOBALS pkg_substracttenaddten__substracttenaddten local FALSE E_PROCEDURE FALSE ORIGIN_FLOW 1 pkg_substracttenaddten proper_proof_in 0 proper_input 1 pkg_substracttenaddten__ten proper_output 0 refined_proof_in 0 refined_input 1 pkg_substracttenaddten__ten refined_output 0 calls_proof 0 calls 0 calls_conditional 0 FALSE FALSE TRUE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 1 pkg_substracttenaddten__ten LOCKS 0
+GG EK_DIRECT_CALLS pkg_substracttenaddten 0
+GG EK_GLOBALS pkg_substracttenaddten local FALSE E_PACKAGE TRUE ORIGIN_FLOW 0 proper_proof_in 0 proper_input 0 proper_output 0 refined_proof_in 0 refined_input 0 refined_output 0 initializes 1 pkg_substracttenaddten__ten calls_proof 0 calls 0 calls_conditional 0 local_var 1 pkg_substracttenaddten__ten FALSE FALSE FALSE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
+GG EK_FLOW_SCOPE pkg_substracttenaddten__substracttenaddten FALSE FALSE FALSE FALSE TRUE pkg_substracttenaddten VISIBLE_PART
+GG EK_FLOW_SCOPE pkg_substracttenaddten TRUE FALSE FALSE FALSE FALSE __standard
+GG EK_END_MARKER

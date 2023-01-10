@@ -1,0 +1,687 @@
+module Standard__integer
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  
+  type integer = <range -2147483648 2147483647>
+  
+  val function first : int
+    ensures { result = ((- 2147483648) : int) }
+  
+  val function last : int
+    ensures { result = (2147483647 : int) }
+  
+  predicate in_range (x: int) = ((first <= x) /\ (x <= last))
+  
+  val in_range (x: int) : bool
+    ensures { result <-> (in_range (x : int)) }
+  
+  clone export ada__model.Static_Discrete with
+    axiom .,
+    type t = integer,
+    function first = first,
+    function last = last,
+    predicate in_range = in_range
+  
+  type integer__ref = { mutable integer__content : integer }
+  
+  function integer__ref_integer__content__projection (a: integer__ref) : integer =
+    a.integer__content
+  
+  meta "model_projection" function integer__ref_integer__content__projection
+  
+  meta "inline:no" function integer__ref_integer__content__projection
+  
+  val integer__havoc (x: integer__ref) : unit
+    writes { x }
+end
+
+module Standard__natural
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  
+  type natural = <range 0 2147483647>
+  
+  val function first : int
+    ensures { result = (0 : int) }
+  
+  val function last : int
+    ensures { result = (2147483647 : int) }
+  
+  predicate in_range (x: int) = ((first <= x) /\ (x <= last))
+  
+  val in_range (x: int) : bool
+    ensures { result <-> (in_range (x : int)) }
+  
+  clone export ada__model.Static_Discrete with
+    axiom .,
+    type t = natural,
+    function first = first,
+    function last = last,
+    predicate in_range = in_range
+  
+  type natural__ref = { mutable natural__content : natural }
+  
+  function natural__ref_natural__content__projection (a: natural__ref) : natural =
+    a.natural__content
+  
+  meta "model_projection" function natural__ref_natural__content__projection
+  
+  meta "inline:no" function natural__ref_natural__content__projection
+  
+  val natural__havoc (x: natural__ref) : unit
+    writes { x }
+end
+
+module Standard__natural___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Standard__natural as Standard__natural
+  
+  predicate dynamic_invariant (temp___expr_46: int) (temp___is_init_42: bool) (temp___skip_constant_43: bool) (temp___do_toplevel_44: bool) (temp___do_typ_inv_45: bool) =
+    if ((temp___is_init_42 = True) \/
+          (Standard__natural.first <= Standard__natural.last)) then
+      (((Standard__natural.dynamic_property Standard__natural.first)
+          Standard__natural.last)
+         temp___expr_46)
+    else true
+  
+  val dynamic_invariant (temp___expr_46: int) (temp___is_init_42: bool) (temp___skip_constant_43: bool) (temp___do_toplevel_44: bool) (temp___do_typ_inv_45: bool) : 
+    bool
+    ensures { result
+                <->
+                (((((dynamic_invariant (temp___expr_46 : int))
+                      (temp___is_init_42 : bool))
+                     (temp___skip_constant_43 : bool))
+                    (temp___do_toplevel_44 : bool))
+                   (temp___do_typ_inv_45 : bool)) }
+  
+  predicate default_initial_assumption (temp___expr_47: int) (temp___skip_top_level_48: bool) =
+    true
+  
+  val default_initial_assumption (temp___expr_47: int) (temp___skip_top_level_48: bool) : 
+    bool
+    ensures { result
+                <->
+                ((default_initial_assumption (temp___expr_47 : int))
+                   (temp___skip_top_level_48 : bool)) }
+end
+
+module Standard__positive
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  
+  type positive = <range 1 2147483647>
+  
+  val function first : int
+    ensures { result = (1 : int) }
+  
+  val function last : int
+    ensures { result = (2147483647 : int) }
+  
+  predicate in_range (x: int) = ((first <= x) /\ (x <= last))
+  
+  val in_range (x: int) : bool
+    ensures { result <-> (in_range (x : int)) }
+  
+  clone export ada__model.Static_Discrete with
+    axiom .,
+    type t = positive,
+    function first = first,
+    function last = last,
+    predicate in_range = in_range
+  
+  type positive__ref = { mutable positive__content : positive }
+  
+  function positive__ref_positive__content__projection (a: positive__ref) : positive =
+    a.positive__content
+  
+  meta "model_projection" function positive__ref_positive__content__projection
+  
+  meta "inline:no" function positive__ref_positive__content__projection
+  
+  val positive__havoc (x: positive__ref) : unit
+    writes { x }
+end
+
+module Standard__positive___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Standard__positive as Standard__positive
+  
+  predicate dynamic_invariant (temp___expr_53: int) (temp___is_init_49: bool) (temp___skip_constant_50: bool) (temp___do_toplevel_51: bool) (temp___do_typ_inv_52: bool) =
+    if ((temp___is_init_49 = True) \/
+          (Standard__positive.first <= Standard__positive.last)) then
+      (((Standard__positive.dynamic_property Standard__positive.first)
+          Standard__positive.last)
+         temp___expr_53)
+    else true
+  
+  val dynamic_invariant (temp___expr_53: int) (temp___is_init_49: bool) (temp___skip_constant_50: bool) (temp___do_toplevel_51: bool) (temp___do_typ_inv_52: bool) : 
+    bool
+    ensures { result
+                <->
+                (((((dynamic_invariant (temp___expr_53 : int))
+                      (temp___is_init_49 : bool))
+                     (temp___skip_constant_50 : bool))
+                    (temp___do_toplevel_51 : bool))
+                   (temp___do_typ_inv_52 : bool)) }
+  
+  predicate default_initial_assumption (temp___expr_54: int) (temp___skip_top_level_55: bool) =
+    true
+  
+  val default_initial_assumption (temp___expr_54: int) (temp___skip_top_level_55: bool) : 
+    bool
+    ensures { result
+                <->
+                ((default_initial_assumption (temp___expr_54 : int))
+                   (temp___skip_top_level_55 : bool)) }
+end
+
+module Pkg_addtenxtimes__n
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  val n : int__ref
+end
+
+module Pkg_addtenxtimes__addtenxtimes__x
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  val function x : int
+end
+
+module Pkg_addtenxtimes__addtenxtimes__res
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  val res : int__ref
+end
+
+module Pkg_addtenxtimes__addtenxtimes__L_1__i
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  val i : int__ref
+end
+
+module Pkg_addtenxtimes__addtenxtimes__L_1
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  exception L_1
+end
+
+module Standard__integer__rep
+  use Standard__integer as Standard__integer
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  function to_rep (x: Standard__integer.integer) : int =
+    Standard__integer.integer'int x
+  
+  clone export ada__model.Rep_Proj_Int with
+    axiom .,
+    type t = Standard__integer.integer,
+    predicate in_range = Standard__integer.in_range,
+    function to_rep = to_rep
+  
+  meta "model_projection" function to_rep
+  
+  meta "inline:no" function to_rep
+end
+
+module Pkg_addtenxtimes__addtenxtimes__L_1__T2b
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Standard__integer as Standard__integer
+  use Standard__integer__rep as Standard__integer__rep
+  
+  type t2b = Standard__integer.integer
+  
+  predicate dynamic_property (first_int: int) (last_int: int) (x: int) =
+    ((first_int <= x) /\ (x <= last_int))
+  
+  val dynamic_property (first_int: int) (last_int: int) (x: int) : bool
+    ensures { result
+                <->
+                (((dynamic_property (first_int : int)) (last_int : int))
+                   (x : int)) }
+  
+  clone export ada__model.Dynamic_Discrete with
+    axiom .,
+    type t = t2b,
+    type rep_type = int,
+    function base_to_rep = Standard__integer__rep.to_rep,
+    function base_of_rep = Standard__integer__rep.of_rep,
+    predicate dynamic_property = dynamic_property
+  
+  type t2b__ref = { mutable t2b__content : t2b }
+  
+  function t2b__ref_t2b__content__projection (a: t2b__ref) : t2b =
+    a.t2b__content
+  
+  meta "model_projection" function t2b__ref_t2b__content__projection
+  
+  meta "inline:no" function t2b__ref_t2b__content__projection
+  
+  val t2b__havoc (x: t2b__ref) : unit
+    writes { x }
+end
+
+module Standard__integer___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Standard__integer as Standard__integer
+  
+  predicate dynamic_invariant (temp___expr_18: int) (temp___is_init_14: bool) (temp___skip_constant_15: bool) (temp___do_toplevel_16: bool) (temp___do_typ_inv_17: bool) =
+    if ((temp___is_init_14 = True) \/
+          (Standard__integer.first <= Standard__integer.last)) then
+      (((Standard__integer.dynamic_property Standard__integer.first)
+          Standard__integer.last)
+         temp___expr_18)
+    else true
+  
+  val dynamic_invariant (temp___expr_18: int) (temp___is_init_14: bool) (temp___skip_constant_15: bool) (temp___do_toplevel_16: bool) (temp___do_typ_inv_17: bool) : 
+    bool
+    ensures { result
+                <->
+                (((((dynamic_invariant (temp___expr_18 : int))
+                      (temp___is_init_14 : bool))
+                     (temp___skip_constant_15 : bool))
+                    (temp___do_toplevel_16 : bool))
+                   (temp___do_typ_inv_17 : bool)) }
+  
+  predicate default_initial_assumption (temp___expr_19: int) (temp___skip_top_level_20: bool) =
+    true
+  
+  val default_initial_assumption (temp___expr_19: int) (temp___skip_top_level_20: bool) : 
+    bool
+    ensures { result
+                <->
+                ((default_initial_assumption (temp___expr_19 : int))
+                   (temp___skip_top_level_20 : bool)) }
+end
+
+module Pkg_addtenxtimes__addtenxtimes__res___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Pkg_addtenxtimes__addtenxtimes__L_1__i___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Pkg_addtenxtimes__addtenxtimes__L_1___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Pkg_addtenxtimes__n___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Pkg_addtenxtimes__addtenxtimes__x___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Pkg_addtenxtimes__addtenxtimes__L_1__T2b___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Pkg_addtenxtimes__addtenxtimes__subprogram_def
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use _gnatprove_standard.Main as Main
+  use _gnatprove_standard.Int_Division as Int_Division
+  use _gnatprove_standard.Boolean as Boolean
+  use Standard__integer as Standard__integer
+  use Standard__natural___axiom as Standard__natural___axiom
+  use Standard__positive___axiom as Standard__positive___axiom
+  use Pkg_addtenxtimes__n as Pkg_addtenxtimes__n
+  use Pkg_addtenxtimes__addtenxtimes__x as Pkg_addtenxtimes__addtenxtimes__x
+  use Pkg_addtenxtimes__addtenxtimes__res as Pkg_addtenxtimes__addtenxtimes__res
+  use Pkg_addtenxtimes__addtenxtimes__L_1__i as Pkg_addtenxtimes__addtenxtimes__L_1__i
+  use Pkg_addtenxtimes__addtenxtimes__L_1 as Pkg_addtenxtimes__addtenxtimes__L_1
+  use Pkg_addtenxtimes__addtenxtimes__L_1__T2b as Pkg_addtenxtimes__addtenxtimes__L_1__T2b
+  use Standard__natural___axiom as Standard__natural___axiom
+  use Standard__positive___axiom as Standard__positive___axiom
+  use Standard__integer___axiom as Standard__integer___axiom
+  use Pkg_addtenxtimes__addtenxtimes__res___axiom as Pkg_addtenxtimes__addtenxtimes__res___axiom
+  use Pkg_addtenxtimes__addtenxtimes__L_1__i___axiom as Pkg_addtenxtimes__addtenxtimes__L_1__i___axiom
+  use Pkg_addtenxtimes__addtenxtimes__L_1___axiom as Pkg_addtenxtimes__addtenxtimes__L_1___axiom
+  use Pkg_addtenxtimes__n___axiom as Pkg_addtenxtimes__n___axiom
+  use Pkg_addtenxtimes__addtenxtimes__x___axiom as Pkg_addtenxtimes__addtenxtimes__x___axiom
+  use Pkg_addtenxtimes__addtenxtimes__L_1__T2b___axiom as Pkg_addtenxtimes__addtenxtimes__L_1__T2b___axiom
+  
+  val pkg_addtenxtimes__addtenxtimes__result : int__ref
+  
+  let def (__void_param : unit)
+    requires { [#"pkg_addtenxtimes.ads" 5 0 0] true }
+    ensures { [#"pkg_addtenxtimes.ads" 5 0 0]
+              [#"pkg_addtenxtimes.ads" 12 0 0]
+              [@GP_Reason:VC_POSTCONDITION]
+              [@GP_Shape:pragargs__cmp]
+              [@model_vc_post]
+              [@GP_Id:7]
+              [@GP_Sloc:pkg_addtenxtimes.ads:12:16]
+              [@comment:       Post => addTenXTimes'Result = N * X + 10;                ^ pkg_addtenxtimes.ads:12:16:VC_POSTCONDITION]
+              [@GP_Pretty_Ada:1003]
+              [@GP_Sloc:pkg_addtenxtimes.ads:12:16]
+              ((pkg_addtenxtimes__addtenxtimes__result.int__content)
+                 = (((Pkg_addtenxtimes__n.n.int__content)
+                       * Pkg_addtenxtimes__addtenxtimes__x.x)
+                      + (10 : int))) }
+  = [@vc:divergent]
+    (([@GNAT-comment:Assume dynamic invariants of inputs of the subprogram pkg_addtenxtimes.ads:5]
+      ());
+     assume {
+       ((((Standard__positive___axiom.dynamic_invariant
+             (Pkg_addtenxtimes__n.n.int__content))
+            True)
+           False)
+          True)
+         True };
+     assume {
+       ((((Standard__natural___axiom.dynamic_invariant
+             Pkg_addtenxtimes__addtenxtimes__x.x)
+            True)
+           False)
+          True)
+         True };
+     ([@GNAT-comment:Assume moved pointers in outputs of the subprogram pkg_addtenxtimes.ads:5]
+      ());
+     ([@GNAT-comment:Check for RTE in the Pre of the subprogram pkg_addtenxtimes.ads:5]
+      ());
+     (begin
+        ensures { true }
+        let _ =
+          let _ =
+            (Pkg_addtenxtimes__addtenxtimes__x.x
+               < ([#"pkg_addtenxtimes.ads" 11 0 0]
+                  [@vc:annotation]
+                  [@GP_Reason:VC_DIVISION_CHECK]
+                  [@GP_Shape:pragargs__andthen__cmp__div]
+                  [@comment:       Pre => X < Natural'Last/N and then N = 10,                               ^ pkg_addtenxtimes.ads:11:31:VC_DIVISION_CHECK]
+                  [@GP_Id:6]
+                  [@GP_Sloc:pkg_addtenxtimes.ads:11:31]
+                  ((Int_Division.div_ (2147483647 : int))
+                     (Pkg_addtenxtimes__n.n.int__content))))
+             && ((Pkg_addtenxtimes__n.n.int__content) = (10 : int)) in
+          () in
+        ()
+      end);
+     ([@GNAT-comment:Assume Pre of the subprogram pkg_addtenxtimes.ads:5] ());
+     assume {
+       (([@GP_Pretty_Ada:928]
+         (Pkg_addtenxtimes__addtenxtimes__x.x
+            < ((Int_Division.div (2147483647 : int))
+                 (Pkg_addtenxtimes__n.n.int__content)))) /\
+          ([@GP_Pretty_Ada:936]
+           ((Pkg_addtenxtimes__n.n.int__content) = (10 : int)))) };
+     (try
+        ([#"pkg_addtenxtimes.adb" 5 0 0]
+         (([#"pkg_addtenxtimes.adb" 5 0 0]
+           assume {
+             [#"pkg_addtenxtimes.adb" 5 0 0]
+             ((Standard__positive___axiom.default_initial_assumption
+                 (Pkg_addtenxtimes__addtenxtimes__res.res.int__content))
+                False) });
+          ([#"pkg_addtenxtimes.adb" 5 0 0]
+           assume {
+             [#"pkg_addtenxtimes.adb" 5 0 0]
+             (((((Standard__positive___axiom.dynamic_invariant
+                    (Pkg_addtenxtimes__addtenxtimes__res.res.int__content))
+                   False)
+                  False)
+                 True)
+                True) })));
+        ([#"pkg_addtenxtimes.adb" 13 0 0] ());
+        ([@GP_Sloc:pkg_addtenxtimes.adb:8:7]
+         [#"pkg_addtenxtimes.adb" 8 0 0]
+         (if (([#"pkg_addtenxtimes.adb" 8 0 0]
+               [#"pkg_addtenxtimes.adb" 8 0 0]
+               (([@branch_id=833] Main.spark__branch).bool__content <-
+                  (Pkg_addtenxtimes__addtenxtimes__x.x = (0 : int))));
+              (([@branch_id=833] Main.spark__branch).bool__content)) then
+            (([@GP_Sloc:pkg_addtenxtimes.adb:9:17]
+              [#"pkg_addtenxtimes.adb" 9 0 0] ());
+             ([@GP_Sloc:pkg_addtenxtimes.adb:9:10]
+              [#"pkg_addtenxtimes.adb" 9 0 0]
+              (([#"pkg_addtenxtimes.adb" 9 0 0]
+                (pkg_addtenxtimes__addtenxtimes__result.int__content <-
+                   (Pkg_addtenxtimes__n.n.int__content)));
+               ([#"pkg_addtenxtimes.adb" 9 0 0] ((raise Return__exc) : unit)))))
+          else ()));
+        ([@GP_Sloc:pkg_addtenxtimes.adb:12:7]
+         [#"pkg_addtenxtimes.adb" 12 0 0] ());
+        ([@GP_Sloc:pkg_addtenxtimes.adb:12:14]
+         [#"pkg_addtenxtimes.adb" 12 0 0] ());
+        ([@GP_Sloc:pkg_addtenxtimes.adb:12:11]
+         [#"pkg_addtenxtimes.adb" 12 0 0]
+         [#"pkg_addtenxtimes.adb" 12 0 0]
+         (Pkg_addtenxtimes__addtenxtimes__res.res.int__content <-
+            (Pkg_addtenxtimes__n.n.int__content)));
+        ([@GP_Sloc:pkg_addtenxtimes.adb:13:23]
+         [#"pkg_addtenxtimes.adb" 13 0 0]
+         (let temp___163 = 1 : int in
+          let temp___164 = Pkg_addtenxtimes__addtenxtimes__x.x in
+          ([#"pkg_addtenxtimes.adb" 13 0 0]
+           (Pkg_addtenxtimes__addtenxtimes__L_1__i.i.int__content <-
+              temp___163));
+          ([@GNAT-comment:Translation of an Ada loop from pkg_addtenxtimes.adb:13]
+           ());
+          (if ((Boolean.andb
+                  (temp___163
+                     <= (Pkg_addtenxtimes__addtenxtimes__L_1__i.i.int__content)))
+                 ((Pkg_addtenxtimes__addtenxtimes__L_1__i.i.int__content)
+                    <= temp___164)) then
+             ([#"pkg_addtenxtimes.adb" 13 0 0]
+              (try
+                 let temp___loop_entry_167 =
+                   Pkg_addtenxtimes__addtenxtimes__res.res.int__content in
+                 ([@GNAT-comment:While loop translating the Ada loop from pkg_addtenxtimes.adb:13]
+                  ());
+                 ([#"'@Loop 858@'pkg_addtenxtimes.adb" 15 0 0]
+                  [#"'@Loop 858@'pkg_addtenxtimes.adb" 15 0 0]
+                  ((([@GP_Sloc:pkg_addtenxtimes.adb:14:10]
+                     [#"pkg_addtenxtimes.adb" 14 0 0] ());
+                    ([@GP_Sloc:pkg_addtenxtimes.adb:14:17]
+                     [#"pkg_addtenxtimes.adb" 14 0 0] ());
+                    ([@GP_Sloc:pkg_addtenxtimes.adb:14:23]
+                     [#"pkg_addtenxtimes.adb" 14 0 0] ());
+                    ([@GP_Sloc:pkg_addtenxtimes.adb:14:14]
+                     [#"pkg_addtenxtimes.adb" 14 0 0]
+                     [#"pkg_addtenxtimes.adb" 14 0 0]
+                     (Pkg_addtenxtimes__addtenxtimes__res.res.int__content <-
+                        ([#"pkg_addtenxtimes.adb" 14 0 0]
+                         [@comment:         Res := Res + N;                     ^ pkg_addtenxtimes.adb:14:21:VC_OVERFLOW_CHECK]
+                         [@GP_Shape:L_1_while__res_assign__add]
+                         [@vc:annotation]
+                         [@GP_Reason:VC_OVERFLOW_CHECK]
+                         [@GP_Sloc:pkg_addtenxtimes.adb:14:21]
+                         [@GP_Id:0]
+                         (Standard__integer.range_check_
+                            ((Pkg_addtenxtimes__addtenxtimes__res.res.int__content)
+                               + (Pkg_addtenxtimes__n.n.int__content))))));
+                    ([@GNAT-comment:Check for absence of RTE in the loop invariant and variant]
+                     ());
+                    (let temp___inv_166 =
+                       ((Pkg_addtenxtimes__addtenxtimes__res.res.int__content)
+                          = ([#"pkg_addtenxtimes.adb" 15 0 0]
+                             [@GP_Sloc:pkg_addtenxtimes.adb:15:57]
+                             [@comment:         pragma Loop_Invariant(Res = Res'Loop_Entry * i + N);                                                         ^ pkg_addtenxtimes.adb:15:57:VC_OVERFLOW_CHECK]
+                             [@GP_Shape:L_1_while__pragargs__cmp__add]
+                             [@vc:annotation]
+                             [@GP_Reason:VC_OVERFLOW_CHECK]
+                             [@GP_Id:2]
+                             (Standard__integer.range_check_
+                                (([#"pkg_addtenxtimes.adb" 15 0 0]
+                                  [@GP_Sloc:pkg_addtenxtimes.adb:15:53]
+                                  [@GP_Shape:L_1_while__pragargs__cmp__add__mult]
+                                  [@comment:         pragma Loop_Invariant(Res = Res'Loop_Entry * i + N);                                                     ^ pkg_addtenxtimes.adb:15:53:VC_OVERFLOW_CHECK]
+                                  [@vc:annotation]
+                                  [@GP_Reason:VC_OVERFLOW_CHECK]
+                                  [@GP_Id:1]
+                                  (Standard__integer.range_check_
+                                     (temp___loop_entry_167
+                                        * (Pkg_addtenxtimes__addtenxtimes__L_1__i.i.int__content))))
+                                   + (Pkg_addtenxtimes__n.n.int__content))))) in
+                     ()));
+                   while True do
+                     invariant LoopInvariant {
+                       [#"pkg_addtenxtimes.adb" 15 0 0]
+                       [@GP_Reason:VC_LOOP_INVARIANT]
+                       [@comment:         pragma Loop_Invariant(Res = Res'Loop_Entry * i + N);                                ^ pkg_addtenxtimes.adb:15:32:VC_LOOP_INVARIANT]
+                       [@vc:annotation]
+                       [@GP_Shape:L_1_while__pragargs__cmp]
+                       [@GP_Sloc:pkg_addtenxtimes.adb:15:32]
+                       [@GP_Id:3]
+                       [@GP_Pretty_Ada:863]
+                       [@GP_Sloc:pkg_addtenxtimes.adb:15:32]
+                       ((Pkg_addtenxtimes__addtenxtimes__res.res.int__content)
+                          = ((temp___loop_entry_167
+                                * (Pkg_addtenxtimes__addtenxtimes__L_1__i.i.int__content))
+                               + (Pkg_addtenxtimes__n.n.int__content))) }
+                     ([@GNAT-comment:gnat_ast_to_ptree: code after the loop invariant]
+                      (([@GNAT-comment:Assume implicit invariants from the loop pkg_addtenxtimes.adb:13]
+                        ());
+                       assume {
+                         (Boolean.andb
+                            ((((true /\
+                                  (((((Standard__positive___axiom.dynamic_invariant
+                                         (Pkg_addtenxtimes__addtenxtimes__res.res.int__content))
+                                        False)
+                                       True)
+                                      True)
+                                     True)) /\
+                                 (true /\ true)) /\
+                                (if ((True = True) \/
+                                       ((1 : int)
+                                          <= Pkg_addtenxtimes__addtenxtimes__x.x)) then
+                                   (((Pkg_addtenxtimes__addtenxtimes__L_1__T2b.dynamic_property
+                                        (1 : int))
+                                       Pkg_addtenxtimes__addtenxtimes__x.x)
+                                      (Pkg_addtenxtimes__addtenxtimes__L_1__i.i.int__content))
+                                 else true)) /\
+                               (true /\ true)))
+                           (((1 : int)
+                               <= (Pkg_addtenxtimes__addtenxtimes__L_1__i.i.int__content)) /\
+                              ((Pkg_addtenxtimes__addtenxtimes__L_1__i.i.int__content)
+                                 <= Pkg_addtenxtimes__addtenxtimes__x.x)) };
+                       ([@GNAT-comment:Continuation of loop after loop invariant and variant]
+                        ());
+                       ([@GNAT-comment:Check for the exit condition and loop statements appearing before the loop invariant of loop pkg_addtenxtimes.adb:13]
+                        ());
+                       (if ((Pkg_addtenxtimes__addtenxtimes__L_1__i.i.int__content)
+                              = temp___164) then
+                          (raise Pkg_addtenxtimes__addtenxtimes__L_1.L_1)
+                        else ());
+                       ([#"pkg_addtenxtimes.adb" 13 0 0]
+                        [#"pkg_addtenxtimes.adb" 13 0 0]
+                        (Pkg_addtenxtimes__addtenxtimes__L_1__i.i.int__content <-
+                           ((Pkg_addtenxtimes__addtenxtimes__L_1__i.i.int__content)
+                              + (1 : int))))));
+                     ([@GNAT-comment:gnat_ast_to_ptree: code before the loop invariant]
+                      (([@GP_Sloc:pkg_addtenxtimes.adb:14:10]
+                        [#"pkg_addtenxtimes.adb" 14 0 0] ());
+                       ([@GP_Sloc:pkg_addtenxtimes.adb:14:17]
+                        [#"pkg_addtenxtimes.adb" 14 0 0] ());
+                       ([@GP_Sloc:pkg_addtenxtimes.adb:14:23]
+                        [#"pkg_addtenxtimes.adb" 14 0 0] ());
+                       ([@GP_Sloc:pkg_addtenxtimes.adb:14:14]
+                        [#"pkg_addtenxtimes.adb" 14 0 0]
+                        [#"pkg_addtenxtimes.adb" 14 0 0]
+                        (Pkg_addtenxtimes__addtenxtimes__res.res.int__content <-
+                           ([#"pkg_addtenxtimes.adb" 14 0 0]
+                            [@comment:         Res := Res + N;                     ^ pkg_addtenxtimes.adb:14:21:VC_OVERFLOW_CHECK]
+                            [@GP_Shape:L_1_while__res_assign__add]
+                            [@vc:annotation]
+                            [@GP_Reason:VC_OVERFLOW_CHECK]
+                            [@GP_Sloc:pkg_addtenxtimes.adb:14:21]
+                            [@GP_Id:0]
+                            (Standard__integer.range_check_
+                               ((Pkg_addtenxtimes__addtenxtimes__res.res.int__content)
+                                  + (Pkg_addtenxtimes__n.n.int__content))))));
+                       ([@GNAT-comment:Check for absence of RTE in the loop invariant and variant]
+                        ());
+                       (let temp___inv_166 =
+                          ((Pkg_addtenxtimes__addtenxtimes__res.res.int__content)
+                             = ([#"pkg_addtenxtimes.adb" 15 0 0]
+                                [@GP_Sloc:pkg_addtenxtimes.adb:15:57]
+                                [@comment:         pragma Loop_Invariant(Res = Res'Loop_Entry * i + N);                                                         ^ pkg_addtenxtimes.adb:15:57:VC_OVERFLOW_CHECK]
+                                [@GP_Shape:L_1_while__pragargs__cmp__add]
+                                [@vc:annotation]
+                                [@GP_Reason:VC_OVERFLOW_CHECK]
+                                [@GP_Id:2]
+                                (Standard__integer.range_check_
+                                   (([#"pkg_addtenxtimes.adb" 15 0 0]
+                                     [@GP_Sloc:pkg_addtenxtimes.adb:15:53]
+                                     [@GP_Shape:L_1_while__pragargs__cmp__add__mult]
+                                     [@comment:         pragma Loop_Invariant(Res = Res'Loop_Entry * i + N);                                                     ^ pkg_addtenxtimes.adb:15:53:VC_OVERFLOW_CHECK]
+                                     [@vc:annotation]
+                                     [@GP_Reason:VC_OVERFLOW_CHECK]
+                                     [@GP_Id:1]
+                                     (Standard__integer.range_check_
+                                        (temp___loop_entry_167
+                                           * (Pkg_addtenxtimes__addtenxtimes__L_1__i.i.int__content))))
+                                      + (Pkg_addtenxtimes__n.n.int__content))))) in
+                        ())));
+                     ([@GNAT-comment:gnat_ast_to_ptree: code checking the variants]
+                      ())
+                   done))
+               with Pkg_addtenxtimes__addtenxtimes__L_1.L_1 -> ()
+               end))
+           else ())));
+        ([@GP_Sloc:pkg_addtenxtimes.adb:18:14]
+         [#"pkg_addtenxtimes.adb" 18 0 0] ());
+        ([@GP_Sloc:pkg_addtenxtimes.adb:18:7]
+         [#"pkg_addtenxtimes.adb" 18 0 0]
+         (([#"pkg_addtenxtimes.adb" 18 0 0]
+           (pkg_addtenxtimes__addtenxtimes__result.int__content <-
+              (Pkg_addtenxtimes__addtenxtimes__res.res.int__content)));
+          ([#"pkg_addtenxtimes.adb" 18 0 0] ((raise Return__exc) : unit))));
+        (raise Return__exc)
+      with Return__exc -> ()
+      end);
+     (begin
+        ensures { true }
+        let _ =
+          let _ =
+            ((pkg_addtenxtimes__addtenxtimes__result.int__content)
+               = ([#"pkg_addtenxtimes.ads" 12 0 0]
+                  [@GP_Sloc:pkg_addtenxtimes.ads:12:44]
+                  [@comment:       Post => addTenXTimes'Result = N * X + 10;                                            ^ pkg_addtenxtimes.ads:12:44:VC_OVERFLOW_CHECK]
+                  [@vc:annotation]
+                  [@GP_Reason:VC_OVERFLOW_CHECK]
+                  [@GP_Shape:pragargs__cmp__add]
+                  [@GP_Id:5]
+                  (Standard__integer.range_check_
+                     (([#"pkg_addtenxtimes.ads" 12 0 0]
+                       [@GP_Shape:pragargs__cmp__add__mult]
+                       [@vc:annotation]
+                       [@comment:       Post => addTenXTimes'Result = N * X + 10;                                        ^ pkg_addtenxtimes.ads:12:40:VC_OVERFLOW_CHECK]
+                       [@GP_Reason:VC_OVERFLOW_CHECK]
+                       [@GP_Id:4]
+                       [@GP_Sloc:pkg_addtenxtimes.ads:12:40]
+                       (Standard__integer.range_check_
+                          ((Pkg_addtenxtimes__n.n.int__content)
+                             * Pkg_addtenxtimes__addtenxtimes__x.x)))
+                        + (10 : int))))) in
+          () in
+        ()
+      end);
+     (pkg_addtenxtimes__addtenxtimes__result.int__content))
+end

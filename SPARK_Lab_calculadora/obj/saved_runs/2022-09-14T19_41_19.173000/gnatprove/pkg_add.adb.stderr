@@ -1,0 +1,1 @@
+pkg_add.ads:11:07: warning: postcondition does not mention function result [-gnatw.t]

@@ -1,0 +1,14 @@
+20201109145324
+-c
+-x
+ada
+-gnatA
+-g
+-fstack-check
+-gnata
+-gnato
+-gnat12
+-gnatwa
+-gnateE
+-gnatc
+-gnates=D:\Universidad\TERCERO\P3\Ada Projects\SPARK_Lab_01\obj\gnatprove\11609f79.tmp

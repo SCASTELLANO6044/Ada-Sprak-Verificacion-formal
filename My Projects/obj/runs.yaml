@@ -1,0 +1,31 @@
+'2022-09-14T16:54:28.276000':
+  category: GNATprove
+  files:
+  - D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\My Projects\obj\gnatprove
+  label: Examine Single File
+  output: 'Phase 1 of 2: generation of Global contracts ...
+
+    Phase 2 of 2: analysis of data and information flow ...
+
+    abs_function.ads:7:08: warning: postcondition does not mention function result
+    [-gnatw.t]
+
+    Summary logged in D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\My Projects\obj\gnatprove\gnatprove.out
+
+    '
+  output_parser: GNATprove_Parser
+  timestamp: '2022-09-14T16:54:28.276000'
+'2022-09-14T16:56:06.679000':
+  category: GNATprove
+  files:
+  - D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\My Projects\obj\gnatprove
+  label: Examine Single File
+  output: 'Phase 1 of 2: generation of Global contracts ...
+
+    abs_function.ads:7:25: error: missing argument for "value" attribute
+
+    gnatprove: error during generation of Global contracts
+
+    '
+  output_parser: GNATprove_Parser
+  timestamp: '2022-09-14T16:56:06.679000'

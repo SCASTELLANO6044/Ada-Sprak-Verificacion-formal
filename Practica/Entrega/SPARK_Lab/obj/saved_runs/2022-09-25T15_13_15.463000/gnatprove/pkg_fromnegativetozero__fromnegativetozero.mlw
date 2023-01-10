@@ -1,0 +1,1385 @@
+module Standard__integer
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  
+  type integer = <range -2147483648 2147483647>
+  
+  val function first : int
+    ensures { result = ((- 2147483648) : int) }
+  
+  val function last : int
+    ensures { result = (2147483647 : int) }
+  
+  predicate in_range (x: int) = ((first <= x) /\ (x <= last))
+  
+  val in_range (x: int) : bool
+    ensures { result <-> (in_range (x : int)) }
+  
+  clone export ada__model.Static_Discrete with
+    axiom .,
+    type t = integer,
+    function first = first,
+    function last = last,
+    predicate in_range = in_range
+  
+  type integer__ref = { mutable integer__content : integer }
+  
+  function integer__ref_integer__content__projection (a: integer__ref) : integer =
+    a.integer__content
+  
+  meta "model_projection" function integer__ref_integer__content__projection
+  
+  meta "inline:no" function integer__ref_integer__content__projection
+  
+  val integer__havoc (x: integer__ref) : unit
+    writes { x }
+end
+
+module Standard__integer__rep
+  use Standard__integer as Standard__integer
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  function to_rep (x: Standard__integer.integer) : int =
+    Standard__integer.integer'int x
+  
+  clone export ada__model.Rep_Proj_Int with
+    axiom .,
+    type t = Standard__integer.integer,
+    predicate in_range = Standard__integer.in_range,
+    function to_rep = to_rep
+  
+  meta "model_projection" function to_rep
+  
+  meta "inline:no" function to_rep
+end
+
+module Standard__natural
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  
+  type natural = <range 0 2147483647>
+  
+  val function first : int
+    ensures { result = (0 : int) }
+  
+  val function last : int
+    ensures { result = (2147483647 : int) }
+  
+  predicate in_range (x: int) = ((first <= x) /\ (x <= last))
+  
+  val in_range (x: int) : bool
+    ensures { result <-> (in_range (x : int)) }
+  
+  clone export ada__model.Static_Discrete with
+    axiom .,
+    type t = natural,
+    function first = first,
+    function last = last,
+    predicate in_range = in_range
+  
+  type natural__ref = { mutable natural__content : natural }
+  
+  function natural__ref_natural__content__projection (a: natural__ref) : natural =
+    a.natural__content
+  
+  meta "model_projection" function natural__ref_natural__content__projection
+  
+  meta "inline:no" function natural__ref_natural__content__projection
+  
+  val natural__havoc (x: natural__ref) : unit
+    writes { x }
+end
+
+module Standard__natural___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Standard__natural as Standard__natural
+  
+  predicate dynamic_invariant (temp___expr_46: int) (temp___is_init_42: bool) (temp___skip_constant_43: bool) (temp___do_toplevel_44: bool) (temp___do_typ_inv_45: bool) =
+    if ((temp___is_init_42 = True) \/
+          (Standard__natural.first <= Standard__natural.last)) then
+      (((Standard__natural.dynamic_property Standard__natural.first)
+          Standard__natural.last)
+         temp___expr_46)
+    else true
+  
+  val dynamic_invariant (temp___expr_46: int) (temp___is_init_42: bool) (temp___skip_constant_43: bool) (temp___do_toplevel_44: bool) (temp___do_typ_inv_45: bool) : 
+    bool
+    ensures { result
+                <->
+                (((((dynamic_invariant (temp___expr_46 : int))
+                      (temp___is_init_42 : bool))
+                     (temp___skip_constant_43 : bool))
+                    (temp___do_toplevel_44 : bool))
+                   (temp___do_typ_inv_45 : bool)) }
+  
+  predicate default_initial_assumption (temp___expr_47: int) (temp___skip_top_level_48: bool) =
+    true
+  
+  val default_initial_assumption (temp___expr_47: int) (temp___skip_top_level_48: bool) : 
+    bool
+    ensures { result
+                <->
+                ((default_initial_assumption (temp___expr_47 : int))
+                   (temp___skip_top_level_48 : bool)) }
+end
+
+module Standard__positive
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  
+  type positive = <range 1 2147483647>
+  
+  val function first : int
+    ensures { result = (1 : int) }
+  
+  val function last : int
+    ensures { result = (2147483647 : int) }
+  
+  predicate in_range (x: int) = ((first <= x) /\ (x <= last))
+  
+  val in_range (x: int) : bool
+    ensures { result <-> (in_range (x : int)) }
+  
+  clone export ada__model.Static_Discrete with
+    axiom .,
+    type t = positive,
+    function first = first,
+    function last = last,
+    predicate in_range = in_range
+  
+  type positive__ref = { mutable positive__content : positive }
+  
+  function positive__ref_positive__content__projection (a: positive__ref) : positive =
+    a.positive__content
+  
+  meta "model_projection" function positive__ref_positive__content__projection
+  
+  meta "inline:no" function positive__ref_positive__content__projection
+  
+  val positive__havoc (x: positive__ref) : unit
+    writes { x }
+end
+
+module Standard__positive___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Standard__positive as Standard__positive
+  
+  predicate dynamic_invariant (temp___expr_53: int) (temp___is_init_49: bool) (temp___skip_constant_50: bool) (temp___do_toplevel_51: bool) (temp___do_typ_inv_52: bool) =
+    if ((temp___is_init_49 = True) \/
+          (Standard__positive.first <= Standard__positive.last)) then
+      (((Standard__positive.dynamic_property Standard__positive.first)
+          Standard__positive.last)
+         temp___expr_53)
+    else true
+  
+  val dynamic_invariant (temp___expr_53: int) (temp___is_init_49: bool) (temp___skip_constant_50: bool) (temp___do_toplevel_51: bool) (temp___do_typ_inv_52: bool) : 
+    bool
+    ensures { result
+                <->
+                (((((dynamic_invariant (temp___expr_53 : int))
+                      (temp___is_init_49 : bool))
+                     (temp___skip_constant_50 : bool))
+                    (temp___do_toplevel_51 : bool))
+                   (temp___do_typ_inv_52 : bool)) }
+  
+  predicate default_initial_assumption (temp___expr_54: int) (temp___skip_top_level_55: bool) =
+    true
+  
+  val default_initial_assumption (temp___expr_54: int) (temp___skip_top_level_55: bool) : 
+    bool
+    ensures { result
+                <->
+                ((default_initial_assumption (temp___expr_54 : int))
+                   (temp___skip_top_level_55 : bool)) }
+end
+
+module Pkg_fromnegativetozero__zero
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  val zero : int__ref
+end
+
+module Array__Int__Standard__integer
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Standard__integer as Standard__integer
+  use Standard__integer__rep as Standard__integer__rep
+  
+  function index_I1_one : int = 1 : int
+  
+  type component_type = Standard__integer.integer
+  
+  clone export _gnatprove_standard.Array__1 with
+    axiom .,
+    type I1.t = int,
+    predicate I1.le = Int.( <= ),
+    predicate I1.lt = Int.( < ),
+    predicate I1.gt = Int.( > ),
+    function I1.add = Int.( + ),
+    function I1.sub = Int.( - ),
+    function I1.one = index_I1_one,
+    type component_type = component_type
+  
+  function bool_eq (a: map) (a__first: int) (a__last: int) (b: map) (b__first: int) (b__last: int) : bool =
+    ((if (a__first <= a__last) then
+        ((b__first <= b__last) /\
+           ((a__last - a__first) = (b__last - b__first)))
+      else (b__first > b__last)) /\
+       (forall temp___idx_161 : int.
+          if ((a__first <= temp___idx_161) /\ (temp___idx_161 <= a__last)) then
+            ((Standard__integer__rep.to_rep ((get a) temp___idx_161))
+               = (Standard__integer__rep.to_rep
+                    ((get b) ((b__first - a__first) + temp___idx_161))))
+          else true))
+  
+  val bool_eq (a: map) (a__first: int) (a__last: int) (b: map) (b__first: int) (b__last: int) : 
+    bool
+    ensures { result
+      =
+      ((((((bool_eq (a : map)) (a__first : int)) (a__last : int)) (b : map))
+          (b__first : int))
+         (b__last : int)) }
+  
+  axiom bool_eq_rev:
+    forall a : map, b : map.
+      forall a__first : int, a__last : int, b__first : int, b__last : int.
+        ((((((((bool_eq b) b__first) b__last) a) a__first) a__last) = True) ->
+           ((if (a__first <= a__last) then
+               ((b__first <= b__last) /\
+                  ((a__last - a__first) = (b__last - b__first)))
+             else (b__first > b__last)) /\
+              (forall temp___idx_161 : int.
+                 if ((a__first <= temp___idx_161) /\
+                       (temp___idx_161 <= a__last)) then
+                   ((Standard__integer__rep.to_rep ((get a) temp___idx_161))
+                      = (Standard__integer__rep.to_rep
+                           ((get b) ((b__first - a__first) + temp___idx_161))))
+                 else true)))
+end
+
+module Pkg_fromnegativetozero__fromnegativetozero__vec
+  use _gnatprove_standard.Main
+  use int.Int
+  use Standard__integer as Standard__integer
+  use Array__Int__Standard__integer as Array__Int__Standard__integer
+  
+  val vec : Array__Int__Standard__integer.map__ref
+  
+  val function vec__first : Standard__integer.integer
+  
+  val function vec__last : Standard__integer.integer
+end
+
+module Pkg_fromnegativetozero__fromnegativetozero__i
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  val i : int__ref
+end
+
+module Pkg_fromnegativetozero__t_vec
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Standard__integer as Standard__integer
+  use Standard__integer as Standard__integer
+  use Standard__positive as Standard__positive
+  use Standard__integer__rep as Standard__integer__rep
+  use Array__Int__Standard__integer as Array__Int__Standard__integer
+  
+  type component_type = Standard__integer.integer
+  
+  function index_1_id (x: int) : int = x
+  
+  clone export ada__model.Unconstr_Array with
+    axiom .,
+    type map = Array__Int__Standard__integer.map,
+    function array_bool_eq = Array__Int__Standard__integer.bool_eq,
+    type index_base_type = Standard__integer.integer,
+    type index_rep_type = int,
+    function to_rep = Standard__integer__rep.to_rep,
+    function rep_to_int = index_1_id,
+    predicate in_range_base = Standard__integer.in_range,
+    predicate index_dynamic_property = Standard__positive.dynamic_property,
+    predicate index_rep_le = Int.( <= )
+  
+  type t_vec = __t
+  
+  meta "model_projection" function to_array
+  
+  meta "inline:no" function to_array
+  
+  meta "model_projection" function first
+  
+  meta "inline:no" function first
+  
+  meta "model_projection" function last
+  
+  meta "inline:no" function last
+  
+  type t_vec__ref = { mutable t_vec__content : t_vec }
+  
+  function t_vec__ref_t_vec__content__projection (a: t_vec__ref) : t_vec =
+    a.t_vec__content
+  
+  meta "model_projection" function t_vec__ref_t_vec__content__projection
+  
+  meta "inline:no" function t_vec__ref_t_vec__content__projection
+  
+  val t_vec__havoc (x: t_vec__ref) : unit
+    writes { x }
+end
+
+module Pkg_fromnegativetozero__fromnegativetozero__S1b
+  use export Pkg_fromnegativetozero__t_vec
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  type s1b = t_vec
+  
+  type s1b__ref = { mutable s1b__content : s1b }
+  
+  function s1b__ref_s1b__content__projection (a: s1b__ref) : s1b =
+    a.s1b__content
+  
+  meta "model_projection" function s1b__ref_s1b__content__projection
+  
+  meta "inline:no" function s1b__ref_s1b__content__projection
+  
+  val s1b__havoc (x: s1b__ref) : unit
+    writes { x }
+end
+
+module Pkg_fromnegativetozero__fromnegativetozero__L_1
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  exception L_1
+end
+
+module Standard__integer___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Standard__integer as Standard__integer
+  
+  predicate dynamic_invariant (temp___expr_18: int) (temp___is_init_14: bool) (temp___skip_constant_15: bool) (temp___do_toplevel_16: bool) (temp___do_typ_inv_17: bool) =
+    if ((temp___is_init_14 = True) \/
+          (Standard__integer.first <= Standard__integer.last)) then
+      (((Standard__integer.dynamic_property Standard__integer.first)
+          Standard__integer.last)
+         temp___expr_18)
+    else true
+  
+  val dynamic_invariant (temp___expr_18: int) (temp___is_init_14: bool) (temp___skip_constant_15: bool) (temp___do_toplevel_16: bool) (temp___do_typ_inv_17: bool) : 
+    bool
+    ensures { result
+                <->
+                (((((dynamic_invariant (temp___expr_18 : int))
+                      (temp___is_init_14 : bool))
+                     (temp___skip_constant_15 : bool))
+                    (temp___do_toplevel_16 : bool))
+                   (temp___do_typ_inv_17 : bool)) }
+  
+  predicate default_initial_assumption (temp___expr_19: int) (temp___skip_top_level_20: bool) =
+    true
+  
+  val default_initial_assumption (temp___expr_19: int) (temp___skip_top_level_20: bool) : 
+    bool
+    ensures { result
+                <->
+                ((default_initial_assumption (temp___expr_19 : int))
+                   (temp___skip_top_level_20 : bool)) }
+end
+
+module Pkg_fromnegativetozero__fromnegativetozero__i___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Pkg_fromnegativetozero__fromnegativetozero__L_1___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Pkg_fromnegativetozero__t_vec___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+  use Standard__positive as Standard__positive
+  use Pkg_fromnegativetozero__t_vec as Pkg_fromnegativetozero__t_vec
+  
+  predicate dynamic_invariant (temp___expr_166: Pkg_fromnegativetozero__t_vec.t_vec) (temp___is_init_162: bool) (temp___skip_constant_163: bool) (temp___do_toplevel_164: bool) (temp___do_typ_inv_165: bool) =
+    if temp___skip_constant_163 then true
+    else
+      ((((Pkg_fromnegativetozero__t_vec.dynamic_property
+            Standard__positive.first)
+           Standard__positive.last)
+          (Pkg_fromnegativetozero__t_vec.first temp___expr_166))
+         (Pkg_fromnegativetozero__t_vec.last temp___expr_166))
+  
+  val dynamic_invariant (temp___expr_166: Pkg_fromnegativetozero__t_vec.t_vec) (temp___is_init_162: bool) (temp___skip_constant_163: bool) (temp___do_toplevel_164: bool) (temp___do_typ_inv_165: bool) : 
+    bool
+    ensures { result
+                <->
+                (((((dynamic_invariant
+                       (temp___expr_166 : Pkg_fromnegativetozero__t_vec.t_vec))
+                      (temp___is_init_162 : bool))
+                     (temp___skip_constant_163 : bool))
+                    (temp___do_toplevel_164 : bool))
+                   (temp___do_typ_inv_165 : bool)) }
+end
+
+module Pkg_fromnegativetozero__zero___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Pkg_fromnegativetozero__fromnegativetozero__vec___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Pkg_fromnegativetozero__fromnegativetozero__S1b___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+  use Standard__integer__rep as Standard__integer__rep
+  use Pkg_fromnegativetozero__fromnegativetozero__vec as Pkg_fromnegativetozero__fromnegativetozero__vec
+  use Pkg_fromnegativetozero__fromnegativetozero__S1b as Pkg_fromnegativetozero__fromnegativetozero__S1b
+  
+  predicate dynamic_invariant (temp___expr_176: Pkg_fromnegativetozero__fromnegativetozero__S1b.s1b) (temp___is_init_172: bool) (temp___skip_constant_173: bool) (temp___do_toplevel_174: bool) (temp___do_typ_inv_175: bool) =
+    if temp___skip_constant_173 then true
+    else
+      ((((((Pkg_fromnegativetozero__fromnegativetozero__S1b.dynamic_property
+              (Standard__integer__rep.to_rep
+                 Pkg_fromnegativetozero__fromnegativetozero__vec.vec__first))
+             (Standard__integer__rep.to_rep
+                Pkg_fromnegativetozero__fromnegativetozero__vec.vec__last))
+            (Pkg_fromnegativetozero__fromnegativetozero__S1b.first
+               temp___expr_176))
+           (Pkg_fromnegativetozero__fromnegativetozero__S1b.last
+              temp___expr_176)) /\
+          ((Pkg_fromnegativetozero__fromnegativetozero__S1b.first
+              temp___expr_176)
+             = (Standard__integer__rep.to_rep
+                  Pkg_fromnegativetozero__fromnegativetozero__vec.vec__first))) /\
+         ((Pkg_fromnegativetozero__fromnegativetozero__S1b.last
+             temp___expr_176)
+            = (Standard__integer__rep.to_rep
+                 Pkg_fromnegativetozero__fromnegativetozero__vec.vec__last)))
+  
+  val dynamic_invariant (temp___expr_176: Pkg_fromnegativetozero__fromnegativetozero__S1b.s1b) (temp___is_init_172: bool) (temp___skip_constant_173: bool) (temp___do_toplevel_174: bool) (temp___do_typ_inv_175: bool) : 
+    bool
+    ensures { result
+                <->
+                (((((dynamic_invariant
+                       (temp___expr_176 :
+                          Pkg_fromnegativetozero__fromnegativetozero__S1b.s1b))
+                      (temp___is_init_172 : bool))
+                     (temp___skip_constant_173 : bool))
+                    (temp___do_toplevel_174 : bool))
+                   (temp___do_typ_inv_175 : bool)) }
+  
+  predicate default_initial_assumption (temp___expr_178: Pkg_fromnegativetozero__fromnegativetozero__S1b.s1b) (temp___skip_top_level_179: bool) =
+    ((true /\
+        ((Pkg_fromnegativetozero__fromnegativetozero__S1b.first
+            temp___expr_178)
+           = (Standard__integer__rep.to_rep
+                Pkg_fromnegativetozero__fromnegativetozero__vec.vec__first))) /\
+       ((Pkg_fromnegativetozero__fromnegativetozero__S1b.last temp___expr_178)
+          = (Standard__integer__rep.to_rep
+               Pkg_fromnegativetozero__fromnegativetozero__vec.vec__last)))
+  
+  val default_initial_assumption (temp___expr_178: Pkg_fromnegativetozero__fromnegativetozero__S1b.s1b) (temp___skip_top_level_179: bool) : 
+    bool
+    ensures { result
+                <->
+                ((default_initial_assumption
+                    (temp___expr_178 :
+                       Pkg_fromnegativetozero__fromnegativetozero__S1b.s1b))
+                   (temp___skip_top_level_179 : bool)) }
+end
+
+module Pkg_fromnegativetozero__fromnegativetozero__subprogram_def
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use _gnatprove_standard.Main as Main
+  use _gnatprove_standard.Integer as Integer
+  use _gnatprove_standard.Boolean as Boolean
+  use Standard__integer as Standard__integer
+  use Standard__integer as Standard__integer
+  use Standard__integer__rep as Standard__integer__rep
+  use Standard__natural___axiom as Standard__natural___axiom
+  use Standard__positive as Standard__positive
+  use Standard__positive___axiom as Standard__positive___axiom
+  use Standard__integer__rep as Standard__integer__rep
+  use Pkg_fromnegativetozero__zero as Pkg_fromnegativetozero__zero
+  use Array__Int__Standard__integer as Array__Int__Standard__integer
+  use Pkg_fromnegativetozero__fromnegativetozero__vec as Pkg_fromnegativetozero__fromnegativetozero__vec
+  use Pkg_fromnegativetozero__fromnegativetozero__i as Pkg_fromnegativetozero__fromnegativetozero__i
+  use Array__Int__Standard__integer as Array__Int__Standard__integer
+  use Pkg_fromnegativetozero__t_vec as Pkg_fromnegativetozero__t_vec
+  use Pkg_fromnegativetozero__fromnegativetozero__S1b as Pkg_fromnegativetozero__fromnegativetozero__S1b
+  use Pkg_fromnegativetozero__fromnegativetozero__L_1 as Pkg_fromnegativetozero__fromnegativetozero__L_1
+  use Array__Int__Standard__integer as Array__Int__Standard__integer
+  use Array__Int__Standard__integer as Array__Int__Standard__integer
+  use Array__Int__Standard__integer as Array__Int__Standard__integer
+  use Array__Int__Standard__integer as Array__Int__Standard__integer
+  use Array__Int__Standard__integer as Array__Int__Standard__integer
+  use Array__Int__Standard__integer as Array__Int__Standard__integer
+  use Array__Int__Standard__integer as Array__Int__Standard__integer
+  use Array__Int__Standard__integer as Array__Int__Standard__integer
+  use Array__Int__Standard__integer as Array__Int__Standard__integer
+  use Array__Int__Standard__integer as Array__Int__Standard__integer
+  use Standard__integer___axiom as Standard__integer___axiom
+  use Standard__natural___axiom as Standard__natural___axiom
+  use Standard__positive___axiom as Standard__positive___axiom
+  use Standard__integer___axiom as Standard__integer___axiom
+  use Pkg_fromnegativetozero__fromnegativetozero__i___axiom as Pkg_fromnegativetozero__fromnegativetozero__i___axiom
+  use Pkg_fromnegativetozero__fromnegativetozero__L_1___axiom as Pkg_fromnegativetozero__fromnegativetozero__L_1___axiom
+  use Pkg_fromnegativetozero__t_vec___axiom as Pkg_fromnegativetozero__t_vec___axiom
+  use Pkg_fromnegativetozero__zero___axiom as Pkg_fromnegativetozero__zero___axiom
+  use Pkg_fromnegativetozero__fromnegativetozero__vec___axiom as Pkg_fromnegativetozero__fromnegativetozero__vec___axiom
+  use Pkg_fromnegativetozero__fromnegativetozero__S1b___axiom as Pkg_fromnegativetozero__fromnegativetozero__S1b___axiom
+  
+  let def (__void_param : unit)
+    requires { [#"pkg_fromnegativetozero.ads" 7 0 0] true }
+    ensures { [#"pkg_fromnegativetozero.ads" 7 0 0]
+              [#"pkg_fromnegativetozero.ads" 14 0 0]
+              [@GP_Reason:VC_POSTCONDITION]
+              [@comment:       Post    => (for some i in Vec'Range => Vec(i) in 0 .. Integer'Last);                   ^ pkg_fromnegativetozero.ads:14:19:VC_POSTCONDITION]
+              [@GP_Shape:pragargs__forsome]
+              [@GP_Sloc:pkg_fromnegativetozero.ads:14:19]
+              [@model_vc_post]
+              [@GP_Id:9]
+              (exists i : int.
+                 ((((Standard__integer__rep.to_rep
+                       Pkg_fromnegativetozero__fromnegativetozero__vec.vec__first)
+                      <= i) /\
+                     (i
+                        <= (Standard__integer__rep.to_rep
+                              Pkg_fromnegativetozero__fromnegativetozero__vec.vec__last))) /\
+                    ([@GP_Sloc:pkg_fromnegativetozero.ads:14:47]
+                     [@GP_Pretty_Ada:975]
+                     (let temp___203 =
+                        Standard__integer__rep.to_rep
+                          (let temp___202 =
+                             ((Pkg_fromnegativetozero__fromnegativetozero__S1b.of_array
+                                 (Pkg_fromnegativetozero__fromnegativetozero__vec.vec.
+                                    Array__Int__Standard__integer.map__content))
+                                (Standard__integer__rep.to_rep
+                                   Pkg_fromnegativetozero__fromnegativetozero__vec.vec__first))
+                               (Standard__integer__rep.to_rep
+                                  Pkg_fromnegativetozero__fromnegativetozero__vec.vec__last) in
+                           (Array__Int__Standard__integer.get
+                              (Pkg_fromnegativetozero__fromnegativetozero__S1b.to_array
+                                 temp___202))
+                             i) in
+                      (((0 : int) <= temp___203) /\
+                         (temp___203 <= (2147483647 : int))))))) }
+  = [@vc:divergent]
+    (([@GNAT-comment:Assume dynamic invariants of inputs of the subprogram pkg_fromnegativetozero.ads:7]
+      ());
+     assume {
+       ((((Standard__natural___axiom.dynamic_invariant
+             (Pkg_fromnegativetozero__zero.zero.int__content))
+            True)
+           False)
+          True)
+         True };
+     assume {
+       if False then true
+       else
+         ((((Pkg_fromnegativetozero__t_vec.dynamic_property
+               Standard__positive.first)
+              Standard__positive.last)
+             (Pkg_fromnegativetozero__fromnegativetozero__S1b.first
+                (((Pkg_fromnegativetozero__fromnegativetozero__S1b.of_array
+                     (Pkg_fromnegativetozero__fromnegativetozero__vec.vec.
+                        Array__Int__Standard__integer.map__content))
+                    (Standard__integer__rep.to_rep
+                       Pkg_fromnegativetozero__fromnegativetozero__vec.vec__first))
+                   (Standard__integer__rep.to_rep
+                      Pkg_fromnegativetozero__fromnegativetozero__vec.vec__last))))
+            (Pkg_fromnegativetozero__fromnegativetozero__S1b.last
+               (((Pkg_fromnegativetozero__fromnegativetozero__S1b.of_array
+                    (Pkg_fromnegativetozero__fromnegativetozero__vec.vec.
+                       Array__Int__Standard__integer.map__content))
+                   (Standard__integer__rep.to_rep
+                      Pkg_fromnegativetozero__fromnegativetozero__vec.vec__first))
+                  (Standard__integer__rep.to_rep
+                     Pkg_fromnegativetozero__fromnegativetozero__vec.vec__last)))) };
+     ([@GNAT-comment:Assume moved pointers in outputs of the subprogram pkg_fromnegativetozero.ads:7]
+      ());
+     ([@GNAT-comment:Check for RTE in the Pre of the subprogram pkg_fromnegativetozero.ads:7]
+      ());
+     (begin
+        ensures { true }
+        let _ =
+          let _ =
+            ((((begin
+                  ensures { true }
+                  let _ =
+                    let _ =
+                      ((Pkg_fromnegativetozero__fromnegativetozero__S1b.of_array
+                          (Pkg_fromnegativetozero__fromnegativetozero__vec.vec.
+                             Array__Int__Standard__integer.map__content))
+                         (Standard__integer__rep.to_rep
+                            Pkg_fromnegativetozero__fromnegativetozero__vec.vec__first))
+                        (Standard__integer__rep.to_rep
+                           Pkg_fromnegativetozero__fromnegativetozero__vec.vec__last) in
+                    () in
+                  ()
+                end);
+               ((Integer.length
+                   (Standard__integer__rep.to_rep
+                      Pkg_fromnegativetozero__fromnegativetozero__vec.vec__first))
+                  (Standard__integer__rep.to_rep
+                     Pkg_fromnegativetozero__fromnegativetozero__vec.vec__last)))
+                > (0 : int))
+              &&
+               ((Standard__integer__rep.to_rep
+                   ((begin
+                       ensures { true }
+                       let _ =
+                         let _ =
+                           ((Pkg_fromnegativetozero__fromnegativetozero__S1b.of_array
+                               (Pkg_fromnegativetozero__fromnegativetozero__vec.vec.
+                                  Array__Int__Standard__integer.map__content))
+                              (Standard__integer__rep.to_rep
+                                 Pkg_fromnegativetozero__fromnegativetozero__vec.vec__first))
+                             (Standard__integer__rep.to_rep
+                                Pkg_fromnegativetozero__fromnegativetozero__vec.vec__last) in
+                         () in
+                       ()
+                     end);
+                    Pkg_fromnegativetozero__fromnegativetozero__vec.vec__first))
+                  = (1 : int)))
+             &&
+              ((Standard__integer__rep.to_rep
+                  ((begin
+                      ensures { true }
+                      let _ =
+                        let _ =
+                          ((Pkg_fromnegativetozero__fromnegativetozero__S1b.of_array
+                              (Pkg_fromnegativetozero__fromnegativetozero__vec.vec.
+                                 Array__Int__Standard__integer.map__content))
+                             (Standard__integer__rep.to_rep
+                                Pkg_fromnegativetozero__fromnegativetozero__vec.vec__first))
+                            (Standard__integer__rep.to_rep
+                               Pkg_fromnegativetozero__fromnegativetozero__vec.vec__last) in
+                        () in
+                      ()
+                    end);
+                   Pkg_fromnegativetozero__fromnegativetozero__vec.vec__last))
+                 < (2147483647 : int)) in
+          () in
+        ()
+      end);
+     ([@GNAT-comment:Assume Pre of the subprogram pkg_fromnegativetozero.ads:7]
+      ());
+     assume {
+       ((([@GP_Pretty_Ada:948]
+          (((Integer.length
+               (Standard__integer__rep.to_rep
+                  Pkg_fromnegativetozero__fromnegativetozero__vec.vec__first))
+              (Standard__integer__rep.to_rep
+                 Pkg_fromnegativetozero__fromnegativetozero__vec.vec__last))
+             > (0 : int))) /\
+           ([@GP_Pretty_Ada:954]
+            ((Standard__integer__rep.to_rep
+                Pkg_fromnegativetozero__fromnegativetozero__vec.vec__first)
+               = (1 : int)))) /\
+          ([@GP_Pretty_Ada:960]
+           ((Standard__integer__rep.to_rep
+               Pkg_fromnegativetozero__fromnegativetozero__vec.vec__last)
+              < (2147483647 : int)))) };
+     (try
+        ([#"pkg_fromnegativetozero.adb" 3 0 0] ());
+        ([#"pkg_fromnegativetozero.adb" 5 0 0]
+         (([#"pkg_fromnegativetozero.adb" 5 0 0]
+           (Pkg_fromnegativetozero__fromnegativetozero__i.i.int__content <-
+              (1 : int)));
+          ([#"pkg_fromnegativetozero.adb" 5 0 0]
+           assume {
+             [#"pkg_fromnegativetozero.adb" 5 0 0]
+             (((((Standard__positive___axiom.dynamic_invariant
+                    (Pkg_fromnegativetozero__fromnegativetozero__i.i.int__content))
+                   True)
+                  False)
+                 True)
+                True) })));
+        ([#"pkg_fromnegativetozero.adb" 9 0 0] ());
+        ([@GP_Sloc:pkg_fromnegativetozero.adb:9:27]
+         [#"pkg_fromnegativetozero.adb" 9 0 0]
+         (([@GNAT-comment:Translation of an Ada loop from pkg_fromnegativetozero.adb:9]
+           ());
+          (if ((Pkg_fromnegativetozero__fromnegativetozero__i.i.int__content)
+                 <= (Standard__integer__rep.to_rep
+                       (([#"pkg_fromnegativetozero.adb" 9 0 0]
+                         (begin
+                            ensures { true }
+                            let _ =
+                              let _ =
+                                ((Pkg_fromnegativetozero__fromnegativetozero__S1b.of_array
+                                    (Pkg_fromnegativetozero__fromnegativetozero__vec.vec.
+                                       Array__Int__Standard__integer.map__content))
+                                   (Standard__integer__rep.to_rep
+                                      Pkg_fromnegativetozero__fromnegativetozero__vec.vec__first))
+                                  (Standard__integer__rep.to_rep
+                                     Pkg_fromnegativetozero__fromnegativetozero__vec.vec__last) in
+                              () in
+                            ()
+                          end));
+                        Pkg_fromnegativetozero__fromnegativetozero__vec.vec__last))) then
+             ([#"pkg_fromnegativetozero.adb" 9 0 0]
+              (try
+                 let temp___loop_entry_187 =
+                   ((Pkg_fromnegativetozero__fromnegativetozero__S1b.of_array
+                       (Pkg_fromnegativetozero__fromnegativetozero__vec.vec.
+                          Array__Int__Standard__integer.map__content))
+                      (Standard__integer__rep.to_rep
+                         Pkg_fromnegativetozero__fromnegativetozero__vec.vec__first))
+                     (Standard__integer__rep.to_rep
+                        Pkg_fromnegativetozero__fromnegativetozero__vec.vec__last) in
+                 ([@GNAT-comment:While loop translating the Ada loop from pkg_fromnegativetozero.adb:9]
+                  ());
+                 ([#"'@Loop 871@'pkg_fromnegativetozero.adb" 16 0 0]
+                  [#"'@Loop 871@'pkg_fromnegativetozero.adb" 16 0 0]
+                  ((([@GP_Sloc:pkg_fromnegativetozero.adb:10:17]
+                     [#"pkg_fromnegativetozero.adb" 10 0 0] ());
+                    ([@GP_Sloc:pkg_fromnegativetozero.adb:10:10]
+                     [#"pkg_fromnegativetozero.adb" 10 0 0]
+                     (if (([#"pkg_fromnegativetozero.adb" 10 0 0]
+                           [#"pkg_fromnegativetozero.adb" 10 0 0]
+                           (([@branch_id=842] Main.spark__branch).bool__content <-
+                              ((Standard__integer__rep.to_rep
+                                  (let temp___184 =
+                                     ((Pkg_fromnegativetozero__fromnegativetozero__S1b.of_array
+                                         (Pkg_fromnegativetozero__fromnegativetozero__vec.vec.
+                                            Array__Int__Standard__integer.map__content))
+                                        (Standard__integer__rep.to_rep
+                                           Pkg_fromnegativetozero__fromnegativetozero__vec.vec__first))
+                                       (Standard__integer__rep.to_rep
+                                          Pkg_fromnegativetozero__fromnegativetozero__vec.vec__last) in
+                                   (Array__Int__Standard__integer.get
+                                      (Pkg_fromnegativetozero__fromnegativetozero__S1b.to_array
+                                         temp___184))
+                                     (([#"pkg_fromnegativetozero.adb" 10 0 0]
+                                       assert {
+                                         [#"pkg_fromnegativetozero.adb" 10 0 0]
+                                         [#"pkg_fromnegativetozero.adb" 10 0 0]
+                                         [@GP_Sloc:pkg_fromnegativetozero.adb:10:17]
+                                         [@vc:annotation]
+                                         [@GP_Reason:VC_INDEX_CHECK]
+                                         [@GP_Id:1]
+                                         [@comment:         if Vec(i) < 0 then                 ^ pkg_fromnegativetozero.adb:10:17:VC_INDEX_CHECK]
+                                         [@GP_Shape:L_1_while__if__cmp__ixdcomp]
+                                         (((Pkg_fromnegativetozero__fromnegativetozero__S1b.first
+                                              temp___184)
+                                             <= (Pkg_fromnegativetozero__fromnegativetozero__i.i.int__content)) /\
+                                            ((Pkg_fromnegativetozero__fromnegativetozero__i.i.int__content)
+                                               <= (Pkg_fromnegativetozero__fromnegativetozero__S1b.last
+                                                     temp___184))) });
+                                      (Pkg_fromnegativetozero__fromnegativetozero__i.i.int__content))))
+                                 < (0 : int))));
+                          (([@branch_id=842] Main.spark__branch).bool__content)) then
+                        (([@GP_Sloc:pkg_fromnegativetozero.adb:11:17]
+                          [#"pkg_fromnegativetozero.adb" 11 0 0] ());
+                         ([@GP_Sloc:pkg_fromnegativetozero.adb:11:23]
+                          [#"pkg_fromnegativetozero.adb" 11 0 0] ());
+                         ([@GP_Sloc:pkg_fromnegativetozero.adb:11:20]
+                          [#"pkg_fromnegativetozero.adb" 11 0 0]
+                          [#"pkg_fromnegativetozero.adb" 11 0 0]
+                          (Pkg_fromnegativetozero__fromnegativetozero__vec.vec.
+                             Array__Int__Standard__integer.map__content <-
+                             (Pkg_fromnegativetozero__fromnegativetozero__S1b.to_array
+                                (let temp___183 =
+                                   ((Pkg_fromnegativetozero__fromnegativetozero__S1b.of_array
+                                       (Pkg_fromnegativetozero__fromnegativetozero__vec.vec.
+                                          Array__Int__Standard__integer.map__content))
+                                      (Standard__integer__rep.to_rep
+                                         Pkg_fromnegativetozero__fromnegativetozero__vec.vec__first))
+                                     (Standard__integer__rep.to_rep
+                                        Pkg_fromnegativetozero__fromnegativetozero__vec.vec__last) in
+                                 { (((Pkg_fromnegativetozero__fromnegativetozero__S1b.of_array
+                                        (Pkg_fromnegativetozero__fromnegativetozero__vec.vec.
+                                           Array__Int__Standard__integer.map__content))
+                                       (Standard__integer__rep.to_rep
+                                          Pkg_fromnegativetozero__fromnegativetozero__vec.vec__first))
+                                      (Standard__integer__rep.to_rep
+                                         Pkg_fromnegativetozero__fromnegativetozero__vec.vec__last)) with
+                                   Pkg_fromnegativetozero__fromnegativetozero__S1b.elts =
+                                     (((Array__Int__Standard__integer.set
+                                          (Pkg_fromnegativetozero__fromnegativetozero__S1b.to_array
+                                             (((Pkg_fromnegativetozero__fromnegativetozero__S1b.of_array
+                                                  (Pkg_fromnegativetozero__fromnegativetozero__vec.vec.
+                                                     Array__Int__Standard__integer.map__content))
+                                                 (Standard__integer__rep.to_rep
+                                                    Pkg_fromnegativetozero__fromnegativetozero__vec.vec__first))
+                                                (Standard__integer__rep.to_rep
+                                                   Pkg_fromnegativetozero__fromnegativetozero__vec.vec__last))))
+                                         (([#"pkg_fromnegativetozero.adb" 11 0 0]
+                                           assert {
+                                             [#"pkg_fromnegativetozero.adb" 11 0 0]
+                                             [#"pkg_fromnegativetozero.adb" 11 0 0]
+                                             [@comment:            Vec(i) := zero;                 ^ pkg_fromnegativetozero.adb:11:17:VC_INDEX_CHECK]
+                                             [@GP_Shape:L_1_while__if__vec_assign__ixdcomp]
+                                             [@vc:annotation]
+                                             [@GP_Sloc:pkg_fromnegativetozero.adb:11:17]
+                                             [@GP_Reason:VC_INDEX_CHECK]
+                                             [@GP_Id:0]
+                                             (((Pkg_fromnegativetozero__fromnegativetozero__S1b.first
+                                                  temp___183)
+                                                 <= (Pkg_fromnegativetozero__fromnegativetozero__i.i.int__content)) /\
+                                                ((Pkg_fromnegativetozero__fromnegativetozero__i.i.int__content)
+                                                   <= (Pkg_fromnegativetozero__fromnegativetozero__S1b.last
+                                                         temp___183))) });
+                                          (Pkg_fromnegativetozero__fromnegativetozero__i.i.int__content)))
+                                        (Standard__integer__rep.of_rep
+                                           (Pkg_fromnegativetozero__zero.zero.int__content))) })))))
+                      else ()));
+                    ([@GNAT-comment:Check for absence of RTE in the loop invariant and variant]
+                     ());
+                    (let temp___inv_194 =
+                       (Boolean.andb
+                          ((1 : int)
+                             <= (Pkg_fromnegativetozero__fromnegativetozero__i.i.int__content)))
+                         ((Pkg_fromnegativetozero__fromnegativetozero__i.i.int__content)
+                            <= (Standard__integer__rep.to_rep
+                                  ((begin
+                                      ensures { true }
+                                      let _ =
+                                        let _ =
+                                          ((Pkg_fromnegativetozero__fromnegativetozero__S1b.of_array
+                                              (Pkg_fromnegativetozero__fromnegativetozero__vec.vec.
+                                                 Array__Int__Standard__integer.map__content))
+                                             (Standard__integer__rep.to_rep
+                                                Pkg_fromnegativetozero__fromnegativetozero__vec.vec__first))
+                                            (Standard__integer__rep.to_rep
+                                               Pkg_fromnegativetozero__fromnegativetozero__vec.vec__last) in
+                                        () in
+                                      ()
+                                    end);
+                                   Pkg_fromnegativetozero__fromnegativetozero__vec.vec__last))) in
+                     begin
+                       ensures { true }
+                       let _ =
+                         let _ =
+                           let temp___inv_189 =
+                             if ((Standard__integer__rep.to_rep
+                                    (let temp___191 =
+                                       ((Pkg_fromnegativetozero__fromnegativetozero__S1b.of_array
+                                           (Pkg_fromnegativetozero__fromnegativetozero__vec.vec.
+                                              Array__Int__Standard__integer.map__content))
+                                          (Standard__integer__rep.to_rep
+                                             Pkg_fromnegativetozero__fromnegativetozero__vec.vec__first))
+                                         (Standard__integer__rep.to_rep
+                                            Pkg_fromnegativetozero__fromnegativetozero__vec.vec__last) in
+                                     (Array__Int__Standard__integer.get
+                                        (Pkg_fromnegativetozero__fromnegativetozero__S1b.to_array
+                                           temp___191))
+                                       (assert {
+                                          [#"pkg_fromnegativetozero.adb" 16 0 0]
+                                          [@GP_Shape:L_1_while__pragargs__if__cmp__ixdcomp]
+                                          [@vc:annotation]
+                                          [@GP_Reason:VC_INDEX_CHECK]
+                                          [@comment:         pragma Loop_Invariant(if Vec(i) < 0 then                                       ^ pkg_fromnegativetozero.adb:16:39:VC_INDEX_CHECK]
+                                          [@GP_Id:4]
+                                          [@GP_Sloc:pkg_fromnegativetozero.adb:16:39]
+                                          (((Pkg_fromnegativetozero__fromnegativetozero__S1b.first
+                                               temp___191)
+                                              <= (Pkg_fromnegativetozero__fromnegativetozero__i.i.int__content)) /\
+                                             ((Pkg_fromnegativetozero__fromnegativetozero__i.i.int__content)
+                                                <= (Pkg_fromnegativetozero__fromnegativetozero__S1b.last
+                                                      temp___191))) };
+                                        (Pkg_fromnegativetozero__fromnegativetozero__i.i.int__content))))
+                                   < (0 : int)) then
+                               ((Standard__integer__rep.to_rep
+                                   (let temp___190 =
+                                      ((Pkg_fromnegativetozero__fromnegativetozero__S1b.of_array
+                                          (Pkg_fromnegativetozero__fromnegativetozero__vec.vec.
+                                             Array__Int__Standard__integer.map__content))
+                                         (Standard__integer__rep.to_rep
+                                            Pkg_fromnegativetozero__fromnegativetozero__vec.vec__first))
+                                        (Standard__integer__rep.to_rep
+                                           Pkg_fromnegativetozero__fromnegativetozero__vec.vec__last) in
+                                    (Array__Int__Standard__integer.get
+                                       (Pkg_fromnegativetozero__fromnegativetozero__S1b.to_array
+                                          temp___190))
+                                      (assert {
+                                         [#"pkg_fromnegativetozero.adb" 17 0 0]
+                                         [@GP_Shape:L_1_while__pragargs__if__cmp__ixdcomp]
+                                         [@vc:annotation]
+                                         [@GP_Sloc:pkg_fromnegativetozero.adb:17:39]
+                                         [@comment:                                  Vec(i) = zero);                                       ^ pkg_fromnegativetozero.adb:17:39:VC_INDEX_CHECK]
+                                         [@GP_Reason:VC_INDEX_CHECK]
+                                         [@GP_Id:3]
+                                         (((Pkg_fromnegativetozero__fromnegativetozero__S1b.first
+                                              temp___190)
+                                             <= (Pkg_fromnegativetozero__fromnegativetozero__i.i.int__content)) /\
+                                            ((Pkg_fromnegativetozero__fromnegativetozero__i.i.int__content)
+                                               <= (Pkg_fromnegativetozero__fromnegativetozero__S1b.last
+                                                     temp___190))) };
+                                       (Pkg_fromnegativetozero__fromnegativetozero__i.i.int__content))))
+                                  = (Pkg_fromnegativetozero__zero.zero.int__content))
+                             else (Boolean.of_int (1 : int)) in
+                           () in
+                         () in
+                       ()
+                     end);
+                    (begin
+                       ensures { true }
+                       let _ =
+                         let _ =
+                           Pkg_fromnegativetozero__fromnegativetozero__i.i.int__content in
+                         () in
+                       ()
+                     end));
+                   while True do
+                     invariant LoopInvariant {
+                       [#"pkg_fromnegativetozero.adb" 14 0 0]
+                       [@GP_Sloc:pkg_fromnegativetozero.adb:14:32]
+                       [@GP_Reason:VC_LOOP_INVARIANT]
+                       [@vc:annotation]
+                       [@GP_Shape:L_1_while__pragargs__in]
+                       [@comment:         pragma Loop_Invariant(i in 1 .. Vec'Last);                                ^ pkg_fromnegativetozero.adb:14:32:VC_LOOP_INVARIANT]
+                       [@GP_Id:6]
+                       [@GP_Sloc:pkg_fromnegativetozero.adb:14:32]
+                       [@GP_Pretty_Ada:859]
+                       (((1 : int)
+                           <= (Pkg_fromnegativetozero__fromnegativetozero__i.i.int__content)) /\
+                          ((Pkg_fromnegativetozero__fromnegativetozero__i.i.int__content)
+                             <= (Standard__integer__rep.to_rep
+                                   Pkg_fromnegativetozero__fromnegativetozero__vec.vec__last))) }
+                     invariant LoopInvariant {
+                       [#"pkg_fromnegativetozero.adb" 16 0 0]
+                       [@GP_Reason:VC_LOOP_INVARIANT]
+                       [@vc:annotation]
+                       [@GP_Shape:L_1_while__pragargs__if]
+                       [@comment:         pragma Loop_Invariant(if Vec(i) < 0 then                                ^ pkg_fromnegativetozero.adb:16:32:VC_LOOP_INVARIANT]
+                       [@GP_Sloc:pkg_fromnegativetozero.adb:16:32]
+                       [@GP_Id:5]
+                       (if ((Standard__integer__rep.to_rep
+                               (let temp___193 =
+                                  ((Pkg_fromnegativetozero__fromnegativetozero__S1b.of_array
+                                      (Pkg_fromnegativetozero__fromnegativetozero__vec.vec.
+                                         Array__Int__Standard__integer.map__content))
+                                     (Standard__integer__rep.to_rep
+                                        Pkg_fromnegativetozero__fromnegativetozero__vec.vec__first))
+                                    (Standard__integer__rep.to_rep
+                                       Pkg_fromnegativetozero__fromnegativetozero__vec.vec__last) in
+                                (Array__Int__Standard__integer.get
+                                   (Pkg_fromnegativetozero__fromnegativetozero__S1b.to_array
+                                      temp___193))
+                                  (Pkg_fromnegativetozero__fromnegativetozero__i.i.int__content)))
+                              < (0 : int)) then
+                          ([@GP_Sloc:pkg_fromnegativetozero.adb:17:35]
+                           [@GP_Pretty_Ada:883]
+                           ((Standard__integer__rep.to_rep
+                               (let temp___192 =
+                                  ((Pkg_fromnegativetozero__fromnegativetozero__S1b.of_array
+                                      (Pkg_fromnegativetozero__fromnegativetozero__vec.vec.
+                                         Array__Int__Standard__integer.map__content))
+                                     (Standard__integer__rep.to_rep
+                                        Pkg_fromnegativetozero__fromnegativetozero__vec.vec__first))
+                                    (Standard__integer__rep.to_rep
+                                       Pkg_fromnegativetozero__fromnegativetozero__vec.vec__last) in
+                                (Array__Int__Standard__integer.get
+                                   (Pkg_fromnegativetozero__fromnegativetozero__S1b.to_array
+                                      temp___192))
+                                  (Pkg_fromnegativetozero__fromnegativetozero__i.i.int__content)))
+                              = (Pkg_fromnegativetozero__zero.zero.int__content)))
+                        else
+                          ([@GP_Sloc:pkg_fromnegativetozero.adb:16:32]
+                           [@GP_Pretty_Ada:1135] true)) }
+                     let loop_var___4534 =
+                       Pkg_fromnegativetozero__fromnegativetozero__i.i.int__content in
+                     ([@GNAT-comment:gnat_ast_to_ptree: code after the loop invariant]
+                      (([@GNAT-comment:Assume implicit invariants from the loop pkg_fromnegativetozero.adb:9]
+                        ());
+                       assume {
+                         ((((true /\ true) /\ (true /\ true)) /\
+                             (((((Standard__positive___axiom.dynamic_invariant
+                                    (Pkg_fromnegativetozero__fromnegativetozero__i.i.int__content))
+                                   True)
+                                  True)
+                                 True)
+                                True)) /\
+                            (true /\ true)) };
+                       ([@GNAT-comment:Continuation of loop after loop invariant and variant]
+                        ());
+                       ([@GP_Sloc:pkg_fromnegativetozero.adb:19:10]
+                        [#"pkg_fromnegativetozero.adb" 19 0 0] ());
+                       ([@GP_Sloc:pkg_fromnegativetozero.adb:19:15]
+                        [#"pkg_fromnegativetozero.adb" 19 0 0] ());
+                       ([@GP_Sloc:pkg_fromnegativetozero.adb:19:12]
+                        [#"pkg_fromnegativetozero.adb" 19 0 0]
+                        [#"pkg_fromnegativetozero.adb" 19 0 0]
+                        (Pkg_fromnegativetozero__fromnegativetozero__i.i.int__content <-
+                           ([#"pkg_fromnegativetozero.adb" 19 0 0]
+                            [@comment:         i := i + 1;                 ^ pkg_fromnegativetozero.adb:19:17:VC_OVERFLOW_CHECK]
+                            [@vc:annotation]
+                            [@GP_Reason:VC_OVERFLOW_CHECK]
+                            [@GP_Sloc:pkg_fromnegativetozero.adb:19:17]
+                            [@GP_Id:2]
+                            [@GP_Shape:L_1_while__i_assign__add]
+                            (Standard__integer.range_check_
+                               ((Pkg_fromnegativetozero__fromnegativetozero__i.i.int__content)
+                                  + (1 : int))))));
+                       ([@GNAT-comment:Check for the exit condition and loop statements appearing before the loop invariant of loop pkg_fromnegativetozero.adb:9]
+                        ());
+                       (if (not ((Pkg_fromnegativetozero__fromnegativetozero__i.i.int__content)
+                                   <= (Standard__integer__rep.to_rep
+                                         ((begin
+                                             ensures { true }
+                                             let _ =
+                                               let _ =
+                                                 ((Pkg_fromnegativetozero__fromnegativetozero__S1b.of_array
+                                                     (Pkg_fromnegativetozero__fromnegativetozero__vec.vec.
+                                                        Array__Int__Standard__integer.map__content))
+                                                    (Standard__integer__rep.to_rep
+                                                       Pkg_fromnegativetozero__fromnegativetozero__vec.vec__first))
+                                                   (Standard__integer__rep.to_rep
+                                                      Pkg_fromnegativetozero__fromnegativetozero__vec.vec__last) in
+                                               () in
+                                             ()
+                                           end);
+                                          Pkg_fromnegativetozero__fromnegativetozero__vec.vec__last)))) then
+                          (raise Pkg_fromnegativetozero__fromnegativetozero__L_1.L_1)
+                        else ())));
+                     ([@GNAT-comment:gnat_ast_to_ptree: code before the loop invariant]
+                      (([@GP_Sloc:pkg_fromnegativetozero.adb:10:17]
+                        [#"pkg_fromnegativetozero.adb" 10 0 0] ());
+                       ([@GP_Sloc:pkg_fromnegativetozero.adb:10:10]
+                        [#"pkg_fromnegativetozero.adb" 10 0 0]
+                        (if (([#"pkg_fromnegativetozero.adb" 10 0 0]
+                              [#"pkg_fromnegativetozero.adb" 10 0 0]
+                              (([@branch_id=842] Main.spark__branch).bool__content <-
+                                 ((Standard__integer__rep.to_rep
+                                     (let temp___184 =
+                                        ((Pkg_fromnegativetozero__fromnegativetozero__S1b.of_array
+                                            (Pkg_fromnegativetozero__fromnegativetozero__vec.vec.
+                                               Array__Int__Standard__integer.map__content))
+                                           (Standard__integer__rep.to_rep
+                                              Pkg_fromnegativetozero__fromnegativetozero__vec.vec__first))
+                                          (Standard__integer__rep.to_rep
+                                             Pkg_fromnegativetozero__fromnegativetozero__vec.vec__last) in
+                                      (Array__Int__Standard__integer.get
+                                         (Pkg_fromnegativetozero__fromnegativetozero__S1b.to_array
+                                            temp___184))
+                                        (([#"pkg_fromnegativetozero.adb" 10 0 0]
+                                          assert {
+                                            [#"pkg_fromnegativetozero.adb" 10 0 0]
+                                            [#"pkg_fromnegativetozero.adb" 10 0 0]
+                                            [@GP_Sloc:pkg_fromnegativetozero.adb:10:17]
+                                            [@vc:annotation]
+                                            [@GP_Reason:VC_INDEX_CHECK]
+                                            [@GP_Id:1]
+                                            [@comment:         if Vec(i) < 0 then                 ^ pkg_fromnegativetozero.adb:10:17:VC_INDEX_CHECK]
+                                            [@GP_Shape:L_1_while__if__cmp__ixdcomp]
+                                            (((Pkg_fromnegativetozero__fromnegativetozero__S1b.first
+                                                 temp___184)
+                                                <= (Pkg_fromnegativetozero__fromnegativetozero__i.i.int__content)) /\
+                                               ((Pkg_fromnegativetozero__fromnegativetozero__i.i.int__content)
+                                                  <= (Pkg_fromnegativetozero__fromnegativetozero__S1b.last
+                                                        temp___184))) });
+                                         (Pkg_fromnegativetozero__fromnegativetozero__i.i.int__content))))
+                                    < (0 : int))));
+                             (([@branch_id=842] Main.spark__branch).bool__content)) then
+                           (([@GP_Sloc:pkg_fromnegativetozero.adb:11:17]
+                             [#"pkg_fromnegativetozero.adb" 11 0 0] ());
+                            ([@GP_Sloc:pkg_fromnegativetozero.adb:11:23]
+                             [#"pkg_fromnegativetozero.adb" 11 0 0] ());
+                            ([@GP_Sloc:pkg_fromnegativetozero.adb:11:20]
+                             [#"pkg_fromnegativetozero.adb" 11 0 0]
+                             [#"pkg_fromnegativetozero.adb" 11 0 0]
+                             (Pkg_fromnegativetozero__fromnegativetozero__vec.vec.
+                                Array__Int__Standard__integer.map__content <-
+                                (Pkg_fromnegativetozero__fromnegativetozero__S1b.to_array
+                                   (let temp___183 =
+                                      ((Pkg_fromnegativetozero__fromnegativetozero__S1b.of_array
+                                          (Pkg_fromnegativetozero__fromnegativetozero__vec.vec.
+                                             Array__Int__Standard__integer.map__content))
+                                         (Standard__integer__rep.to_rep
+                                            Pkg_fromnegativetozero__fromnegativetozero__vec.vec__first))
+                                        (Standard__integer__rep.to_rep
+                                           Pkg_fromnegativetozero__fromnegativetozero__vec.vec__last) in
+                                    { (((Pkg_fromnegativetozero__fromnegativetozero__S1b.of_array
+                                           (Pkg_fromnegativetozero__fromnegativetozero__vec.vec.
+                                              Array__Int__Standard__integer.map__content))
+                                          (Standard__integer__rep.to_rep
+                                             Pkg_fromnegativetozero__fromnegativetozero__vec.vec__first))
+                                         (Standard__integer__rep.to_rep
+                                            Pkg_fromnegativetozero__fromnegativetozero__vec.vec__last)) with
+                                      Pkg_fromnegativetozero__fromnegativetozero__S1b.elts =
+                                        (((Array__Int__Standard__integer.set
+                                             (Pkg_fromnegativetozero__fromnegativetozero__S1b.to_array
+                                                (((Pkg_fromnegativetozero__fromnegativetozero__S1b.of_array
+                                                     (Pkg_fromnegativetozero__fromnegativetozero__vec.vec.
+                                                        Array__Int__Standard__integer.map__content))
+                                                    (Standard__integer__rep.to_rep
+                                                       Pkg_fromnegativetozero__fromnegativetozero__vec.vec__first))
+                                                   (Standard__integer__rep.to_rep
+                                                      Pkg_fromnegativetozero__fromnegativetozero__vec.vec__last))))
+                                            (([#"pkg_fromnegativetozero.adb" 11 0 0]
+                                              assert {
+                                                [#"pkg_fromnegativetozero.adb" 11 0 0]
+                                                [#"pkg_fromnegativetozero.adb" 11 0 0]
+                                                [@comment:            Vec(i) := zero;                 ^ pkg_fromnegativetozero.adb:11:17:VC_INDEX_CHECK]
+                                                [@GP_Shape:L_1_while__if__vec_assign__ixdcomp]
+                                                [@vc:annotation]
+                                                [@GP_Sloc:pkg_fromnegativetozero.adb:11:17]
+                                                [@GP_Reason:VC_INDEX_CHECK]
+                                                [@GP_Id:0]
+                                                (((Pkg_fromnegativetozero__fromnegativetozero__S1b.first
+                                                     temp___183)
+                                                    <= (Pkg_fromnegativetozero__fromnegativetozero__i.i.int__content)) /\
+                                                   ((Pkg_fromnegativetozero__fromnegativetozero__i.i.int__content)
+                                                      <= (Pkg_fromnegativetozero__fromnegativetozero__S1b.last
+                                                            temp___183))) });
+                                             (Pkg_fromnegativetozero__fromnegativetozero__i.i.int__content)))
+                                           (Standard__integer__rep.of_rep
+                                              (Pkg_fromnegativetozero__zero.zero.int__content))) })))))
+                         else ()));
+                       ([@GNAT-comment:Check for absence of RTE in the loop invariant and variant]
+                        ());
+                       (let temp___inv_194 =
+                          (Boolean.andb
+                             ((1 : int)
+                                <= (Pkg_fromnegativetozero__fromnegativetozero__i.i.int__content)))
+                            ((Pkg_fromnegativetozero__fromnegativetozero__i.i.int__content)
+                               <= (Standard__integer__rep.to_rep
+                                     ((begin
+                                         ensures { true }
+                                         let _ =
+                                           let _ =
+                                             ((Pkg_fromnegativetozero__fromnegativetozero__S1b.of_array
+                                                 (Pkg_fromnegativetozero__fromnegativetozero__vec.vec.
+                                                    Array__Int__Standard__integer.map__content))
+                                                (Standard__integer__rep.to_rep
+                                                   Pkg_fromnegativetozero__fromnegativetozero__vec.vec__first))
+                                               (Standard__integer__rep.to_rep
+                                                  Pkg_fromnegativetozero__fromnegativetozero__vec.vec__last) in
+                                           () in
+                                         ()
+                                       end);
+                                      Pkg_fromnegativetozero__fromnegativetozero__vec.vec__last))) in
+                        begin
+                          ensures { true }
+                          let _ =
+                            let _ =
+                              let temp___inv_189 =
+                                if ((Standard__integer__rep.to_rep
+                                       (let temp___191 =
+                                          ((Pkg_fromnegativetozero__fromnegativetozero__S1b.of_array
+                                              (Pkg_fromnegativetozero__fromnegativetozero__vec.vec.
+                                                 Array__Int__Standard__integer.map__content))
+                                             (Standard__integer__rep.to_rep
+                                                Pkg_fromnegativetozero__fromnegativetozero__vec.vec__first))
+                                            (Standard__integer__rep.to_rep
+                                               Pkg_fromnegativetozero__fromnegativetozero__vec.vec__last) in
+                                        (Array__Int__Standard__integer.get
+                                           (Pkg_fromnegativetozero__fromnegativetozero__S1b.to_array
+                                              temp___191))
+                                          (assert {
+                                             [#"pkg_fromnegativetozero.adb" 16 0 0]
+                                             [@GP_Shape:L_1_while__pragargs__if__cmp__ixdcomp]
+                                             [@vc:annotation]
+                                             [@GP_Reason:VC_INDEX_CHECK]
+                                             [@comment:         pragma Loop_Invariant(if Vec(i) < 0 then                                       ^ pkg_fromnegativetozero.adb:16:39:VC_INDEX_CHECK]
+                                             [@GP_Id:4]
+                                             [@GP_Sloc:pkg_fromnegativetozero.adb:16:39]
+                                             (((Pkg_fromnegativetozero__fromnegativetozero__S1b.first
+                                                  temp___191)
+                                                 <= (Pkg_fromnegativetozero__fromnegativetozero__i.i.int__content)) /\
+                                                ((Pkg_fromnegativetozero__fromnegativetozero__i.i.int__content)
+                                                   <= (Pkg_fromnegativetozero__fromnegativetozero__S1b.last
+                                                         temp___191))) };
+                                           (Pkg_fromnegativetozero__fromnegativetozero__i.i.int__content))))
+                                      < (0 : int)) then
+                                  ((Standard__integer__rep.to_rep
+                                      (let temp___190 =
+                                         ((Pkg_fromnegativetozero__fromnegativetozero__S1b.of_array
+                                             (Pkg_fromnegativetozero__fromnegativetozero__vec.vec.
+                                                Array__Int__Standard__integer.map__content))
+                                            (Standard__integer__rep.to_rep
+                                               Pkg_fromnegativetozero__fromnegativetozero__vec.vec__first))
+                                           (Standard__integer__rep.to_rep
+                                              Pkg_fromnegativetozero__fromnegativetozero__vec.vec__last) in
+                                       (Array__Int__Standard__integer.get
+                                          (Pkg_fromnegativetozero__fromnegativetozero__S1b.to_array
+                                             temp___190))
+                                         (assert {
+                                            [#"pkg_fromnegativetozero.adb" 17 0 0]
+                                            [@GP_Shape:L_1_while__pragargs__if__cmp__ixdcomp]
+                                            [@vc:annotation]
+                                            [@GP_Sloc:pkg_fromnegativetozero.adb:17:39]
+                                            [@comment:                                  Vec(i) = zero);                                       ^ pkg_fromnegativetozero.adb:17:39:VC_INDEX_CHECK]
+                                            [@GP_Reason:VC_INDEX_CHECK]
+                                            [@GP_Id:3]
+                                            (((Pkg_fromnegativetozero__fromnegativetozero__S1b.first
+                                                 temp___190)
+                                                <= (Pkg_fromnegativetozero__fromnegativetozero__i.i.int__content)) /\
+                                               ((Pkg_fromnegativetozero__fromnegativetozero__i.i.int__content)
+                                                  <= (Pkg_fromnegativetozero__fromnegativetozero__S1b.last
+                                                        temp___190))) };
+                                          (Pkg_fromnegativetozero__fromnegativetozero__i.i.int__content))))
+                                     = (Pkg_fromnegativetozero__zero.zero.int__content))
+                                else (Boolean.of_int (1 : int)) in
+                              () in
+                            () in
+                          ()
+                        end);
+                       (begin
+                          ensures { true }
+                          let _ =
+                            let _ =
+                              Pkg_fromnegativetozero__fromnegativetozero__i.i.int__content in
+                            () in
+                          ()
+                        end)));
+                     ([@GNAT-comment:gnat_ast_to_ptree: code checking the variants]
+                      (assert {
+                         [@GP_Reason:VC_LOOP_VARIANT]
+                         [@vc:annotation]
+                         [@GP_Sloc:pkg_fromnegativetozero.adb:15:30]
+                         [@comment:         pragma Loop_Variant(Increases => i);                              ^ pkg_fromnegativetozero.adb:15:30:VC_LOOP_VARIANT]
+                         [@GP_Id:7]
+                         [@GP_Shape:L_1_while__pragargs]
+                         (((Pkg_fromnegativetozero__fromnegativetozero__i.i.int__content)
+                             > loop_var___4534)
+                            ||
+                            ((Pkg_fromnegativetozero__fromnegativetozero__i.i.int__content)
+                             =
+                             loop_var___4534)
+                            &&
+                            False) };
+                       ()))
+                   done))
+               with Pkg_fromnegativetozero__fromnegativetozero__L_1.L_1 -> ()
+               end))
+           else ())));
+        (raise Return__exc)
+      with Return__exc -> ()
+      end);
+     (begin
+        ensures { true }
+        let _ =
+          let _ =
+            (let i = val _f : int in
+                     _f in
+             if ((Boolean.andb
+                    ((Standard__integer__rep.to_rep
+                        ((begin
+                            ensures { true }
+                            let _ =
+                              let _ =
+                                ((Pkg_fromnegativetozero__fromnegativetozero__S1b.of_array
+                                    (Pkg_fromnegativetozero__fromnegativetozero__vec.vec.
+                                       Array__Int__Standard__integer.map__content))
+                                   (Standard__integer__rep.to_rep
+                                      Pkg_fromnegativetozero__fromnegativetozero__vec.vec__first))
+                                  (Standard__integer__rep.to_rep
+                                     Pkg_fromnegativetozero__fromnegativetozero__vec.vec__last) in
+                              () in
+                            ()
+                          end);
+                         Pkg_fromnegativetozero__fromnegativetozero__vec.vec__first))
+                       <= i))
+                   (i
+                      <= (Standard__integer__rep.to_rep
+                            ((begin
+                                ensures { true }
+                                let _ =
+                                  let _ =
+                                    ((Pkg_fromnegativetozero__fromnegativetozero__S1b.of_array
+                                        (Pkg_fromnegativetozero__fromnegativetozero__vec.vec.
+                                           Array__Int__Standard__integer.map__content))
+                                       (Standard__integer__rep.to_rep
+                                          Pkg_fromnegativetozero__fromnegativetozero__vec.vec__first))
+                                      (Standard__integer__rep.to_rep
+                                         Pkg_fromnegativetozero__fromnegativetozero__vec.vec__last) in
+                                  () in
+                                ()
+                              end);
+                             Pkg_fromnegativetozero__fromnegativetozero__vec.vec__last)))) then
+               (begin
+                  ensures { true }
+                  let _ =
+                    let _ =
+                      let temp___197 =
+                        Standard__integer__rep.to_rep
+                          (let temp___196 =
+                             ((Pkg_fromnegativetozero__fromnegativetozero__S1b.of_array
+                                 (Pkg_fromnegativetozero__fromnegativetozero__vec.vec.
+                                    Array__Int__Standard__integer.map__content))
+                                (Standard__integer__rep.to_rep
+                                   Pkg_fromnegativetozero__fromnegativetozero__vec.vec__first))
+                               (Standard__integer__rep.to_rep
+                                  Pkg_fromnegativetozero__fromnegativetozero__vec.vec__last) in
+                           (Array__Int__Standard__integer.get
+                              (Pkg_fromnegativetozero__fromnegativetozero__S1b.to_array
+                                 temp___196))
+                             (assert {
+                                [#"pkg_fromnegativetozero.ads" 14 0 0]
+                                [@GP_Shape:pragargs__forsome__in__ixdcomp]
+                                [@comment:       Post    => (for some i in Vec'Range => Vec(i) in 0 .. Integer'Last);                                                   ^ pkg_fromnegativetozero.ads:14:51:VC_INDEX_CHECK]
+                                [@GP_Sloc:pkg_fromnegativetozero.ads:14:51]
+                                [@vc:annotation]
+                                [@GP_Reason:VC_INDEX_CHECK]
+                                [@GP_Id:8]
+                                (((Pkg_fromnegativetozero__fromnegativetozero__S1b.first
+                                     temp___196)
+                                    <= i) /\
+                                   (i
+                                      <= (Pkg_fromnegativetozero__fromnegativetozero__S1b.last
+                                            temp___196))) };
+                              i)) in
+                      (Boolean.andb ((0 : int) <= temp___197))
+                        (temp___197 <= (2147483647 : int)) in
+                    () in
+                  ()
+                end)
+             else ());
+            (val _f : bool
+               ensures { ((result = True) <->
+                            (exists i : int.
+                               ((((Standard__integer__rep.to_rep
+                                     Pkg_fromnegativetozero__fromnegativetozero__vec.vec__first)
+                                    <= i) /\
+                                   (i
+                                      <= (Standard__integer__rep.to_rep
+                                            Pkg_fromnegativetozero__fromnegativetozero__vec.vec__last))) /\
+                                  ([@GP_Pretty_Ada:975]
+                                   (let temp___199 =
+                                      Standard__integer__rep.to_rep
+                                        (let temp___198 =
+                                           ((Pkg_fromnegativetozero__fromnegativetozero__S1b.of_array
+                                               (Pkg_fromnegativetozero__fromnegativetozero__vec.vec.
+                                                  Array__Int__Standard__integer.map__content))
+                                              (Standard__integer__rep.to_rep
+                                                 Pkg_fromnegativetozero__fromnegativetozero__vec.vec__first))
+                                             (Standard__integer__rep.to_rep
+                                                Pkg_fromnegativetozero__fromnegativetozero__vec.vec__last) in
+                                         (Array__Int__Standard__integer.get
+                                            (Pkg_fromnegativetozero__fromnegativetozero__S1b.to_array
+                                               temp___198))
+                                           i) in
+                                    (((0 : int) <= temp___199) /\
+                                       (temp___199 <= (2147483647 : int)))))))) } in
+             _f) in
+          () in
+        ()
+      end))
+end

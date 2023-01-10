@@ -1,0 +1,89 @@
+{
+  "spark": [
+    {
+      "name": "Example",
+      "sloc": [
+        {
+          "file": "example.ads",
+          "line": 1
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "Example.Next_Value",
+      "sloc": [
+        {
+          "file": "example.ads",
+          "line": 10
+        }
+      ],
+      "spark": "all"
+    }
+  ],
+  "flow": [
+    {
+      "file": "example.ads",
+      "line": 11,
+      "col": 7,
+      "rule": "GLOBAL_WRONG",
+      "severity": "info",
+      "entity": {
+        "name": "Example.Next_Value",
+        "sloc": [
+          {
+            "file": "example.ads",
+            "line": 10
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    },
+    {
+      "file": "example.ads",
+      "line": 12,
+      "col": 7,
+      "rule": "DEPENDS_WRONG",
+      "severity": "info",
+      "entity": {
+        "name": "Example.Next_Value",
+        "sloc": [
+          {
+            "file": "example.ads",
+            "line": 10
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    }
+  ],
+  "assumptions": [
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Example.Next_Value",
+          "sloc": [
+            {
+              "file": "example.ads",
+              "line": 10
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "timings": {
+    "globals (advanced)": 5.06600015796721E-04,
+    "flow analysis": 1.89980003051460E-03,
+    "marking": 1.33299996377900E-04,
+    "properties (advanced)": 2.92999993689591E-05,
+    "globals (basic)": 4.66500001493841E-04
+  }
+}

@@ -1,0 +1,47 @@
+V "GNAT Lib v2021"
+A -gnatA
+A -g
+A -fstack-check=specific
+A -gnata
+A -gnato
+A -gnat12
+A -gnatwa
+A -gnateE
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_IMPLICIT_CONDITIONALS
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_ASPECT_SPECIFICATIONS
+RV NO_IMPLEMENTATION_PRAGMAS
+
+U pkg_median%b		pkg_median.adb		d1b29033 NE OO PK
+Z system.assertions%s	s-assert.adb		s-assert.ali
+Z system.concat_2%s	s-conca2.adb		s-conca2.ali
+
+U pkg_median%s		pkg_median.ads		62604066 EE NE OO PK
+
+D ada.ads		20210520051132 76789da1 ada%s
+D a-assert.ads		20210520051128 a718b65c ada.assertions%s
+D a-unccon.ads		20210520051130 0e9b276f ada.unchecked_conversion%s
+D pkg_median.ads	20201111085648 62604066 pkg_median%s
+D pkg_median.adb	20201109132244 b3d2d055 pkg_median%b
+D system.ads		20210520051136 2ffa5114 system%s
+D s-assert.ads		20210520051132 6a49a4e4 system.assertions%s
+D s-conca2.ads		20210520051132 02a0d7d0 system.concat_2%s
+D s-exctab.ads		20210520051132 54135002 system.exception_table%s
+D s-stalib.ads		20210520051134 472fbca8 system.standard_library%s
+G a e
+G c Z s b [median pkg_median 5 14 none]
+G c Z s s [t_vecIP pkg_median 3 9 none]
+X 4 pkg_median.ads
+1K9*Pkg_Median 15l5 15e15 5|1b14 14l5 14t15
+3A9*T_Vec(integer)<integer> 5r28 5|3r28
+5U14*Median 5>22 5<35 5|3b14 12l8 12t14
+5a22 Vec{3A9} 10r27 11r15 11r39 11r62 11r73 12r28 12r53 13r27 13r52 13r57
+. 5|3b22 6r10 7r17 7r21 9r17 9r22
+5i35 Res{integer} 10r20 12r47 13r46 5|3b35 7m10 9m10
+

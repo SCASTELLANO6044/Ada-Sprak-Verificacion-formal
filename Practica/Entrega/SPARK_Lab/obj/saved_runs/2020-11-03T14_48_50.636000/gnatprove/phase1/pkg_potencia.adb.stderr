@@ -1,0 +1,4 @@
+pkg_potencia.ads:7:53: missing operand
+pkg_potencia.ads:9:23: "=" should be ":="
+pkg_potencia.ads:11:23: "=" should be ":="
+pkg_potencia.ads:14:01: "end if;" expected for "if" at line 8

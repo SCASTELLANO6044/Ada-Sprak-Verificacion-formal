@@ -1,0 +1,69 @@
+{
+  "spark": [
+    {
+      "name": "Pkg_Potencia",
+      "sloc": [
+        {
+          "file": "pkg_potencia.ads",
+          "line": 1
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "Pkg_Potencia.Potencia",
+      "sloc": [
+        {
+          "file": "pkg_potencia.ads",
+          "line": 3
+        }
+      ],
+      "spark": "all"
+    }
+  ],
+  "flow": [
+    {
+      "file": "pkg_potencia.ads",
+      "line": 3,
+      "col": 52,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Pkg_Potencia.Potencia",
+        "sloc": [
+          {
+            "file": "pkg_potencia.ads",
+            "line": 3
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    }
+  ],
+  "assumptions": [
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Pkg_Potencia.Potencia",
+          "sloc": [
+            {
+              "file": "pkg_potencia.ads",
+              "line": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "timings": {
+    "globals/properties (advanced)": 3.55399999534711E-04,
+    "flow analysis": 1.27899996004999E-03,
+    "marking": 2.41200003074482E-04,
+    "globals (basic)": 2.07100005354732E-04
+  }
+}

@@ -1,0 +1,2 @@
+pkg_substracttenaddten.ads:11:08: global "ten" is missing from input dependence list
+pkg_substracttenaddten.ads:11:08: add "null => ten" dependency to ignore this input

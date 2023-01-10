@@ -1,0 +1,77 @@
+V "GNAT Lib v2020"
+M P W=b
+A -gnatA
+A -g
+A -fstack-check=specific
+A -gnata
+A -gnato
+A -gnat12
+A -gnatwa
+A -gnateE
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_IO
+RV NO_IMPLEMENTATION_PRAGMAS
+
+U tests_media%b		tests_media.adb		a72f76ff NE OO SU
+W ada%s			ada.ads			ada.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W pkg_media%s		pkg_media.adb		pkg_media.ali
+Z system.assertions%s	s-assert.adb		s-assert.ali
+
+D ada.ads		20200819050644 76789da1 ada%s
+D a-except.ads		20200819050644 a7106115 ada.exceptions%s
+D a-ioexce.ads		20200819050644 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20200819050644 119b8fb3 ada.streams%s
+D a-tags.ads		20200819050644 edddc8f0 ada.tags%s
+D a-textio.ads		20200819050644 aef4d56d ada.text_io%s
+D a-unccon.ads		20200819050644 0e9b276f ada.unchecked_conversion%s
+D interfac.ads		20200819050646 5ab55268 interfaces%s
+D i-cstrea.ads		20200819050646 e53d8b8e interfaces.c_streams%s
+D pkg_media.ads		20201109185522 2f0ebdd5 pkg_media%s
+D system.ads		20200819050648 32a08138 system%s
+D s-assert.ads		20200819050646 cd8d2c94 system.assertions%s
+D s-crtl.ads		20200819050646 0ebbdb71 system.crtl%s
+D s-exctab.ads		20200819050646 54135002 system.exception_table%s
+D s-ficobl.ads		20200819050646 078245e4 system.file_control_block%s
+D s-parame.ads		20200819050648 4752c4cb system.parameters%s
+D s-secsta.ads		20200819050648 9b3ab94b system.secondary_stack%s
+D s-soflin.ads		20200819050648 a7318a92 system.soft_links%s
+D s-stache.ads		20200819050648 a37c21ec system.stack_checking%s
+D s-stalib.ads		20200819050648 6b7a13f2 system.standard_library%s
+D s-stoele.ads		20200819050648 2dc34a04 system.storage_elements%s
+D s-traent.ads		20200819050648 005bf670 system.traceback_entries%s
+D s-unstyp.ads		20200819050648 5ecf7212 system.unsigned_types%s
+D s-wchcon.ads		20200819050648 1b7d22d2 system.wch_con%s
+D tests_media.adb	20201104190508 26d51e47 tests_media%b
+G a e
+G c Z b b [tests_media standard 4 11 none]
+G r c none [tests_media standard 4 11 none] [media pkg_media 5 14 none]
+X 1 ada.ads
+16K9*Ada 20e8 25|1r6 1r29
+X 6 a-textio.ads
+57K13*Text_IO 727e16 25|1w10 1r33
+465U14*Put 25|9s7 20s7 31s7 42s7 53s7 64s7
+508U14*Put_Line 25|14s7 25s7 36s7 47s7 58s7 69s7 74s4
+X 10 pkg_media.ads
+1K9*Pkg_Media 33e14 25|2w6 2r28
+3A9*T_Vec(integer)<integer> 25|7r13 18r13 29r13 40r13 51r13 62r13
+5U14*Media 25|11s7 22s7 33s7 44s7 55s7 66s7
+X 25 tests_media.adb
+4U11*Tests_Media 4b11 81l5 81t16
+6U14 Test_1 6b14 15l8 15t14 75s4
+7a7 Vec{10|3A9} 11m13 11r13 12r22
+17U14 Test_2 17b14 26l8 26t14 76s4
+18a7 Vec{10|3A9} 22m13 22r13 23r22
+28U14 Test_3 28b14 37l8 37t14 77s4
+29a7 Vec{10|3A9} 33m13 33r13 34r22
+39U14 Test_4 39b14 48l8 48t14 78s4
+40a7 Vec{10|3A9} 44m13 44r13 45r22
+50U14 Test_5 50b14 59l8 59t14 79s4
+51a7 Vec{10|3A9} 55m13 55r13 56r22
+61U14 Test_6 61b14 70l8 70t14 80s4
+62a7 Vec{10|3A9} 66m13 66r13 67r22
+

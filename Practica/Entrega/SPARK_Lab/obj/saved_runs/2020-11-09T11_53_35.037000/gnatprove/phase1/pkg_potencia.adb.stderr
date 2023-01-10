@@ -1,0 +1,2 @@
+pkg_potencia.ads:8:08: parameter "X" is missing from input dependence list
+pkg_potencia.ads:8:08: add "null => X" dependency to ignore this input

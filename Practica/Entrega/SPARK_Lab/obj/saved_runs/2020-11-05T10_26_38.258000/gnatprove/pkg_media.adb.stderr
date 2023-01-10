@@ -1,0 +1,2 @@
+pkg_media.adb:21:37: medium: loop invariant might fail in first iteration, cannot prove Vec(j) = Vec'Loop_Entry(j) + 10[#0]
+pkg_media.ads:25:20: medium: postcondition might fail, cannot prove Vec(i) = Vec'Old(i) + 10 (e.g. when Vec = (1 => -11, 2 => 0, others => -1) and Vec'Last = 3 and Vec'Old = (1 => -1, 2 => -1, others => 1) and i = 2)[#1]

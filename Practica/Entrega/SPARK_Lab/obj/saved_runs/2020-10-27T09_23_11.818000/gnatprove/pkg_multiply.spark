@@ -1,0 +1,81 @@
+{
+  "spark": [
+    {
+      "name": "Pkg_Multiply",
+      "sloc": [
+        {
+          "file": "pkg_multiply.ads",
+          "line": 1
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "Pkg_Multiply.Multiply",
+      "sloc": [
+        {
+          "file": "pkg_multiply.ads",
+          "line": 3
+        }
+      ],
+      "spark": "all"
+    }
+  ],
+  "flow": [
+    {
+      "file": "pkg_multiply.ads",
+      "line": 6,
+      "col": 7,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Pkg_Multiply.Multiply",
+        "sloc": [
+          {
+            "file": "pkg_multiply.ads",
+            "line": 3
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    }
+  ],
+  "assumptions": [
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "Pkg_Add.Add",
+            "sloc": [
+              {
+                "file": "pkg_add.ads",
+                "line": 3
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Pkg_Multiply.Multiply",
+          "sloc": [
+            {
+              "file": "pkg_multiply.ads",
+              "line": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "timings": {
+    "globals/properties (advanced)": 7.11400003638119E-04,
+    "flow analysis": 1.37399998493493E-03,
+    "marking": 3.13600001391023E-04,
+    "globals (basic)": 3.38899990310892E-04
+  }
+}

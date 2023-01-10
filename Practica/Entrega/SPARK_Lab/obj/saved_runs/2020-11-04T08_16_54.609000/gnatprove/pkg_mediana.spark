@@ -1,0 +1,132 @@
+{
+  "spark": [
+    {
+      "name": "Pkg_Mediana",
+      "sloc": [
+        {
+          "file": "pkg_mediana.ads",
+          "line": 1
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "Pkg_Mediana.Mediana",
+      "sloc": [
+        {
+          "file": "pkg_mediana.ads",
+          "line": 5
+        }
+      ],
+      "spark": "all"
+    }
+  ],
+  "flow": [
+    {
+      "file": "pkg_mediana.adb",
+      "line": 6,
+      "col": 7,
+      "rule": "INEFFECTIVE",
+      "severity": "warning",
+      "entity": {
+        "name": "Pkg_Mediana.Mediana",
+        "sloc": [
+          {
+            "file": "pkg_mediana.ads",
+            "line": 5
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "msg_id": 0,
+      "how_proved": "flow"
+    },
+    {
+      "file": "pkg_mediana.adb",
+      "line": 7,
+      "col": 14,
+      "rule": "INEFFECTIVE",
+      "severity": "warning",
+      "entity": {
+        "name": "Pkg_Mediana.Mediana",
+        "sloc": [
+          {
+            "file": "pkg_mediana.ads",
+            "line": 5
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "tracefile": "pkg_mediana__flow__0.trace",
+      "msg_id": 1,
+      "how_proved": "flow"
+    },
+    {
+      "file": "pkg_mediana.ads",
+      "line": 5,
+      "col": 36,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Pkg_Mediana.Mediana",
+        "sloc": [
+          {
+            "file": "pkg_mediana.ads",
+            "line": 5
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    },
+    {
+      "file": "pkg_mediana.ads",
+      "line": 8,
+      "col": 8,
+      "rule": "GLOBAL_WRONG",
+      "severity": "info",
+      "entity": {
+        "name": "Pkg_Mediana.Mediana",
+        "sloc": [
+          {
+            "file": "pkg_mediana.ads",
+            "line": 5
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    },
+    {
+      "file": "pkg_mediana.ads",
+      "line": 9,
+      "col": 8,
+      "rule": "DEPENDS_WRONG",
+      "severity": "info",
+      "entity": {
+        "name": "Pkg_Mediana.Mediana",
+        "sloc": [
+          {
+            "file": "pkg_mediana.ads",
+            "line": 5
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    }
+  ],
+  "assumptions": [
+  ],
+  "timings": {
+    "globals/properties (advanced)": 3.67700005881488E-04,
+    "flow analysis": 1.41210004221648E-03,
+    "marking": 2.38799999351613E-04,
+    "globals (basic)": 2.13099992834032E-04
+  }
+}

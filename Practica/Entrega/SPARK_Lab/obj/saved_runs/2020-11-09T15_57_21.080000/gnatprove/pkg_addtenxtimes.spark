@@ -1,0 +1,107 @@
+{
+  "spark": [
+    {
+      "name": "Pkg_addTenXTimes",
+      "sloc": [
+        {
+          "file": "pkg_addtenxtimes.ads",
+          "line": 1
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "Pkg_addTenXTimes.addTenXTimes",
+      "sloc": [
+        {
+          "file": "pkg_addtenxtimes.ads",
+          "line": 5
+        }
+      ],
+      "spark": "all"
+    }
+  ],
+  "flow": [
+    {
+      "file": "pkg_addtenxtimes.adb",
+      "line": 5,
+      "col": 7,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Pkg_addTenXTimes.addTenXTimes",
+        "sloc": [
+          {
+            "file": "pkg_addtenxtimes.ads",
+            "line": 5
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    },
+    {
+      "file": "pkg_addtenxtimes.ads",
+      "line": 7,
+      "col": 8,
+      "rule": "GLOBAL_WRONG",
+      "severity": "info",
+      "entity": {
+        "name": "Pkg_addTenXTimes.addTenXTimes",
+        "sloc": [
+          {
+            "file": "pkg_addtenxtimes.ads",
+            "line": 5
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    },
+    {
+      "file": "pkg_addtenxtimes.ads",
+      "line": 8,
+      "col": 8,
+      "rule": "DEPENDS_WRONG",
+      "severity": "info",
+      "entity": {
+        "name": "Pkg_addTenXTimes.addTenXTimes",
+        "sloc": [
+          {
+            "file": "pkg_addtenxtimes.ads",
+            "line": 5
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    }
+  ],
+  "assumptions": [
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Pkg_addTenXTimes.addTenXTimes",
+          "sloc": [
+            {
+              "file": "pkg_addtenxtimes.ads",
+              "line": 5
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "timings": {
+    "globals/properties (advanced)": 3.65299987606704E-04,
+    "flow analysis": 1.37267000973225E-02,
+    "marking": 2.34699997236021E-04,
+    "globals (basic)": 2.02199997147545E-04
+  }
+}

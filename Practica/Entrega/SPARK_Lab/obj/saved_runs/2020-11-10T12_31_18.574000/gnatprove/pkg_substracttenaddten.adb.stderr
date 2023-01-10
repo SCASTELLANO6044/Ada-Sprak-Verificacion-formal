@@ -1,0 +1,1 @@
+pkg_substracttenaddten.adb:8:07: high: "Text_IO.File_System" must be listed in the Global aspect of "substractTenAddTen" (SPARK RM 6.1.4(14))[#0]

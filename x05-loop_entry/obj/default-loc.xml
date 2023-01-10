@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<Locations>
+  <Project>
+    <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\x05-loop_entry\default.gpr</vfs_file>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\x05-loop_entry\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\x05-loop_entry\src\example.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 7" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\x05-loop_entry\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\x05-loop_entry\src\example.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\x05-loop_entry\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\x05-loop_entry\src\example.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 16" line=" 8" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\x05-loop_entry\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\x05-loop_entry\src\example.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 7" line=" 9" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\x05-loop_entry\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\x05-loop_entry\src\example.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 13" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\x05-loop_entry\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\x05-loop_entry\src\example.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 16" line=" 6" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\x05-loop_entry\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\x05-loop_entry\src\example.adb</vfs_file>
+    </file_marker>
+    <file_marker current="true" column=" 25" line=" 7" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\x05-loop_entry\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\x05-loop_entry\src\example.ads</vfs_file>
+    </file_marker>
+  </Project>
+</Locations>

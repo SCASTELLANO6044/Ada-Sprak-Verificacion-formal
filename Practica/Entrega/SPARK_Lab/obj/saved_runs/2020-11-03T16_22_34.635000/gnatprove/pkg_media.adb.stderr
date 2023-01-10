@@ -1,0 +1,4 @@
+pkg_media.adb:10:25: medium: float overflow check might fail (e.g. when Vec = (others => 119) and Vec'First = 1 and Vec'Last = 1 and i = 1 and media = 0.0)[#0]
+pkg_media.adb:12:32: medium: loop invariant might not be preserved by an arbitrary iteration, cannot prove media = media'Loop_Entry + Float(Vec(i)) (e.g. when Vec = (2 => -2, others => 1) and Vec'First = 1 and Vec'Last = 3 and i = 3 and media = -1.0 and media'Loop_Entry = 0.0)[#1]
+pkg_media.adb:15:19: medium: divide by zero might fail (e.g. when Vec = (others => 1) and Vec'First = 1 and Vec'Last = 1)[#2]
+pkg_media.ads:11:08: warning: postcondition does not mention function result

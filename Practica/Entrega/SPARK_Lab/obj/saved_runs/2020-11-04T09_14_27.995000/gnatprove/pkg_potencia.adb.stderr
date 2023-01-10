@@ -1,0 +1,5 @@
+pkg_potencia.adb:16:24: medium: overflow check might fail (e.g. when N = -2 and Res = -2)[#0]
+pkg_potencia.adb:20:35: medium: loop invariant might not be preserved by an arbitrary iteration, cannot prove Res = Res'Loop_Entry * (N ** i) (e.g. when N = -1 and Res = 0 and Res'Loop_Entry = -1 and i = 2)[#2]
+pkg_potencia.adb:20:56: medium: overflow check might fail (e.g. when N = -2 and Res'Loop_Entry = -2 and i = 2)[#1]
+pkg_potencia.ads:11:19: medium: postcondition might fail, cannot prove Res = N ** Exp (e.g. when Exp = 1 and N = -1 and Res = -1)[#4]
+pkg_potencia.ads:11:27: medium: overflow check might fail (e.g. when Exp = 1 and N = 0)[#3]

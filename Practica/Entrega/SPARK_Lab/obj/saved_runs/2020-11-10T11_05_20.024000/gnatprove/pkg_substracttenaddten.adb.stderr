@@ -1,0 +1,1 @@
+pkg_substracttenaddten.ads:28:22: medium: postcondition might fail, cannot prove Vec(i) = Vec'Old(i) - 9 (e.g. when Vec = (1 => -8, 2 => -9, others => 1) and Vec'Old = (1 => 0, 2 => 0, others => 4) and i = 1)[#0]

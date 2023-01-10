@@ -1,0 +1,51 @@
+{
+  "spark": [
+    {
+      "name": "Pkg_Add",
+      "sloc": [
+        {
+          "file": "pkg_add.ads",
+          "line": 1
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "Pkg_Add.Add",
+      "sloc": [
+        {
+          "file": "pkg_add.ads",
+          "line": 3
+        }
+      ],
+      "spark": "all"
+    }
+  ],
+  "flow": [
+  ],
+  "assumptions": [
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Pkg_Add.Add",
+          "sloc": [
+            {
+              "file": "pkg_add.ads",
+              "line": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "timings": {
+    "globals (advanced)": 4.16800001403317E-04,
+    "flow analysis": 1.12609995994717E-03,
+    "marking": 1.04999999166466E-04,
+    "properties (advanced)": 2.44000002567191E-05,
+    "globals (basic)": 3.75000003259629E-04
+  }
+}

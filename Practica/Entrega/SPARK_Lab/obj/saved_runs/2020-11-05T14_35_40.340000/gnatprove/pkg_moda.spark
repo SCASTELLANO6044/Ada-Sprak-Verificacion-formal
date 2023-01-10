@@ -1,0 +1,1117 @@
+{
+  "spark": [
+    {
+      "name": "Pkg_Moda",
+      "sloc": [
+        {
+          "file": "pkg_moda.ads",
+          "line": 1
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "Pkg_Moda.Moda",
+      "sloc": [
+        {
+          "file": "pkg_moda.ads",
+          "line": 7
+        }
+      ],
+      "spark": "all"
+    }
+  ],
+  "flow": [
+    {
+      "file": "pkg_moda.adb",
+      "line": 6,
+      "col": 7,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Pkg_Moda.Moda",
+        "sloc": [
+          {
+            "file": "pkg_moda.ads",
+            "line": 7
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    },
+    {
+      "file": "pkg_moda.ads",
+      "line": 10,
+      "col": 8,
+      "rule": "GLOBAL_WRONG",
+      "severity": "info",
+      "entity": {
+        "name": "Pkg_Moda.Moda",
+        "sloc": [
+          {
+            "file": "pkg_moda.ads",
+            "line": 7
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    },
+    {
+      "file": "pkg_moda.ads",
+      "line": 11,
+      "col": 8,
+      "rule": "DEPENDS_WRONG",
+      "severity": "info",
+      "entity": {
+        "name": "Pkg_Moda.Moda",
+        "sloc": [
+          {
+            "file": "pkg_moda.ads",
+            "line": 7
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    }
+  ],
+  "session_map": {
+    " 1": "D:\\ESTUDIOS\\UNI3\\ASIGNATURAS\\PROGRAMACION3\\PRACTICA\\SPARK_Lab_01\\obj\\gnatprove\\pkg_moda__moda"
+  },
+  "proof": [
+    {
+      "file": "pkg_moda.adb",
+      "line": 15,
+      "col": 24,
+      "rule": "VC_OVERFLOW_CHECK",
+      "severity": "medium",
+      "entity": {
+        "name": "Pkg_Moda.Moda",
+        "sloc": [
+          {
+            "file": "pkg_moda.ads",
+            "line": 7
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Unknown (unknown)",
+              "steps": 27,
+              "time": 2.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Unknown (unknown)",
+              "steps": 25,
+              "time": 2.00000000000000E-02
+            },
+            "CVC4_CE": {
+              "result": "Unknown (unknown)",
+              "steps": 41,
+              "time": 2.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "pkg_moda.adb",
+      "check_line": 15,
+      "check_col": 24,
+      "cntexmp": {
+        "pkg_moda.adb": {
+          "previous": {
+          },
+          "current": {
+            "5": [
+              {
+                "name": "i",
+                "value": "1",
+                "kind": "variable"
+              }
+            ],
+            "9": [
+              {
+                "name": "X",
+                "value": "1",
+                "kind": "variable"
+              }
+            ],
+            "12": [
+              {
+                "name": "N",
+                "value": "1073741824",
+                "kind": "variable"
+              },
+              {
+                "name": "Res",
+                "value": "1073741824",
+                "kind": "variable"
+              }
+            ],
+            "14": [
+              {
+                "name": "X",
+                "value": "1",
+                "kind": "variable"
+              }
+            ],
+            "15": [
+              {
+                "name": "N",
+                "value": "1073741824",
+                "kind": "variable"
+              },
+              {
+                "name": "Res",
+                "value": "1073741824",
+                "kind": "variable"
+              }
+            ]
+          }
+        },
+        "pkg_moda.ads": {
+          "previous": {
+          },
+          "current": {
+            "5": [
+              {
+                "name": "N",
+                "value": "1073741824",
+                "kind": "variable"
+              }
+            ],
+            "7": [
+              {
+                "name": "X",
+                "value": "1",
+                "kind": "variable"
+              }
+            ]
+          }
+        }
+      },
+      "msg_id": 0,
+      "session_dir": 1,
+      "how_proved": "prover"
+    },
+    {
+      "file": "pkg_moda.adb",
+      "line": 21,
+      "col": 20,
+      "rule": "VC_OVERFLOW_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "Pkg_Moda.Moda",
+        "sloc": [
+          {
+            "file": "pkg_moda.ads",
+            "line": 7
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 19,
+              "time": 2.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "pkg_moda.adb",
+      "check_line": 21,
+      "check_col": 20,
+      "session_dir": 1,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 1.99999995529652E-02
+        }
+      }
+    },
+    {
+      "file": "pkg_moda.adb",
+      "line": 19,
+      "col": 56,
+      "rule": "VC_OVERFLOW_CHECK",
+      "severity": "info",
+      "entity": {
+        "name": "Pkg_Moda.Moda",
+        "sloc": [
+          {
+            "file": "pkg_moda.ads",
+            "line": 7
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 13,
+              "time": 2.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 13,
+              "time": 2.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "pkg_moda.adb",
+      "check_line": 19,
+      "check_col": 56,
+      "session_dir": 1,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 2,
+          "max_steps": 1,
+          "max_time": 1.99999995529652E-02
+        }
+      }
+    },
+    {
+      "file": "pkg_moda.adb",
+      "line": 19,
+      "col": 35,
+      "rule": "VC_LOOP_INVARIANT_INIT",
+      "severity": "info",
+      "entity": {
+        "name": "Pkg_Moda.Moda",
+        "sloc": [
+          {
+            "file": "pkg_moda.ads",
+            "line": 7
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 2.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "pkg_moda.adb",
+      "check_line": 19,
+      "check_col": 35,
+      "session_dir": 1,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 1.99999995529652E-02
+        }
+      }
+    },
+    {
+      "file": "pkg_moda.adb",
+      "line": 19,
+      "col": 35,
+      "rule": "VC_LOOP_INVARIANT_PRESERV",
+      "severity": "medium",
+      "entity": {
+        "name": "Pkg_Moda.Moda",
+        "sloc": [
+          {
+            "file": "pkg_moda.ads",
+            "line": 7
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Unknown (unknown)",
+              "steps": 26,
+              "time": 2.00000000000000E-02
+            },
+            "CVC4_CE": {
+              "result": "Unknown (unknown)",
+              "steps": 49,
+              "time": 2.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "pkg_moda.adb",
+      "check_line": 19,
+      "check_col": 35,
+      "cntexmp": {
+        "pkg_moda.adb": {
+          "previous": {
+            "19": [
+              {
+                "name": "Res",
+                "value": "2",
+                "kind": "variable"
+              },
+              {
+                "name": "X",
+                "value": "2",
+                "kind": "variable"
+              },
+              {
+                "name": "i",
+                "value": "1",
+                "kind": "variable"
+              }
+            ]
+          },
+          "current": {
+            "12": [
+              {
+                "name": "N",
+                "value": "1",
+                "kind": "variable"
+              }
+            ],
+            "14": [
+              {
+                "name": "X",
+                "value": "2",
+                "kind": "variable"
+              }
+            ],
+            "15": [
+              {
+                "name": "N",
+                "value": "1",
+                "kind": "variable"
+              },
+              {
+                "name": "Res",
+                "value": "3",
+                "kind": "variable"
+              }
+            ],
+            "18": [
+              {
+                "name": "X",
+                "value": "2",
+                "kind": "variable"
+              }
+            ],
+            "19": [
+              {
+                "name": "N",
+                "value": "1",
+                "kind": "variable"
+              },
+              {
+                "name": "Res",
+                "value": "3",
+                "kind": "variable"
+              },
+              {
+                "name": "Res'Loop_Entry",
+                "value": "1",
+                "kind": "variable"
+              }
+            ],
+            "21": [
+              {
+                "name": "i",
+                "value": "2",
+                "kind": "variable"
+              }
+            ]
+          }
+        },
+        "pkg_moda.ads": {
+          "previous": {
+          },
+          "current": {
+            "5": [
+              {
+                "name": "N",
+                "value": "1",
+                "kind": "variable"
+              }
+            ],
+            "7": [
+              {
+                "name": "X",
+                "value": "2",
+                "kind": "variable"
+              }
+            ]
+          }
+        }
+      },
+      "msg_id": 1,
+      "session_dir": 1,
+      "how_proved": "prover"
+    },
+    {
+      "file": "pkg_moda.adb",
+      "line": 18,
+      "col": 35,
+      "rule": "VC_LOOP_INVARIANT_INIT",
+      "severity": "info",
+      "entity": {
+        "name": "Pkg_Moda.Moda",
+        "sloc": [
+          {
+            "file": "pkg_moda.ads",
+            "line": 7
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 2.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 2.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "pkg_moda.adb",
+      "check_line": 18,
+      "check_col": 35,
+      "session_dir": 1,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 2,
+          "max_steps": 1,
+          "max_time": 1.99999995529652E-02
+        }
+      }
+    },
+    {
+      "file": "pkg_moda.adb",
+      "line": 18,
+      "col": 35,
+      "rule": "VC_LOOP_INVARIANT_PRESERV",
+      "severity": "info",
+      "entity": {
+        "name": "Pkg_Moda.Moda",
+        "sloc": [
+          {
+            "file": "pkg_moda.ads",
+            "line": 7
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 2.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        },
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 19,
+              "time": 3.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "pkg_moda.adb",
+      "check_line": 18,
+      "check_col": 35,
+      "session_dir": 1,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 2,
+          "max_steps": 1,
+          "max_time": 2.99999993294477E-02
+        }
+      }
+    },
+    {
+      "file": "pkg_moda.adb",
+      "line": 17,
+      "col": 13,
+      "rule": "VC_LOOP_VARIANT",
+      "severity": "info",
+      "entity": {
+        "name": "Pkg_Moda.Moda",
+        "sloc": [
+          {
+            "file": "pkg_moda.ads",
+            "line": 7
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Valid",
+              "steps": 5,
+              "time": 2.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "pkg_moda.adb",
+      "check_line": 17,
+      "check_col": 13,
+      "session_dir": 1,
+      "how_proved": "prover",
+      "stats": {
+        "CVC4": {
+          "count": 1,
+          "max_steps": 1,
+          "max_time": 1.99999995529652E-02
+        }
+      }
+    },
+    {
+      "file": "pkg_moda.ads",
+      "line": 13,
+      "col": 35,
+      "rule": "VC_OVERFLOW_CHECK",
+      "severity": "medium",
+      "entity": {
+        "name": "Pkg_Moda.Moda",
+        "sloc": [
+          {
+            "file": "pkg_moda.ads",
+            "line": 7
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Unknown (unknown)",
+              "steps": 521,
+              "time": 5.00000000000000E-02
+            },
+            "CVC4_CE": {
+              "result": "Unknown (unknown)",
+              "steps": 1473,
+              "time": 3.10000000000000E-01
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "pkg_moda.ads",
+      "check_line": 13,
+      "check_col": 35,
+      "cntexmp": {
+        "pkg_moda.adb": {
+          "previous": {
+            "19": [
+              {
+                "name": "Res",
+                "value": "10",
+                "kind": "variable"
+              },
+              {
+                "name": "X",
+                "value": "3",
+                "kind": "variable"
+              },
+              {
+                "name": "i",
+                "value": "3",
+                "kind": "variable"
+              }
+            ]
+          },
+          "current": {
+            "12": [
+              {
+                "name": "N",
+                "value": "5",
+                "kind": "variable"
+              }
+            ],
+            "14": [
+              {
+                "name": "Res",
+                "value": "5",
+                "kind": "variable"
+              }
+            ],
+            "15": [
+              {
+                "name": "N",
+                "value": "5",
+                "kind": "variable"
+              },
+              {
+                "name": "Res",
+                "value": "10",
+                "kind": "variable"
+              }
+            ],
+            "18": [
+              {
+                "name": "X",
+                "value": "3",
+                "kind": "variable"
+              }
+            ],
+            "19": [
+              {
+                "name": "N",
+                "value": "5",
+                "kind": "variable"
+              }
+            ],
+            "21": [
+              {
+                "name": "i",
+                "value": "4",
+                "kind": "variable"
+              }
+            ],
+            "24": [
+              {
+                "name": "Moda'Result",
+                "value": "10",
+                "kind": "variable"
+              },
+              {
+                "name": "Res",
+                "value": "10",
+                "kind": "variable"
+              }
+            ]
+          }
+        },
+        "pkg_moda.ads": {
+          "previous": {
+          },
+          "current": {
+            "5": [
+              {
+                "name": "N",
+                "value": "5",
+                "kind": "variable"
+              }
+            ],
+            "7": [
+              {
+                "name": "X",
+                "value": "3",
+                "kind": "variable"
+              }
+            ],
+            "13": [
+              {
+                "name": "N",
+                "value": "5",
+                "kind": "variable"
+              },
+              {
+                "name": "X",
+                "value": "3",
+                "kind": "variable"
+              }
+            ]
+          }
+        }
+      },
+      "msg_id": 2,
+      "session_dir": 1,
+      "how_proved": "prover"
+    },
+    {
+      "file": "pkg_moda.ads",
+      "line": 13,
+      "col": 39,
+      "rule": "VC_OVERFLOW_CHECK",
+      "severity": "medium",
+      "entity": {
+        "name": "Pkg_Moda.Moda",
+        "sloc": [
+          {
+            "file": "pkg_moda.ads",
+            "line": 7
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Unknown (unknown)",
+              "steps": 401,
+              "time": 6.00000000000000E-02
+            },
+            "CVC4_CE": {
+              "result": "Unknown (unknown)",
+              "steps": 922,
+              "time": 1.60000000000000E-01
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "pkg_moda.ads",
+      "check_line": 13,
+      "check_col": 39,
+      "cntexmp": {
+        "pkg_moda.adb": {
+          "previous": {
+            "19": [
+              {
+                "name": "Res",
+                "value": "8",
+                "kind": "variable"
+              },
+              {
+                "name": "X",
+                "value": "2",
+                "kind": "variable"
+              },
+              {
+                "name": "i",
+                "value": "2",
+                "kind": "variable"
+              }
+            ]
+          },
+          "current": {
+            "12": [
+              {
+                "name": "N",
+                "value": "4",
+                "kind": "variable"
+              }
+            ],
+            "14": [
+              {
+                "name": "Res",
+                "value": "4",
+                "kind": "variable"
+              }
+            ],
+            "15": [
+              {
+                "name": "N",
+                "value": "4",
+                "kind": "variable"
+              },
+              {
+                "name": "Res",
+                "value": "8",
+                "kind": "variable"
+              }
+            ],
+            "18": [
+              {
+                "name": "X",
+                "value": "2",
+                "kind": "variable"
+              }
+            ],
+            "19": [
+              {
+                "name": "N",
+                "value": "4",
+                "kind": "variable"
+              }
+            ],
+            "21": [
+              {
+                "name": "i",
+                "value": "3",
+                "kind": "variable"
+              }
+            ],
+            "24": [
+              {
+                "name": "Moda'Result",
+                "value": "8",
+                "kind": "variable"
+              },
+              {
+                "name": "Res",
+                "value": "8",
+                "kind": "variable"
+              }
+            ]
+          }
+        },
+        "pkg_moda.ads": {
+          "previous": {
+          },
+          "current": {
+            "5": [
+              {
+                "name": "N",
+                "value": "4",
+                "kind": "variable"
+              }
+            ],
+            "7": [
+              {
+                "name": "X",
+                "value": "2",
+                "kind": "variable"
+              }
+            ],
+            "13": [
+              {
+                "name": "N",
+                "value": "4",
+                "kind": "variable"
+              },
+              {
+                "name": "X",
+                "value": "2",
+                "kind": "variable"
+              }
+            ]
+          }
+        }
+      },
+      "msg_id": 3,
+      "session_dir": 1,
+      "how_proved": "prover"
+    },
+    {
+      "file": "pkg_moda.ads",
+      "line": 13,
+      "col": 19,
+      "rule": "VC_POSTCONDITION",
+      "severity": "medium",
+      "entity": {
+        "name": "Pkg_Moda.Moda",
+        "sloc": [
+          {
+            "file": "pkg_moda.ads",
+            "line": 7
+          }
+        ]
+      },
+      "check_tree": [
+        {
+          "proof_attempts": {
+            "CVC4": {
+              "result": "Unknown (unknown)",
+              "steps": 76,
+              "time": 2.00000000000000E-02
+            },
+            "CVC4_CE": {
+              "result": "Unknown (unknown)",
+              "steps": 53,
+              "time": 2.00000000000000E-02
+            }
+          },
+          "transformations": {
+          }
+        }
+      ],
+      "check_file": "pkg_moda.ads",
+      "check_line": 13,
+      "check_col": 19,
+      "cntexmp": {
+        "pkg_moda.adb": {
+          "previous": {
+            "19": [
+              {
+                "name": "X",
+                "value": "0",
+                "kind": "variable"
+              }
+            ]
+          },
+          "current": {
+            "5": [
+              {
+                "name": "i",
+                "value": "1",
+                "kind": "variable"
+              }
+            ],
+            "10": [
+              {
+                "name": "Moda'Result",
+                "value": "1",
+                "kind": "variable"
+              },
+              {
+                "name": "N",
+                "value": "1",
+                "kind": "variable"
+              }
+            ]
+          }
+        },
+        "pkg_moda.ads": {
+          "previous": {
+          },
+          "current": {
+            "5": [
+              {
+                "name": "N",
+                "value": "1",
+                "kind": "variable"
+              }
+            ],
+            "7": [
+              {
+                "name": "X",
+                "value": "0",
+                "kind": "variable"
+              }
+            ],
+            "13": [
+              {
+                "name": "Moda'Result",
+                "value": "1",
+                "kind": "variable"
+              },
+              {
+                "name": "N",
+                "value": "1",
+                "kind": "variable"
+              },
+              {
+                "name": "X",
+                "value": "0",
+                "kind": "variable"
+              }
+            ]
+          }
+        }
+      },
+      "msg_id": 4,
+      "session_dir": 1,
+      "how_proved": "prover"
+    }
+  ],
+  "assumptions": [
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_AORTE",
+        "arg": {
+          "name": "Pkg_Moda",
+          "sloc": [
+            {
+              "file": "pkg_moda.ads",
+              "line": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Pkg_Moda.Moda",
+          "sloc": [
+            {
+              "file": "pkg_moda.ads",
+              "line": 7
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "timings": {
+    "gnatwhy3.transformations.inline_trivial": 2.03125000000000E-01,
+    "codepeer results": 5.51000011910219E-05,
+    "init_why_sections": 5.38600026629865E-04,
+    "gnatwhy3.transformations.detect_polymorphism": 0.00000000000000E+00,
+    "globals/properties (advanced)": 3.80899989977479E-04,
+    "gnatwhy3.transformations.eliminate_literal": 0.00000000000000E+00,
+    "gnatwhy3.run_vcs": 3.12500000000000E-01,
+    "gnatwhy3.transformations.eliminate_algebraic_if_poly": 0.00000000000000E+00,
+    "gnatwhy3.transformations.eliminate_definition_if_poly": 1.56250000000000E-02,
+    "flow analysis": 1.72719999682158E-03,
+    "gnatwhy3.transformations.simplify_formula": 0.00000000000000E+00,
+    "marking": 2.63900001300499E-04,
+    "translation of standard": 3.39429988525808E-03,
+    "gnatwhy3.register_vcs": 1.56250000000000E-02,
+    "gnatwhy3.transformations.eliminate_epsilon": 0.00000000000000E+00,
+    "globals (basic)": 2.05000003916211E-04,
+    "gnatwhy3.schedule_vcs": 0.00000000000000E+00,
+    "gnatwhy3.transformations.prepare_for_counterexmp": 0.00000000000000E+00,
+    "gnatwhy3.save_session": 0.00000000000000E+00,
+    "gnatwhy3.transformations.eliminate_inductive": 0.00000000000000E+00,
+    "gnatwhy3.transformations.encoding_smt_if_poly": 0.00000000000000E+00,
+    "gnatwhy3.transformations.eliminate_unused_hypo": 0.00000000000000E+00,
+    "gnatwhy3.transformations.eliminate_builtin": 0.00000000000000E+00,
+    "gnatwhy3.transformations.discriminate_if_poly": 0.00000000000000E+00,
+    "gnatwhy3.init": 1.56250000000000E-01
+  }
+}

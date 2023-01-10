@@ -1,0 +1,1 @@
+pkg_fromnegativetozero.ads:14:19: medium: postcondition might fail (e.g. when Vec = (2 => 1, others => 2) and Vec'First = 1 and Vec'Last = 2 and Vec'Old = (1 => 0, others => 1))[#0]

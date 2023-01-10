@@ -1,0 +1,47 @@
+V "GNAT Lib v2020"
+A -x
+A ada
+A -gnatA
+A -g
+A -fstack-check
+A -gnata
+A -gnato
+A -gnat12
+A -gnatwa
+A -gnateE
+A -gnatc
+P GP FX
+
+RN
+RV NO_FLOATING_POINT
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_ASPECT_SPECIFICATIONS
+RV NO_IMPLEMENTATION_ATTRIBUTES
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+
+U pkg_media%b		pkg_media.adb		01bdd98a OO PK
+
+U pkg_media%s		pkg_media.ads		aaf414d8 OO PK
+
+D pkg_media.ads		20201103164410 aaf414d8 pkg_media%s
+D pkg_media.adb		20201103162128 ab49cd52 pkg_media%b
+D system.ads		20200819050648 32a08138 system%s
+G a Z
+X 1 pkg_media.ads
+1K9*Pkg_Media 13l5 13e14 2|1b14 18l5 18t14
+3A9*T_Vec(integer)<integer> 5r26 2|3r26
+5V13*Media{float} 5>20 9r20 2|3b13 16l8 16t13
+5a20 Vec{3A9} 9r36 10r19 2|3b20 9r16 10r33 12r65 15r26
+X 2 pkg_media.adb
+5f7 media{float} 10m10 10r19 12r32 12r40 15r14
+9i11 i{integer} 10r37 12r69
+
+QQ SPARKVERSION SPARK Community 2020 (20200818)
+GG EK_DIRECT_CALLS pkg_media__media 0
+GG EK_GLOBALS pkg_media__media local FALSE E_FUNCTION FALSE ORIGIN_FLOW 1 pkg_media proper_proof_in 0 proper_input 0 proper_output 0 refined_proof_in 0 refined_input 0 refined_output 0 calls_proof 0 calls 0 calls_conditional 0 FALSE FALSE TRUE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
+GG EK_DIRECT_CALLS pkg_media 0
+GG EK_GLOBALS pkg_media local FALSE E_PACKAGE TRUE ORIGIN_FLOW 0 proper_proof_in 0 proper_input 0 proper_output 0 refined_proof_in 0 refined_input 0 refined_output 0 initializes 0 calls_proof 0 calls 0 calls_conditional 0 local_var 0 FALSE FALSE FALSE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
+GG EK_FLOW_SCOPE pkg_media TRUE FALSE FALSE FALSE FALSE __standard
+GG EK_FLOW_SCOPE pkg_media__media FALSE FALSE FALSE FALSE TRUE pkg_media VISIBLE_PART
+GG EK_END_MARKER

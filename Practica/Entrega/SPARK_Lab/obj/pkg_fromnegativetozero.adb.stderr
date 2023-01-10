@@ -1,0 +1,3 @@
+pkg_fromnegativetozero.adb:14:37: warning: lower bound check only fails if it is invalid [-gnatwc]
+pkg_fromnegativetozero.ads:14:69: warning: upper bound test optimized away [enabled by default]
+pkg_fromnegativetozero.ads:14:69: warning: value is known to be in range [enabled by default]

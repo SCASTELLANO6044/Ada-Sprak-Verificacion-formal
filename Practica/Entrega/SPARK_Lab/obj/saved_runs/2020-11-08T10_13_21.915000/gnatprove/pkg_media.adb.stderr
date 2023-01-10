@@ -1,0 +1,1 @@
+pkg_media.ads:27:19: medium: postcondition might fail, cannot prove Vec(i) = Vec'Old(i) - 10 xor Vec(i) = Vec'Old(i) + 10 (e.g. when Vec = (1 => -11, 2 => 2, 3 => 0, others => -9) and Vec'Old = (2 => -9, 3 => -10, others => -1) and i = 2)[#0]

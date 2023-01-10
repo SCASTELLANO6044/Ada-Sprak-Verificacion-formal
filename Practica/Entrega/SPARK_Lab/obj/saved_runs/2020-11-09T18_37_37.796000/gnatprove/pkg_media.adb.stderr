@@ -1,0 +1,2 @@
+pkg_media.adb:8:27: medium: overflow check might fail (e.g. when Vec = (others => -2147483639) and Vec'Last = 1)[#0]
+pkg_media.ads:28:22: medium: postcondition might fail, cannot prove Vec(j) = Vec'Old(j) + 10 (e.g. when Vec = (2 => 11, 3 => 9, others => -10) and Vec'Last = 3 and Vec'Old = (3 => -1, others => 0) and j = 2)[#1]

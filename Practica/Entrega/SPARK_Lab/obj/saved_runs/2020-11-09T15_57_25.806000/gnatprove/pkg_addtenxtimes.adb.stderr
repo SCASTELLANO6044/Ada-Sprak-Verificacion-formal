@@ -1,0 +1,1 @@
+pkg_addtenxtimes.adb:14:21: medium: overflow check might fail (e.g. when N = 3 and Res = Positive'Last-2)[#0]

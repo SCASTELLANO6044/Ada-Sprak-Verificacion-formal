@@ -1,0 +1,240 @@
+(* Module for axiomatizing type "integer", created in Gnat2Why.Types.Translate_Type *)
+module Standard__integer
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use import int.Int
+  
+  type integer  = <range -2147483648 2147483647>
+  
+  function   first () requires { True } ensures  { True } returns
+    int = -2147483648
+  
+  function   last () requires { True } ensures  { True } returns
+    int = 2147483647
+  
+  function   in_range (x : int) requires { True } ensures  { True } returns
+     = ((first <= x) /\ (x <= last))
+  
+  clone export ada__model.Static_Discrete with axiom . type t = integer,
+    function first = first, function last = last,
+    predicate in_range = in_range
+  
+  type integer__ref  = { mutable integer__content : integer }
+  
+  function   integer__ref_integer__content__projection (a : integer__ref)
+    requires {  } ensures  {  } returns integer = a.integer__content
+  
+  meta model_projection function integer__ref_integer__content__projection
+  
+  meta inline:no function integer__ref_integer__content__projection
+  
+  function   integer__havoc (x : integer__ref) requires {  } ensures  {  }
+    returns unit
+
+end
+
+(* Module giving axioms for type "integer", created in Gnat2Why.Types.Generate_Type_Completion *)
+module Standard__integer___axiom
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use import int.Int
+  use        Standard__integer
+  
+  function   dynamic_invariant
+    (([mlw:proxy_symbol] [introduced] temp___expr_18) : int
+    ([mlw:proxy_symbol] [introduced] temp___is_init_14) : bool
+    ([mlw:proxy_symbol] [introduced] temp___skip_constant_15) : bool
+    ([mlw:proxy_symbol] [introduced] temp___do_toplevel_16) : bool
+    ([mlw:proxy_symbol] [introduced] temp___do_typ_inv_17) : bool) requires
+    { True } ensures  { True } returns
+     = (if
+       ((([mlw:proxy_symbol] [introduced] temp___is_init_14) = True) \/
+          (Standard__integer.first <= Standard__integer.last))
+       then
+       (Standard__integer.dynamic_property Standard__integer.first
+          Standard__integer.last ([mlw:proxy_symbol]
+          [introduced] temp___expr_18))
+       )
+  
+  function   default_initial_assumption
+    (([mlw:proxy_symbol] [introduced] temp___expr_19) : int
+    ([mlw:proxy_symbol] [introduced] temp___skip_top_level_20) : bool)
+    requires { True } ensures  { True } returns  = True
+
+end
+
+(* Module for defining the constant "x" defined at example.ads:10, created in Gnat2Why.Decls.Translate_Constant *)
+module Example__next_value__x
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  function [name:X] [model_trace:865] [sloc:example.ads:10] x () requires
+    {  } ensures  {  } returns int
+
+end
+
+(* Module giving an empty axiom for the entity "x" defined at example.ads:10, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Example__next_value__x___axiom
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  
+
+end
+
+(* Module for checking contracts and absence of run-time errors in subprogram "next_value" defined at example.ads:10, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
+module Example__next_value__subprogram_def
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use import int.Int
+  use        _gnatprove_standard.Main
+  use        _gnatprove_standard.Boolean
+  use        Standard__integer
+  use        Standard__integer___axiom
+  use        Example__next_value__x
+  use        Standard__integer___axiom
+  use        Standard__integer___axiom
+  use        Example__next_value__x___axiom
+  
+  val example__next_value__result [model_trace:864@result] [model_projected]
+  [name:Next_Value] : int
+  
+  function [GP_Subp:example.ads:10] [sloc:example.ads:10] def
+    (__void_param : unit) requires { True } ensures 
+    { ([sloc:example.ads:15] ([GP_Reason:VC_POSTCONDITION]
+                             [GP_Sloc:example.ads:15:7]
+                             [comment:      (if X > 0 then Next_Value'Result = X - 1       ^ example.ads:15:7:VC_POSTCONDITION]
+                             [model_vc_post] [GP_Id:4]
+                             [GP_Shape:pragargs__if] (if
+                                                     (Example__next_value__x.x
+                                                        > 0)
+                                                     then
+                                                     ([GP_Sloc:example.ads:15:22]
+                                                     [GP_Pretty_Ada:909] (
+                                                     !example__next_value__result
+                                                       = (Example__next_value__x.x
+                                                            - 1)))
+                                                      else
+                                                     (if
+                                                     (Example__next_value__x.x
+                                                        < 0)
+                                                     then
+                                                     ([GP_Sloc:example.ads:16:25]
+                                                     [GP_Pretty_Ada:919] (
+                                                     !example__next_value__result
+                                                       = (Example__next_value__x.x
+                                                            + 1)))
+                                                      else
+                                                     ([GP_Pretty_Ada:998]
+                                                     [GP_Sloc:example.ads:16:8] True))))) }
+    returns
+     = (* Assume dynamic invariants of inputs of the subprogram example.ads:10 *);
+        assume
+        { (Standard__integer___axiom.dynamic_invariant
+             Example__next_value__x.x True False True True) };
+        (* Assume moved pointers in outputs of the subprogram example.ads:10 *);
+        (* Check for RTE in the Pre of the subprogram example.ads:10 *);
+        abstract ensures
+        { True } begin  (let _ =
+                       (_gnatprove_standard.Boolean.andb
+                          (Example__next_value__x.x >= -2147483648)
+                          (Example__next_value__x.x <= 2147483647))
+                       in ())  end;
+        (* Assume Pre of the subprogram example.ads:10 *);
+        assume
+        { (([GP_Pretty_Ada:890] (Example__next_value__x.x >= -2147483648)) /\
+             ([GP_Pretty_Ada:896] (Example__next_value__x.x <= 2147483647))) };
+        (try
+        ();
+          ([GP_Sloc:example.adb:7:7] ([sloc:example.adb:7] (if
+                                                           ([sloc:example.adb:7] ([branch_id=829]
+                                                           _gnatprove_standard.Main.spark__branch
+                                                           :=
+                                                           (Example__next_value__x.x
+                                                              > 0)));
+                                                           ([branch_id=829] _gnatprove_standard.Main.spark__branch).bool__content
+                                                           then
+                                                           ();
+                                                           ([GP_Sloc:example.adb:8:10] 
+                                                           ([sloc:example.adb:8] (
+                                                           example__next_value__result
+                                                           :=
+                                                           ( ([sloc:example.adb:8] 
+                                                             ([vc:annotation]
+                                                             [GP_Reason:VC_OVERFLOW_CHECK]
+                                                             [GP_Shape:if__return__sub]
+                                                             [GP_Sloc:example.adb:8:19]
+                                                             [GP_Id:0]
+                                                             [comment:         return X - 1;                   ^ example.adb:8:19:VC_OVERFLOW_CHECK] (
+                                                             Standard__integer.range_check_
+                                                               (Example__next_value__x.x
+                                                                  - 1))))));
+                                                           raise Return__exc))
+                                                            else
+                                                           ([GP_Sloc:example.adb:9:7] 
+                                                           (if
+                                                           ([sloc:example.adb:9] ([branch_id=838]
+                                                           _gnatprove_standard.Main.spark__branch
+                                                           :=
+                                                           (Example__next_value__x.x
+                                                              < 0)));
+                                                           ([branch_id=838] _gnatprove_standard.Main.spark__branch).bool__content
+                                                           then
+                                                           ();
+                                                           ([GP_Sloc:example.adb:10:10] 
+                                                           ([sloc:example.adb:10] (
+                                                           example__next_value__result
+                                                           :=
+                                                           ( ([sloc:example.adb:10] 
+                                                             ([GP_Shape:if__return__add]
+                                                             [GP_Sloc:example.adb:10:19]
+                                                             [vc:annotation]
+                                                             [GP_Reason:VC_OVERFLOW_CHECK]
+                                                             [comment:         return X + 1;                   ^ example.adb:10:19:VC_OVERFLOW_CHECK]
+                                                             [GP_Id:1] (
+                                                             Standard__integer.range_check_
+                                                               (Example__next_value__x.x
+                                                                  + 1))))));
+                                                           raise Return__exc))
+                                                            else
+                                                           ();
+                                                           ([GP_Sloc:example.adb:12:10] 
+                                                           ([sloc:example.adb:12] (
+                                                           example__next_value__result
+                                                           :=
+                                                           ( -1));
+                                                           raise Return__exc)))))));
+          raise Return__exc with | Return__exc  -> ());
+        abstract ensures
+        { True } begin  (let _ =
+                       (if (Example__next_value__x.x > 0) then
+                       (!example__next_value__result
+                          = ([sloc:example.ads:15] ([GP_Sloc:example.ads:15:44]
+                                                   [vc:annotation]
+                                                   [GP_Reason:VC_OVERFLOW_CHECK]
+                                                   [GP_Id:2]
+                                                   [GP_Shape:pragargs__if__cmp__sub]
+                                                   [comment:      (if X > 0 then Next_Value'Result = X - 1                                            ^ example.ads:15:44:VC_OVERFLOW_CHECK] (
+                                                   Standard__integer.range_check_
+                                                     (Example__next_value__x.x
+                                                        - 1)))))
+                        else
+                       (if (Example__next_value__x.x < 0) then
+                       (!example__next_value__result
+                          = ([sloc:example.ads:16] ([comment:       elsif X < 0 then Next_Value'Result = X + 1);                                               ^ example.ads:16:47:VC_OVERFLOW_CHECK]
+                                                   [vc:annotation]
+                                                   [GP_Reason:VC_OVERFLOW_CHECK]
+                                                   [GP_Sloc:example.ads:16:47]
+                                                   [GP_Shape:pragargs__if__if__cmp__add]
+                                                   [GP_Id:3] (Standard__integer.range_check_
+                                                                (Example__next_value__x.x
+                                                                   + 1)))))
+                        else (_gnatprove_standard.Boolean.of_int 1))) in ())  end;
+        !example__next_value__result
+
+end

@@ -1,0 +1,55 @@
+V "GNAT Lib v2021"
+A -gnatA
+A -g
+A -fstack-check=specific
+A -gnata
+A -gnato
+A -gnat12
+A -gnatwa
+A -gnateE
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_IMPLICIT_CONDITIONALS
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_ASPECT_SPECIFICATIONS
+RV NO_IMPLEMENTATION_ATTRIBUTES
+RV NO_IMPLEMENTATION_PRAGMAS
+
+U pkg_substracttenaddten%b  pkg_substracttenaddten.adb  4114354e NE OO PK
+Z system.assertions%s	s-assert.adb		s-assert.ali
+
+U pkg_substracttenaddten%s  pkg_substracttenaddten.ads  ba32a195 EE NE OO PK
+
+D ada.ads		20210520051132 76789da1 ada%s
+D a-assert.ads		20210520051128 a718b65c ada.assertions%s
+D a-unccon.ads		20210520051130 0e9b276f ada.unchecked_conversion%s
+D pkg_substracttenaddten.ads  20201110140018 ba32a195 pkg_substracttenaddten%s
+D pkg_substracttenaddten.adb  20201110132024 fb2694db pkg_substracttenaddten%b
+D system.ads		20210520051136 2ffa5114 system%s
+D s-assert.ads		20210520051132 6a49a4e4 system.assertions%s
+D s-exctab.ads		20210520051132 54135002 system.exception_table%s
+D s-stalib.ads		20210520051134 472fbca8 system.standard_library%s
+G a e
+G c Z s b [substracttenaddten pkg_substracttenaddten 5 14 none]
+G c Z s s [t_vecIP pkg_substracttenaddten 3 9 none]
+X 4 pkg_substracttenaddten.ads
+1K9*Pkg_substractTenAddTen 35l5 35e27 5|1b14 26l5 26t27
+3A9*T_Vec(integer)<integer> 5r47 5|3r47
+5U14*substractTenAddTen 5=34 5|3b14 24l8 24t26
+5a34 Vec{3A9} 11r20 11r27 13r15 13r39 13r62 15r19 16r18 18r35 19r23 20r22
+. 22r32 22r53 23r24 24r23 26r20 27r19 27r28 29r38 30r22 30r31 32r34 32r55
+. 33r22 33r31 5|3b34 7r10 8m10 8r20 11r24 12m13 12r23 14r37 14r46 17r20 17r41
+. 18m13 18r23 19r49 20r37 20r46
+18i25 i{integer} 19r27 20r26
+22i26 j{integer} 23r28 24r27
+29i28 i{integer} 30r26 30r39
+32i28 j{integer} 33r26 33r39
+X 5 pkg_substracttenaddten.adb
+11i14 i{integer} 12r17 12r27 13r53
+13i43 j{integer} 14r41 14r61
+17i14 j{integer} 18r17 18r27 19r70
+19i43 k{integer} 20r41 20r61
+

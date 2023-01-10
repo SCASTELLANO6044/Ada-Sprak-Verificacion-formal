@@ -1,0 +1,107 @@
+{
+  "spark": [
+    {
+      "name": "Pkg_Potencia",
+      "sloc": [
+        {
+          "file": "pkg_potencia.ads",
+          "line": 1
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "Pkg_Potencia.Potencia",
+      "sloc": [
+        {
+          "file": "pkg_potencia.ads",
+          "line": 5
+        }
+      ],
+      "spark": "all"
+    }
+  ],
+  "flow": [
+    {
+      "file": "pkg_potencia.adb",
+      "line": 5,
+      "col": 7,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Pkg_Potencia.Potencia",
+        "sloc": [
+          {
+            "file": "pkg_potencia.ads",
+            "line": 5
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    },
+    {
+      "file": "pkg_potencia.ads",
+      "line": 7,
+      "col": 8,
+      "rule": "GLOBAL_WRONG",
+      "severity": "info",
+      "entity": {
+        "name": "Pkg_Potencia.Potencia",
+        "sloc": [
+          {
+            "file": "pkg_potencia.ads",
+            "line": 5
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    },
+    {
+      "file": "pkg_potencia.ads",
+      "line": 8,
+      "col": 8,
+      "rule": "DEPENDS_WRONG",
+      "severity": "info",
+      "entity": {
+        "name": "Pkg_Potencia.Potencia",
+        "sloc": [
+          {
+            "file": "pkg_potencia.ads",
+            "line": 5
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    }
+  ],
+  "assumptions": [
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Pkg_Potencia.Potencia",
+          "sloc": [
+            {
+              "file": "pkg_potencia.ads",
+              "line": 5
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "timings": {
+    "globals/properties (advanced)": 3.84599989047274E-04,
+    "flow analysis": 1.58100004773587E-03,
+    "marking": 2.54799990216270E-04,
+    "globals (basic)": 2.06299999263138E-04
+  }
+}

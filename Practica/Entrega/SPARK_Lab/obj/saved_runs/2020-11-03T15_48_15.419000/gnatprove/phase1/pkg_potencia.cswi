@@ -1,0 +1,14 @@
+20201103154804
+-c
+-x
+ada
+-gnatA
+-g
+-fstack-check
+-gnata
+-gnato
+-gnat12
+-gnatwa
+-gnateE
+-gnatc
+-gnates=D:\ESTUDIOS\UNI3\ASIGNATURAS\PROGRAMACION3\PRACTICA\SPARK_Lab_01\obj\gnatprove\85a74aac.tmp

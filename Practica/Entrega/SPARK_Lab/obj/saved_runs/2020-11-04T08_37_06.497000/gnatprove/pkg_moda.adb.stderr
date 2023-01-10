@@ -1,0 +1,4 @@
+pkg_moda.adb:13:32: medium: loop invariant might fail in first iteration, cannot prove rep in 1 .. Vec'last (e.g. when rep = 0)[#1]
+pkg_moda.adb:13:32: medium: loop invariant might not be preserved by an arbitrary iteration, cannot prove rep in 1 .. Vec'last (e.g. when Vec = (1 => 0, 2 => -1, others => 1) and rep = 0)[#2]
+pkg_moda.adb:17:27: medium: overflow check might fail (e.g. when rep = Integer'Last) [possible explanation: loop at line 14 should mention rep in a loop invariant][#0]
+pkg_moda.ads:11:08: warning: postcondition does not mention function result

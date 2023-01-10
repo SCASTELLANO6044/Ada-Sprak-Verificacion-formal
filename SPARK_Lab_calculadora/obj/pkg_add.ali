@@ -1,0 +1,40 @@
+V "GNAT Lib v2021"
+A -gnatA
+A -g
+A -fstack-check=specific
+A -gnata
+A -gnato
+A -gnat12
+A -gnatwa
+A -gnateE
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_DIRECT_BOOLEAN_OPERATORS
+RV NO_IMPLEMENTATION_ASPECT_SPECIFICATIONS
+RV NO_IMPLEMENTATION_PRAGMAS
+
+U pkg_add%b		pkg_add.adb		e56f10cf NE OO PK
+Z system.assertions%s	s-assert.adb		s-assert.ali
+
+U pkg_add%s		pkg_add.ads		51fea9d6 EE NE OO PK
+
+D ada.ads		20210520051132 76789da1 ada%s
+D a-assert.ads		20210520051128 a718b65c ada.assertions%s
+D a-unccon.ads		20210520051130 0e9b276f ada.unchecked_conversion%s
+D pkg_add.ads		20220914211256 51fea9d6 pkg_add%s
+D pkg_add.adb		20220914184042 b491b919 pkg_add%b
+D system.ads		20210520051136 2ffa5114 system%s
+D s-assert.ads		20210520051132 6a49a4e4 system.assertions%s
+D s-exctab.ads		20210520051132 54135002 system.exception_table%s
+D s-stalib.ads		20210520051134 472fbca8 system.standard_library%s
+G a e
+G c Z s b [add pkg_add 5 13 none]
+X 4 pkg_add.ads
+1K9*Pkg_Add 18l5 18e12 5|1b14 10l5 10t12
+5V13*Add{integer} 6>7 6>32 10r19 16r15 5|3b13 8l8 8t11
+6i7 First_Operand{integer} 10r34 12r11 13r43 14r14 15r10 16r28 5|4b7 7r14
+6i32 Second_Operand{integer} 10r49 12r34 13r10 14r37 15r43 16r44 5|5b7 7r28
+

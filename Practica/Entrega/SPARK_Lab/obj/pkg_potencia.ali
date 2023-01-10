@@ -1,0 +1,42 @@
+V "GNAT Lib v2020"
+A -gnatA
+A -g
+A -fstack-check=specific
+A -gnata
+A -gnato
+A -gnat12
+A -gnatwa
+A -gnateE
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_IMPLEMENTATION_ASPECT_SPECIFICATIONS
+RV NO_IMPLEMENTATION_ATTRIBUTES
+RV NO_IMPLEMENTATION_PRAGMAS
+
+U pkg_potencia%b	pkg_potencia.adb	705b3e61 NE OO PK
+Z system.assertions%s	s-assert.adb		s-assert.ali
+
+U pkg_potencia%s	pkg_potencia.ads	875b35df EE NE OO PK
+
+D ada.ads		20200819050644 76789da1 ada%s
+D a-unccon.ads		20200819050644 0e9b276f ada.unchecked_conversion%s
+D pkg_potencia.ads	20201109115424 875b35df pkg_potencia%s
+D pkg_potencia.adb	20201108103916 f7000bbe pkg_potencia%b
+D system.ads		20200819050648 32a08138 system%s
+D s-assert.ads		20200819050646 cd8d2c94 system.assertions%s
+D s-exctab.ads		20200819050646 54135002 system.exception_table%s
+D s-stalib.ads		20200819050648 6b7a13f2 system.standard_library%s
+G a e
+G c Z s b [potencia pkg_potencia 5 13 none]
+X 3 pkg_potencia.ads
+1K9*Pkg_Potencia 14l5 14e17 4|1b14 21l5 21t17
+3i4*N{positive} 7r28 8r43 9r32 9r43 10r34 10r42 4|9r17 12r14 14r23 15r59
+5V13*Potencia{positive} 5>23 8r20 10r16 4|3b13 19l8 19t16
+5i23 X{natural} 8r40 9r15 10r38 4|3b23 8r10 13r21
+X 4 pkg_potencia.adb
+5i7 Res{positive} 12m7 14m10 14r17 15r32 15r38 18r14
+13i11 i{integer} 15r55
+

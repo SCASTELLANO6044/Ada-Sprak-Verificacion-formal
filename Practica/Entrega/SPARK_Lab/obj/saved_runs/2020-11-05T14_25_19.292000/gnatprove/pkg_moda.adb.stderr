@@ -1,0 +1,2 @@
+pkg_moda.ads:10:29: medium: constant without variable input "N" cannot appear in Globals[#0]
+pkg_moda.ads:11:39: medium: constant without variable input "N" cannot appear in Depends[#1]

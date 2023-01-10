@@ -1,0 +1,27 @@
+[GENERATED OBJECT FILE]
+b__main.o
+[PROJECT FILES]
+D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Practica\SPARK_Lab\default.gpr
+20190923174626 eb5604a914fc69d9a0e77ebcaa5e6a26
+[BOUND OBJECT FILES]
+D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Practica\SPARK_Lab\obj\pkg_addTenXTimes.o
+D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Practica\SPARK_Lab\obj\pkg_fromNegativeToZero.o
+D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Practica\SPARK_Lab\obj\pkg_median.o
+D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Practica\SPARK_Lab\obj\pkg_substractTenAddTen.o
+D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Practica\SPARK_Lab\obj\tests_addTenXTimes.o
+D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Practica\SPARK_Lab\obj\tests_fromNegativeToZero.o
+D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Practica\SPARK_Lab\obj\tests_median.o
+D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Practica\SPARK_Lab\obj\tests_substractTenAddTen.o
+D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Practica\SPARK_Lab\obj\main.o
+[GENERATED SOURCE FILES]
+b__main.ads
+b__main.adb
+b__main.ali
+[RESULTING OPTIONS]
+-LD:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Practica\SPARK_Lab\obj\
+-LD:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Practica\SPARK_Lab\obj\
+-LC:/gnat/2021/lib/gcc/x86_64-w64-mingw32/10.3.1/adalib/
+-static
+-static-libgcc
+C:/gnat/2021/lib/gcc/x86_64-w64-mingw32/10.3.1/adalib/libgnat.a
+-Wl,--stack=0x2000000

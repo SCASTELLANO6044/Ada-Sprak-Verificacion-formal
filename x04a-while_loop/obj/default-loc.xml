@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<Locations >
+  <Project>
+    <vfs_file />
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\x04a-while_loop\src\example.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 24" line=" 8" >
+      <vfs_project />
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\x04a-while_loop\src\example.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\x04a-while_loop\src\example.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 6" >
+      <vfs_project />
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\x04a-while_loop\src\example.ads</vfs_file>
+    </file_marker>
+    <file_marker current="true" column=" 17" line=" 12" >
+      <vfs_project />
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\x04a-while_loop\src\example.adb</vfs_file>
+    </file_marker>
+  </Project>
+  <Project >
+    <vfs_file >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\x04a-while_loop\default.gpr</vfs_file>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\x04a-while_loop\default.gpr</vfs_project>
+      <vfs_file >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\x04a-while_loop\src\example.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 24" line=" 8">
+      <vfs_project >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\x04a-while_loop\default.gpr</vfs_project>
+      <vfs_file >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\x04a-while_loop\src\example.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\x04a-while_loop\default.gpr</vfs_project>
+      <vfs_file >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\x04a-while_loop\src\example.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 6">
+      <vfs_project >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\x04a-while_loop\default.gpr</vfs_project>
+      <vfs_file >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\x04a-while_loop\src\example.ads</vfs_file>
+    </file_marker>
+    <file_marker current="true" column=" 17" line=" 12">
+      <vfs_project >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\x04a-while_loop\default.gpr</vfs_project>
+      <vfs_file >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\x04a-while_loop\src\example.adb</vfs_file>
+    </file_marker>
+  </Project>
+</Locations>

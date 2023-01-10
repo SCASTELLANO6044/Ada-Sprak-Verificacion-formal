@@ -1,0 +1,4 @@
+pkg_potencia.adb:16:24: medium: overflow check might fail (e.g. when N = -2 and Res = 2) [possible explanation: loop at line 15 should mention Res in a loop invariant][#0]
+pkg_potencia.adb:22:20: medium: overflow check might fail (e.g. when i = Positive'Last)[#1]
+pkg_potencia.ads:8:16: medium: postcondition might fail, cannot prove Res = N ** Exp (e.g. when Exp = 2 and N = 0 and Res = 0)[#3]
+pkg_potencia.ads:8:24: medium: overflow check might fail (e.g. when Exp = 2 and N = 0) [possible explanation: precondition of subprogram at line 3 should mention Exp and N][#2]

@@ -1,0 +1,89 @@
+{
+  "spark": [
+    {
+      "name": "Pkg_fromNegativeToZero",
+      "sloc": [
+        {
+          "file": "pkg_fromnegativetozero.ads",
+          "line": 1
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "Pkg_fromNegativeToZero.fromNegativeToZero",
+      "sloc": [
+        {
+          "file": "pkg_fromnegativetozero.ads",
+          "line": 7
+        }
+      ],
+      "spark": "all"
+    }
+  ],
+  "flow": [
+    {
+      "file": "pkg_fromnegativetozero.ads",
+      "line": 11,
+      "col": 8,
+      "rule": "GLOBAL_WRONG",
+      "severity": "info",
+      "entity": {
+        "name": "Pkg_fromNegativeToZero.fromNegativeToZero",
+        "sloc": [
+          {
+            "file": "pkg_fromnegativetozero.ads",
+            "line": 7
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    },
+    {
+      "file": "pkg_fromnegativetozero.ads",
+      "line": 12,
+      "col": 8,
+      "rule": "DEPENDS_WRONG",
+      "severity": "info",
+      "entity": {
+        "name": "Pkg_fromNegativeToZero.fromNegativeToZero",
+        "sloc": [
+          {
+            "file": "pkg_fromnegativetozero.ads",
+            "line": 7
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    }
+  ],
+  "assumptions": [
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Pkg_fromNegativeToZero.fromNegativeToZero",
+          "sloc": [
+            {
+              "file": "pkg_fromnegativetozero.ads",
+              "line": 7
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "timings": {
+    "globals (advanced)": 6.14300020970404E-04,
+    "flow analysis": 1.85070000588894E-03,
+    "marking": 1.11100001959130E-04,
+    "properties (advanced)": 3.18999991577584E-05,
+    "globals (basic)": 4.74800006486475E-04
+  }
+}

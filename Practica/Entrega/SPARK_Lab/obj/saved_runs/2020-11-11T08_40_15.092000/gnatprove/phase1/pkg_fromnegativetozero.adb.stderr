@@ -1,0 +1,2 @@
+pkg_fromnegativetozero.ads:15:26: "i" is undefined
+pkg_fromnegativetozero.ads:17:61: missing ")"

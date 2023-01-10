@@ -1,0 +1,56 @@
+V "GNAT Lib v2021"
+A -gnatA
+A -g
+A -fstack-check=specific
+A -gnata
+A -gnato
+A -gnat12
+A -gnatwa
+A -gnateE
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_DIRECT_BOOLEAN_OPERATORS
+RV NO_IMPLEMENTATION_ASPECT_SPECIFICATIONS
+RV NO_IMPLEMENTATION_PRAGMAS
+
+U pkg_multiply%b	pkg_multiply.adb	0ac1a961 NE OO PK
+W pkg_add%s		pkg_add.adb		pkg_add.ali
+Z system.assertions%s	s-assert.adb		s-assert.ali
+
+U pkg_multiply%s	pkg_multiply.ads	937a2636 EE NE OO PK
+
+D ada.ads		20210520051132 76789da1 ada%s
+D a-assert.ads		20210520051128 a718b65c ada.assertions%s
+D a-unccon.ads		20210520051130 0e9b276f ada.unchecked_conversion%s
+D pkg_add.ads		20220914211256 51fea9d6 pkg_add%s
+D pkg_multiply.ads	20220922081232 937a2636 pkg_multiply%s
+D pkg_multiply.adb	20220922080308 c8452681 pkg_multiply%b
+D system.ads		20210520051136 2ffa5114 system%s
+D s-assert.ads		20210520051132 6a49a4e4 system.assertions%s
+D s-exctab.ads		20210520051132 54135002 system.exception_table%s
+D s-stalib.ads		20210520051134 472fbca8 system.standard_library%s
+G a e
+G c Z s b [multiply pkg_multiply 5 14 none]
+G r c none [multiply pkg_multiply 5 14 none] [add pkg_add 5 13 none]
+X 4 pkg_add.ads
+1K9*Pkg_Add 18e12 6|1w6 1r19
+5V13*Add{integer} 6|15s23 22s23 29s23 36s23
+X 5 pkg_multiply.ads
+1K9*Pkg_Multiply 24l5 24e17 6|2b14 43l5 43t17
+5U14*Multiply 6>7 6>36 7<7 6|6b14 41l8 41t16
+6i7 First_Operand{integer} 12r30 14r11 15r10 16r14 17r44 18r14 19r10 20r14
+. 21r10 22r25 6|7b7 11r10 15r36 16r44 19r13 21r24 26r13 29r36 30r44 33r13
+. 36r37 37r44
+6i36 Second_Operand{integer} 12r45 14r33 15r42 16r36 17r10 18r36 19r43 20r36
+. 21r42 22r41 6|7b32 11r37 13r24 19r40 22r36 23r44 26r40 28r24 33r40 35r25
+7i7 Result{integer} 12r19 22r16 6|7b58 10m7 15m13 15r28 16r35 22m13 22r28
+. 23r35 29m13 29r28 30r35 36m13 36r28 37r35
+X 6 pkg_multiply.adb
+13i14 i{integer} 16r58
+21i14 i{integer} 23r61
+28i14 i{integer} 30r58
+35i14 i{integer} 37r60
+

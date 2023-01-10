@@ -1,0 +1,14 @@
+20220915094658
+-c
+-x
+ada
+-gnatA
+-g
+-fstack-check
+-gnata
+-gnato
+-gnat12
+-gnatwa
+-gnateE
+-gnatc
+-gnates=D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\x02c-Next_Value-func-if_expr\obj\gnatprove\2f246185.tmp

@@ -1,0 +1,73 @@
+{
+  "spark": [
+    {
+      "name": "Pkg_substractTenAddTen",
+      "sloc": [
+        {
+          "file": "pkg_substracttenaddten.ads",
+          "line": 1
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "Pkg_substractTenAddTen.substractTenAddTen",
+      "sloc": [
+        {
+          "file": "pkg_substracttenaddten.ads",
+          "line": 5
+        }
+      ],
+      "spark": "all"
+    }
+  ],
+  "flow": [
+    {
+      "file": "pkg_substracttenaddten.adb",
+      "line": 8,
+      "col": 7,
+      "rule": "GLOBAL_MISSING",
+      "severity": "high",
+      "entity": {
+        "name": "Pkg_substractTenAddTen.substractTenAddTen",
+        "sloc": [
+          {
+            "file": "pkg_substracttenaddten.ads",
+            "line": 5
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "msg_id": 0,
+      "how_proved": "flow"
+    },
+    {
+      "file": "pkg_substracttenaddten.ads",
+      "line": 9,
+      "col": 8,
+      "rule": "DEPENDS_WRONG",
+      "severity": "info",
+      "entity": {
+        "name": "Pkg_substractTenAddTen.substractTenAddTen",
+        "sloc": [
+          {
+            "file": "pkg_substracttenaddten.ads",
+            "line": 5
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    }
+  ],
+  "assumptions": [
+  ],
+  "timings": {
+    "globals/properties (advanced)": 1.49894002825022E-02,
+    "flow analysis": 2.85069993697107E-03,
+    "marking": 4.20169997960329E-03,
+    "globals (basic)": 1.00763002410531E-02
+  }
+}

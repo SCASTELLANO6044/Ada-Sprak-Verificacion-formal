@@ -1,0 +1,1 @@
+pkg_potencia.adb:19:13: pragma "Loop_Invariant" must appear next to pragma at line 16

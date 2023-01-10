@@ -1,0 +1,1966 @@
+(* Module for axiomatizing type "integer", created in Gnat2Why.Types.Translate_Type *)
+module Standard__integer
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use import int.Int
+  
+  type integer  = <range -2147483648 2147483647>
+  
+  function   first () requires { True } ensures  { True } returns
+    int = -2147483648
+  
+  function   last () requires { True } ensures  { True } returns
+    int = 2147483647
+  
+  function   in_range (x : int) requires { True } ensures  { True } returns
+     = ((first <= x) /\ (x <= last))
+  
+  clone export ada__model.Static_Discrete with axiom . type t = integer,
+    function first = first, function last = last,
+    predicate in_range = in_range
+  
+  type integer__ref  = { mutable integer__content : integer }
+  
+  function   integer__ref_integer__content__projection (a : integer__ref)
+    requires {  } ensures  {  } returns integer = a.integer__content
+  
+  meta model_projection function integer__ref_integer__content__projection
+  
+  meta inline:no function integer__ref_integer__content__projection
+  
+  function   integer__havoc (x : integer__ref) requires {  } ensures  {  }
+    returns unit
+
+end
+
+(* Module defining to_rep/of_rep for type "integer", created in Gnat2Why.Types.Translate_Type *)
+module Standard__integer__rep
+  
+  use        Standard__integer
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  function   to_rep (x : Standard__integer.integer) requires { True }
+    ensures  { True } returns int = (Standard__integer.integer'int x)
+  
+  clone export ada__model.Rep_Proj_Int with axiom . type t = Standard__integer.integer,
+    predicate in_range = Standard__integer.in_range, function to_rep = to_rep
+  
+  meta model_projection function to_rep
+  
+  meta inline:no function to_rep
+
+end
+
+(* Module for axiomatizing type "positive", created in Gnat2Why.Types.Translate_Type *)
+module Standard__positive
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use import int.Int
+  
+  type positive  = <range 1 2147483647>
+  
+  function   first () requires { True } ensures  { True } returns int = 1
+  
+  function   last () requires { True } ensures  { True } returns
+    int = 2147483647
+  
+  function   in_range (x : int) requires { True } ensures  { True } returns
+     = ((first <= x) /\ (x <= last))
+  
+  clone export ada__model.Static_Discrete with axiom . type t = positive,
+    function first = first, function last = last,
+    predicate in_range = in_range
+  
+  type positive__ref  = { mutable positive__content : positive }
+  
+  function   positive__ref_positive__content__projection (a : positive__ref)
+    requires {  } ensures  {  } returns positive = a.positive__content
+  
+  meta model_projection function positive__ref_positive__content__projection
+  
+  meta inline:no function positive__ref_positive__content__projection
+  
+  function   positive__havoc (x : positive__ref) requires {  } ensures  {  }
+    returns unit
+
+end
+
+(* Module for axiomatizing the array theory associated to type "t_vec" defined at pkg_substracttenaddten.ads:3, created in Why.Gen.Arrays.Create_Rep_Array_Theory *)
+module Array__Int__Standard__integer
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use import int.Int
+  use        Standard__integer
+  use        Standard__integer__rep
+  
+  function   index_I1_one () requires { True } ensures  { True } returns
+    int = 1
+  
+  type component_type  = --pp_transparent_type_definition NOT IMPLEMENTED
+  
+  clone export _gnatprove_standard.Array__1 with axiom . type I1.t = int,
+    predicate I1.le = <=, predicate I1.lt = <, predicate I1.gt = >,
+    function I1.add = +, function I1.sub = -, function I1.one = index_I1_one,
+    type component_type = component_type
+  
+  function   bool_eq
+    (a : map a__first : int a__last : int b : map b__first : int
+    b__last : int) requires { True } ensures  { True } returns
+    bool = ((if (a__first <= a__last) then
+            ((b__first <= b__last) /\
+               ((a__last - a__first) = (b__last - b__first)))
+             else (b__first > b__last)) /\
+              --pp_universal_quantif NOT IMPLEMENTED)
+  
+  axiom bool_eq_rev : --pp_universal_quantif NOT IMPLEMENTED
+
+end
+
+(* Module for defining a ref holding the value of variable "vec" defined at pkg_substracttenaddten.ads:5, created in Gnat2Why.Decls.Translate_Variable *)
+module Pkg_substracttenaddten__substracttenaddten__vec
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use        Standard__integer
+  use        Array__Int__Standard__integer
+  
+  val vec [model_projected] [model_trace:980]
+  [name:Vec] [sloc:pkg_substracttenaddten.ads:5]: Array__Int__Standard__integer.map
+  
+  function [model_projected] [model_trace:980'First] [name:Vec]
+    [sloc:pkg_substracttenaddten.ads:5] vec__first () requires {  } ensures 
+    {  } returns Standard__integer.integer
+  
+  function [model_projected] [model_trace:980'Last] [name:Vec]
+    [sloc:pkg_substracttenaddten.ads:5] vec__last () requires {  } ensures 
+    {  } returns Standard__integer.integer
+
+end
+
+(* Module for defining a ref holding the value of variable "i" defined at pkg_substracttenaddten.adb:11, created in Gnat2Why.Decls.Translate_Variable *)
+module Pkg_substracttenaddten__substracttenaddten__L_1__i
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  val i [name:i] [model_projected]
+  [model_trace:845] [sloc:pkg_substracttenaddten.adb:11]: int
+
+end
+
+(* Module for defining a ref holding the value of variable "j" defined at pkg_substracttenaddten.adb:17, created in Gnat2Why.Decls.Translate_Variable *)
+module Pkg_substracttenaddten__substracttenaddten__L_2__j
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  val j [name:j] [model_projected]
+  [model_trace:889] [sloc:pkg_substracttenaddten.adb:17]: int
+
+end
+
+(* Module for axiomatizing type "t_vec" defined at pkg_substracttenaddten.ads:3, created in Gnat2Why.Types.Translate_Type *)
+module Pkg_substracttenaddten__t_vec
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use import int.Int
+  use        Standard__integer
+  use        Standard__integer
+  use        Standard__positive
+  use        Standard__integer__rep
+  use        Array__Int__Standard__integer
+  
+  type component_type  = --pp_transparent_type_definition NOT IMPLEMENTED
+  
+  function   index_1_id (x : int) requires { True } ensures  { True } returns
+    int = x
+  
+  clone export ada__model.Unconstr_Array with axiom . type map = Array__Int__Standard__integer.map,
+    function array_bool_eq = Array__Int__Standard__integer.bool_eq,
+    type index_base_type = Standard__integer.integer,
+    type index_rep_type = int,
+    function to_rep = Standard__integer__rep.to_rep,
+    function rep_to_int = index_1_id,
+    predicate in_range_base = Standard__integer.in_range,
+    predicate index_dynamic_property = Standard__positive.dynamic_property,
+    predicate index_rep_le = <=
+  
+  type t_vec  = --pp_transparent_type_definition NOT IMPLEMENTED
+  
+  meta model_projection function to_array
+  
+  meta inline:no function to_array
+  
+  meta model_projection function first
+  
+  meta inline:no function first
+  
+  meta model_projection function last
+  
+  meta inline:no function last
+  
+  type t_vec__ref  = { mutable t_vec__content : t_vec }
+  
+  function   t_vec__ref_t_vec__content__projection (a : t_vec__ref) requires
+    {  } ensures  {  } returns t_vec = a.t_vec__content
+  
+  meta model_projection function t_vec__ref_t_vec__content__projection
+  
+  meta inline:no function t_vec__ref_t_vec__content__projection
+  
+  function   t_vec__havoc (x : t_vec__ref) requires {  } ensures  {  }
+    returns unit
+
+end
+
+(* Module for axiomatizing type "S1b" defined at pkg_substracttenaddten.adb:3, created in Gnat2Why.Types.Translate_Type *)
+module Pkg_substracttenaddten__substracttenaddten__S1b
+  
+  use export Pkg_substracttenaddten__t_vec
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  type s1b  = --pp_transparent_type_definition NOT IMPLEMENTED
+  
+  type s1b__ref  = { mutable s1b__content : s1b }
+  
+  function   s1b__ref_s1b__content__projection (a : s1b__ref) requires {  }
+    ensures  {  } returns s1b = a.s1b__content
+  
+  meta model_projection function s1b__ref_s1b__content__projection
+  
+  meta inline:no function s1b__ref_s1b__content__projection
+  
+  function   s1b__havoc (x : s1b__ref) requires {  } ensures  {  } returns
+    unit
+
+end
+
+(* Module for defining the loop exit exception for the loop "L_1" defined at pkg_substracttenaddten.adb:11, created in Gnat2Why.Decls.Translate_Loop_Entity *)
+module Pkg_substracttenaddten__substracttenaddten__L_1
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  --pp_exception_declaration NOT IMPLEMENTED
+
+end
+
+(* Module for axiomatizing type "T2b" defined at pkg_substracttenaddten.adb:11, created in Gnat2Why.Types.Translate_Type *)
+module Pkg_substracttenaddten__substracttenaddten__L_1__T2b
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use import int.Int
+  use        Standard__integer
+  use        Standard__integer__rep
+  
+  type t2b  = --pp_transparent_type_definition NOT IMPLEMENTED
+  
+  function   dynamic_property (first_int : int last_int : int x : int)
+    requires { True } ensures  { True } returns
+     = ((first_int <= x) /\ (x <= last_int))
+  
+  clone export ada__model.Dynamic_Discrete with axiom . type t = t2b,
+    type rep_type = int,
+    function base_to_rep = Standard__integer__rep.to_rep,
+    function base_of_rep = Standard__integer__rep.of_rep,
+    predicate dynamic_property = dynamic_property
+  
+  type t2b__ref  = { mutable t2b__content : t2b }
+  
+  function   t2b__ref_t2b__content__projection (a : t2b__ref) requires {  }
+    ensures  {  } returns t2b = a.t2b__content
+  
+  meta model_projection function t2b__ref_t2b__content__projection
+  
+  meta inline:no function t2b__ref_t2b__content__projection
+  
+  function   t2b__havoc (x : t2b__ref) requires {  } ensures  {  } returns
+    unit
+
+end
+
+(* Module for defining the loop exit exception for the loop "L_2" defined at pkg_substracttenaddten.adb:17, created in Gnat2Why.Decls.Translate_Loop_Entity *)
+module Pkg_substracttenaddten__substracttenaddten__L_2
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  --pp_exception_declaration NOT IMPLEMENTED
+
+end
+
+(* Module for axiomatizing type "T7b" defined at pkg_substracttenaddten.adb:17, created in Gnat2Why.Types.Translate_Type *)
+module Pkg_substracttenaddten__substracttenaddten__L_2__T7b
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use import int.Int
+  use        Standard__integer
+  use        Standard__integer__rep
+  
+  type t7b  = --pp_transparent_type_definition NOT IMPLEMENTED
+  
+  function   dynamic_property (first_int : int last_int : int x : int)
+    requires { True } ensures  { True } returns
+     = ((first_int <= x) /\ (x <= last_int))
+  
+  clone export ada__model.Dynamic_Discrete with axiom . type t = t7b,
+    type rep_type = int,
+    function base_to_rep = Standard__integer__rep.to_rep,
+    function base_of_rep = Standard__integer__rep.of_rep,
+    predicate dynamic_property = dynamic_property
+  
+  type t7b__ref  = { mutable t7b__content : t7b }
+  
+  function   t7b__ref_t7b__content__projection (a : t7b__ref) requires {  }
+    ensures  {  } returns t7b = a.t7b__content
+  
+  meta model_projection function t7b__ref_t7b__content__projection
+  
+  meta inline:no function t7b__ref_t7b__content__projection
+  
+  function   t7b__havoc (x : t7b__ref) requires {  } ensures  {  } returns
+    unit
+
+end
+
+(* Module giving axioms for type "integer", created in Gnat2Why.Types.Generate_Type_Completion *)
+module Standard__integer___axiom
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use import int.Int
+  use        Standard__integer
+  
+  function   dynamic_invariant
+    (([mlw:proxy_symbol] [introduced] temp___expr_18) : int
+    ([mlw:proxy_symbol] [introduced] temp___is_init_14) : bool
+    ([mlw:proxy_symbol] [introduced] temp___skip_constant_15) : bool
+    ([mlw:proxy_symbol] [introduced] temp___do_toplevel_16) : bool
+    ([mlw:proxy_symbol] [introduced] temp___do_typ_inv_17) : bool) requires
+    { True } ensures  { True } returns
+     = (if
+       ((([mlw:proxy_symbol] [introduced] temp___is_init_14) = True) \/
+          (Standard__integer.first <= Standard__integer.last))
+       then
+       (Standard__integer.dynamic_property Standard__integer.first
+          Standard__integer.last ([mlw:proxy_symbol]
+          [introduced] temp___expr_18))
+       )
+  
+  function   default_initial_assumption
+    (([mlw:proxy_symbol] [introduced] temp___expr_19) : int
+    ([mlw:proxy_symbol] [introduced] temp___skip_top_level_20) : bool)
+    requires { True } ensures  { True } returns  = True
+
+end
+
+(* Module giving axioms for type "positive", created in Gnat2Why.Types.Generate_Type_Completion *)
+module Standard__positive___axiom
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use import int.Int
+  use        Standard__positive
+  
+  function   dynamic_invariant
+    (([mlw:proxy_symbol] [introduced] temp___expr_53) : int
+    ([mlw:proxy_symbol] [introduced] temp___is_init_49) : bool
+    ([mlw:proxy_symbol] [introduced] temp___skip_constant_50) : bool
+    ([mlw:proxy_symbol] [introduced] temp___do_toplevel_51) : bool
+    ([mlw:proxy_symbol] [introduced] temp___do_typ_inv_52) : bool) requires
+    { True } ensures  { True } returns
+     = (if
+       ((([mlw:proxy_symbol] [introduced] temp___is_init_49) = True) \/
+          (Standard__positive.first <= Standard__positive.last))
+       then
+       (Standard__positive.dynamic_property Standard__positive.first
+          Standard__positive.last ([mlw:proxy_symbol]
+          [introduced] temp___expr_53))
+       )
+  
+  function   default_initial_assumption
+    (([mlw:proxy_symbol] [introduced] temp___expr_54) : int
+    ([mlw:proxy_symbol] [introduced] temp___skip_top_level_55) : bool)
+    requires { True } ensures  { True } returns  = True
+
+end
+
+(* Module giving an empty axiom for the entity "i" defined at pkg_substracttenaddten.adb:11, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Pkg_substracttenaddten__substracttenaddten__L_1__i___axiom
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  
+
+end
+
+(* Module giving an empty axiom for the entity "j" defined at pkg_substracttenaddten.adb:17, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Pkg_substracttenaddten__substracttenaddten__L_2__j___axiom
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  
+
+end
+
+(* Module giving an empty axiom for the entity "L_1" defined at pkg_substracttenaddten.adb:11, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Pkg_substracttenaddten__substracttenaddten__L_1___axiom
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  
+
+end
+
+(* Module giving an empty axiom for the entity "L_2" defined at pkg_substracttenaddten.adb:17, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Pkg_substracttenaddten__substracttenaddten__L_2___axiom
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  
+
+end
+
+(* Module giving axioms for type "t_vec" defined at pkg_substracttenaddten.ads:3, created in Gnat2Why.Types.Generate_Type_Completion *)
+module Pkg_substracttenaddten__t_vec___axiom
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use        Standard__positive
+  use        Pkg_substracttenaddten__t_vec
+  
+  function   dynamic_invariant
+    (([mlw:proxy_symbol]
+    [introduced] temp___expr_166) : Pkg_substracttenaddten__t_vec.t_vec
+    ([mlw:proxy_symbol] [introduced] temp___is_init_162) : bool
+    ([mlw:proxy_symbol] [introduced] temp___skip_constant_163) : bool
+    ([mlw:proxy_symbol] [introduced] temp___do_toplevel_164) : bool
+    ([mlw:proxy_symbol] [introduced] temp___do_typ_inv_165) : bool) requires
+    { True } ensures  { True } returns
+     = (if ([mlw:proxy_symbol] [introduced] temp___skip_constant_163) then
+       True  else
+       (Pkg_substracttenaddten__t_vec.dynamic_property
+          Standard__positive.first Standard__positive.last
+          (Pkg_substracttenaddten__t_vec.first ([mlw:proxy_symbol]
+             [introduced] temp___expr_166))
+          (Pkg_substracttenaddten__t_vec.last ([mlw:proxy_symbol]
+             [introduced] temp___expr_166))))
+
+end
+
+(* Module giving an empty axiom for the entity "vec" defined at pkg_substracttenaddten.ads:5, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Pkg_substracttenaddten__substracttenaddten__vec___axiom
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  
+
+end
+
+(* Module giving axioms for type "S1b" defined at pkg_substracttenaddten.adb:3, created in Gnat2Why.Types.Generate_Type_Completion *)
+module Pkg_substracttenaddten__substracttenaddten__S1b___axiom
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use        Standard__integer__rep
+  use        Pkg_substracttenaddten__substracttenaddten__vec
+  use        Pkg_substracttenaddten__substracttenaddten__S1b
+  
+  function   dynamic_invariant
+    (([mlw:proxy_symbol]
+    [introduced] temp___expr_185) : Pkg_substracttenaddten__substracttenaddten__S1b.s1b
+    ([mlw:proxy_symbol] [introduced] temp___is_init_181) : bool
+    ([mlw:proxy_symbol] [introduced] temp___skip_constant_182) : bool
+    ([mlw:proxy_symbol] [introduced] temp___do_toplevel_183) : bool
+    ([mlw:proxy_symbol] [introduced] temp___do_typ_inv_184) : bool) requires
+    { True } ensures  { True } returns
+     = (if ([mlw:proxy_symbol] [introduced] temp___skip_constant_182) then
+       True  else
+       (((Pkg_substracttenaddten__substracttenaddten__S1b.dynamic_property
+            (Standard__integer__rep.to_rep
+               Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+            (Standard__integer__rep.to_rep
+               Pkg_substracttenaddten__substracttenaddten__vec.vec__last)
+            (Pkg_substracttenaddten__substracttenaddten__S1b.first
+               ([mlw:proxy_symbol] [introduced] temp___expr_185))
+            (Pkg_substracttenaddten__substracttenaddten__S1b.last
+               ([mlw:proxy_symbol] [introduced] temp___expr_185))) /\
+           ((Pkg_substracttenaddten__substracttenaddten__S1b.first
+               ([mlw:proxy_symbol] [introduced] temp___expr_185))
+              = (Standard__integer__rep.to_rep
+                   Pkg_substracttenaddten__substracttenaddten__vec.vec__first)))
+          /\
+          ((Pkg_substracttenaddten__substracttenaddten__S1b.last
+              ([mlw:proxy_symbol] [introduced] temp___expr_185))
+             = (Standard__integer__rep.to_rep
+                  Pkg_substracttenaddten__substracttenaddten__vec.vec__last))))
+  
+  function   default_initial_assumption
+    (([mlw:proxy_symbol]
+    [introduced] temp___expr_187) : Pkg_substracttenaddten__substracttenaddten__S1b.s1b
+    ([mlw:proxy_symbol] [introduced] temp___skip_top_level_188) : bool)
+    requires { True } ensures  { True } returns
+     = (True /\
+          ((Pkg_substracttenaddten__substracttenaddten__S1b.first
+              ([mlw:proxy_symbol] [introduced] temp___expr_187))
+             = (Standard__integer__rep.to_rep
+                  Pkg_substracttenaddten__substracttenaddten__vec.vec__first))
+          /\
+          ((Pkg_substracttenaddten__substracttenaddten__S1b.last
+              ([mlw:proxy_symbol] [introduced] temp___expr_187))
+             = (Standard__integer__rep.to_rep
+                  Pkg_substracttenaddten__substracttenaddten__vec.vec__last)))
+
+end
+
+(* Module giving axioms for type "T2b" defined at pkg_substracttenaddten.adb:11, created in Gnat2Why.Types.Generate_Type_Completion *)
+module Pkg_substracttenaddten__substracttenaddten__L_1__T2b___axiom
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  
+
+end
+
+(* Module giving axioms for type "T7b" defined at pkg_substracttenaddten.adb:17, created in Gnat2Why.Types.Generate_Type_Completion *)
+module Pkg_substracttenaddten__substracttenaddten__L_2__T7b___axiom
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  
+
+end
+
+(* Module for checking contracts and absence of run-time errors in subprogram "substracttenaddten" defined at pkg_substracttenaddten.ads:5, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
+module Pkg_substracttenaddten__substracttenaddten__subprogram_def
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use import int.Int
+  use        _gnatprove_standard.Main
+  use        _gnatprove_standard.Integer
+  use        _gnatprove_standard.Int_Division
+  use        _gnatprove_standard.Boolean
+  use        Standard__integer
+  use        Standard__integer
+  use        Standard__integer__rep
+  use        Standard__positive
+  use        Standard__integer__rep
+  use        Array__Int__Standard__integer
+  use        Pkg_substracttenaddten__substracttenaddten__vec
+  use        Pkg_substracttenaddten__substracttenaddten__L_1__i
+  use        Pkg_substracttenaddten__substracttenaddten__L_2__j
+  use        Array__Int__Standard__integer
+  use        Pkg_substracttenaddten__t_vec
+  use        Pkg_substracttenaddten__substracttenaddten__S1b
+  use        Pkg_substracttenaddten__substracttenaddten__L_1
+  use        Pkg_substracttenaddten__substracttenaddten__L_1__T2b
+  use        Pkg_substracttenaddten__substracttenaddten__L_2
+  use        Pkg_substracttenaddten__substracttenaddten__L_2__T7b
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Standard__integer___axiom
+  use        Standard__positive___axiom
+  use        Standard__integer___axiom
+  use        Pkg_substracttenaddten__substracttenaddten__L_1__i___axiom
+  use        Pkg_substracttenaddten__substracttenaddten__L_2__j___axiom
+  use        Pkg_substracttenaddten__substracttenaddten__L_1___axiom
+  use        Pkg_substracttenaddten__substracttenaddten__L_2___axiom
+  use        Pkg_substracttenaddten__t_vec___axiom
+  use        Pkg_substracttenaddten__substracttenaddten__vec___axiom
+  use        Pkg_substracttenaddten__substracttenaddten__S1b___axiom
+  use        Pkg_substracttenaddten__substracttenaddten__L_1__T2b___axiom
+  use        Pkg_substracttenaddten__substracttenaddten__L_2__T7b___axiom
+  
+  function [GP_Subp:pkg_substracttenaddten.ads:5]
+    [sloc:pkg_substracttenaddten.ads:5] def (__void_param : unit) requires
+    { True } ensures 
+    { ([sloc:pkg_substracttenaddten.ads:26] ([GP_Reason:VC_POSTCONDITION]
+                                            [comment:       Post => (if Vec'Length = 1 then                ^ pkg_substracttenaddten.ads:26:16:VC_POSTCONDITION]
+                                            [GP_Id:45]
+                                            [GP_Sloc:pkg_substracttenaddten.ads:26:16]
+                                            [model_vc_post]
+                                            [GP_Shape:pragargs__if] (if
+                                                                    (
+                                                                    (_gnatprove_standard.Integer.length
+                                                                    (Standard__integer__rep.to_rep
+                                                                    Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                                                                    (Standard__integer__rep.to_rep
+                                                                    Pkg_substracttenaddten__substracttenaddten__vec.vec__last))
+                                                                    = 1) then
+                                                                    ([GP_Pretty_Ada:1105]
+                                                                    [GP_Sloc:pkg_substracttenaddten.ads:27:19] (
+                                                                    (Standard__integer__rep.to_rep
+                                                                    (let ([mlw:proxy_symbol]
+                                                                    [introduced] temp___250)
+                                                                    =
+                                                                    (Pkg_substracttenaddten__substracttenaddten__S1b.of_array
+                                                                    !Pkg_substracttenaddten__substracttenaddten__vec.vec
+                                                                    (Standard__integer__rep.to_rep
+                                                                    Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                                                                    (Standard__integer__rep.to_rep
+                                                                    Pkg_substracttenaddten__substracttenaddten__vec.vec__last))
+                                                                    in
+                                                                    (Array__Int__Standard__integer.get
+                                                                    (Pkg_substracttenaddten__substracttenaddten__S1b.to_array
+                                                                    ([mlw:proxy_symbol]
+                                                                    [introduced] temp___250))
+                                                                    1)))
+                                                                    = (
+                                                                    (Standard__integer__rep.to_rep
+                                                                    (let ([mlw:proxy_symbol]
+                                                                    [introduced] temp___251)
+                                                                    =
+                                                                    --pp_tagged NOT IMPLEMENTED
+                                                                    in
+                                                                    (Array__Int__Standard__integer.get
+                                                                    (Pkg_substracttenaddten__substracttenaddten__S1b.to_array
+                                                                    ([mlw:proxy_symbol]
+                                                                    [introduced] temp___251))
+                                                                    1))) - 10)))
+                                                                     else
+                                                                    (
+                                                                    --pp_universal_quantif NOT IMPLEMENTED
+                                                                    /\
+                                                                    --pp_universal_quantif NOT IMPLEMENTED)))) }
+    returns
+     = (* Assume dynamic invariants of inputs of the subprogram pkg_substracttenaddten.ads:5 *);
+        assume
+        { (if False then True  else
+          (Pkg_substracttenaddten__t_vec.dynamic_property
+             Standard__positive.first Standard__positive.last
+             (Pkg_substracttenaddten__substracttenaddten__S1b.first
+                (Pkg_substracttenaddten__substracttenaddten__S1b.of_array
+                   !Pkg_substracttenaddten__substracttenaddten__vec.vec
+                   (Standard__integer__rep.to_rep
+                      Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                   (Standard__integer__rep.to_rep
+                      Pkg_substracttenaddten__substracttenaddten__vec.vec__last)))
+             (Pkg_substracttenaddten__substracttenaddten__S1b.last
+                (Pkg_substracttenaddten__substracttenaddten__S1b.of_array
+                   !Pkg_substracttenaddten__substracttenaddten__vec.vec
+                   (Standard__integer__rep.to_rep
+                      Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                   (Standard__integer__rep.to_rep
+                      Pkg_substracttenaddten__substracttenaddten__vec.vec__last))))) };
+        (* Assume moved pointers in outputs of the subprogram pkg_substracttenaddten.ads:5 *);
+        (* Check for RTE in the Pre of the subprogram pkg_substracttenaddten.ads:5 *);
+        abstract ensures
+        { True } begin  (let _ =
+                       ((((abstract ensures
+                             { True } begin  (let _ =
+                                            (Pkg_substracttenaddten__substracttenaddten__S1b.of_array
+                                               !Pkg_substracttenaddten__substracttenaddten__vec.vec
+                                               (Standard__integer__rep.to_rep
+                                                  Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                                               (Standard__integer__rep.to_rep
+                                                  Pkg_substracttenaddten__substracttenaddten__vec.vec__last))
+                                            in ())  end;
+                             (_gnatprove_standard.Integer.length
+                                (Standard__integer__rep.to_rep
+                                   Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                                (Standard__integer__rep.to_rep
+                                   Pkg_substracttenaddten__substracttenaddten__vec.vec__last))
+                             > 0) &&
+                            ((Standard__integer__rep.to_rep abstract ensures
+                                { True } begin  (let _ =
+                                               (Pkg_substracttenaddten__substracttenaddten__S1b.of_array
+                                                  !Pkg_substracttenaddten__substracttenaddten__vec.vec
+                                                  (Standard__integer__rep.to_rep
+                                                     Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                                                  (Standard__integer__rep.to_rep
+                                                     Pkg_substracttenaddten__substracttenaddten__vec.vec__last))
+                                               in ())  end;
+                                Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                               = 1)) &&
+                           ((Standard__integer__rep.to_rep abstract ensures
+                               { True } begin  (let _ =
+                                              (Pkg_substracttenaddten__substracttenaddten__S1b.of_array
+                                                 !Pkg_substracttenaddten__substracttenaddten__vec.vec
+                                                 (Standard__integer__rep.to_rep
+                                                    Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                                                 (Standard__integer__rep.to_rep
+                                                    Pkg_substracttenaddten__substracttenaddten__vec.vec__last))
+                                              in ())  end;
+                               Pkg_substracttenaddten__substracttenaddten__vec.vec__last)
+                              < 2147483647)) &&
+                          (if
+                          (abstract ensures
+                             { True } begin  (let _ =
+                                            (Pkg_substracttenaddten__substracttenaddten__S1b.of_array
+                                               !Pkg_substracttenaddten__substracttenaddten__vec.vec
+                                               (Standard__integer__rep.to_rep
+                                                  Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                                               (Standard__integer__rep.to_rep
+                                                  Pkg_substracttenaddten__substracttenaddten__vec.vec__last))
+                                            in ())  end;
+                             (_gnatprove_standard.Integer.length
+                                (Standard__integer__rep.to_rep
+                                   Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                                (Standard__integer__rep.to_rep
+                                   Pkg_substracttenaddten__substracttenaddten__vec.vec__last))
+                             = 1)
+                          then
+                          ((Standard__integer__rep.to_rep
+                              (let ([mlw:proxy_symbol]
+                              [introduced] temp___235) =
+                              (Pkg_substracttenaddten__substracttenaddten__S1b.of_array
+                                 !Pkg_substracttenaddten__substracttenaddten__vec.vec
+                                 (Standard__integer__rep.to_rep
+                                    Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                                 (Standard__integer__rep.to_rep
+                                    Pkg_substracttenaddten__substracttenaddten__vec.vec__last))
+                              in
+                              (Array__Int__Standard__integer.get
+                                 (Pkg_substracttenaddten__substracttenaddten__S1b.to_array
+                                    ([mlw:proxy_symbol]
+                                    [introduced] temp___235))
+                                 (let ([mlw:proxy_symbol]
+                                 [introduced] temp___236) = 1 in assert
+                                 { ([sloc:pkg_substracttenaddten.ads:16] 
+                                   ([GP_Sloc:pkg_substracttenaddten.ads:16:22]
+                                   [comment:                 Vec(1) >= Integer'First + 10                      ^ pkg_substracttenaddten.ads:16:22:VC_INDEX_CHECK]
+                                   [vc:annotation] [GP_Id:36]
+                                   [GP_Reason:VC_INDEX_CHECK]
+                                   [GP_Shape:pragargs__andthen__if__cmp__ixdcomp] (
+                                   ((Pkg_substracttenaddten__substracttenaddten__S1b.first
+                                       ([mlw:proxy_symbol]
+                                       [introduced] temp___235))
+                                      <= ([mlw:proxy_symbol]
+                                      [introduced] temp___236)) /\
+                                     (([mlw:proxy_symbol]
+                                        [introduced] temp___236)
+                                        <= (Pkg_substracttenaddten__substracttenaddten__S1b.last
+                                              ([mlw:proxy_symbol]
+                                              [introduced] temp___235)))))) };
+                                 ([mlw:proxy_symbol]
+                                 [introduced] temp___236))))) >= -2147483638)
+                           else
+                          ((let i = ( any  pre {} post {} return int) in
+                          (if
+                          (_gnatprove_standard.Boolean.andb (1 <= i)
+                             (i
+                                <= ([sloc:pkg_substracttenaddten.ads:18] 
+                                   ([GP_Shape:pragargs__andthen__if__andthen__forall__range__div]
+                                   [GP_Sloc:pkg_substracttenaddten.ads:18:45]
+                                   [vc:annotation]
+                                   [GP_Reason:VC_DIVISION_CHECK] [GP_Id:38]
+                                   [comment:               (for all i in 1 .. Vec'Length/2 =>                                             ^ pkg_substracttenaddten.ads:18:45:VC_DIVISION_CHECK] (
+                                   _gnatprove_standard.Int_Division.div_
+                                     ([sloc:pkg_substracttenaddten.ads:18] 
+                                     ([comment:               (for all i in 1 .. Vec'Length/2 =>                                      ^ pkg_substracttenaddten.ads:18:38:VC_RANGE_CHECK]
+                                     [GP_Shape:pragargs__andthen__if__andthen__forall__range__div__typeconv__length_ref]
+                                     [vc:annotation] [GP_Id:37]
+                                     [GP_Reason:VC_RANGE_CHECK]
+                                     [GP_Sloc:pkg_substracttenaddten.ads:18:38] (
+                                     Standard__integer.range_check_ abstract
+                                       ensures
+                                       { True } begin  (let _ =
+                                                      (Pkg_substracttenaddten__substracttenaddten__S1b.of_array
+                                                         !Pkg_substracttenaddten__substracttenaddten__vec.vec
+                                                         (Standard__integer__rep.to_rep
+                                                            Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                                                         (Standard__integer__rep.to_rep
+                                                            Pkg_substracttenaddten__substracttenaddten__vec.vec__last))
+                                                      in ())  end;
+                                       (_gnatprove_standard.Integer.length
+                                          (Standard__integer__rep.to_rep
+                                             Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                                          (Standard__integer__rep.to_rep
+                                             Pkg_substracttenaddten__substracttenaddten__vec.vec__last)))))
+                                     2)))))
+                          then
+                          abstract ensures
+                          { True } begin  (let _ =
+                                         (if
+                                         ((Standard__integer__rep.to_rep
+                                             (let ([mlw:proxy_symbol]
+                                             [introduced] temp___238) =
+                                             (Pkg_substracttenaddten__substracttenaddten__S1b.of_array
+                                                !Pkg_substracttenaddten__substracttenaddten__vec.vec
+                                                (Standard__integer__rep.to_rep
+                                                   Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                                                (Standard__integer__rep.to_rep
+                                                   Pkg_substracttenaddten__substracttenaddten__vec.vec__last))
+                                             in
+                                             (Array__Int__Standard__integer.get
+                                                (Pkg_substracttenaddten__substracttenaddten__S1b.to_array
+                                                   ([mlw:proxy_symbol]
+                                                   [introduced] temp___238))
+                                                assert
+                                                { ([sloc:pkg_substracttenaddten.ads:19] 
+                                                  ([GP_Id:40]
+                                                  [GP_Sloc:pkg_substracttenaddten.ads:19:27]
+                                                  [vc:annotation]
+                                                  [GP_Reason:VC_INDEX_CHECK]
+                                                  [GP_Shape:pragargs__andthen__if__andthen__forall__if__cmp__ixdcomp]
+                                                  [comment:                  (if Vec(i) < 0 then                           ^ pkg_substracttenaddten.ads:19:27:VC_INDEX_CHECK] (
+                                                  ((Pkg_substracttenaddten__substracttenaddten__S1b.first
+                                                      ([mlw:proxy_symbol]
+                                                      [introduced] temp___238))
+                                                     <= i) /\
+                                                    (i
+                                                       <= (Pkg_substracttenaddten__substracttenaddten__S1b.last
+                                                             ([mlw:proxy_symbol]
+                                                             [introduced] temp___238)))))) };
+                                                i))) < 0)
+                                         then
+                                         ((Standard__integer__rep.to_rep
+                                             (let ([mlw:proxy_symbol]
+                                             [introduced] temp___237) =
+                                             (Pkg_substracttenaddten__substracttenaddten__S1b.of_array
+                                                !Pkg_substracttenaddten__substracttenaddten__vec.vec
+                                                (Standard__integer__rep.to_rep
+                                                   Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                                                (Standard__integer__rep.to_rep
+                                                   Pkg_substracttenaddten__substracttenaddten__vec.vec__last))
+                                             in
+                                             (Array__Int__Standard__integer.get
+                                                (Pkg_substracttenaddten__substracttenaddten__S1b.to_array
+                                                   ([mlw:proxy_symbol]
+                                                   [introduced] temp___237))
+                                                assert
+                                                { ([sloc:pkg_substracttenaddten.ads:20] 
+                                                  ([vc:annotation] [GP_Id:39]
+                                                  [GP_Reason:VC_INDEX_CHECK]
+                                                  [GP_Sloc:pkg_substracttenaddten.ads:20:26]
+                                                  [GP_Shape:pragargs__andthen__if__andthen__forall__if__cmp__ixdcomp]
+                                                  [comment:                     Vec(i) >= Integer'First + 10))                          ^ pkg_substracttenaddten.ads:20:26:VC_INDEX_CHECK] (
+                                                  ((Pkg_substracttenaddten__substracttenaddten__S1b.first
+                                                      ([mlw:proxy_symbol]
+                                                      [introduced] temp___237))
+                                                     <= i) /\
+                                                    (i
+                                                       <= (Pkg_substracttenaddten__substracttenaddten__S1b.last
+                                                             ([mlw:proxy_symbol]
+                                                             [introduced] temp___237)))))) };
+                                                i))) >= -2147483638)
+                                          else
+                                         (_gnatprove_standard.Boolean.of_int
+                                            1))
+                                         in ())  end
+                          ));
+                          ( any  pre {} post
+                          {((result = True) <->
+                              --pp_universal_quantif NOT IMPLEMENTED)}
+                          return bool) && (let j =
+                          ( any  pre {} post {} return int) in
+                          (if
+                          (_gnatprove_standard.Boolean.andb
+                             ((([sloc:pkg_substracttenaddten.ads:22] 
+                               ([GP_Shape:pragargs__andthen__if__andthen__forall__range__add__div]
+                               [GP_Id:42] [vc:annotation]
+                               [GP_Reason:VC_DIVISION_CHECK]
+                               [comment:                (for all j in (Vec'Length/2) + 1 .. Vec'Last =>                                          ^ pkg_substracttenaddten.ads:22:42:VC_DIVISION_CHECK]
+                               [GP_Sloc:pkg_substracttenaddten.ads:22:42] (
+                               _gnatprove_standard.Int_Division.div_
+                                 ([sloc:pkg_substracttenaddten.ads:22] 
+                                 ([GP_Id:41]
+                                 [GP_Sloc:pkg_substracttenaddten.ads:22:35]
+                                 [comment:                (for all j in (Vec'Length/2) + 1 .. Vec'Last =>                                   ^ pkg_substracttenaddten.ads:22:35:VC_RANGE_CHECK]
+                                 [vc:annotation] [GP_Reason:VC_RANGE_CHECK]
+                                 [GP_Shape:pragargs__andthen__if__andthen__forall__range__add__div__typeconv__length_ref] (
+                                 Standard__integer.range_check_ abstract
+                                   ensures
+                                   { True } begin  (let _ =
+                                                  (Pkg_substracttenaddten__substracttenaddten__S1b.of_array
+                                                     !Pkg_substracttenaddten__substracttenaddten__vec.vec
+                                                     (Standard__integer__rep.to_rep
+                                                        Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                                                     (Standard__integer__rep.to_rep
+                                                        Pkg_substracttenaddten__substracttenaddten__vec.vec__last))
+                                                  in ())  end;
+                                   (_gnatprove_standard.Integer.length
+                                      (Standard__integer__rep.to_rep
+                                         Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                                      (Standard__integer__rep.to_rep
+                                         Pkg_substracttenaddten__substracttenaddten__vec.vec__last)))))
+                                 2))) + 1) <= j)
+                             (j
+                                <= (Standard__integer__rep.to_rep abstract
+                                      ensures
+                                      { True } begin  (let _ =
+                                                     (Pkg_substracttenaddten__substracttenaddten__S1b.of_array
+                                                        !Pkg_substracttenaddten__substracttenaddten__vec.vec
+                                                        (Standard__integer__rep.to_rep
+                                                           Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                                                        (Standard__integer__rep.to_rep
+                                                           Pkg_substracttenaddten__substracttenaddten__vec.vec__last))
+                                                     in ())  end;
+                                      Pkg_substracttenaddten__substracttenaddten__vec.vec__last)))
+                          then
+                          abstract ensures
+                          { True } begin  (let _ =
+                                         (if
+                                         ((Standard__integer__rep.to_rep
+                                             (let ([mlw:proxy_symbol]
+                                             [introduced] temp___242) =
+                                             (Pkg_substracttenaddten__substracttenaddten__S1b.of_array
+                                                !Pkg_substracttenaddten__substracttenaddten__vec.vec
+                                                (Standard__integer__rep.to_rep
+                                                   Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                                                (Standard__integer__rep.to_rep
+                                                   Pkg_substracttenaddten__substracttenaddten__vec.vec__last))
+                                             in
+                                             (Array__Int__Standard__integer.get
+                                                (Pkg_substracttenaddten__substracttenaddten__S1b.to_array
+                                                   ([mlw:proxy_symbol]
+                                                   [introduced] temp___242))
+                                                assert
+                                                { ([sloc:pkg_substracttenaddten.ads:23] 
+                                                  ([GP_Sloc:pkg_substracttenaddten.ads:23:28]
+                                                  [GP_Id:44]
+                                                  [comment:                   (if Vec(j) > 0 then                            ^ pkg_substracttenaddten.ads:23:28:VC_INDEX_CHECK]
+                                                  [vc:annotation]
+                                                  [GP_Reason:VC_INDEX_CHECK]
+                                                  [GP_Shape:pragargs__andthen__if__andthen__forall__if__cmp__ixdcomp] (
+                                                  ((Pkg_substracttenaddten__substracttenaddten__S1b.first
+                                                      ([mlw:proxy_symbol]
+                                                      [introduced] temp___242))
+                                                     <= j) /\
+                                                    (j
+                                                       <= (Pkg_substracttenaddten__substracttenaddten__S1b.last
+                                                             ([mlw:proxy_symbol]
+                                                             [introduced] temp___242)))))) };
+                                                j))) > 0)
+                                         then
+                                         ((Standard__integer__rep.to_rep
+                                             (let ([mlw:proxy_symbol]
+                                             [introduced] temp___241) =
+                                             (Pkg_substracttenaddten__substracttenaddten__S1b.of_array
+                                                !Pkg_substracttenaddten__substracttenaddten__vec.vec
+                                                (Standard__integer__rep.to_rep
+                                                   Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                                                (Standard__integer__rep.to_rep
+                                                   Pkg_substracttenaddten__substracttenaddten__vec.vec__last))
+                                             in
+                                             (Array__Int__Standard__integer.get
+                                                (Pkg_substracttenaddten__substracttenaddten__S1b.to_array
+                                                   ([mlw:proxy_symbol]
+                                                   [introduced] temp___241))
+                                                assert
+                                                { ([sloc:pkg_substracttenaddten.ads:24] 
+                                                  ([GP_Id:43] [vc:annotation]
+                                                  [GP_Sloc:pkg_substracttenaddten.ads:24:27]
+                                                  [comment:                      Vec(j) <= Integer'Last - 10))),                           ^ pkg_substracttenaddten.ads:24:27:VC_INDEX_CHECK]
+                                                  [GP_Reason:VC_INDEX_CHECK]
+                                                  [GP_Shape:pragargs__andthen__if__andthen__forall__if__cmp__ixdcomp] (
+                                                  ((Pkg_substracttenaddten__substracttenaddten__S1b.first
+                                                      ([mlw:proxy_symbol]
+                                                      [introduced] temp___241))
+                                                     <= j) /\
+                                                    (j
+                                                       <= (Pkg_substracttenaddten__substracttenaddten__S1b.last
+                                                             ([mlw:proxy_symbol]
+                                                             [introduced] temp___241)))))) };
+                                                j))) <= 2147483637)
+                                          else
+                                         (_gnatprove_standard.Boolean.of_int
+                                            1))
+                                         in ())  end
+                          ));
+                          ( any  pre {} post
+                          {((result = True) <->
+                              --pp_universal_quantif NOT IMPLEMENTED)} return
+                          bool)))) in
+())  end;
+(* Assume Pre of the subprogram pkg_substracttenaddten.ads:5 *);
+assume
+{ (((([GP_Pretty_Ada:1002] ((_gnatprove_standard.Integer.length
+                               (Standard__integer__rep.to_rep
+                                  Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                               (Standard__integer__rep.to_rep
+                                  Pkg_substracttenaddten__substracttenaddten__vec.vec__last))
+                              > 0)) /\
+       ([GP_Pretty_Ada:1008] ((Standard__integer__rep.to_rep
+                                 Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                                = 1))) /\
+      ([GP_Pretty_Ada:1014] ((Standard__integer__rep.to_rep
+                                Pkg_substracttenaddten__substracttenaddten__vec.vec__last)
+                               < 2147483647))) /\
+     (if
+     ((_gnatprove_standard.Integer.length
+         (Standard__integer__rep.to_rep
+            Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+         (Standard__integer__rep.to_rep
+            Pkg_substracttenaddten__substracttenaddten__vec.vec__last)) = 1)
+     then
+     ([GP_Pretty_Ada:1027] ((Standard__integer__rep.to_rep
+                               (let ([mlw:proxy_symbol]
+                               [introduced] temp___245) =
+                               (Pkg_substracttenaddten__substracttenaddten__S1b.of_array
+                                  !Pkg_substracttenaddten__substracttenaddten__vec.vec
+                                  (Standard__integer__rep.to_rep
+                                     Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                                  (Standard__integer__rep.to_rep
+                                     Pkg_substracttenaddten__substracttenaddten__vec.vec__last))
+                               in
+                               (Array__Int__Standard__integer.get
+                                  (Pkg_substracttenaddten__substracttenaddten__S1b.to_array
+                                     ([mlw:proxy_symbol]
+                                     [introduced] temp___245)) 1)))
+                              >= -2147483638))
+      else
+     (--pp_universal_quantif NOT IMPLEMENTED /\
+        --pp_universal_quantif NOT IMPLEMENTED))) };
+(let ([mlw:proxy_symbol] [introduced] temp___old_231) =
+(Pkg_substracttenaddten__substracttenaddten__S1b.of_array
+   !Pkg_substracttenaddten__substracttenaddten__vec.vec
+   (Standard__integer__rep.to_rep
+      Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+   (Standard__integer__rep.to_rep
+      Pkg_substracttenaddten__substracttenaddten__vec.vec__last)) in
+(let ([mlw:proxy_symbol] [introduced] temp___old_228) =
+(Pkg_substracttenaddten__substracttenaddten__S1b.of_array
+   !Pkg_substracttenaddten__substracttenaddten__vec.vec
+   (Standard__integer__rep.to_rep
+      Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+   (Standard__integer__rep.to_rep
+      Pkg_substracttenaddten__substracttenaddten__vec.vec__last)) in
+(let ([mlw:proxy_symbol] [introduced] temp___old_225) =
+(Pkg_substracttenaddten__substracttenaddten__S1b.of_array
+   !Pkg_substracttenaddten__substracttenaddten__vec.vec
+   (Standard__integer__rep.to_rep
+      Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+   (Standard__integer__rep.to_rep
+      Pkg_substracttenaddten__substracttenaddten__vec.vec__last)) in (try
+();
+  ([sloc:pkg_substracttenaddten.adb:3] ());
+  ([sloc:pkg_substracttenaddten.adb:11] ());
+  ([sloc:pkg_substracttenaddten.adb:17] ());
+  ();
+  ([GP_Sloc:pkg_substracttenaddten.adb:7:7] ([sloc:pkg_substracttenaddten.adb:7] 
+                                            (if
+                                            ([sloc:pkg_substracttenaddten.adb:7] ([branch_id=829]
+                                            _gnatprove_standard.Main.spark__branch
+                                            :=
+                                            (abstract ensures
+                                               { True } begin  (let _ =
+                                                              (Pkg_substracttenaddten__substracttenaddten__S1b.of_array
+                                                                 !Pkg_substracttenaddten__substracttenaddten__vec.vec
+                                                                 (Standard__integer__rep.to_rep
+                                                                    Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                                                                 (Standard__integer__rep.to_rep
+                                                                    Pkg_substracttenaddten__substracttenaddten__vec.vec__last))
+                                                              in ())  end;
+                                               (_gnatprove_standard.Integer.length
+                                                  (Standard__integer__rep.to_rep
+                                                     Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                                                  (Standard__integer__rep.to_rep
+                                                     Pkg_substracttenaddten__substracttenaddten__vec.vec__last))
+                                               = 1)));
+                                            ([branch_id=829] _gnatprove_standard.Main.spark__branch).bool__content
+                                            then
+                                            ();
+                                            ([GP_Sloc:pkg_substracttenaddten.adb:8:17] 
+                                            ([sloc:pkg_substracttenaddten.adb:8] (
+                                            Pkg_substracttenaddten__substracttenaddten__vec.vec
+                                            :=
+                                            (Pkg_substracttenaddten__substracttenaddten__S1b.to_array
+                                               (let ([mlw:proxy_symbol]
+                                               [introduced] temp___194) =
+                                               (Pkg_substracttenaddten__substracttenaddten__S1b.of_array
+                                                  !Pkg_substracttenaddten__substracttenaddten__vec.vec
+                                                  (Standard__integer__rep.to_rep
+                                                     Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                                                  (Standard__integer__rep.to_rep
+                                                     Pkg_substracttenaddten__substracttenaddten__vec.vec__last))
+                                               in
+                                               --pp_record_update NOT IMPLEMENTED)))))
+                                             else
+                                            ();
+                                            ([GP_Sloc:pkg_substracttenaddten.adb:11:37] 
+                                            ([sloc:pkg_substracttenaddten.adb:11] (let ([mlw:proxy_symbol]
+                                            [introduced] temp___196) = 
+                                            1 in (let ([mlw:proxy_symbol]
+                                            [introduced] temp___197) =
+                                            ([sloc:pkg_substracttenaddten.adb:11] 
+                                            ([GP_Id:11]
+                                            [GP_Sloc:pkg_substracttenaddten.adb:11:34]
+                                            [vc:annotation]
+                                            [GP_Reason:VC_DIVISION_CHECK]
+                                            [comment:         for i in 1 .. Vec'Length/2 loop                                  ^ pkg_substracttenaddten.adb:11:34:VC_DIVISION_CHECK]
+                                            [GP_Shape:if__L_1_while__range__div] (
+                                            _gnatprove_standard.Int_Division.div_
+                                              ([sloc:pkg_substracttenaddten.adb:11] 
+                                              ([GP_Id:10]
+                                              [comment:         for i in 1 .. Vec'Length/2 loop                           ^ pkg_substracttenaddten.adb:11:27:VC_RANGE_CHECK]
+                                              [vc:annotation]
+                                              [GP_Sloc:pkg_substracttenaddten.adb:11:27]
+                                              [GP_Reason:VC_RANGE_CHECK]
+                                              [GP_Shape:if__L_1_while__range__div__typeconv__length_ref] (
+                                              Standard__integer.range_check_
+                                                abstract ensures
+                                                { True } begin  (let _ =
+                                                               (Pkg_substracttenaddten__substracttenaddten__S1b.of_array
+                                                                  !Pkg_substracttenaddten__substracttenaddten__vec.vec
+                                                                  (Standard__integer__rep.to_rep
+                                                                    Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                                                                  (Standard__integer__rep.to_rep
+                                                                    Pkg_substracttenaddten__substracttenaddten__vec.vec__last))
+                                                               in ())  end;
+                                                (_gnatprove_standard.Integer.length
+                                                   (Standard__integer__rep.to_rep
+                                                      Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                                                   (Standard__integer__rep.to_rep
+                                                      Pkg_substracttenaddten__substracttenaddten__vec.vec__last)))))
+                                              2)))
+                                            in (
+                                            Pkg_substracttenaddten__substracttenaddten__L_1__i.i
+                                            :=
+                                            ([mlw:proxy_symbol]
+                                              [introduced] temp___196));
+                                            (* Translation of an Ada loop from pkg_substracttenaddten.adb:11 *);
+                                            (if
+                                            (_gnatprove_standard.Boolean.andb
+                                               (([mlw:proxy_symbol]
+                                                  [introduced] temp___196)
+                                                  <= !Pkg_substracttenaddten__substracttenaddten__L_1__i.i)
+                                               (!Pkg_substracttenaddten__substracttenaddten__L_1__i.i
+                                                  <= ([mlw:proxy_symbol]
+                                                  [introduced] temp___197)))
+                                            then
+                                            (try
+                                            (let ([model_trace:980'Loop_Entry] temp___loop_entry_206)
+                                              =
+                                              (Pkg_substracttenaddten__substracttenaddten__S1b.of_array
+                                                 !Pkg_substracttenaddten__substracttenaddten__vec.vec
+                                                 (Standard__integer__rep.to_rep
+                                                    Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                                                 (Standard__integer__rep.to_rep
+                                                    Pkg_substracttenaddten__substracttenaddten__vec.vec__last))
+                                              in (let temp___loop_entry_202 =
+                                              (Pkg_substracttenaddten__substracttenaddten__S1b.of_array
+                                                 !Pkg_substracttenaddten__substracttenaddten__vec.vec
+                                                 (Standard__integer__rep.to_rep
+                                                    Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                                                 (Standard__integer__rep.to_rep
+                                                    Pkg_substracttenaddten__substracttenaddten__vec.vec__last))
+                                              in
+                                              (* While loop translating the Ada loop from pkg_substracttenaddten.adb:11 *);
+                                              ([sloc:pkg_substracttenaddten.adb:13] 
+                                              loop
+                                                ();
+                                                ([GP_Sloc:pkg_substracttenaddten.adb:12:20] 
+                                                ([sloc:pkg_substracttenaddten.adb:12] (
+                                                Pkg_substracttenaddten__substracttenaddten__vec.vec
+                                                :=
+                                                (Pkg_substracttenaddten__substracttenaddten__S1b.to_array
+                                                   (let ([mlw:proxy_symbol]
+                                                   [introduced] temp___200) =
+                                                   (Pkg_substracttenaddten__substracttenaddten__S1b.of_array
+                                                      !Pkg_substracttenaddten__substracttenaddten__vec.vec
+                                                      (Standard__integer__rep.to_rep
+                                                         Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                                                      (Standard__integer__rep.to_rep
+                                                         Pkg_substracttenaddten__substracttenaddten__vec.vec__last))
+                                                   in
+                                                   --pp_record_update NOT IMPLEMENTED)))));
+                                                (* Check for absence of RTE in the loop invariant and variant *);
+                                                (let ([mlw:proxy_symbol]
+                                                [introduced] temp___inv_204)
+                                                =
+                                                (let j =
+                                                  ( any  pre {} post {
+                                                    } return int) in
+                                                (if
+                                                (_gnatprove_standard.Boolean.andb
+                                                   (1 <= j)
+                                                   (j
+                                                      <= !Pkg_substracttenaddten__substracttenaddten__L_1__i.i))
+                                                then
+                                                abstract ensures
+                                                { True } begin  (let _ =
+                                                               ((Standard__integer__rep.to_rep
+                                                                   (let ([mlw:proxy_symbol]
+                                                                   [introduced] temp___205)
+                                                                   =
+                                                                   (Pkg_substracttenaddten__substracttenaddten__S1b.of_array
+                                                                    !Pkg_substracttenaddten__substracttenaddten__vec.vec
+                                                                    (Standard__integer__rep.to_rep
+                                                                    Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                                                                    (Standard__integer__rep.to_rep
+                                                                    Pkg_substracttenaddten__substracttenaddten__vec.vec__last))
+                                                                   in
+                                                                   (Array__Int__Standard__integer.get
+                                                                    (Pkg_substracttenaddten__substracttenaddten__S1b.to_array
+                                                                    ([mlw:proxy_symbol]
+                                                                    [introduced] temp___205))
+                                                                    assert
+                                                                    { ([sloc:pkg_substracttenaddten.adb:14] 
+                                                                    ([GP_Shape:if__L_1_while__pragargs__forall__cmp__ixdcomp]
+                                                                    [vc:annotation]
+                                                                    [GP_Reason:VC_INDEX_CHECK]
+                                                                    [comment:                                    Vec(j) = Vec'Loop_Entry(j) - 10);                                         ^ pkg_substracttenaddten.adb:14:41:VC_INDEX_CHECK]
+                                                                    [GP_Sloc:pkg_substracttenaddten.adb:14:41]
+                                                                    [GP_Id:6] (
+                                                                    ((Pkg_substracttenaddten__substracttenaddten__S1b.first
+                                                                    ([mlw:proxy_symbol]
+                                                                    [introduced] temp___205))
+                                                                    <= j) /\
+                                                                    (j
+                                                                    <= (
+                                                                    Pkg_substracttenaddten__substracttenaddten__S1b.last
+                                                                    ([mlw:proxy_symbol]
+                                                                    [introduced] temp___205)))))) };
+                                                                    j)))
+                                                                  = ([sloc:pkg_substracttenaddten.adb:14] 
+                                                                    ([GP_Sloc:pkg_substracttenaddten.adb:14:64]
+                                                                    [vc:annotation]
+                                                                    [GP_Reason:VC_OVERFLOW_CHECK]
+                                                                    [GP_Shape:if__L_1_while__pragargs__forall__cmp__sub]
+                                                                    [comment:                                    Vec(j) = Vec'Loop_Entry(j) - 10);                                                                ^ pkg_substracttenaddten.adb:14:64:VC_OVERFLOW_CHECK]
+                                                                    [GP_Id:8] (
+                                                                    Standard__integer.range_check_
+                                                                    ((Standard__integer__rep.to_rep
+                                                                    (Array__Int__Standard__integer.get
+                                                                    (Pkg_substracttenaddten__substracttenaddten__S1b.to_array
+                                                                    ([model_trace:980'Loop_Entry] temp___loop_entry_206))
+                                                                    assert
+                                                                    { ([sloc:pkg_substracttenaddten.adb:14] 
+                                                                    ([comment:                                    Vec(j) = Vec'Loop_Entry(j) - 10);                                                             ^ pkg_substracttenaddten.adb:14:61:VC_INDEX_CHECK]
+                                                                    [GP_Sloc:pkg_substracttenaddten.adb:14:61]
+                                                                    [vc:annotation]
+                                                                    [GP_Reason:VC_INDEX_CHECK]
+                                                                    [GP_Shape:if__L_1_while__pragargs__forall__cmp__sub__ixdcomp]
+                                                                    [GP_Id:7] (
+                                                                    ((Pkg_substracttenaddten__substracttenaddten__S1b.first
+                                                                    ([model_trace:980'Loop_Entry] temp___loop_entry_206))
+                                                                    <= j) /\
+                                                                    (j
+                                                                    <= (
+                                                                    Pkg_substracttenaddten__substracttenaddten__S1b.last
+                                                                    ([model_trace:980'Loop_Entry] temp___loop_entry_206)))))) };
+                                                                    j)) - 10)))))
+                                                               in ())  end
+                                                ));
+                                                ( any  pre {} post
+                                                {((result = True) <->
+                                                    --pp_universal_quantif NOT IMPLEMENTED)}
+                                                return bool) in abstract
+                                              ensures
+                                              { True } begin  (let _ = 
+                                                             () in ())  end)
+                                              invariant
+                                              {([sloc:pkg_substracttenaddten.adb:13] 
+                                               ([GP_Reason:VC_LOOP_INVARIANT]
+                                               [GP_Shape:if__L_1_while__pragargs__forall]
+                                               [comment:            pragma Loop_Invariant(for all j in 1 .. i =>                                   ^ pkg_substracttenaddten.adb:13:35:VC_LOOP_INVARIANT]
+                                               [vc:annotation]
+                                               [GP_Sloc:pkg_substracttenaddten.adb:13:35]
+                                               [GP_Id:9] --pp_universal_quantif NOT IMPLEMENTED))}
+                                              
+                                              (* Assume implicit invariants from the loop pkg_substracttenaddten.adb:11 *);
+                                              assume
+                                              { (_gnatprove_standard.Boolean.andb
+                                                   ((True /\ True /\ True /\
+                                                       --pp_universal_quantif NOT IMPLEMENTED)
+                                                      /\
+                                                      (if
+                                                      ((True = True) \/
+                                                         (1
+                                                            <= (_gnatprove_standard.Int_Division.div
+                                                                  (_gnatprove_standard.Integer.length
+                                                                    (Standard__integer__rep.to_rep
+                                                                    Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                                                                    (Standard__integer__rep.to_rep
+                                                                    Pkg_substracttenaddten__substracttenaddten__vec.vec__last))
+                                                                  2)))
+                                                      then
+                                                      (Pkg_substracttenaddten__substracttenaddten__L_1__T2b.dynamic_property
+                                                         1
+                                                         (_gnatprove_standard.Int_Division.div
+                                                            (_gnatprove_standard.Integer.length
+                                                               (Standard__integer__rep.to_rep
+                                                                  Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                                                               (Standard__integer__rep.to_rep
+                                                                  Pkg_substracttenaddten__substracttenaddten__vec.vec__last))
+                                                            2)
+                                                         !Pkg_substracttenaddten__substracttenaddten__L_1__i.i)
+                                                      ) /\ True /\ True)
+                                                   ((1
+                                                       <= !Pkg_substracttenaddten__substracttenaddten__L_1__i.i)
+                                                      /\
+                                                      (!Pkg_substracttenaddten__substracttenaddten__L_1__i.i
+                                                         <= (_gnatprove_standard.Int_Division.div
+                                                               (_gnatprove_standard.Integer.length
+                                                                  (Standard__integer__rep.to_rep
+                                                                    Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                                                                  (Standard__integer__rep.to_rep
+                                                                    Pkg_substracttenaddten__substracttenaddten__vec.vec__last))
+                                                               2)))) };
+                                              (* Continuation of loop after loop invariant and variant *);
+                                              (* Check for the exit condition and loop statements appearing before the loop invariant of loop pkg_substracttenaddten.adb:11 *);
+                                              (if
+                                              (!Pkg_substracttenaddten__substracttenaddten__L_1__i.i
+                                                 = ([mlw:proxy_symbol]
+                                                 [introduced] temp___197))
+                                              then
+                                              raise Pkg_substracttenaddten__substracttenaddten__L_1.L_1
+                                              );
+                                              ([sloc:pkg_substracttenaddten.adb:11] (
+                                              Pkg_substracttenaddten__substracttenaddten__L_1__i.i
+                                              :=
+                                              (!Pkg_substracttenaddten__substracttenaddten__L_1__i.i
+                                                 + 1)))
+                                               end loop))) with
+                                            | Pkg_substracttenaddten__substracttenaddten__L_1.L_1 
+                                            -> ()) )))));
+                                            ([GP_Sloc:pkg_substracttenaddten.adb:17:50] 
+                                            ([sloc:pkg_substracttenaddten.adb:17] (let ([mlw:proxy_symbol]
+                                            [introduced] temp___209) =
+                                            (([sloc:pkg_substracttenaddten.adb:17] 
+                                             ([comment:         for j in (Vec'Length/2) + 1 .. Vec'Last loop                              ^ pkg_substracttenaddten.adb:17:30:VC_DIVISION_CHECK]
+                                             [vc:annotation]
+                                             [GP_Sloc:pkg_substracttenaddten.adb:17:30]
+                                             [GP_Reason:VC_DIVISION_CHECK]
+                                             [GP_Shape:if__L_2_while__range__add__div]
+                                             [GP_Id:22] (_gnatprove_standard.Int_Division.div_
+                                                           ([sloc:pkg_substracttenaddten.adb:17] 
+                                                           ([vc:annotation]
+                                                           [comment:         for j in (Vec'Length/2) + 1 .. Vec'Last loop                       ^ pkg_substracttenaddten.adb:17:23:VC_RANGE_CHECK]
+                                                           [GP_Reason:VC_RANGE_CHECK]
+                                                           [GP_Sloc:pkg_substracttenaddten.adb:17:23]
+                                                           [GP_Id:21]
+                                                           [GP_Shape:if__L_2_while__range__add__div__typeconv__length_ref] (
+                                                           Standard__integer.range_check_
+                                                             abstract ensures
+                                                             { True } begin 
+                                                              (let _ =
+                                                             (Pkg_substracttenaddten__substracttenaddten__S1b.of_array
+                                                                !Pkg_substracttenaddten__substracttenaddten__vec.vec
+                                                                (Standard__integer__rep.to_rep
+                                                                   Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                                                                (Standard__integer__rep.to_rep
+                                                                   Pkg_substracttenaddten__substracttenaddten__vec.vec__last))
+                                                             in ())  end;
+                                                             (_gnatprove_standard.Integer.length
+                                                                (Standard__integer__rep.to_rep
+                                                                   Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                                                                (Standard__integer__rep.to_rep
+                                                                   Pkg_substracttenaddten__substracttenaddten__vec.vec__last)))))
+                                                           2))) + 1)
+                                            in (let ([mlw:proxy_symbol]
+                                            [introduced] temp___210) =
+                                            (Standard__integer__rep.to_rep
+                                               abstract ensures
+                                               { True } begin  (let _ =
+                                                              (Pkg_substracttenaddten__substracttenaddten__S1b.of_array
+                                                                 !Pkg_substracttenaddten__substracttenaddten__vec.vec
+                                                                 (Standard__integer__rep.to_rep
+                                                                    Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                                                                 (Standard__integer__rep.to_rep
+                                                                    Pkg_substracttenaddten__substracttenaddten__vec.vec__last))
+                                                              in ())  end;
+                                               Pkg_substracttenaddten__substracttenaddten__vec.vec__last)
+                                            in (
+                                            Pkg_substracttenaddten__substracttenaddten__L_2__j.j
+                                            :=
+                                            ([mlw:proxy_symbol]
+                                              [introduced] temp___209));
+                                            (* Translation of an Ada loop from pkg_substracttenaddten.adb:17 *);
+                                            (if
+                                            (_gnatprove_standard.Boolean.andb
+                                               (([mlw:proxy_symbol]
+                                                  [introduced] temp___209)
+                                                  <= !Pkg_substracttenaddten__substracttenaddten__L_2__j.j)
+                                               (!Pkg_substracttenaddten__substracttenaddten__L_2__j.j
+                                                  <= ([mlw:proxy_symbol]
+                                                  [introduced] temp___210)))
+                                            then
+                                            (try
+                                            (let ([model_trace:980'Loop_Entry] temp___loop_entry_219)
+                                              =
+                                              (Pkg_substracttenaddten__substracttenaddten__S1b.of_array
+                                                 !Pkg_substracttenaddten__substracttenaddten__vec.vec
+                                                 (Standard__integer__rep.to_rep
+                                                    Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                                                 (Standard__integer__rep.to_rep
+                                                    Pkg_substracttenaddten__substracttenaddten__vec.vec__last))
+                                              in (let temp___loop_entry_215 =
+                                              (Pkg_substracttenaddten__substracttenaddten__S1b.of_array
+                                                 !Pkg_substracttenaddten__substracttenaddten__vec.vec
+                                                 (Standard__integer__rep.to_rep
+                                                    Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                                                 (Standard__integer__rep.to_rep
+                                                    Pkg_substracttenaddten__substracttenaddten__vec.vec__last))
+                                              in
+                                              (* While loop translating the Ada loop from pkg_substracttenaddten.adb:17 *);
+                                              ([sloc:pkg_substracttenaddten.adb:19] 
+                                              loop
+                                                ();
+                                                ([GP_Sloc:pkg_substracttenaddten.adb:18:20] 
+                                                ([sloc:pkg_substracttenaddten.adb:18] (
+                                                Pkg_substracttenaddten__substracttenaddten__vec.vec
+                                                :=
+                                                (Pkg_substracttenaddten__substracttenaddten__S1b.to_array
+                                                   (let ([mlw:proxy_symbol]
+                                                   [introduced] temp___213) =
+                                                   (Pkg_substracttenaddten__substracttenaddten__S1b.of_array
+                                                      !Pkg_substracttenaddten__substracttenaddten__vec.vec
+                                                      (Standard__integer__rep.to_rep
+                                                         Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                                                      (Standard__integer__rep.to_rep
+                                                         Pkg_substracttenaddten__substracttenaddten__vec.vec__last))
+                                                   in
+                                                   --pp_record_update NOT IMPLEMENTED)))));
+                                                (* Check for absence of RTE in the loop invariant and variant *);
+                                                (let ([mlw:proxy_symbol]
+                                                [introduced] temp___inv_217)
+                                                =
+                                                (let k =
+                                                  ( any  pre {} post {
+                                                    } return int) in
+                                                (if
+                                                (_gnatprove_standard.Boolean.andb
+                                                   ((([sloc:pkg_substracttenaddten.adb:19] 
+                                                     ([GP_Id:16]
+                                                     [vc:annotation]
+                                                     [GP_Reason:VC_DIVISION_CHECK]
+                                                     [comment:            pragma Loop_Invariant(for all k in (Vec'Length/2) + 1 .. j =>                                                           ^ pkg_substracttenaddten.adb:19:59:VC_DIVISION_CHECK]
+                                                     [GP_Sloc:pkg_substracttenaddten.adb:19:59]
+                                                     [GP_Shape:if__L_2_while__pragargs__forall__range__add__div] (
+                                                     _gnatprove_standard.Int_Division.div_
+                                                       ([sloc:pkg_substracttenaddten.adb:19] 
+                                                       ([GP_Id:15]
+                                                       [vc:annotation]
+                                                       [GP_Sloc:pkg_substracttenaddten.adb:19:52]
+                                                       [GP_Reason:VC_RANGE_CHECK]
+                                                       [comment:            pragma Loop_Invariant(for all k in (Vec'Length/2) + 1 .. j =>                                                    ^ pkg_substracttenaddten.adb:19:52:VC_RANGE_CHECK]
+                                                       [GP_Shape:if__L_2_while__pragargs__forall__range__add__div__typeconv__length_ref] (
+                                                       Standard__integer.range_check_
+                                                         abstract ensures
+                                                         { True } begin 
+                                                          (let _ =
+                                                         (Pkg_substracttenaddten__substracttenaddten__S1b.of_array
+                                                            !Pkg_substracttenaddten__substracttenaddten__vec.vec
+                                                            (Standard__integer__rep.to_rep
+                                                               Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                                                            (Standard__integer__rep.to_rep
+                                                               Pkg_substracttenaddten__substracttenaddten__vec.vec__last))
+                                                         in ())  end;
+                                                         (_gnatprove_standard.Integer.length
+                                                            (Standard__integer__rep.to_rep
+                                                               Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                                                            (Standard__integer__rep.to_rep
+                                                               Pkg_substracttenaddten__substracttenaddten__vec.vec__last)))))
+                                                       2))) + 1) <= k)
+                                                   (k
+                                                      <= !Pkg_substracttenaddten__substracttenaddten__L_2__j.j))
+                                                then
+                                                abstract ensures
+                                                { True } begin  (let _ =
+                                                               ((Standard__integer__rep.to_rep
+                                                                   (let ([mlw:proxy_symbol]
+                                                                   [introduced] temp___218)
+                                                                   =
+                                                                   (Pkg_substracttenaddten__substracttenaddten__S1b.of_array
+                                                                    !Pkg_substracttenaddten__substracttenaddten__vec.vec
+                                                                    (Standard__integer__rep.to_rep
+                                                                    Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                                                                    (Standard__integer__rep.to_rep
+                                                                    Pkg_substracttenaddten__substracttenaddten__vec.vec__last))
+                                                                   in
+                                                                   (Array__Int__Standard__integer.get
+                                                                    (Pkg_substracttenaddten__substracttenaddten__S1b.to_array
+                                                                    ([mlw:proxy_symbol]
+                                                                    [introduced] temp___218))
+                                                                    assert
+                                                                    { ([sloc:pkg_substracttenaddten.adb:20] 
+                                                                    ([GP_Id:17]
+                                                                    [vc:annotation]
+                                                                    [GP_Sloc:pkg_substracttenaddten.adb:20:41]
+                                                                    [GP_Reason:VC_INDEX_CHECK]
+                                                                    [GP_Shape:if__L_2_while__pragargs__forall__cmp__ixdcomp]
+                                                                    [comment:                                    Vec(k) = Vec'Loop_Entry(k) + 10);                                         ^ pkg_substracttenaddten.adb:20:41:VC_INDEX_CHECK] (
+                                                                    ((Pkg_substracttenaddten__substracttenaddten__S1b.first
+                                                                    ([mlw:proxy_symbol]
+                                                                    [introduced] temp___218))
+                                                                    <= k) /\
+                                                                    (k
+                                                                    <= (
+                                                                    Pkg_substracttenaddten__substracttenaddten__S1b.last
+                                                                    ([mlw:proxy_symbol]
+                                                                    [introduced] temp___218)))))) };
+                                                                    k)))
+                                                                  = ([sloc:pkg_substracttenaddten.adb:20] 
+                                                                    ([GP_Id:19]
+                                                                    [vc:annotation]
+                                                                    [GP_Reason:VC_OVERFLOW_CHECK]
+                                                                    [GP_Shape:if__L_2_while__pragargs__forall__cmp__add]
+                                                                    [GP_Sloc:pkg_substracttenaddten.adb:20:64]
+                                                                    [comment:                                    Vec(k) = Vec'Loop_Entry(k) + 10);                                                                ^ pkg_substracttenaddten.adb:20:64:VC_OVERFLOW_CHECK] (
+                                                                    Standard__integer.range_check_
+                                                                    ((Standard__integer__rep.to_rep
+                                                                    (Array__Int__Standard__integer.get
+                                                                    (Pkg_substracttenaddten__substracttenaddten__S1b.to_array
+                                                                    ([model_trace:980'Loop_Entry] temp___loop_entry_219))
+                                                                    assert
+                                                                    { ([sloc:pkg_substracttenaddten.adb:20] 
+                                                                    ([GP_Id:18]
+                                                                    [vc:annotation]
+                                                                    [comment:                                    Vec(k) = Vec'Loop_Entry(k) + 10);                                                             ^ pkg_substracttenaddten.adb:20:61:VC_INDEX_CHECK]
+                                                                    [GP_Reason:VC_INDEX_CHECK]
+                                                                    [GP_Shape:if__L_2_while__pragargs__forall__cmp__add__ixdcomp]
+                                                                    [GP_Sloc:pkg_substracttenaddten.adb:20:61] (
+                                                                    ((Pkg_substracttenaddten__substracttenaddten__S1b.first
+                                                                    ([model_trace:980'Loop_Entry] temp___loop_entry_219))
+                                                                    <= k) /\
+                                                                    (k
+                                                                    <= (
+                                                                    Pkg_substracttenaddten__substracttenaddten__S1b.last
+                                                                    ([model_trace:980'Loop_Entry] temp___loop_entry_219)))))) };
+                                                                    k)) + 10)))))
+                                                               in ())  end
+                                                ));
+                                                ( any  pre {} post
+                                                {((result = True) <->
+                                                    --pp_universal_quantif NOT IMPLEMENTED)}
+                                                return bool) in abstract
+                                              ensures
+                                              { True } begin  (let _ = 
+                                                             () in ())  end)
+                                              invariant
+                                              {([sloc:pkg_substracttenaddten.adb:19] 
+                                               ([GP_Reason:VC_LOOP_INVARIANT]
+                                               [comment:            pragma Loop_Invariant(for all k in (Vec'Length/2) + 1 .. j =>                                   ^ pkg_substracttenaddten.adb:19:35:VC_LOOP_INVARIANT]
+                                               [GP_Sloc:pkg_substracttenaddten.adb:19:35]
+                                               [vc:annotation] [GP_Id:20]
+                                               [GP_Shape:if__L_2_while__pragargs__forall] --pp_universal_quantif NOT IMPLEMENTED))}
+                                              
+                                              (* Assume implicit invariants from the loop pkg_substracttenaddten.adb:17 *);
+                                              assume
+                                              { (_gnatprove_standard.Boolean.andb
+                                                   ((True /\ True /\ True /\
+                                                       --pp_universal_quantif NOT IMPLEMENTED)
+                                                      /\
+                                                      (if
+                                                      ((True = True) \/
+                                                         (((_gnatprove_standard.Int_Division.div
+                                                              (_gnatprove_standard.Integer.length
+                                                                 (Standard__integer__rep.to_rep
+                                                                    Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                                                                 (Standard__integer__rep.to_rep
+                                                                    Pkg_substracttenaddten__substracttenaddten__vec.vec__last))
+                                                              2) + 1)
+                                                            <= (Standard__integer__rep.to_rep
+                                                                  Pkg_substracttenaddten__substracttenaddten__vec.vec__last)))
+                                                      then
+                                                      (Pkg_substracttenaddten__substracttenaddten__L_2__T7b.dynamic_property
+                                                         ((_gnatprove_standard.Int_Division.div
+                                                             (_gnatprove_standard.Integer.length
+                                                                (Standard__integer__rep.to_rep
+                                                                   Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                                                                (Standard__integer__rep.to_rep
+                                                                   Pkg_substracttenaddten__substracttenaddten__vec.vec__last))
+                                                             2) + 1)
+                                                         (Standard__integer__rep.to_rep
+                                                            Pkg_substracttenaddten__substracttenaddten__vec.vec__last)
+                                                         !Pkg_substracttenaddten__substracttenaddten__L_2__j.j)
+                                                      ) /\ True /\ True)
+                                                   ((((_gnatprove_standard.Int_Division.div
+                                                         (_gnatprove_standard.Integer.length
+                                                            (Standard__integer__rep.to_rep
+                                                               Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                                                            (Standard__integer__rep.to_rep
+                                                               Pkg_substracttenaddten__substracttenaddten__vec.vec__last))
+                                                         2) + 1)
+                                                       <= !Pkg_substracttenaddten__substracttenaddten__L_2__j.j)
+                                                      /\
+                                                      (!Pkg_substracttenaddten__substracttenaddten__L_2__j.j
+                                                         <= (Standard__integer__rep.to_rep
+                                                               Pkg_substracttenaddten__substracttenaddten__vec.vec__last)))) };
+                                              (* Continuation of loop after loop invariant and variant *);
+                                              (* Check for the exit condition and loop statements appearing before the loop invariant of loop pkg_substracttenaddten.adb:17 *);
+                                              (if
+                                              (!Pkg_substracttenaddten__substracttenaddten__L_2__j.j
+                                                 = ([mlw:proxy_symbol]
+                                                 [introduced] temp___210))
+                                              then
+                                              raise Pkg_substracttenaddten__substracttenaddten__L_2.L_2
+                                              );
+                                              ([sloc:pkg_substracttenaddten.adb:17] (
+                                              Pkg_substracttenaddten__substracttenaddten__L_2__j.j
+                                              :=
+                                              (!Pkg_substracttenaddten__substracttenaddten__L_2__j.j
+                                                 + 1)))
+                                               end loop))) with
+                                            | Pkg_substracttenaddten__substracttenaddten__L_2.L_2 
+                                            -> ()) ))))))));
+raise Return__exc with | Return__exc  -> ());
+abstract ensures
+{ True } begin  (let _ =
+               (if
+               (abstract ensures
+                  { True } begin  (let _ =
+                                 (Pkg_substracttenaddten__substracttenaddten__S1b.of_array
+                                    !Pkg_substracttenaddten__substracttenaddten__vec.vec
+                                    (Standard__integer__rep.to_rep
+                                       Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                                    (Standard__integer__rep.to_rep
+                                       Pkg_substracttenaddten__substracttenaddten__vec.vec__last))
+                                 in ())  end;
+                  (_gnatprove_standard.Integer.length
+                     (Standard__integer__rep.to_rep
+                        Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                     (Standard__integer__rep.to_rep
+                        Pkg_substracttenaddten__substracttenaddten__vec.vec__last))
+                  = 1)
+               then
+               ((Standard__integer__rep.to_rep (let ([mlw:proxy_symbol]
+                   [introduced] temp___223) =
+                   (Pkg_substracttenaddten__substracttenaddten__S1b.of_array
+                      !Pkg_substracttenaddten__substracttenaddten__vec.vec
+                      (Standard__integer__rep.to_rep
+                         Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                      (Standard__integer__rep.to_rep
+                         Pkg_substracttenaddten__substracttenaddten__vec.vec__last))
+                   in
+                   (Array__Int__Standard__integer.get
+                      (Pkg_substracttenaddten__substracttenaddten__S1b.to_array
+                         ([mlw:proxy_symbol] [introduced] temp___223))
+                      (let ([mlw:proxy_symbol] [introduced] temp___224) = 
+                      1 in assert
+                      { ([sloc:pkg_substracttenaddten.ads:27] ([comment:                  Vec(1) = Vec'Old(1) - 10                       ^ pkg_substracttenaddten.ads:27:23:VC_INDEX_CHECK]
+                                                              [vc:annotation]
+                                                              [GP_Sloc:pkg_substracttenaddten.ads:27:23]
+                                                              [GP_Reason:VC_INDEX_CHECK]
+                                                              [GP_Id:23]
+                                                              [GP_Shape:pragargs__if__cmp__ixdcomp] (
+                                                              ((Pkg_substracttenaddten__substracttenaddten__S1b.first
+                                                                  ([mlw:proxy_symbol]
+                                                                  [introduced] temp___223))
+                                                                 <= ([mlw:proxy_symbol]
+                                                                 [introduced] temp___224))
+                                                                /\
+                                                                (([mlw:proxy_symbol]
+                                                                   [introduced] temp___224)
+                                                                   <= (
+                                                                   Pkg_substracttenaddten__substracttenaddten__S1b.last
+                                                                    ([mlw:proxy_symbol]
+                                                                    [introduced] temp___223)))))) };
+                      ([mlw:proxy_symbol] [introduced] temp___224)))))
+                  = ([sloc:pkg_substracttenaddten.ads:27] ([GP_Sloc:pkg_substracttenaddten.ads:27:39]
+                                                          [vc:annotation]
+                                                          [GP_Reason:VC_OVERFLOW_CHECK]
+                                                          [comment:                  Vec(1) = Vec'Old(1) - 10                                       ^ pkg_substracttenaddten.ads:27:39:VC_OVERFLOW_CHECK]
+                                                          [GP_Id:25]
+                                                          [GP_Shape:pragargs__if__cmp__sub] (
+                                                          Standard__integer.range_check_
+                                                            ((Standard__integer__rep.to_rep
+                                                                (Array__Int__Standard__integer.get
+                                                                   (Pkg_substracttenaddten__substracttenaddten__S1b.to_array
+                                                                    ([mlw:proxy_symbol]
+                                                                    [introduced] temp___old_225))
+                                                                   (let ([mlw:proxy_symbol]
+                                                                   [introduced] temp___226)
+                                                                   = 
+                                                                   1 in
+                                                                   assert
+                                                                   { ([sloc:pkg_substracttenaddten.ads:27] 
+                                                                    ([comment:                  Vec(1) = Vec'Old(1) - 10                                    ^ pkg_substracttenaddten.ads:27:36:VC_INDEX_CHECK]
+                                                                    [GP_Sloc:pkg_substracttenaddten.ads:27:36]
+                                                                    [vc:annotation]
+                                                                    [GP_Reason:VC_INDEX_CHECK]
+                                                                    [GP_Id:24]
+                                                                    [GP_Shape:pragargs__if__cmp__sub__ixdcomp] (
+                                                                    ((Pkg_substracttenaddten__substracttenaddten__S1b.first
+                                                                    ([mlw:proxy_symbol]
+                                                                    [introduced] temp___old_225))
+                                                                    <= ([mlw:proxy_symbol]
+                                                                    [introduced] temp___226))
+                                                                    /\
+                                                                    (([mlw:proxy_symbol]
+                                                                    [introduced] temp___226)
+                                                                    <= (
+                                                                    Pkg_substracttenaddten__substracttenaddten__S1b.last
+                                                                    ([mlw:proxy_symbol]
+                                                                    [introduced] temp___old_225)))))) };
+                                                                   ([mlw:proxy_symbol]
+                                                                   [introduced] temp___226))))
+                                                               - 10)))))
+                else
+               ((let i = ( any  pre {} post {} return int) in
+               (if
+               (_gnatprove_standard.Boolean.andb (1 <= i)
+                  (i
+                     <= ([sloc:pkg_substracttenaddten.ads:29] ([GP_Shape:pragargs__if__andthen__forall__range__div]
+                                                              [vc:annotation]
+                                                              [GP_Reason:VC_DIVISION_CHECK]
+                                                              [GP_Id:27]
+                                                              [comment:                  (for all i in 1 .. Vec'Length/2 =>                                                ^ pkg_substracttenaddten.ads:29:48:VC_DIVISION_CHECK]
+                                                              [GP_Sloc:pkg_substracttenaddten.ads:29:48] (
+                                                              _gnatprove_standard.Int_Division.div_
+                                                                ([sloc:pkg_substracttenaddten.ads:29] 
+                                                                ([comment:                  (for all i in 1 .. Vec'Length/2 =>                                         ^ pkg_substracttenaddten.ads:29:41:VC_RANGE_CHECK]
+                                                                [vc:annotation]
+                                                                [GP_Shape:pragargs__if__andthen__forall__range__div__typeconv__length_ref]
+                                                                [GP_Reason:VC_RANGE_CHECK]
+                                                                [GP_Sloc:pkg_substracttenaddten.ads:29:41]
+                                                                [GP_Id:26] (
+                                                                Standard__integer.range_check_
+                                                                  abstract
+                                                                  ensures
+                                                                  { True } begin 
+                                                                   (let _ =
+                                                                  (Pkg_substracttenaddten__substracttenaddten__S1b.of_array
+                                                                    !Pkg_substracttenaddten__substracttenaddten__vec.vec
+                                                                    (Standard__integer__rep.to_rep
+                                                                    Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                                                                    (Standard__integer__rep.to_rep
+                                                                    Pkg_substracttenaddten__substracttenaddten__vec.vec__last))
+                                                                  in ())  end;
+                                                                  (_gnatprove_standard.Integer.length
+                                                                    (Standard__integer__rep.to_rep
+                                                                    Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                                                                    (Standard__integer__rep.to_rep
+                                                                    Pkg_substracttenaddten__substracttenaddten__vec.vec__last)))))
+                                                                2)))))
+               then
+               abstract ensures
+               { True } begin  (let _ =
+                              ((Standard__integer__rep.to_rep
+                                  (let ([mlw:proxy_symbol]
+                                  [introduced] temp___227) =
+                                  (Pkg_substracttenaddten__substracttenaddten__S1b.of_array
+                                     !Pkg_substracttenaddten__substracttenaddten__vec.vec
+                                     (Standard__integer__rep.to_rep
+                                        Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                                     (Standard__integer__rep.to_rep
+                                        Pkg_substracttenaddten__substracttenaddten__vec.vec__last))
+                                  in
+                                  (Array__Int__Standard__integer.get
+                                     (Pkg_substracttenaddten__substracttenaddten__S1b.to_array
+                                        ([mlw:proxy_symbol]
+                                        [introduced] temp___227)) assert
+                                     { ([sloc:pkg_substracttenaddten.ads:30] 
+                                       ([vc:annotation]
+                                       [GP_Shape:pragargs__if__andthen__forall__cmp__ixdcomp]
+                                       [comment:                     Vec(i) = Vec'Old(i) - 10)                          ^ pkg_substracttenaddten.ads:30:26:VC_INDEX_CHECK]
+                                       [GP_Reason:VC_INDEX_CHECK]
+                                       [GP_Sloc:pkg_substracttenaddten.ads:30:26]
+                                       [GP_Id:28] (((Pkg_substracttenaddten__substracttenaddten__S1b.first
+                                                       ([mlw:proxy_symbol]
+                                                       [introduced] temp___227))
+                                                      <= i) /\
+                                                     (i
+                                                        <= (Pkg_substracttenaddten__substracttenaddten__S1b.last
+                                                              ([mlw:proxy_symbol]
+                                                              [introduced] temp___227)))))) };
+                                     i)))
+                                 = ([sloc:pkg_substracttenaddten.ads:30] 
+                                   ([GP_Shape:pragargs__if__andthen__forall__cmp__sub]
+                                   [GP_Sloc:pkg_substracttenaddten.ads:30:42]
+                                   [vc:annotation]
+                                   [GP_Reason:VC_OVERFLOW_CHECK] [GP_Id:30]
+                                   [comment:                     Vec(i) = Vec'Old(i) - 10)                                          ^ pkg_substracttenaddten.ads:30:42:VC_OVERFLOW_CHECK] (
+                                   Standard__integer.range_check_
+                                     ((Standard__integer__rep.to_rep
+                                         (Array__Int__Standard__integer.get
+                                            (Pkg_substracttenaddten__substracttenaddten__S1b.to_array
+                                               ([mlw:proxy_symbol]
+                                               [introduced] temp___old_228))
+                                            assert
+                                            { ([sloc:pkg_substracttenaddten.ads:30] 
+                                              ([vc:annotation]
+                                              [comment:                     Vec(i) = Vec'Old(i) - 10)                                       ^ pkg_substracttenaddten.ads:30:39:VC_INDEX_CHECK]
+                                              [GP_Sloc:pkg_substracttenaddten.ads:30:39]
+                                              [GP_Shape:pragargs__if__andthen__forall__cmp__sub__ixdcomp]
+                                              [GP_Reason:VC_INDEX_CHECK]
+                                              [GP_Id:29] (((Pkg_substracttenaddten__substracttenaddten__S1b.first
+                                                              ([mlw:proxy_symbol]
+                                                              [introduced] temp___old_228))
+                                                             <= i) /\
+                                                            (i
+                                                               <= (Pkg_substracttenaddten__substracttenaddten__S1b.last
+                                                                    ([mlw:proxy_symbol]
+                                                                    [introduced] temp___old_228)))))) };
+                                            i)) - 10)))))
+                              in ())  end
+               ));
+               ( any  pre {} post
+               {((result = True) <-> --pp_universal_quantif NOT IMPLEMENTED)}
+               return bool) && (let j = ( any  pre {} post {} return int) in
+                 (if
+                 (_gnatprove_standard.Boolean.andb
+                    ((([sloc:pkg_substracttenaddten.ads:32] ([GP_Sloc:pkg_substracttenaddten.ads:32:44]
+                                                            [vc:annotation]
+                                                            [GP_Reason:VC_DIVISION_CHECK]
+                                                            [GP_Id:32]
+                                                            [GP_Shape:pragargs__if__andthen__forall__range__add__div]
+                                                            [comment:                  (for all j in (Vec'Length/2) + 1 .. Vec'Last =>                                            ^ pkg_substracttenaddten.ads:32:44:VC_DIVISION_CHECK] (
+                                                            _gnatprove_standard.Int_Division.div_
+                                                              ([sloc:pkg_substracttenaddten.ads:32] 
+                                                              ([comment:                  (for all j in (Vec'Length/2) + 1 .. Vec'Last =>                                     ^ pkg_substracttenaddten.ads:32:37:VC_RANGE_CHECK]
+                                                              [GP_Shape:pragargs__if__andthen__forall__range__add__div__typeconv__length_ref]
+                                                              [vc:annotation]
+                                                              [GP_Sloc:pkg_substracttenaddten.ads:32:37]
+                                                              [GP_Id:31]
+                                                              [GP_Reason:VC_RANGE_CHECK] (
+                                                              Standard__integer.range_check_
+                                                                abstract
+                                                                ensures
+                                                                { True } begin 
+                                                                 (let _ =
+                                                                (Pkg_substracttenaddten__substracttenaddten__S1b.of_array
+                                                                   !Pkg_substracttenaddten__substracttenaddten__vec.vec
+                                                                   (Standard__integer__rep.to_rep
+                                                                    Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                                                                   (Standard__integer__rep.to_rep
+                                                                    Pkg_substracttenaddten__substracttenaddten__vec.vec__last))
+                                                                in ())  end;
+                                                                (_gnatprove_standard.Integer.length
+                                                                   (Standard__integer__rep.to_rep
+                                                                    Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                                                                   (Standard__integer__rep.to_rep
+                                                                    Pkg_substracttenaddten__substracttenaddten__vec.vec__last)))))
+                                                              2))) + 1) <= j)
+                    (j
+                       <= (Standard__integer__rep.to_rep abstract ensures
+                             { True } begin  (let _ =
+                                            (Pkg_substracttenaddten__substracttenaddten__S1b.of_array
+                                               !Pkg_substracttenaddten__substracttenaddten__vec.vec
+                                               (Standard__integer__rep.to_rep
+                                                  Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                                               (Standard__integer__rep.to_rep
+                                                  Pkg_substracttenaddten__substracttenaddten__vec.vec__last))
+                                            in ())  end;
+                             Pkg_substracttenaddten__substracttenaddten__vec.vec__last)))
+                 then
+                 abstract ensures
+                 { True } begin  (let _ =
+                                ((Standard__integer__rep.to_rep
+                                    (let ([mlw:proxy_symbol]
+                                    [introduced] temp___230) =
+                                    (Pkg_substracttenaddten__substracttenaddten__S1b.of_array
+                                       !Pkg_substracttenaddten__substracttenaddten__vec.vec
+                                       (Standard__integer__rep.to_rep
+                                          Pkg_substracttenaddten__substracttenaddten__vec.vec__first)
+                                       (Standard__integer__rep.to_rep
+                                          Pkg_substracttenaddten__substracttenaddten__vec.vec__last))
+                                    in
+                                    (Array__Int__Standard__integer.get
+                                       (Pkg_substracttenaddten__substracttenaddten__S1b.to_array
+                                          ([mlw:proxy_symbol]
+                                          [introduced] temp___230)) assert
+                                       { ([sloc:pkg_substracttenaddten.ads:33] 
+                                         ([GP_Sloc:pkg_substracttenaddten.ads:33:26]
+                                         [vc:annotation]
+                                         [GP_Shape:pragargs__if__andthen__forall__cmp__ixdcomp]
+                                         [GP_Id:33]
+                                         [GP_Reason:VC_INDEX_CHECK]
+                                         [comment:                     Vec(j) = Vec'Old(j) + 10));                          ^ pkg_substracttenaddten.ads:33:26:VC_INDEX_CHECK] (
+                                         ((Pkg_substracttenaddten__substracttenaddten__S1b.first
+                                             ([mlw:proxy_symbol]
+                                             [introduced] temp___230)) <= j)
+                                           /\
+                                           (j
+                                              <= (Pkg_substracttenaddten__substracttenaddten__S1b.last
+                                                    ([mlw:proxy_symbol]
+                                                    [introduced] temp___230)))))) };
+                                       j)))
+                                   = ([sloc:pkg_substracttenaddten.ads:33] 
+                                     ([comment:                     Vec(j) = Vec'Old(j) + 10));                                          ^ pkg_substracttenaddten.ads:33:42:VC_OVERFLOW_CHECK]
+                                     [vc:annotation]
+                                     [GP_Reason:VC_OVERFLOW_CHECK]
+                                     [GP_Sloc:pkg_substracttenaddten.ads:33:42]
+                                     [GP_Id:35]
+                                     [GP_Shape:pragargs__if__andthen__forall__cmp__add] (
+                                     Standard__integer.range_check_
+                                       ((Standard__integer__rep.to_rep
+                                           (Array__Int__Standard__integer.get
+                                              (Pkg_substracttenaddten__substracttenaddten__S1b.to_array
+                                                 ([mlw:proxy_symbol]
+                                                 [introduced] temp___old_231))
+                                              assert
+                                              { ([sloc:pkg_substracttenaddten.ads:33] 
+                                                ([vc:annotation] [GP_Id:34]
+                                                [GP_Shape:pragargs__if__andthen__forall__cmp__add__ixdcomp]
+                                                [comment:                     Vec(j) = Vec'Old(j) + 10));                                       ^ pkg_substracttenaddten.ads:33:39:VC_INDEX_CHECK]
+                                                [GP_Reason:VC_INDEX_CHECK]
+                                                [GP_Sloc:pkg_substracttenaddten.ads:33:39] (
+                                                ((Pkg_substracttenaddten__substracttenaddten__S1b.first
+                                                    ([mlw:proxy_symbol]
+                                                    [introduced] temp___old_231))
+                                                   <= j) /\
+                                                  (j
+                                                     <= (Pkg_substracttenaddten__substracttenaddten__S1b.last
+                                                           ([mlw:proxy_symbol]
+                                                           [introduced] temp___old_231)))))) };
+                                              j)) + 10)))))
+                                in ())  end
+                 ));
+                 ( any  pre {} post
+                 {((result = True) <-> --pp_universal_quantif NOT IMPLEMENTED)}
+                 return bool))) in
+())  end)))
+
+end

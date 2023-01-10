@@ -1,0 +1,2 @@
+pkg_mediana.ads:11:16: medium: postcondition might fail, cannot prove Res = Vec((Vec'Length/2)) (e.g. when Res = 1 and Vec = (others => 1) and Vec'First = 1 and Vec'Last = 1)[#1]
+pkg_mediana.ads:11:38: medium: array index check might fail (e.g. when Vec = (others => 1) and Vec'First = 1 and Vec'Last = 1)[#0]

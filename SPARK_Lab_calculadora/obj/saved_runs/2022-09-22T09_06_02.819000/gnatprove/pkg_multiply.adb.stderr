@@ -1,0 +1,2 @@
+pkg_multiply.adb:29:23: medium: precondition might fail, cannot prove First_Operand >= Integer'First - Second_Operand[#0]
+pkg_multiply.ads:17:41: medium: overflow check might fail [reason for check: result of division must fit in a 32-bits machine integer][#1]

@@ -1,0 +1,668 @@
+module Standard__integer
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  
+  type integer = <range -2147483648 2147483647>
+  
+  val function first : int
+    ensures { result = ((- 2147483648) : int) }
+  
+  val function last : int
+    ensures { result = (2147483647 : int) }
+  
+  predicate in_range (x: int) = ((first <= x) /\ (x <= last))
+  
+  val in_range (x: int) : bool
+    ensures { result <-> (in_range (x : int)) }
+  
+  clone export ada__model.Static_Discrete with
+    axiom .,
+    type t = integer,
+    function first = first,
+    function last = last,
+    predicate in_range = in_range
+  
+  type integer__ref = { mutable integer__content : integer }
+  
+  function integer__ref_integer__content__projection (a: integer__ref) : integer =
+    a.integer__content
+  
+  meta "model_projection" function integer__ref_integer__content__projection
+  
+  meta "inline:no" function integer__ref_integer__content__projection
+  
+  val integer__havoc (x: integer__ref) : unit
+    writes { x }
+end
+
+module Standard__integer___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Standard__integer as Standard__integer
+  
+  predicate dynamic_invariant (temp___expr_18: int) (temp___is_init_14: bool) (temp___skip_constant_15: bool) (temp___do_toplevel_16: bool) (temp___do_typ_inv_17: bool) =
+    if ((temp___is_init_14 = True) \/
+          (Standard__integer.first <= Standard__integer.last)) then
+      (((Standard__integer.dynamic_property Standard__integer.first)
+          Standard__integer.last)
+         temp___expr_18)
+    else true
+  
+  val dynamic_invariant (temp___expr_18: int) (temp___is_init_14: bool) (temp___skip_constant_15: bool) (temp___do_toplevel_16: bool) (temp___do_typ_inv_17: bool) : 
+    bool
+    ensures { result
+                <->
+                (((((dynamic_invariant (temp___expr_18 : int))
+                      (temp___is_init_14 : bool))
+                     (temp___skip_constant_15 : bool))
+                    (temp___do_toplevel_16 : bool))
+                   (temp___do_typ_inv_17 : bool)) }
+  
+  predicate default_initial_assumption (temp___expr_19: int) (temp___skip_top_level_20: bool) =
+    true
+  
+  val default_initial_assumption (temp___expr_19: int) (temp___skip_top_level_20: bool) : 
+    bool
+    ensures { result
+                <->
+                ((default_initial_assumption (temp___expr_19 : int))
+                   (temp___skip_top_level_20 : bool)) }
+end
+
+module Standard__integer__rep
+  use Standard__integer as Standard__integer
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  function to_rep (x: Standard__integer.integer) : int =
+    Standard__integer.integer'int x
+  
+  clone export ada__model.Rep_Proj_Int with
+    axiom .,
+    type t = Standard__integer.integer,
+    predicate in_range = Standard__integer.in_range,
+    function to_rep = to_rep
+  
+  meta "model_projection" function to_rep
+  
+  meta "inline:no" function to_rep
+end
+
+module Standard__positive
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  
+  type positive = <range 1 2147483647>
+  
+  val function first : int
+    ensures { result = (1 : int) }
+  
+  val function last : int
+    ensures { result = (2147483647 : int) }
+  
+  predicate in_range (x: int) = ((first <= x) /\ (x <= last))
+  
+  val in_range (x: int) : bool
+    ensures { result <-> (in_range (x : int)) }
+  
+  clone export ada__model.Static_Discrete with
+    axiom .,
+    type t = positive,
+    function first = first,
+    function last = last,
+    predicate in_range = in_range
+  
+  type positive__ref = { mutable positive__content : positive }
+  
+  function positive__ref_positive__content__projection (a: positive__ref) : positive =
+    a.positive__content
+  
+  meta "model_projection" function positive__ref_positive__content__projection
+  
+  meta "inline:no" function positive__ref_positive__content__projection
+  
+  val positive__havoc (x: positive__ref) : unit
+    writes { x }
+end
+
+module Array__Int__Standard__integer
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Standard__integer as Standard__integer
+  use Standard__integer__rep as Standard__integer__rep
+  
+  function index_I1_one : int = 1 : int
+  
+  type component_type = Standard__integer.integer
+  
+  clone export _gnatprove_standard.Array__1 with
+    axiom .,
+    type I1.t = int,
+    predicate I1.le = Int.( <= ),
+    predicate I1.lt = Int.( < ),
+    predicate I1.gt = Int.( > ),
+    function I1.add = Int.( + ),
+    function I1.sub = Int.( - ),
+    function I1.one = index_I1_one,
+    type component_type = component_type
+  
+  function bool_eq (a: map) (a__first: int) (a__last: int) (b: map) (b__first: int) (b__last: int) : bool =
+    ((if (a__first <= a__last) then
+        ((b__first <= b__last) /\
+           ((a__last - a__first) = (b__last - b__first)))
+      else (b__first > b__last)) /\
+       (forall temp___idx_161 : int.
+          if ((a__first <= temp___idx_161) /\ (temp___idx_161 <= a__last)) then
+            ((Standard__integer__rep.to_rep ((get a) temp___idx_161))
+               = (Standard__integer__rep.to_rep
+                    ((get b) ((b__first - a__first) + temp___idx_161))))
+          else true))
+  
+  val bool_eq (a: map) (a__first: int) (a__last: int) (b: map) (b__first: int) (b__last: int) : 
+    bool
+    ensures { result
+      =
+      ((((((bool_eq (a : map)) (a__first : int)) (a__last : int)) (b : map))
+          (b__first : int))
+         (b__last : int)) }
+  
+  axiom bool_eq_rev:
+    forall a : map, b : map.
+      forall a__first : int, a__last : int, b__first : int, b__last : int.
+        ((((((((bool_eq b) b__first) b__last) a) a__first) a__last) = True) ->
+           ((if (a__first <= a__last) then
+               ((b__first <= b__last) /\
+                  ((a__last - a__first) = (b__last - b__first)))
+             else (b__first > b__last)) /\
+              (forall temp___idx_161 : int.
+                 if ((a__first <= temp___idx_161) /\
+                       (temp___idx_161 <= a__last)) then
+                   ((Standard__integer__rep.to_rep ((get a) temp___idx_161))
+                      = (Standard__integer__rep.to_rep
+                           ((get b) ((b__first - a__first) + temp___idx_161))))
+                 else true)))
+end
+
+module Pkg_median__t_vec
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Standard__integer as Standard__integer
+  use Standard__integer as Standard__integer
+  use Standard__positive as Standard__positive
+  use Standard__integer__rep as Standard__integer__rep
+  use Array__Int__Standard__integer as Array__Int__Standard__integer
+  
+  type component_type = Standard__integer.integer
+  
+  function index_1_id (x: int) : int = x
+  
+  clone export ada__model.Unconstr_Array with
+    axiom .,
+    type map = Array__Int__Standard__integer.map,
+    function array_bool_eq = Array__Int__Standard__integer.bool_eq,
+    type index_base_type = Standard__integer.integer,
+    type index_rep_type = int,
+    function to_rep = Standard__integer__rep.to_rep,
+    function rep_to_int = index_1_id,
+    predicate in_range_base = Standard__integer.in_range,
+    predicate index_dynamic_property = Standard__positive.dynamic_property,
+    predicate index_rep_le = Int.( <= )
+  
+  type t_vec = __t
+  
+  meta "model_projection" function to_array
+  
+  meta "inline:no" function to_array
+  
+  meta "model_projection" function first
+  
+  meta "inline:no" function first
+  
+  meta "model_projection" function last
+  
+  meta "inline:no" function last
+  
+  type t_vec__ref = { mutable t_vec__content : t_vec }
+  
+  function t_vec__ref_t_vec__content__projection (a: t_vec__ref) : t_vec =
+    a.t_vec__content
+  
+  meta "model_projection" function t_vec__ref_t_vec__content__projection
+  
+  meta "inline:no" function t_vec__ref_t_vec__content__projection
+  
+  val t_vec__havoc (x: t_vec__ref) : unit
+    writes { x }
+end
+
+module Pkg_median__median__vec
+  use _gnatprove_standard.Main
+  use int.Int
+  use Pkg_median__t_vec as Pkg_median__t_vec
+  
+  val function vec : Pkg_median__t_vec.t_vec
+end
+
+module Pkg_median__median__res
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  val res : int__ref
+end
+
+module Pkg_median__t_vec___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+  use Standard__positive as Standard__positive
+  use Pkg_median__t_vec as Pkg_median__t_vec
+  
+  predicate dynamic_invariant (temp___expr_166: Pkg_median__t_vec.t_vec) (temp___is_init_162: bool) (temp___skip_constant_163: bool) (temp___do_toplevel_164: bool) (temp___do_typ_inv_165: bool) =
+    if temp___skip_constant_163 then true
+    else
+      ((((Pkg_median__t_vec.dynamic_property Standard__positive.first)
+           Standard__positive.last)
+          (Pkg_median__t_vec.first temp___expr_166))
+         (Pkg_median__t_vec.last temp___expr_166))
+  
+  val dynamic_invariant (temp___expr_166: Pkg_median__t_vec.t_vec) (temp___is_init_162: bool) (temp___skip_constant_163: bool) (temp___do_toplevel_164: bool) (temp___do_typ_inv_165: bool) : 
+    bool
+    ensures { result
+                <->
+                (((((dynamic_invariant
+                       (temp___expr_166 : Pkg_median__t_vec.t_vec))
+                      (temp___is_init_162 : bool))
+                     (temp___skip_constant_163 : bool))
+                    (temp___do_toplevel_164 : bool))
+                   (temp___do_typ_inv_165 : bool)) }
+end
+
+module Standard__positive___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Standard__positive as Standard__positive
+  
+  predicate dynamic_invariant (temp___expr_53: int) (temp___is_init_49: bool) (temp___skip_constant_50: bool) (temp___do_toplevel_51: bool) (temp___do_typ_inv_52: bool) =
+    if ((temp___is_init_49 = True) \/
+          (Standard__positive.first <= Standard__positive.last)) then
+      (((Standard__positive.dynamic_property Standard__positive.first)
+          Standard__positive.last)
+         temp___expr_53)
+    else true
+  
+  val dynamic_invariant (temp___expr_53: int) (temp___is_init_49: bool) (temp___skip_constant_50: bool) (temp___do_toplevel_51: bool) (temp___do_typ_inv_52: bool) : 
+    bool
+    ensures { result
+                <->
+                (((((dynamic_invariant (temp___expr_53 : int))
+                      (temp___is_init_49 : bool))
+                     (temp___skip_constant_50 : bool))
+                    (temp___do_toplevel_51 : bool))
+                   (temp___do_typ_inv_52 : bool)) }
+  
+  predicate default_initial_assumption (temp___expr_54: int) (temp___skip_top_level_55: bool) =
+    true
+  
+  val default_initial_assumption (temp___expr_54: int) (temp___skip_top_level_55: bool) : 
+    bool
+    ensures { result
+                <->
+                ((default_initial_assumption (temp___expr_54 : int))
+                   (temp___skip_top_level_55 : bool)) }
+end
+
+module Pkg_median__median__vec___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Pkg_median__median__res___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Pkg_median__median__subprogram_def
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use _gnatprove_standard.Main as Main
+  use _gnatprove_standard.Int_Division as Int_Division
+  use Standard__integer as Standard__integer
+  use Standard__integer as Standard__integer
+  use Standard__integer___axiom as Standard__integer___axiom
+  use Standard__integer__rep as Standard__integer__rep
+  use Pkg_median__t_vec as Pkg_median__t_vec
+  use Pkg_median__median__vec as Pkg_median__median__vec
+  use Pkg_median__median__res as Pkg_median__median__res
+  use Array__Int__Standard__integer as Array__Int__Standard__integer
+  use Pkg_median__t_vec___axiom as Pkg_median__t_vec___axiom
+  use Array__Int__Standard__integer as Array__Int__Standard__integer
+  use Array__Int__Standard__integer as Array__Int__Standard__integer
+  use Array__Int__Standard__integer as Array__Int__Standard__integer
+  use Array__Int__Standard__integer as Array__Int__Standard__integer
+  use Array__Int__Standard__integer as Array__Int__Standard__integer
+  use Array__Int__Standard__integer as Array__Int__Standard__integer
+  use Standard__integer___axiom as Standard__integer___axiom
+  use Standard__positive___axiom as Standard__positive___axiom
+  use Standard__integer___axiom as Standard__integer___axiom
+  use Pkg_median__t_vec___axiom as Pkg_median__t_vec___axiom
+  use Pkg_median__median__vec___axiom as Pkg_median__median__vec___axiom
+  use Pkg_median__median__res___axiom as Pkg_median__median__res___axiom
+  
+  let def (__void_param : unit)
+    requires { [#"pkg_median.ads" 5 0 0] true }
+  = [@vc:divergent]
+    (([@GNAT-comment:Assume dynamic invariants of inputs of the subprogram pkg_median.ads:5]
+      ());
+     ([#"pkg_median.ads" 5 0 0]
+      assume {
+        [#"pkg_median.ads" 5 0 0]
+        (((((Pkg_median__t_vec___axiom.dynamic_invariant
+               Pkg_median__median__vec.vec)
+              True)
+             False)
+            True)
+           True) });
+     ([#"pkg_median.ads" 5 0 0]
+      assume {
+        [#"pkg_median.ads" 5 0 0]
+        (((((Standard__integer___axiom.dynamic_invariant
+               (Pkg_median__median__res.res.int__content))
+              False)
+             False)
+            True)
+           True) });
+     ([@GNAT-comment:Assume moved pointers in outputs of the subprogram pkg_median.ads:5]
+      ());
+     ([@GNAT-comment:Check for RTE in the Pre of the subprogram pkg_median.ads:5]
+      ());
+     ([#"pkg_median.ads" 5 0 0]
+      (begin
+         ensures { true }
+         let _ =
+           let _ =
+             (((([#"pkg_median.ads" 5 0 0] ());
+                (Pkg_median__t_vec.length Pkg_median__median__vec.vec))
+                 > (0 : int))
+               &&
+                ((([#"pkg_median.ads" 5 0 0] ());
+                  (Pkg_median__t_vec.first Pkg_median__median__vec.vec))
+                   = (1 : int)))
+              &&
+               ((([#"pkg_median.ads" 5 0 0] ());
+                 (Pkg_median__t_vec.last Pkg_median__median__vec.vec))
+                  = ([#"pkg_median.ads" 11 0 0]
+                     [@GP_Shape:pragargs__andthen__cmp__typeconv__length_ref]
+                     [@GP_Id:12]
+                     [@vc:annotation]
+                     [@GP_Sloc:pkg_median.ads:11:76]
+                     [@GP_Reason:VC_RANGE_CHECK]
+                     [@comment:       Pre => Vec'Length > 0 and then Vec'First = 1 and then Vec'Last = Vec'Length,                                                                            ^ pkg_median.ads:11:76:VC_RANGE_CHECK]
+                     (Standard__integer.range_check_
+                        (([#"pkg_median.ads" 11 0 0] ());
+                         (Pkg_median__t_vec.length
+                            Pkg_median__median__vec.vec))))) in
+           () in
+         ()
+       end));
+     ([@GNAT-comment:Assume Pre of the subprogram pkg_median.ads:5] ());
+     assume {
+       ((([@GP_Pretty_Ada:901]
+          ((Pkg_median__t_vec.length Pkg_median__median__vec.vec)
+             > (0 : int))) /\
+           ([@GP_Pretty_Ada:907]
+            ((Pkg_median__t_vec.first Pkg_median__median__vec.vec)
+               = (1 : int)))) /\
+          ([@GP_Pretty_Ada:913]
+           ((Pkg_median__t_vec.last Pkg_median__median__vec.vec)
+              = (Pkg_median__t_vec.length Pkg_median__median__vec.vec)))) };
+     (let temp___180 =
+        ((Pkg_median__t_vec.length Pkg_median__median__vec.vec) > (1 : int)) in
+      let temp___179 =
+        ((Pkg_median__t_vec.length Pkg_median__median__vec.vec) = (1 : int)) in
+      (if temp___180 then ()
+       else ());
+      (if temp___179 then ()
+       else ());
+      (begin
+         ensures { true }
+         let _ =
+           let _ =
+             check {
+               [#"pkg_median.ads" 12 0 0]
+               [@GP_Sloc:pkg_median.ads:12:8]
+               [@vc:annotation]
+               [@GP_Reason:VC_DISJOINT_CONTRACT_CASES]
+               [@comment:       Contract_Cases => ((Vec'Length = 1) => Res = Vec(1),        ^ pkg_median.ads:12:8:VC_DISJOINT_CONTRACT_CASES]
+               [@GP_Id:0]
+               ((((0 : int)
+                    + (if (temp___179 = True) then (1 : int)
+                       else (0 : int)))
+                   + (if (temp___180 = True) then (1 : int)
+                      else (0 : int)))
+                  <= (1 : int)) };
+             check {
+               [#"pkg_median.ads" 12 0 0]
+               [@GP_Reason:VC_COMPLETE_CONTRACT_CASES]
+               [@GP_Sloc:pkg_median.ads:12:8]
+               [@vc:annotation]
+               [@comment:       Contract_Cases => ((Vec'Length = 1) => Res = Vec(1),        ^ pkg_median.ads:12:8:VC_COMPLETE_CONTRACT_CASES]
+               [@GP_Id:1]
+               ((((0 : int)
+                    + (if (temp___179 = True) then (1 : int)
+                       else (0 : int)))
+                   + (if (temp___180 = True) then (1 : int)
+                      else (0 : int)))
+                  >= (1 : int)) } in
+           () in
+         ()
+       end);
+      (try
+         ([#"pkg_median.adb" 3 0 0] ());
+         ([@GP_Sloc:pkg_median.adb:6:7]
+          [#"pkg_median.adb" 6 0 0]
+          (if (([#"pkg_median.adb" 6 0 0]
+                [#"pkg_median.adb" 6 0 0]
+                (([@branch_id=831] Main.spark__branch).bool__content <-
+                   ((([#"pkg_median.adb" 6 0 0] ());
+                     (Pkg_median__t_vec.length Pkg_median__median__vec.vec))
+                      = (1 : int))));
+               (([@branch_id=831] Main.spark__branch).bool__content)) then
+             ([@GP_Sloc:pkg_median.adb:7:14]
+              [#"pkg_median.adb" 7 0 0]
+              [#"pkg_median.adb" 7 0 0]
+              (Pkg_median__median__res.res.int__content <-
+                 (Standard__integer__rep.to_rep
+                    ((Array__Int__Standard__integer.get
+                        (Pkg_median__t_vec.to_array
+                           Pkg_median__median__vec.vec))
+                       (let temp___182 =
+                          ([#"pkg_median.adb" 7 0 0] ());
+                          (Pkg_median__t_vec.first
+                             Pkg_median__median__vec.vec) in
+                        ([#"pkg_median.adb" 7 0 0]
+                         assert {
+                           [#"pkg_median.adb" 7 0 0]
+                           [#"pkg_median.adb" 7 0 0]
+                           [@GP_Sloc:pkg_median.adb:7:24]
+                           [@vc:annotation]
+                           [@comment:         Res := Vec(Vec'First);                        ^ pkg_median.adb:7:24:VC_INDEX_CHECK]
+                           [@GP_Reason:VC_INDEX_CHECK]
+                           [@GP_Id:2]
+                           [@GP_Shape:if__res_assign__ixdcomp__first_ref]
+                           (((Pkg_median__t_vec.first
+                                Pkg_median__median__vec.vec)
+                               <= temp___182) /\
+                              (temp___182
+                                 <= (Pkg_median__t_vec.last
+                                       Pkg_median__median__vec.vec))) });
+                        temp___182)))))
+           else
+             ([@GP_Sloc:pkg_median.adb:9:14]
+              [#"pkg_median.adb" 9 0 0]
+              [#"pkg_median.adb" 9 0 0]
+              (Pkg_median__median__res.res.int__content <-
+                 (Standard__integer__rep.to_rep
+                    ((Array__Int__Standard__integer.get
+                        (Pkg_median__t_vec.to_array
+                           Pkg_median__median__vec.vec))
+                       (let temp___184 =
+                          [#"pkg_median.adb" 9 0 0]
+                          [@comment:         Res := Vec((Vec'Length/2));                                ^ pkg_median.adb:9:32:VC_DIVISION_CHECK]
+                          [@vc:annotation]
+                          [@GP_Reason:VC_DIVISION_CHECK]
+                          [@GP_Sloc:pkg_median.adb:9:32]
+                          [@GP_Id:4]
+                          [@GP_Shape:if__res_assign__ixdcomp__div]
+                          ((Int_Division.div_
+                              ([#"pkg_median.adb" 9 0 0]
+                               [@vc:annotation]
+                               [@GP_Shape:if__res_assign__ixdcomp__div__typeconv__length_ref]
+                               [@GP_Reason:VC_RANGE_CHECK]
+                               [@comment:         Res := Vec((Vec'Length/2));                         ^ pkg_median.adb:9:25:VC_RANGE_CHECK]
+                               [@GP_Sloc:pkg_median.adb:9:25]
+                               [@GP_Id:3]
+                               (Standard__integer.range_check_
+                                  (([#"pkg_median.adb" 9 0 0] ());
+                                   (Pkg_median__t_vec.length
+                                      Pkg_median__median__vec.vec)))))
+                             (2 : int)) in
+                        assert {
+                          [#"pkg_median.adb" 9 0 0]
+                          [@vc:annotation]
+                          [@comment:         Res := Vec((Vec'Length/2));                                ^ pkg_median.adb:9:32:VC_INDEX_CHECK]
+                          [@GP_Sloc:pkg_median.adb:9:32]
+                          [@GP_Reason:VC_INDEX_CHECK]
+                          [@GP_Id:5]
+                          [@GP_Shape:if__res_assign__ixdcomp__div]
+                          (((Pkg_median__t_vec.first
+                               Pkg_median__median__vec.vec)
+                              <= temp___184) /\
+                             (temp___184
+                                <= (Pkg_median__t_vec.last
+                                      Pkg_median__median__vec.vec))) };
+                        temp___184)))))));
+         (raise Return__exc)
+       with Return__exc -> ()
+       end);
+      (begin
+         ensures { true }
+         let _ =
+           let _ =
+             if temp___179 then
+               ((Pkg_median__median__res.res.int__content)
+                  = (Standard__integer__rep.to_rep
+                       ((Array__Int__Standard__integer.get
+                           (Pkg_median__t_vec.to_array
+                              Pkg_median__median__vec.vec))
+                          (let temp___185 = 1 : int in
+                           assert {
+                             [#"pkg_median.ads" 12 0 0]
+                             [@vc:annotation]
+                             [@GP_Sloc:pkg_median.ads:12:57]
+                             [@comment:       Contract_Cases => ((Vec'Length = 1) => Res = Vec(1),                                                         ^ pkg_median.ads:12:57:VC_INDEX_CHECK]
+                             [@GP_Shape:pragargs__aggr__cmp__ixdcomp]
+                             [@GP_Reason:VC_INDEX_CHECK]
+                             [@GP_Id:6]
+                             (((Pkg_median__t_vec.first
+                                  Pkg_median__median__vec.vec)
+                                 <= temp___185) /\
+                                (temp___185
+                                   <= (Pkg_median__t_vec.last
+                                         Pkg_median__median__vec.vec))) };
+                           temp___185))))
+             else True in
+           () in
+         ()
+       end);
+      assert {
+        [#"pkg_median.ads" 12 0 0]
+        [@GP_Reason:VC_CONTRACT_CASE]
+        [@vc:annotation]
+        [@GP_Sloc:pkg_median.ads:12:44]
+        [@comment:       Contract_Cases => ((Vec'Length = 1) => Res = Vec(1),                                            ^ pkg_median.ads:12:44:VC_CONTRACT_CASE]
+        [@GP_Id:7]
+        [@GP_Shape:pragargs__aggr]
+        (if (temp___179 = True) then
+           ((Pkg_median__median__res.res.int__content)
+              = (Standard__integer__rep.to_rep
+                   ((Array__Int__Standard__integer.get
+                       (Pkg_median__t_vec.to_array
+                          Pkg_median__median__vec.vec))
+                      (1 : int))))
+         else true) };
+      (begin
+         ensures { true }
+         let _ =
+           let _ =
+             if temp___180 then
+               ((Pkg_median__median__res.res.int__content)
+                  = (Standard__integer__rep.to_rep
+                       ((Array__Int__Standard__integer.get
+                           (Pkg_median__t_vec.to_array
+                              Pkg_median__median__vec.vec))
+                          (let temp___186 =
+                             [#"pkg_median.ads" 13 0 0]
+                             [@GP_Shape:pragargs__aggr__cmp__ixdcomp__div]
+                             [@vc:annotation]
+                             [@GP_Reason:VC_DIVISION_CHECK]
+                             [@GP_Sloc:pkg_median.ads:13:67]
+                             [@comment:                         (Vec'Length > 1) => Res = Vec((Vec'Length/2)));                                                                   ^ pkg_median.ads:13:67:VC_DIVISION_CHECK]
+                             [@GP_Id:9]
+                             ((Int_Division.div_
+                                 ([#"pkg_median.ads" 13 0 0]
+                                  [@vc:annotation]
+                                  [@GP_Sloc:pkg_median.ads:13:60]
+                                  [@GP_Reason:VC_RANGE_CHECK]
+                                  [@comment:                         (Vec'Length > 1) => Res = Vec((Vec'Length/2)));                                                            ^ pkg_median.ads:13:60:VC_RANGE_CHECK]
+                                  [@GP_Shape:pragargs__aggr__cmp__ixdcomp__div__typeconv__length_ref]
+                                  [@GP_Id:8]
+                                  (Standard__integer.range_check_
+                                     (([#"pkg_median.ads" 13 0 0] ());
+                                      (Pkg_median__t_vec.length
+                                         Pkg_median__median__vec.vec)))))
+                                (2 : int)) in
+                           assert {
+                             [#"pkg_median.ads" 13 0 0]
+                             [@GP_Id:10]
+                             [@GP_Shape:pragargs__aggr__cmp__ixdcomp__div]
+                             [@vc:annotation]
+                             [@GP_Sloc:pkg_median.ads:13:67]
+                             [@GP_Reason:VC_INDEX_CHECK]
+                             [@comment:                         (Vec'Length > 1) => Res = Vec((Vec'Length/2)));                                                                   ^ pkg_median.ads:13:67:VC_INDEX_CHECK]
+                             (((Pkg_median__t_vec.first
+                                  Pkg_median__median__vec.vec)
+                                 <= temp___186) /\
+                                (temp___186
+                                   <= (Pkg_median__t_vec.last
+                                         Pkg_median__median__vec.vec))) };
+                           temp___186))))
+             else True in
+           () in
+         ()
+       end);
+      assert {
+        [#"pkg_median.ads" 13 0 0]
+        [@GP_Sloc:pkg_median.ads:13:43]
+        [@GP_Id:11]
+        [@GP_Reason:VC_CONTRACT_CASE]
+        [@vc:annotation]
+        [@comment:                         (Vec'Length > 1) => Res = Vec((Vec'Length/2)));                                           ^ pkg_median.ads:13:43:VC_CONTRACT_CASE]
+        [@GP_Shape:pragargs__aggr]
+        (if (temp___180 = True) then
+           ((Pkg_median__median__res.res.int__content)
+              = (Standard__integer__rep.to_rep
+                   ((Array__Int__Standard__integer.get
+                       (Pkg_median__t_vec.to_array
+                          Pkg_median__median__vec.vec))
+                      ((Int_Division.div
+                          (Pkg_median__t_vec.length
+                             Pkg_median__median__vec.vec))
+                         (2 : int)))))
+         else true) }))
+end

@@ -1,0 +1,27 @@
+[GENERATED OBJECT FILE]
+b__main.o
+[PROJECT FILES]
+D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\SPARK_Lab_calculadora\default.gpr
+20190923174626 2dcadfe57bf5de66e6684a1fe564f0f2
+[BOUND OBJECT FILES]
+D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\SPARK_Lab_calculadora\obj\pkg_add.o
+D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\SPARK_Lab_calculadora\obj\pkg_multiply.o
+D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\SPARK_Lab_calculadora\obj\pkg_subtract.o
+D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\SPARK_Lab_calculadora\obj\pkg_divide.o
+D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\SPARK_Lab_calculadora\obj\tests_add.o
+D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\SPARK_Lab_calculadora\obj\tests_divide.o
+D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\SPARK_Lab_calculadora\obj\tests_multiply.o
+D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\SPARK_Lab_calculadora\obj\tests_subtract.o
+D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\SPARK_Lab_calculadora\obj\main.o
+[GENERATED SOURCE FILES]
+b__main.ads
+b__main.adb
+b__main.ali
+[RESULTING OPTIONS]
+-LD:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\SPARK_Lab_calculadora\obj\
+-LD:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\SPARK_Lab_calculadora\obj\
+-LC:/gnat/2021/lib/gcc/x86_64-w64-mingw32/10.3.1/adalib/
+-static
+-static-libgcc
+C:/gnat/2021/lib/gcc/x86_64-w64-mingw32/10.3.1/adalib/libgnat.a
+-Wl,--stack=0x2000000

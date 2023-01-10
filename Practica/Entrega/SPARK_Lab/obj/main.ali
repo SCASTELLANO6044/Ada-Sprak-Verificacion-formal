@@ -1,0 +1,80 @@
+V "GNAT Lib v2021"
+M P W=b
+A -gnatA
+A -g
+A -fstack-check=specific
+A -gnata
+A -gnato
+A -gnat12
+A -gnatwa
+A -gnateE
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_IMPLEMENTATION_PRAGMAS
+
+U main%b		main.adb		8ec32a9d NE OO SU
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+W tests_addtenxtimes%b	tests_addtenxtimes.adb	tests_addtenxtimes.ali
+W tests_fromnegativetozero%b  tests_fromnegativetozero.adb  tests_fromnegativetozero.ali
+W tests_median%b	tests_median.adb	tests_median.ali
+W tests_substracttenaddten%b  tests_substracttenaddten.adb  tests_substracttenaddten.ali
+
+D ada.ads		20210520051132 76789da1 ada%s
+D a-assert.ads		20210520051128 a718b65c ada.assertions%s
+D a-except.ads		20210520051128 946f3014 ada.exceptions%s
+D a-ioexce.ads		20210520051128 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20210520051130 119b8fb3 ada.streams%s
+D a-string.ads		20210520051130 90ac6797 ada.strings%s
+D a-sttebu.ads		20210520051130 18209c64 ada.strings.text_buffers%s
+D a-stuten.ads		20210520051130 808c40ad ada.strings.utf_encoding%s
+D a-tags.ads		20210520051130 9eaa38c6 ada.tags%s
+D a-textio.ads		20210520051130 aef4d56d ada.text_io%s
+D a-unccon.ads		20210520051130 0e9b276f ada.unchecked_conversion%s
+D interfac.ads		20210520051132 edec285f interfaces%s
+D i-cstrea.ads		20210520051132 e53d8b8e interfaces.c_streams%s
+D main.adb		20220925141206 a9820230 main%b
+D pkg_addtenxtimes.ads	20201111101036 95669c28 pkg_addtenxtimes%s
+D pkg_fromnegativetozero.ads  20210708095212 a45b5a79 pkg_fromnegativetozero%s
+D pkg_median.ads	20201111085648 62604066 pkg_median%s
+D pkg_substracttenaddten.ads  20201110140018 ba32a195 pkg_substracttenaddten%s
+D system.ads		20210520051136 2ffa5114 system%s
+D s-assert.ads		20210520051132 6a49a4e4 system.assertions%s
+D s-crtl.ads		20210520051132 0ebbdb71 system.crtl%s
+D s-exctab.ads		20210520051132 54135002 system.exception_table%s
+D s-ficobl.ads		20210520051132 078245e4 system.file_control_block%s
+D s-parame.ads		20210520051134 4752c4cb system.parameters%s
+D s-putima.ads		20210520051134 4e095881 system.put_images%s
+D s-secsta.ads		20210520051134 9b3ab94b system.secondary_stack%s
+D s-soflin.ads		20210520051134 a7318a92 system.soft_links%s
+D s-stache.ads		20210520051134 a37c21ec system.stack_checking%s
+D s-stalib.ads		20210520051134 472fbca8 system.standard_library%s
+D s-stoele.ads		20210520051134 2dc34a04 system.storage_elements%s
+D s-stoele.adb		20210520051134 ed88f8fb system.storage_elements%b
+D s-traent.ads		20210520051134 26a8d361 system.traceback_entries%s
+D s-unstyp.ads		20210520051134 2b077493 system.unsigned_types%s
+D s-wchcon.ads		20210520051136 1b7d22d2 system.wch_con%s
+D tests_addtenxtimes.adb  20201110105806 be292c39 tests_addtenxtimes%b
+D tests_fromnegativetozero.adb  20201110105734 82016b61 tests_fromnegativetozero%b
+D tests_median.adb	20201109132242 d30218a7 tests_median%b
+D tests_substracttenaddten.adb  20201110122946 c86b7752 tests_substracttenaddten%b
+D unchconv.ads		20210520051136 ca2f9e18 unchecked_conversion%s
+G a e
+G c Z b b [main standard 6 11 none]
+G r c none [main standard 6 11 none] [tests_addtenxtimes standard 4 11 none]
+G r c none [main standard 6 11 none] [tests_fromnegativetozero standard 4 11 none]
+G r c none [main standard 6 11 none] [tests_substracttenaddten standard 4 11 none]
+G r c none [main standard 6 11 none] [tests_median standard 4 11 none]
+X 14 main.adb
+6U11*Main 6b11 13l5 13t9
+X 35 tests_addtenxtimes.adb
+4U11*Tests_addTenXTimes 14|1w6 9s4
+X 36 tests_fromnegativetozero.adb
+4U11*Tests_fromNegativeToZero 14|2w6 10s4
+X 37 tests_median.adb
+4U11*Tests_Median 14|4w6 12s4
+X 38 tests_substracttenaddten.adb
+4U11*Tests_substractTenAddTen 14|3w6 11s4
+

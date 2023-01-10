@@ -1,0 +1,1 @@
+pkg_substracttenaddten.ads:33:22: medium: postcondition might fail, cannot prove Vec(j) = Vec'Old(j) + ten (e.g. when Vec = (2 => 11, 3 => 10, others => -10) and Vec'Last = 3 and Vec'Old = (others => 0) and j = 2 and ten = 10)[#0]

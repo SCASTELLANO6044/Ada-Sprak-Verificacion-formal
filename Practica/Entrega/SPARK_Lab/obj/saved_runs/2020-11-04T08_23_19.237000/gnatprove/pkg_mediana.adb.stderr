@@ -1,0 +1,2 @@
+pkg_mediana.adb:6:07: warning: statement has no effect[#0]
+pkg_mediana.adb:7:14: warning: unused assignment[#1]

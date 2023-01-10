@@ -1,0 +1,2 @@
+pkg_moda.ads:10:30: constant "cero" cannot act as output
+pkg_moda.ads:11:08: constant "cero" is missing from output dependence list

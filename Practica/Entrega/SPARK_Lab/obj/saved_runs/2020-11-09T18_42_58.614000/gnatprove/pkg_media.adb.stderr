@@ -1,0 +1,1 @@
+pkg_media.ads:28:22: medium: postcondition might fail, cannot prove Vec(i) = Vec'Old(i) - 10[#0]

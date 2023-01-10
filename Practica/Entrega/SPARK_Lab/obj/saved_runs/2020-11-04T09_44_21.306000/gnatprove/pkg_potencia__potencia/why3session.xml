@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE why3session PUBLIC "-//Why3//proof session v5//EN"
+"http://why3.lri.fr/why3session.dtd">
+<why3session shape_version="6">
+<prover id="0" name="CVC4" version="1.6-gnatprove" timelimit="1" steplimit="0" memlimit="1000"/>
+<prover id="1" name="CVC4_CE" version="1.6-gnatprove" timelimit="1" steplimit="0" memlimit="1000"/>
+<file format="gnat-json">
+<path name=".."/><path name="pkg_potencia__potencia.gnat-json"/>
+<theory name="Pkg_potencia__potencia__subprogram_def">
+ <goal name="def&#39;vc" expl="VC for def">
+ <transf name="split_goal_wp_conj" >
+  <goal name="def&#39;vc.0" expl="precondition">
+  <proof prover="0"><result status="timeout"/></proof>
+  <proof prover="1"><result status="timeout" steps="6400"/></proof>
+  </goal>
+  <goal name="def&#39;vc.1" expl="precondition" proved="true">
+  <proof prover="0"><result status="valid" steps="5"/></proof>
+  </goal>
+  <goal name="def&#39;vc.2" expl="postcondition" proved="true">
+  <transf name="trivial_true" proved="true" >
+  </transf>
+  </goal>
+  <goal name="def&#39;vc.3" expl="postcondition" proved="true">
+  <transf name="trivial_true" proved="true" >
+  </transf>
+  </goal>
+  <goal name="def&#39;vc.4" expl="postcondition" proved="true">
+  <transf name="trivial_true" proved="true" >
+  </transf>
+  </goal>
+  <goal name="def&#39;vc.5" expl="postcondition" proved="true">
+  <transf name="trivial_true" proved="true" >
+  </transf>
+  </goal>
+  <goal name="def&#39;vc.6" expl="precondition">
+  <proof prover="0"><result status="timeout"/></proof>
+  </goal>
+  <goal name="def&#39;vc.7" expl="precondition" proved="true">
+  <proof prover="0"><result status="valid" steps="58"/></proof>
+  </goal>
+  <goal name="def&#39;vc.8" expl="precondition">
+  <proof prover="0"><result status="timeout"/></proof>
+  </goal>
+  <goal name="def&#39;vc.9" expl="postcondition" proved="true">
+  <transf name="trivial_true" proved="true" >
+  </transf>
+  </goal>
+  <goal name="def&#39;vc.10" expl="postcondition" proved="true">
+  <transf name="trivial_true" proved="true" >
+  </transf>
+  </goal>
+  <goal name="def&#39;vc.11" expl="loop invariant init" proved="true">
+  <proof prover="0"><result status="valid" steps="5"/></proof>
+  </goal>
+  <goal name="def&#39;vc.12" expl="loop invariant init" proved="true">
+  <proof prover="0"><result status="valid" steps="5"/></proof>
+  </goal>
+  <goal name="def&#39;vc.13" expl="loop invariant init">
+  <proof prover="0"><result status="timeout"/></proof>
+  <proof prover="1"><result status="timeout" steps="7009"/></proof>
+  </goal>
+  <goal name="def&#39;vc.14" expl="precondition" proved="true">
+  <proof prover="0"><result status="valid" steps="20"/></proof>
+  </goal>
+  <goal name="def&#39;vc.15" expl="precondition">
+  <proof prover="0"><result status="timeout"/></proof>
+  <proof prover="1"><result status="timeout" steps="8254"/></proof>
+  </goal>
+  <goal name="def&#39;vc.16" expl="postcondition" proved="true">
+  <transf name="trivial_true" proved="true" >
+  </transf>
+  </goal>
+  <goal name="def&#39;vc.17" expl="postcondition" proved="true">
+  <transf name="trivial_true" proved="true" >
+  </transf>
+  </goal>
+  <goal name="def&#39;vc.18" expl="check" proved="true">
+  <proof prover="0"><result status="valid" steps="5"/></proof>
+  </goal>
+  <goal name="def&#39;vc.19" expl="precondition" proved="true">
+  <proof prover="0"><result status="valid" steps="129"/></proof>
+  </goal>
+  <goal name="def&#39;vc.20" expl="precondition">
+  <proof prover="0"><result status="timeout"/></proof>
+  <proof prover="1"><result status="timeout" steps="7164"/></proof>
+  </goal>
+  <goal name="def&#39;vc.21" expl="postcondition" proved="true">
+  <transf name="trivial_true" proved="true" >
+  </transf>
+  </goal>
+  <goal name="def&#39;vc.22" expl="postcondition" proved="true">
+  <transf name="trivial_true" proved="true" >
+  </transf>
+  </goal>
+  <goal name="def&#39;vc.23" expl="loop invariant preservation" proved="true">
+  <proof prover="0"><result status="valid" steps="20"/></proof>
+  </goal>
+  <goal name="def&#39;vc.24" expl="loop invariant preservation" proved="true">
+  <proof prover="0"><result status="valid" steps="5"/></proof>
+  </goal>
+  <goal name="def&#39;vc.25" expl="loop invariant preservation">
+  <proof prover="0"><result status="timeout"/></proof>
+  <proof prover="1"><result status="timeout" steps="3995"/></proof>
+  </goal>
+  <goal name="def&#39;vc.26" expl="precondition" proved="true">
+  <proof prover="0"><result status="valid" steps="5"/></proof>
+  </goal>
+  <goal name="def&#39;vc.27" expl="postcondition" proved="true">
+  <transf name="trivial_true" proved="true" >
+  </transf>
+  </goal>
+  <goal name="def&#39;vc.28" expl="postcondition" proved="true">
+  <proof prover="0"><result status="valid" steps="5"/></proof>
+  </goal>
+  <goal name="def&#39;vc.29" expl="postcondition">
+  <proof prover="0"><result status="timeout"/></proof>
+  <proof prover="1"><result status="timeout" steps="6434"/></proof>
+  </goal>
+ </transf>
+ </goal>
+</theory>
+</file>
+</why3session>

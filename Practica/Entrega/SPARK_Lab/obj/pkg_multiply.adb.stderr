@@ -1,0 +1,3 @@
+pkg_multiply.ads:18:26: warning: condition can only be False if invalid values present
+pkg_multiply.ads:20:26: warning: condition can only be False if invalid values present
+pkg_multiply.ads:22:26: warning: condition can only be False if invalid values present

@@ -1,0 +1,2 @@
+pkg_substracttenaddten.adb:17:37: medium: loop invariant might fail in first iteration, cannot prove Vec(j) = Vec'Loop_Entry(j) - 10[#0]
+pkg_substracttenaddten.adb:23:37: medium: loop invariant might fail in first iteration, cannot prove Vec(k) = Vec'Loop_Entry(k) + 10[#1]

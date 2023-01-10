@@ -1,0 +1,32 @@
+V "GNAT Lib v2021"
+A -x
+A ada
+A -gnatA
+A -gnatc
+P GP FX
+
+RN
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+
+U abs_function%b	abs_function.adb	f23475aa OO PK IL
+
+U abs_function%s	abs_function.ads	d748b6a5 OO PK IL
+
+D abs_function.ads	20220914155224 d748b6a5 abs_function%s
+D abs_function.adb	20220914153526 257cc30f abs_function%b
+D system.ads		20210520051134 2ffa5114 system%s
+G a Z
+X 1 abs_function.ads
+1K9*Abs_function 10l5 10e17 2|1b14 12l8 12t20
+3V13*abs_value{integer} 3>24 2|3b13 10l11 10t20
+3i24 n{integer} 2|3b24 5r13 6r21 8r20
+
+QQ SPARKVERSION SPARK Community 2021 (20210519)
+GG EK_DIRECT_CALLS abs_function__abs_value 0
+GG EK_GLOBALS abs_function__abs_value local FALSE E_FUNCTION FALSE ORIGIN_FLOW 1 abs_function proper_proof_in 0 proper_input 0 proper_output 0 refined_proof_in 0 refined_input 0 refined_output 0 calls_proof 0 calls 0 calls_conditional 0 FALSE FALSE FALSE TRUE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
+GG EK_DIRECT_CALLS abs_function 0
+GG EK_GLOBALS abs_function local FALSE E_PACKAGE TRUE ORIGIN_FLOW 0 proper_proof_in 0 proper_input 0 proper_output 0 refined_proof_in 0 refined_input 0 refined_output 0 initializes 0 refined_initializes 0 calls_proof 0 calls 0 calls_conditional 0 local_var 0 FALSE FALSE FALSE FALSE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
+GG EK_FLOW_SCOPE abs_function TRUE FALSE FALSE FALSE FALSE __standard
+GG EK_FLOW_SCOPE abs_function__abs_value FALSE FALSE FALSE FALSE TRUE abs_function VISIBLE_PART
+GG EK_END_MARKER

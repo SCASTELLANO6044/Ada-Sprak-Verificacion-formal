@@ -1,0 +1,1 @@
+pkg_moda.ads:11:19: medium: postcondition might fail (e.g. when Vec = (1 => 1, 2 => 1, others => 2) and Vec'First = 1 and Vec'Last = 2)[#0]

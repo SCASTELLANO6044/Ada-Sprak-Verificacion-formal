@@ -1,0 +1,1 @@
+pkg_moda.adb:17:16: pragma "Loop_Invariant" must appear immediately within the statements of a loop

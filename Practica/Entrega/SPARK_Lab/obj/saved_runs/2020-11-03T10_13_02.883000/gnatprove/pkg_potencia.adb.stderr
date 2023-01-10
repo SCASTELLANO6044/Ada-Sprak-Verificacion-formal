@@ -1,0 +1,4 @@
+pkg_potencia.adb:16:24: medium: overflow check might fail (e.g. when N = -2 and Res = -2)[#0]
+pkg_potencia.adb:19:35: medium: loop invariant might not be preserved by an arbitrary iteration, cannot prove i in 1 .. Exp (e.g. when Exp = 2 and i = 3)[#2]
+pkg_potencia.adb:20:43: warning: unused variable "j"
+pkg_potencia.adb:20:58: medium: loop invariant might not be preserved by an arbitrary iteration, cannot prove Res = Res'Loop_Entry * N (e.g. when N = -1 and Res = -1 and Res'Loop_Entry = -1 and j = 1)[#1]

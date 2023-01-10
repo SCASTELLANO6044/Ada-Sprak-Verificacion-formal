@@ -1,0 +1,3 @@
+pkg_substracttenaddten.ads:22:52: missing ";"
+pkg_substracttenaddten.ads:27:24: reserved word "all" cannot be used as identifier
+pkg_substracttenaddten.ads:30:28: missing "use"

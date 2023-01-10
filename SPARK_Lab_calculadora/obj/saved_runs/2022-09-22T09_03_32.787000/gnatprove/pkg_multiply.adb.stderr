@@ -1,0 +1,4 @@
+pkg_multiply.ads:17:24: medium: overflow check might fail [reason for check: result of multiplication must fit in a 32-bits machine integer][#0]
+pkg_multiply.ads:19:24: medium: overflow check might fail [reason for check: result of multiplication must fit in a 32-bits machine integer][#1]
+pkg_multiply.ads:21:10: medium: overflow check might fail [reason for check: result of negation must fit in a 32-bits machine integer][#2]
+pkg_multiply.ads:21:44: medium: overflow check might fail [reason for check: result of negation must fit in a 32-bits machine integer][#3]

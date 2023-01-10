@@ -1,0 +1,14 @@
+20220922081048
+-c
+-x
+ada
+-gnatA
+-g
+-fstack-check
+-gnata
+-gnato
+-gnat12
+-gnatwa
+-gnateE
+-gnatc
+-gnates=D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\SPARK_Lab_calculadora\obj\gnatprove\aa176a6a.tmp

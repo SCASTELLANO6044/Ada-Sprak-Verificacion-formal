@@ -1,0 +1,107 @@
+{
+  "spark": [
+    {
+      "name": "Pkg_Moda",
+      "sloc": [
+        {
+          "file": "pkg_moda.ads",
+          "line": 1
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "Pkg_Moda.Moda",
+      "sloc": [
+        {
+          "file": "pkg_moda.ads",
+          "line": 5
+        }
+      ],
+      "spark": "all"
+    }
+  ],
+  "flow": [
+    {
+      "file": "pkg_moda.adb",
+      "line": 7,
+      "col": 7,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Pkg_Moda.Moda",
+        "sloc": [
+          {
+            "file": "pkg_moda.ads",
+            "line": 5
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    },
+    {
+      "file": "pkg_moda.ads",
+      "line": 8,
+      "col": 8,
+      "rule": "GLOBAL_WRONG",
+      "severity": "info",
+      "entity": {
+        "name": "Pkg_Moda.Moda",
+        "sloc": [
+          {
+            "file": "pkg_moda.ads",
+            "line": 5
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    },
+    {
+      "file": "pkg_moda.ads",
+      "line": 9,
+      "col": 8,
+      "rule": "DEPENDS_WRONG",
+      "severity": "info",
+      "entity": {
+        "name": "Pkg_Moda.Moda",
+        "sloc": [
+          {
+            "file": "pkg_moda.ads",
+            "line": 5
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    }
+  ],
+  "assumptions": [
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Pkg_Moda.Moda",
+          "sloc": [
+            {
+              "file": "pkg_moda.ads",
+              "line": 5
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "timings": {
+    "globals/properties (advanced)": 3.64700012141839E-04,
+    "flow analysis": 1.80960004217923E-03,
+    "marking": 2.85899994196370E-04,
+    "globals (basic)": 2.22999995457940E-04
+  }
+}

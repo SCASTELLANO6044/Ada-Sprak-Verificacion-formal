@@ -1,0 +1,2 @@
+pkg_media.ads:27:42: medium: overflow check might fail (e.g. when Vec = (1 => 0, 2 => -2147483639, others => -10) and Vec'Last = 2)[#0]
+pkg_media.ads:29:41: medium: overflow check might fail (e.g. when Vec = (1 => 2147483638, 2 => 0, others => 2147483628) and Vec'Last = 2)[#1]
