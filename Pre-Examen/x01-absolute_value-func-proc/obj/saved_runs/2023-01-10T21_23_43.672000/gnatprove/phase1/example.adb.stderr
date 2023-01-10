@@ -1,0 +1,4 @@
+example.ads:3:56: error: missing ";"
+example.ads:4:06: error: "with" can only appear in context clause
+example.ads:6:59: error: missing ";"
+example.ads:7:06: error: "with" can only appear in context clause

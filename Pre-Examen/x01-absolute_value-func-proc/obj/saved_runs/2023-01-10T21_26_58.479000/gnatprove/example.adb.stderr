@@ -1,0 +1,1 @@
+example.adb:12:14: warning: procedure "Absolute_Value" is not referenced [-gnatwu]

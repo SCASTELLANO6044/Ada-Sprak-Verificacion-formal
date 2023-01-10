@@ -1,0 +1,14 @@
+20230110213142
+-c
+-x
+ada
+-gnatA
+-g
+-fstack-check
+-gnata
+-gnato
+-gnat12
+-gnatwa
+-gnateE
+-gnatc
+-gnates=D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen\x01-absolute_value-func-proc\obj\gnatprove\a5b48fd4.tmp

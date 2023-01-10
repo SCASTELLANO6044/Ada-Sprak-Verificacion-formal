@@ -1,0 +1,96 @@
+{
+  "spark": [
+    {
+      "name": "Example",
+      "sloc": [
+        {
+          "file": "example.ads",
+          "line": 1
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "Example.Absolute_Value",
+      "sloc": [
+        {
+          "file": "example.ads",
+          "line": 3
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "Example.Absolute_Value",
+      "sloc": [
+        {
+          "file": "example.adb",
+          "line": 12
+        }
+      ],
+      "spark": "all"
+    }
+  ],
+  "flow": [
+    {
+      "file": "example.adb",
+      "line": 12,
+      "col": 43,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Example.Absolute_Value",
+        "sloc": [
+          {
+            "file": "example.adb",
+            "line": 12
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    }
+  ],
+  "assumptions": [
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Example.Absolute_Value",
+          "sloc": [
+            {
+              "file": "example.ads",
+              "line": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Example.Absolute_Value",
+          "sloc": [
+            {
+              "file": "example.adb",
+              "line": 12
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "timings": {
+    "globals (advanced)": 3.27199988532811E-04,
+    "flow analysis": 1.18300004396588E-03,
+    "marking": 7.81999988248572E-05,
+    "properties (advanced)": 1.92999996215804E-05,
+    "globals (basic)": 2.78299994533882E-04
+  }
+}

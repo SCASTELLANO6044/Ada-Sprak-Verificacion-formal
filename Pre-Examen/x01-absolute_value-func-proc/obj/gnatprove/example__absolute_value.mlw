@@ -1,0 +1,281 @@
+module Standard__integer
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  
+  type integer = <range -2147483648 2147483647>
+  
+  val function first : int
+    ensures { result = ((- 2147483648) : int) }
+  
+  val function last : int
+    ensures { result = (2147483647 : int) }
+  
+  predicate in_range (x: int) = ((first <= x) /\ (x <= last))
+  
+  val in_range (x: int) : bool
+    ensures { result <-> (in_range (x : int)) }
+  
+  clone export ada__model.Static_Discrete with
+    axiom .,
+    type t = integer,
+    function first = first,
+    function last = last,
+    predicate in_range = in_range
+  
+  type integer__ref = { mutable integer__content : integer }
+  
+  function integer__ref_integer__content__projection (a: integer__ref) : integer =
+    a.integer__content
+  
+  meta "model_projection" function integer__ref_integer__content__projection
+  
+  meta "inline:no" function integer__ref_integer__content__projection
+  
+  val integer__havoc (x: integer__ref) : unit
+    writes { x }
+end
+
+module Standard__integer___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Standard__integer as Standard__integer
+  
+  predicate dynamic_invariant (temp___expr_18: int) (temp___is_init_14: bool) (temp___skip_constant_15: bool) (temp___do_toplevel_16: bool) (temp___do_typ_inv_17: bool) =
+    if ((temp___is_init_14 = True) \/
+          (Standard__integer.first <= Standard__integer.last)) then
+      (((Standard__integer.dynamic_property Standard__integer.first)
+          Standard__integer.last)
+         temp___expr_18)
+    else true
+  
+  val dynamic_invariant (temp___expr_18: int) (temp___is_init_14: bool) (temp___skip_constant_15: bool) (temp___do_toplevel_16: bool) (temp___do_typ_inv_17: bool) : 
+    bool
+    ensures { result
+                <->
+                (((((dynamic_invariant (temp___expr_18 : int))
+                      (temp___is_init_14 : bool))
+                     (temp___skip_constant_15 : bool))
+                    (temp___do_toplevel_16 : bool))
+                   (temp___do_typ_inv_17 : bool)) }
+  
+  predicate default_initial_assumption (temp___expr_19: int) (temp___skip_top_level_20: bool) =
+    true
+  
+  val default_initial_assumption (temp___expr_19: int) (temp___skip_top_level_20: bool) : 
+    bool
+    ensures { result
+                <->
+                ((default_initial_assumption (temp___expr_19 : int))
+                   (temp___skip_top_level_20 : bool)) }
+end
+
+module Standard__natural
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  
+  type natural = <range 0 2147483647>
+  
+  val function first : int
+    ensures { result = (0 : int) }
+  
+  val function last : int
+    ensures { result = (2147483647 : int) }
+  
+  predicate in_range (x: int) = ((first <= x) /\ (x <= last))
+  
+  val in_range (x: int) : bool
+    ensures { result <-> (in_range (x : int)) }
+  
+  clone export ada__model.Static_Discrete with
+    axiom .,
+    type t = natural,
+    function first = first,
+    function last = last,
+    predicate in_range = in_range
+  
+  type natural__ref = { mutable natural__content : natural }
+  
+  function natural__ref_natural__content__projection (a: natural__ref) : natural =
+    a.natural__content
+  
+  meta "model_projection" function natural__ref_natural__content__projection
+  
+  meta "inline:no" function natural__ref_natural__content__projection
+  
+  val natural__havoc (x: natural__ref) : unit
+    writes { x }
+end
+
+module Example__absolute_value__x
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  val function x : int
+end
+
+module Standard__natural___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Standard__natural as Standard__natural
+  
+  predicate dynamic_invariant (temp___expr_46: int) (temp___is_init_42: bool) (temp___skip_constant_43: bool) (temp___do_toplevel_44: bool) (temp___do_typ_inv_45: bool) =
+    if ((temp___is_init_42 = True) \/
+          (Standard__natural.first <= Standard__natural.last)) then
+      (((Standard__natural.dynamic_property Standard__natural.first)
+          Standard__natural.last)
+         temp___expr_46)
+    else true
+  
+  val dynamic_invariant (temp___expr_46: int) (temp___is_init_42: bool) (temp___skip_constant_43: bool) (temp___do_toplevel_44: bool) (temp___do_typ_inv_45: bool) : 
+    bool
+    ensures { result
+                <->
+                (((((dynamic_invariant (temp___expr_46 : int))
+                      (temp___is_init_42 : bool))
+                     (temp___skip_constant_43 : bool))
+                    (temp___do_toplevel_44 : bool))
+                   (temp___do_typ_inv_45 : bool)) }
+  
+  predicate default_initial_assumption (temp___expr_47: int) (temp___skip_top_level_48: bool) =
+    true
+  
+  val default_initial_assumption (temp___expr_47: int) (temp___skip_top_level_48: bool) : 
+    bool
+    ensures { result
+                <->
+                ((default_initial_assumption (temp___expr_47 : int))
+                   (temp___skip_top_level_48 : bool)) }
+end
+
+module Example__absolute_value__x___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Example__absolute_value__subprogram_def
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use _gnatprove_standard.Main as Main
+  use _gnatprove_standard.Int_Abs as Int_Abs
+  use Standard__integer as Standard__integer
+  use Standard__integer___axiom as Standard__integer___axiom
+  use Standard__natural as Standard__natural
+  use Example__absolute_value__x as Example__absolute_value__x
+  use Standard__integer___axiom as Standard__integer___axiom
+  use Standard__natural___axiom as Standard__natural___axiom
+  use Standard__integer___axiom as Standard__integer___axiom
+  use Example__absolute_value__x___axiom as Example__absolute_value__x___axiom
+  
+  val example__absolute_value__result : int__ref
+  
+  let def (__void_param : unit)
+    requires { [#"example.ads" 3 0 0] true }
+    ensures { [#"example.ads" 3 0 0]
+              [#"example.ads" 6 0 0]
+              [@GP_Reason:VC_POSTCONDITION]
+              [@GP_Sloc:example.ads:6:16]
+              [@GP_Shape:pragargs__cmp]
+              [@model_vc_post]
+              [@GP_Id:4]
+              [@comment:       Post => Absolute_Value'Result = abs(X);                ^ example.ads:6:16:VC_POSTCONDITION]
+              [@GP_Sloc:example.ads:6:16]
+              [@GP_Pretty_Ada:948]
+              ((example__absolute_value__result.int__content)
+                 = (Int_Abs.abs Example__absolute_value__x.x)) }
+  = [@vc:divergent]
+    (([@GNAT-comment:Assume dynamic invariants of inputs of the subprogram example.ads:3]
+      ());
+     assume {
+       ((((Standard__integer___axiom.dynamic_invariant
+             Example__absolute_value__x.x)
+            True)
+           False)
+          True)
+         True };
+     ([@GNAT-comment:Assume moved pointers in outputs of the subprogram example.ads:3]
+      ());
+     ([@GNAT-comment:Check for RTE in the Pre of the subprogram example.ads:3]
+      ());
+     (begin
+        ensures { true }
+        let _ =
+          let _ = (Example__absolute_value__x.x > ((- 2147483648) : int)) in
+          () in
+        ()
+      end);
+     ([@GNAT-comment:Assume Pre of the subprogram example.ads:3] ());
+     assume {
+       [@GP_Pretty_Ada:936]
+       (Example__absolute_value__x.x > ((- 2147483648) : int)) };
+     (try
+        ([@GP_Sloc:example.adb:5:7]
+         [#"example.adb" 5 0 0]
+         (if (([#"example.adb" 5 0 0]
+               [#"example.adb" 5 0 0]
+               (([@branch_id=829] Main.spark__branch).bool__content <-
+                  (Example__absolute_value__x.x < (0 : int))));
+              (([@branch_id=829] Main.spark__branch).bool__content)) then
+            ([@GP_Sloc:example.adb:6:10]
+             [#"example.adb" 6 0 0]
+             (([#"example.adb" 6 0 0]
+               (example__absolute_value__result.int__content <-
+                  ([#"example.adb" 6 0 0]
+                   [@GP_Shape:if__return__minus]
+                   [@comment:         return -X;                 ^ example.adb:6:17:VC_RANGE_CHECK]
+                   [@vc:annotation]
+                   [@GP_Reason:VC_RANGE_CHECK]
+                   [@GP_Id:1]
+                   [@GP_Sloc:example.adb:6:17]
+                   (Standard__natural.range_check_
+                      ([#"example.adb" 6 0 0]
+                       [@comment:         return -X;                 ^ example.adb:6:17:VC_OVERFLOW_CHECK]
+                       [@GP_Shape:if__return__minus]
+                       [@vc:annotation]
+                       [@GP_Reason:VC_OVERFLOW_CHECK]
+                       [@GP_Id:0]
+                       [@GP_Sloc:example.adb:6:17]
+                       (Standard__integer.range_check_
+                          (( -_ ) Example__absolute_value__x.x)))))));
+              ((raise Return__exc) : unit)))
+          else
+            ([@GP_Sloc:example.adb:8:10]
+             [#"example.adb" 8 0 0]
+             (([#"example.adb" 8 0 0]
+               (example__absolute_value__result.int__content <-
+                  ([#"example.adb" 8 0 0]
+                   [@vc:annotation]
+                   [@GP_Shape:if__return]
+                   [@comment:         return X;                 ^ example.adb:8:17:VC_RANGE_CHECK]
+                   [@GP_Sloc:example.adb:8:17]
+                   [@GP_Reason:VC_RANGE_CHECK]
+                   [@GP_Id:2]
+                   (Standard__natural.range_check_
+                      Example__absolute_value__x.x))));
+              ((raise Return__exc) : unit)))));
+        (raise Return__exc)
+      with Return__exc -> ()
+      end);
+     (begin
+        ensures { true }
+        let _ =
+          let _ =
+            ((example__absolute_value__result.int__content)
+               = ([#"example.ads" 6 0 0]
+                  [@comment:       Post => Absolute_Value'Result = abs(X);                                        ^ example.ads:6:40:VC_OVERFLOW_CHECK]
+                  [@GP_Sloc:example.ads:6:40]
+                  [@vc:annotation]
+                  [@GP_Shape:pragargs__cmp__abs]
+                  [@GP_Reason:VC_OVERFLOW_CHECK]
+                  [@GP_Id:3]
+                  (Standard__integer.range_check_
+                     (Int_Abs.abs Example__absolute_value__x.x)))) in
+          () in
+        ()
+      end);
+     (example__absolute_value__result.int__content))
+end
