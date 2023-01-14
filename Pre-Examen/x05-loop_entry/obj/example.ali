@@ -1,0 +1,40 @@
+V "GNAT Lib v2021"
+A -gnatA
+A -g
+A -fstack-check=specific
+A -gnata
+A -gnato
+A -gnat12
+A -gnatwa
+A -gnateE
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_IMPLEMENTATION_PRAGMAS
+
+U example%b		example.adb		b06160f4 NE OO PK
+Z system.assertions%s	s-assert.adb		s-assert.ali
+
+U example%s		example.ads		55be1e27 EE NE OO PK
+
+D ada.ads		20210520051132 76789da1 ada%s
+D a-assert.ads		20210520051128 a718b65c ada.assertions%s
+D a-unccon.ads		20210520051130 0e9b276f ada.unchecked_conversion%s
+D example.ads		20230114193514 55be1e27 example%s
+D example.adb		20230114193652 e5df7ed3 example%b
+D system.ads		20210520051136 2ffa5114 system%s
+D s-assert.ads		20210520051132 6a49a4e4 system.assertions%s
+D s-exctab.ads		20210520051132 54135002 system.exception_table%s
+D s-stalib.ads		20210520051134 472fbca8 system.standard_library%s
+G a e
+G c Z s b [increment example 5 14 none]
+X 4 example.ads
+1K9*Example 8l5 8e12 5|1b14 12l5 12t12
+5U14*Increment 5=25 5>45 5|3b14 10l8 10t17
+5i25 X{natural} 5|3b25 6r40 7m10 7r15
+5i45 N{natural} 5|3b45 5r21 6r36
+X 5 example.adb
+5i11 i{integer} 6r32
+

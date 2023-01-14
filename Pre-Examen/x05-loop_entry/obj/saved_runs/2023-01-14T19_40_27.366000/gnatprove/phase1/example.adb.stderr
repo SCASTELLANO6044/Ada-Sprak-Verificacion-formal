@@ -1,0 +1,2 @@
+example.ads:8:08: error: parameter "X" is missing from input dependence list
+example.ads:8:08: error: add "null => X" dependency to ignore this input
