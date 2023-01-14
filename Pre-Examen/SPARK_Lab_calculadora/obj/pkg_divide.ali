@@ -15,33 +15,33 @@ RN
 RV NO_DIRECT_BOOLEAN_OPERATORS
 RV NO_IMPLEMENTATION_PRAGMAS
 
-U pkg_divide%b		pkg_divide.adb		1a849bab NE OO PK
+U pkg_divide%b		pkg_divide.adb		dda9e284 NE OO PK
 W pkg_add%s		pkg_add.adb		pkg_add.ali
 W pkg_subtract%s	pkg_subtract.adb	pkg_subtract.ali
 
 U pkg_divide%s		pkg_divide.ads		d18aa021 EE NE OO PK
 
-D pkg_add.ads		20220914211256 51fea9d6 pkg_add%s
-D pkg_divide.ads	20220922083436 d18aa021 pkg_divide%s
-D pkg_divide.adb	20220923085156 64109228 pkg_divide%b
-D pkg_subtract.ads	20220914200234 fee00074 pkg_subtract%s
+D pkg_add.ads		20230114171706 5176345e pkg_add%s
+D pkg_divide.ads	20230114122028 d18aa021 pkg_divide%s
+D pkg_divide.adb	20230114192748 a3b5768f pkg_divide%b
+D pkg_subtract.ads	20230114171744 fee00074 pkg_subtract%s
 D system.ads		20210520051136 2ffa5114 system%s
 G a e
 G c Z s b [divide pkg_divide 7 14 none]
 G r c none [divide pkg_divide 7 14 none] [subtract pkg_subtract 5 14 none]
 G r c none [divide pkg_divide 7 14 none] [add pkg_add 5 13 none]
 X 1 pkg_add.ads
-1K9*Pkg_Add 18e12 3|2w6 2r19
+1K9*Pkg_Add 16e12 3|2w6 2r19
 5V13*Add{integer} 3|21s28
 X 2 pkg_divide.ads
-1K9*Pkg_Divide 25l5 25e15 3|3b14 35l5 35t15
-4i4*Last_Quotient{integer} 3|31m7
-5i4*Last_Remainder{integer} 3|32m7
-7U14*Divide 8>7 8>32 8<51 9<7 3|5b14 33l8 33t14
-8i7 Dividend{integer} 3|6b7 15r15 17r30 23r16 26r18 26r52
-8i32 Divisor{integer} 3|7b7 15r32 16r13 18r36 19r40 26r35 26r69
-8i51 Quotient{integer} 3|8b7 12m7 21m16 21r32 27m16 27r29 31r24
-9i7 Remainder{integer} 3|9b7 13m7 17m13 18r19 19r25 20m16 24m16 24r30 32r25
+1K9*Pkg_Divide 57l5 57e15 3|3b14 39l5 39t15
+4i4*Last_Quotient{integer} 3|34m7
+5i4*Last_Remainder{integer} 3|35m7
+7U14*Divide 8>7 8>32 8<51 9<7 3|5b14 37l8 37t14
+8i7 Dividend{integer} 3|6b7 15r15 17r30 23r16 27r18 27r52
+8i32 Divisor{integer} 3|7b7 15r31 16r14 18r36 19r40 27r35 27r69
+8i51 Quotient{integer} 3|8b7 13m7 21m16 21r32 28m16 28r29 34r24
+9i7 Remainder{integer} 3|9b7 14m7 17m13 18r19 19r25 20m16 24m16 24r30 35r25
 X 3 pkg_divide.adb
 10i7 aux{integer} 19m50 20r29
 X 4 pkg_subtract.ads

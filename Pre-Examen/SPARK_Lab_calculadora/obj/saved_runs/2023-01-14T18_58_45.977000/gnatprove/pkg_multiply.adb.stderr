@@ -1,0 +1,6 @@
+pkg_multiply.adb:22:23: medium: precondition might fail, cannot prove First_Operand >= Integer'First - Second_Operand[#1]
+pkg_multiply.adb:23:35: medium: loop invariant might fail in first iteration[#3]
+pkg_multiply.adb:23:35: medium: loop invariant might not be preserved by an arbitrary iteration[#4]
+pkg_multiply.adb:23:60: medium: overflow check might fail [reason for check: result of multiplication must fit in a 32-bits machine integer][#2]
+pkg_multiply.adb:35:24: medium: overflow check might fail [reason for check: result of negation must fit in a 32-bits machine integer][#0]
+pkg_multiply.ads:22:15: medium: postcondition might fail[#5]

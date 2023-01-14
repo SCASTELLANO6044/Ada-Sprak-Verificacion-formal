@@ -89,7 +89,7 @@
             "CVC4": {
               "result": "Valid",
               "steps": 1,
-              "time": 2.00000000000000E-02
+              "time": 0
             }
           },
           "transformations": {
@@ -105,7 +105,7 @@
         "CVC4": {
           "count": 1,
           "max_steps": 1,
-          "max_time": 1.99999995529652E-02
+          "max_time": 0.00000000000000E+00
         }
       }
     },
@@ -212,7 +212,7 @@
             "CVC4": {
               "result": "Valid",
               "steps": 1,
-              "time": 2.00000000000000E-02
+              "time": 0
             }
           },
           "transformations": {
@@ -228,7 +228,7 @@
         "CVC4": {
           "count": 1,
           "max_steps": 1,
-          "max_time": 1.99999995529652E-02
+          "max_time": 0.00000000000000E+00
         }
       }
     }
@@ -301,22 +301,22 @@
   ],
   "timings": {
     "gnatwhy3.transformations.inline_trivial": 0.00000000000000E+00,
-    "codepeer results": 5.26000003446825E-05,
-    "init_why_sections": 7.56699999328703E-04,
+    "codepeer results": 3.79999983124435E-05,
+    "init_why_sections": 5.27299998793751E-04,
     "gnatwhy3.transformations.detect_polymorphism": 0.00000000000000E+00,
-    "gnatwhy3.transformations.eliminate_literal": 1.56250000000000E-02,
+    "gnatwhy3.transformations.eliminate_literal": 0.00000000000000E+00,
     "gnatwhy3.run_vcs": 9.37500000000000E-02,
-    "globals (advanced)": 4.19699994381517E-04,
+    "globals (advanced)": 3.08799993945286E-04,
     "gnatwhy3.transformations.eliminate_algebraic_if_poly": 0.00000000000000E+00,
-    "gnatwhy3.transformations.eliminate_definition_if_poly": 0.00000000000000E+00,
-    "flow analysis": 1.16740004159510E-03,
+    "gnatwhy3.transformations.eliminate_definition_if_poly": 1.56250000000000E-02,
+    "flow analysis": 8.76099977176636E-04,
     "gnatwhy3.transformations.simplify_formula": 0.00000000000000E+00,
-    "marking": 1.11399996967521E-04,
-    "translation of standard": 4.63839992880821E-03,
-    "properties (advanced)": 2.49000004259869E-05,
+    "marking": 1.09200002043508E-04,
+    "translation of standard": 3.14330006949604E-03,
+    "properties (advanced)": 2.52999998338055E-05,
     "gnatwhy3.register_vcs": 0.00000000000000E+00,
     "gnatwhy3.transformations.eliminate_epsilon": 0.00000000000000E+00,
-    "globals (basic)": 3.75500007066876E-04,
+    "globals (basic)": 2.64900008914992E-04,
     "gnatwhy3.schedule_vcs": 0.00000000000000E+00,
     "gnatwhy3.transformations.prepare_for_counterexmp": 0.00000000000000E+00,
     "gnatwhy3.save_session": 0.00000000000000E+00,
@@ -325,6 +325,6 @@
     "gnatwhy3.transformations.eliminate_unused_hypo": 0.00000000000000E+00,
     "gnatwhy3.transformations.eliminate_builtin": 0.00000000000000E+00,
     "gnatwhy3.transformations.discriminate_if_poly": 0.00000000000000E+00,
-    "gnatwhy3.init": 1.56250000000000E-01
+    "gnatwhy3.init": 1.71875000000000E-01
   }
 }

@@ -39,7 +39,7 @@ D a-textio.ads		20210520051130 aef4d56d ada.text_io%s
 D a-unccon.ads		20210520051130 0e9b276f ada.unchecked_conversion%s
 D interfac.ads		20210520051132 edec285f interfaces%s
 D i-cstrea.ads		20210520051132 e53d8b8e interfaces.c_streams%s
-D pkg_divide.ads	20220922083436 d18aa021 pkg_divide%s
+D pkg_divide.ads	20230114122028 d18aa021 pkg_divide%s
 D system.ads		20210520051136 2ffa5114 system%s
 D s-assert.ads		20210520051132 6a49a4e4 system.assertions%s
 D s-crtl.ads		20210520051132 0ebbdb71 system.crtl%s
@@ -68,7 +68,7 @@ X 10 a-textio.ads
 463U14*Put 31|14s7 29s7 44s7 59s7 74s7 89s7 104s7
 506U14*Put_Line 31|22s7 37s7 52s7 67s7 82s7 97s7 107s7 110s10 114s4
 X 14 pkg_divide.ads
-1K9*Pkg_Divide 25e15 31|5w6 5r29
+1K9*Pkg_Divide 57e15 31|5w6 5r29
 4i4*Last_Quotient{integer} 31|19r22 34r22 49r22 64r22 79r22 94r22
 5i4*Last_Remainder{integer} 31|20r22 35r22 50r22 65r22 80r22 95r22
 7U14*Divide 31|16s7 31s7 46s7 61s7 76s7 91s7 106s7

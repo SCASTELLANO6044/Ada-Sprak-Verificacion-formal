@@ -1,0 +1,2 @@
+pkg_multiply.adb:23:44: warning: unary minus expression should be parenthesized here [enabled by default]
+pkg_multiply.adb:37:44: warning: unary minus expression should be parenthesized here [enabled by default]

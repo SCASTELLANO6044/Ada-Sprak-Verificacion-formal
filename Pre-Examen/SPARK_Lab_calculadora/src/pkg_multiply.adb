@@ -13,24 +13,28 @@ is
 
          for i in 1 .. Second_Operand loop
             Result := Add(Result, First_Operand);
+            pragma Loop_Invariant(Result = First_Operand*i);
          end loop;
 
       elsif First_Operand > 0 and then Second_Operand < 0 then
 
-         for i in 1 .. -Second_Operand loop
-            Result := Add(Result, -First_Operand);
+         for i in 1 .. First_Operand loop
+            Result := Add(Result, Second_Operand);
+            pragma Loop_Invariant(Result = Second_Operand*i);
          end loop;
 
       elsif First_Operand < 0 and then Second_Operand > 0 then
 
          for i in 1 .. Second_Operand loop
             Result := Add(Result, First_Operand);
+            pragma Loop_Invariant(Result = First_Operand*i);
          end loop;
 
-      else
+      elsif First_Operand < 0 and then Second_Operand < 0 then
 
          for i in 1 .. -Second_Operand loop
             Result := Add(Result, -First_Operand);
+            pragma Loop_Invariant(Result = (-First_Operand)*i);
          end loop;
 
       end if;

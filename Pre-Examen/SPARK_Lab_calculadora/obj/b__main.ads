@@ -40,7 +40,7 @@ package ada_main is
    pragma Export (C, main, "main");
 
    type Version_32 is mod 2 ** 32;
-   u00001 : constant Version_32 := 16#2e42100f#;
+   u00001 : constant Version_32 := 16#4155ca88#;
    pragma Export (C, u00001, "mainB");
    u00002 : constant Version_32 := 16#2e11c0b1#;
    pragma Export (C, u00002, "system__standard_libraryB");
@@ -294,16 +294,28 @@ package ada_main is
    pragma Export (C, u00126, "ada__assertionsB");
    u00127 : constant Version_32 := 16#d1602bfd#;
    pragma Export (C, u00127, "ada__assertionsS");
-   u00128 : constant Version_32 := 16#6f39876f#;
-   pragma Export (C, u00128, "tests_subtractB");
-   u00129 : constant Version_32 := 16#ce4fd0d9#;
-   pragma Export (C, u00129, "pkg_subtractB");
-   u00130 : constant Version_32 := 16#fee00074#;
-   pragma Export (C, u00130, "pkg_subtractS");
-   u00131 : constant Version_32 := 16#eca5ecae#;
-   pragma Export (C, u00131, "system__memoryB");
-   u00132 : constant Version_32 := 16#76873720#;
-   pragma Export (C, u00132, "system__memoryS");
+   u00128 : constant Version_32 := 16#f356e753#;
+   pragma Export (C, u00128, "tests_divideB");
+   u00129 : constant Version_32 := 16#dda9e284#;
+   pragma Export (C, u00129, "pkg_divideB");
+   u00130 : constant Version_32 := 16#d18aa021#;
+   pragma Export (C, u00130, "pkg_divideS");
+   u00131 : constant Version_32 := 16#ce4fd0d9#;
+   pragma Export (C, u00131, "pkg_subtractB");
+   u00132 : constant Version_32 := 16#fee00074#;
+   pragma Export (C, u00132, "pkg_subtractS");
+   u00133 : constant Version_32 := 16#9d36b540#;
+   pragma Export (C, u00133, "tests_multiplyB");
+   u00134 : constant Version_32 := 16#e6f14830#;
+   pragma Export (C, u00134, "pkg_multiplyB");
+   u00135 : constant Version_32 := 16#2acd5504#;
+   pragma Export (C, u00135, "pkg_multiplyS");
+   u00136 : constant Version_32 := 16#6f39876f#;
+   pragma Export (C, u00136, "tests_subtractB");
+   u00137 : constant Version_32 := 16#eca5ecae#;
+   pragma Export (C, u00137, "system__memoryB");
+   u00138 : constant Version_32 := 16#76873720#;
+   pragma Export (C, u00138, "system__memoryS");
 
    --  BEGIN ELABORATION ORDER
    --  ada%s
@@ -433,9 +445,15 @@ package ada_main is
    --  system.assertions%b
    --  pkg_add%s
    --  pkg_add%b
+   --  pkg_multiply%s
+   --  pkg_multiply%b
    --  pkg_subtract%s
    --  pkg_subtract%b
+   --  pkg_divide%s
+   --  pkg_divide%b
    --  tests_add%b
+   --  tests_divide%b
+   --  tests_multiply%b
    --  tests_subtract%b
    --  main%b
    --  END ELABORATION ORDER
