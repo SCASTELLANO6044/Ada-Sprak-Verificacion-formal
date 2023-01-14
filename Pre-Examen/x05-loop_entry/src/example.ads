@@ -6,7 +6,7 @@ package Example with SPARK_Mode is
      with
        Global => null,
        Depends => (X => (X,N)),
-       Pre => (X <= Integer'Last - N),
+       Pre => X <= Natural'Last - N,
        Post => X = X'Old + N;
 
 end Example;

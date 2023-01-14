@@ -1,0 +1,2 @@
+example.adb:6:17: medium: overflow check might fail [reason for check: result of addition must fit in a 32-bits machine integer][#0]
+example.adb:7:32: medium: loop invariant might not be preserved by an arbitrary iteration[#1]
