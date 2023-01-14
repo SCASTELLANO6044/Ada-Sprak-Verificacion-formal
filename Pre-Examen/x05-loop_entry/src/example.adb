@@ -2,11 +2,7 @@ package body Example with SPARK_Mode is
 
    procedure Increment (X : in out Natural; N : Natural) is
    begin
-      for J in 1 .. N loop
-         X := X + 1;
 
-         pragma Loop_Invariant (X = X'Loop_Entry + J);
-      end loop;
    end Increment;
 
 end Example;
