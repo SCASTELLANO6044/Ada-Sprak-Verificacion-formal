@@ -7,36 +7,33 @@ is
      (First_Operand : Integer; Second_Operand : Integer; Result : out Integer)
    is
    begin
+      Result := 0;
 
+      if First_Operand > 0 and then Second_Operand > 0 then
 
+         for i in 1 .. Second_Operand loop
+            Result := Add(Result, First_Operand);
+         end loop;
 
+      elsif First_Operand > 0 and then Second_Operand < 0 then
 
+         for i in 1 .. -Second_Operand loop
+            Result := Add(Result, -First_Operand);
+         end loop;
 
+      elsif First_Operand < 0 and then Second_Operand > 0 then
 
+         for i in 1 .. Second_Operand loop
+            Result := Add(Result, First_Operand);
+         end loop;
 
+      else
 
+         for i in 1 .. -Second_Operand loop
+            Result := Add(Result, -First_Operand);
+         end loop;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      end if;
 
       --  Result := 0;
       --  if First_Operand > 0 and then Second_Operand > 0 then
