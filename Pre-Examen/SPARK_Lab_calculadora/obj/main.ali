@@ -15,8 +15,9 @@ P ZX
 RN
 RV NO_IMPLEMENTATION_PRAGMAS
 
-U main%b		main.adb		6a804267 NE OO SU
+U main%b		main.adb		2e42100f NE OO SU
 Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+W tests_add%b		tests_add.adb		tests_add.ali
 W tests_subtract%b	tests_subtract.adb	tests_subtract.ali
 
 D ada.ads		20210520051132 76789da1 ada%s
@@ -32,7 +33,8 @@ D a-textio.ads		20210520051130 aef4d56d ada.text_io%s
 D a-unccon.ads		20210520051130 0e9b276f ada.unchecked_conversion%s
 D interfac.ads		20210520051132 edec285f interfaces%s
 D i-cstrea.ads		20210520051132 e53d8b8e interfaces.c_streams%s
-D main.adb		20230114164918 55ad1011 main%b
+D main.adb		20230114171404 8b3bea07 main%b
+D pkg_add.ads		20230114171706 5176345e pkg_add%s
 D pkg_subtract.ads	20230114170930 fee00074 pkg_subtract%s
 D system.ads		20210520051136 2ffa5114 system%s
 D s-assert.ads		20210520051132 6a49a4e4 system.assertions%s
@@ -50,13 +52,17 @@ D s-stoele.adb		20210520051134 ed88f8fb system.storage_elements%b
 D s-traent.ads		20210520051134 26a8d361 system.traceback_entries%s
 D s-unstyp.ads		20210520051134 2b077493 system.unsigned_types%s
 D s-wchcon.ads		20210520051136 1b7d22d2 system.wch_con%s
+D tests_add.adb		20190924162828 9a54a87e tests_add%b
 D tests_subtract.adb	20190924163014 3f2d5276 tests_subtract%b
 D unchconv.ads		20210520051136 ca2f9e18 unchecked_conversion%s
 G a e
 G c Z b b [main standard 6 11 none]
+G r c none [main standard 6 11 none] [tests_add standard 7 11 none]
 G r c none [main standard 6 11 none] [tests_subtract standard 7 11 none]
 X 14 main.adb
 6U11*Main 6b11 12l5 12t9
-X 32 tests_subtract.adb
+X 33 tests_add.adb
+7U11*Tests_Add 14|1w6 8s4
+X 34 tests_subtract.adb
 7U11*Tests_Subtract 14|2w6 9s4
 

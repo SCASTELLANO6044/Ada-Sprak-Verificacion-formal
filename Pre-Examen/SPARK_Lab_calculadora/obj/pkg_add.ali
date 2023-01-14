@@ -15,15 +15,15 @@ RN
 RV NO_DIRECT_BOOLEAN_OPERATORS
 RV NO_IMPLEMENTATION_PRAGMAS
 
-U pkg_add%b		pkg_add.adb		b095efaf NE OO PK
+U pkg_add%b		pkg_add.adb		e5e78d47 NE OO PK
 Z system.assertions%s	s-assert.adb		s-assert.ali
 
-U pkg_add%s		pkg_add.ads		040456b6 EE NE OO PK
+U pkg_add%s		pkg_add.ads		5176345e EE NE OO PK
 
 D ada.ads		20210520051132 76789da1 ada%s
 D a-assert.ads		20210520051128 a718b65c ada.assertions%s
 D a-unccon.ads		20210520051130 0e9b276f ada.unchecked_conversion%s
-D pkg_add.ads		20230114125644 040456b6 pkg_add%s
+D pkg_add.ads		20230114171706 5176345e pkg_add%s
 D pkg_add.adb		20230114124538 b491b919 pkg_add%b
 D system.ads		20210520051136 2ffa5114 system%s
 D s-assert.ads		20210520051132 6a49a4e4 system.assertions%s

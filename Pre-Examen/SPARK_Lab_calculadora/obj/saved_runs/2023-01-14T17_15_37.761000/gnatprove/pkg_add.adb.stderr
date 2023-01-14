@@ -1,0 +1,2 @@
+pkg_add.ads:11:41: medium: overflow check might fail (e.g. when Second_Operand = -1) [reason for check: result of addition must fit in a 32-bits machine integer][#0]
+pkg_add.ads:13:40: medium: overflow check might fail (e.g. when Second_Operand = 1) [reason for check: result of addition must fit in a 32-bits machine integer][#1]
