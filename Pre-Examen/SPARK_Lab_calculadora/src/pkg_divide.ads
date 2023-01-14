@@ -7,6 +7,38 @@ is
    procedure Divide
      (Dividend  :     Integer; Divisor : Integer; Quotient : out Integer;
       Remainder : out Integer);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       --  Using the function 'Add' (or the procedure 'Subtract') and a
       --  while-loop-statement, compute the division of First_Operand
       --  by Second_Operand and store the resulting Quotient and
