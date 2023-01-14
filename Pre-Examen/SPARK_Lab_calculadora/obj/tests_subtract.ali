@@ -36,7 +36,7 @@ D a-textio.ads		20210520051130 aef4d56d ada.text_io%s
 D a-unccon.ads		20210520051130 0e9b276f ada.unchecked_conversion%s
 D interfac.ads		20210520051132 edec285f interfaces%s
 D i-cstrea.ads		20210520051132 e53d8b8e interfaces.c_streams%s
-D pkg_subtract.ads	20220914200234 fee00074 pkg_subtract%s
+D pkg_subtract.ads	20230114170930 fee00074 pkg_subtract%s
 D system.ads		20210520051136 2ffa5114 system%s
 D s-assert.ads		20210520051132 6a49a4e4 system.assertions%s
 D s-crtl.ads		20210520051132 0ebbdb71 system.crtl%s

@@ -24,8 +24,8 @@ U pkg_subtract%s	pkg_subtract.ads	fee00074 EE NE OO PK
 D ada.ads		20210520051132 76789da1 ada%s
 D a-assert.ads		20210520051128 a718b65c ada.assertions%s
 D a-unccon.ads		20210520051130 0e9b276f ada.unchecked_conversion%s
-D pkg_subtract.ads	20220914200234 fee00074 pkg_subtract%s
-D pkg_subtract.adb	20220914191208 30afd0ad pkg_subtract%b
+D pkg_subtract.ads	20230114170930 fee00074 pkg_subtract%s
+D pkg_subtract.adb	20230114125834 30afd0ad pkg_subtract%b
 D system.ads		20210520051136 2ffa5114 system%s
 D s-assert.ads		20210520051132 6a49a4e4 system.assertions%s
 D s-exctab.ads		20210520051132 54135002 system.exception_table%s
@@ -35,7 +35,7 @@ G c Z s b [subtract pkg_subtract 5 14 none]
 X 4 pkg_subtract.ads
 1K9*Pkg_Subtract 20l5 20e17 5|1b14 11l5 11t17
 5U14*Subtract 6>7 6>36 7<7 5|3b14 9l8 9t16
-6i7 First_Operand{integer} 12r30 14r11 15r10 16r14 17r10 18r24 5|4b7 8r17
-6i36 Second_Operand{integer} 12r45 14r34 15r43 16r37 17r42 18r40 5|5b7 8r31
-7i7 Result{integer} 12r19 18r15 5|6b7 8m7
+6i7 First_Operand{integer} 12r31 14r14 15r10 16r14 17r10 18r25 5|4b7 8r17
+6i36 Second_Operand{integer} 12r46 14r37 15r43 16r37 17r42 18r41 5|5b7 8r33
+7i7 Result{integer} 12r20 18r16 5|6b7 8m7
 

@@ -12,17 +12,18 @@ A -march=x86-64
 P ZX
 
 RN
+RV NO_DIRECT_BOOLEAN_OPERATORS
 RV NO_IMPLEMENTATION_PRAGMAS
 
-U pkg_add%b		pkg_add.adb		4f5b34cd NE OO PK
+U pkg_add%b		pkg_add.adb		b095efaf NE OO PK
 Z system.assertions%s	s-assert.adb		s-assert.ali
 
-U pkg_add%s		pkg_add.ads		fbca8dd4 EE NE OO PK
+U pkg_add%s		pkg_add.ads		040456b6 EE NE OO PK
 
 D ada.ads		20210520051132 76789da1 ada%s
 D a-assert.ads		20210520051128 a718b65c ada.assertions%s
 D a-unccon.ads		20210520051130 0e9b276f ada.unchecked_conversion%s
-D pkg_add.ads		20230114124638 fbca8dd4 pkg_add%s
+D pkg_add.ads		20230114125644 040456b6 pkg_add%s
 D pkg_add.adb		20230114124538 b491b919 pkg_add%b
 D system.ads		20210520051136 2ffa5114 system%s
 D s-assert.ads		20210520051132 6a49a4e4 system.assertions%s
@@ -31,8 +32,8 @@ D s-stalib.ads		20210520051134 472fbca8 system.standard_library%s
 G a e
 G c Z s b [add pkg_add 5 13 none]
 X 4 pkg_add.ads
-1K9*Pkg_Add 13l5 13e12 5|1b14 12l5 12t12
-5V13*Add{integer} 6>7 6>32 10r12 5|5b13 10l8 10t11
-6i7 First_Operand{integer} 10r25 5|6b7 9r14
-6i32 Second_Operand{integer} 10r41 5|6b32 9r30
+1K9*Pkg_Add 16l5 16e12 5|1b14 12l5 12t12
+5V13*Add{integer} 6>7 6>32 14r15 5|5b13 10l8 10t11
+6i7 First_Operand{integer} 10r11 11r10 12r14 13r10 14r28 5|6b7 9r14
+6i32 Second_Operand{integer} 10r33 11r43 12r36 13r42 14r44 5|6b32 9r30
 
