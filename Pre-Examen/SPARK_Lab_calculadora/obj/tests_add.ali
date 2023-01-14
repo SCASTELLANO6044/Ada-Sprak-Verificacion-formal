@@ -16,7 +16,7 @@ RN
 RV NO_IO
 RV NO_IMPLEMENTATION_PRAGMAS
 
-U tests_add%b		tests_add.adb		655ed4c5 NE OO SU
+U tests_add%b		tests_add.adb		cf6af0c7 NE OO SU
 W ada%s			ada.ads			ada.ali
 Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
@@ -36,7 +36,7 @@ D a-textio.ads		20210520051130 aef4d56d ada.text_io%s
 D a-unccon.ads		20210520051130 0e9b276f ada.unchecked_conversion%s
 D interfac.ads		20210520051132 edec285f interfaces%s
 D i-cstrea.ads		20210520051132 e53d8b8e interfaces.c_streams%s
-D pkg_add.ads		20220914211256 51fea9d6 pkg_add%s
+D pkg_add.ads		20230114124638 fbca8dd4 pkg_add%s
 D system.ads		20210520051136 2ffa5114 system%s
 D s-assert.ads		20210520051132 6a49a4e4 system.assertions%s
 D s-crtl.ads		20210520051132 0ebbdb71 system.crtl%s
@@ -65,7 +65,7 @@ X 10 a-textio.ads
 463U14*Put 31|11s7 20s7 29s7 38s7 47s7 56s7
 506U14*Put_Line 31|15s7 24s7 33s7 42s7 51s7 60s7 64s4
 X 14 pkg_add.ads
-1K9*Pkg_Add 18e12 31|5w6 5r23
+1K9*Pkg_Add 13e12 31|5w6 5r23
 5V13*Add{integer} 31|13s22 22s22 31s22 40s22 49s22 58s22
 X 31 tests_add.adb
 7U11*Tests_Add 7b11 71l5 71t14
