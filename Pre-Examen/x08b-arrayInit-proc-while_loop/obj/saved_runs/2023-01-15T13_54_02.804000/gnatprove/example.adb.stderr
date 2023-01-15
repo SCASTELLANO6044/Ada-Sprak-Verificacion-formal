@@ -1,0 +1,2 @@
+example.adb:5:07: warning: variable "Vector" is never read and never assigned [-gnatwv]
+example.adb:5:07: warning: unused variable "Vector"[#0]

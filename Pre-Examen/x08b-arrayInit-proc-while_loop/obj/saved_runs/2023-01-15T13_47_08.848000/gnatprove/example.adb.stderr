@@ -1,0 +1,3 @@
+example.adb:4:24: medium: range check might fail [reason for check: default component value must fit in the type][#0]
+example.adb:15:46: medium: overflow check might fail [reason for check: result of addition must fit in a 32-bits machine integer][#2]
+example.adb:19:17: medium: overflow check might fail [reason for check: result of addition must fit in a 32-bits machine integer][#1]

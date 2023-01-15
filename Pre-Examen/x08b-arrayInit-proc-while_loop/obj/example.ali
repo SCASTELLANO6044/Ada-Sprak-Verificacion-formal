@@ -1,0 +1,46 @@
+V "GNAT Lib v2021"
+A -gnatA
+A -g
+A -fstack-check=specific
+A -gnata
+A -gnato
+A -gnat12
+A -gnatwa
+A -gnateE
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_IMPLICIT_CONDITIONALS
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_ASPECT_SPECIFICATIONS
+RV NO_IMPLEMENTATION_PRAGMAS
+
+U example%b		example.adb		9a916e70 NE OO PK
+Z system.assertions%s	s-assert.adb		s-assert.ali
+
+U example%s		example.ads		5541509d EE NE OO PK
+
+D ada.ads		20210520051132 76789da1 ada%s
+D a-assert.ads		20210520051128 a718b65c ada.assertions%s
+D a-unccon.ads		20210520051130 0e9b276f ada.unchecked_conversion%s
+D example.ads		20230115133602 5541509d example%s
+D example.adb		20230115133950 cfd03eed example%b
+D system.ads		20210520051136 2ffa5114 system%s
+D s-assert.ads		20210520051132 6a49a4e4 system.assertions%s
+D s-exctab.ads		20210520051132 54135002 system.exception_table%s
+D s-stalib.ads		20210520051134 472fbca8 system.standard_library%s
+G a e
+G c Z s b [init_while_loop example 5 14 none]
+G c Z s s [t_vectorIP example 3 9 none]
+X 4 example.ads
+1K9*Example 13l5 13e12 5|1b14 17l5 17t12
+3A9*T_Vector(integer)<integer> 5r39 5|3r39
+5U14*Init_While_Loop 5<31 5>49 5|3b14 15l8 15t23
+5a31 V{3A9} 7r18 7r24 9r28 10r17 5|3b31 4r23 7r18 8m10
+5i49 Value{integer} 7r27 8r14 10r24 5|3b49 8r18
+9i23 J{integer} 10r19
+X 5 example.adb
+4i7 J{positive} 7r13 8r12 10r43 11m10 11r15
+

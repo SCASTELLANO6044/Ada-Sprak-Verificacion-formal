@@ -1,0 +1,1 @@
+example.adb:4:24: medium: range check might fail [reason for check: default component value must fit in the type][#0]

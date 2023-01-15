@@ -1,0 +1,2 @@
+example.ads:5:31: medium: "V" might not be initialized in "Init_While_Loop"[#0]
+example.ads:10:17: medium: "V" might not be initialized[#1]
