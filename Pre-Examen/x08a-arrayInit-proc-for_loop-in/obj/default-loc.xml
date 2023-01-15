@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<Locations >
+  <Project >
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>C:\Users\raulm\OneDrive\Escritorio\P3\Programas-P3\x11-selection_sort\src\test_pos_minimum.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>C:\Users\raulm\OneDrive\Escritorio\P3\Programas-P3\x11-selection_sort\src\example.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>C:\Users\raulm\OneDrive\Escritorio\P3\Programas-P3\x10-matrixMax-func-for-level-1\src\example.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>C:\Users\raulm\OneDrive\Escritorio\P3\Programas-P3\x09-arrayIncrAllElems\src\example.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>C:\Users\raulm\OneDrive\Escritorio\P3\Programas-P3\x09-arrayIncrAllElems\src\example.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>C:\Users\raulm\OneDrive\Escritorio\P3\Programas-P3\x12-linear-search1\src\example.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>C:\Users\raulm\OneDrive\Escritorio\P3\Programas-P3\x12-linear-search1\src\example.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>C:\Users\raulm\OneDrive\Escritorio\P3\Programas-P3\x12-linear-search1\src\example.adb</vfs_file>
+    </file_marker>
+    <file_marker current="true" column=" 1" line=" 1" >
+      <vfs_project>C:\Users\raulm\OneDrive\Escritorio\P3\Programas-P3\x08a-arrayInit-proc-for_loop-in\default.gpr</vfs_project>
+      <vfs_file>C:\Users\raulm\OneDrive\Escritorio\P3\Programas-P3\x08a-arrayInit-proc-for_loop-in\src\example.ads</vfs_file>
+    </file_marker>
+  </Project>
+  <Project >
+    <vfs_file >C:\Users\raulm\OneDrive\Escritorio\Programas-P3\x08a-arrayInit-proc-for_loop-in\default.gpr</vfs_file>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project >C:\Users\raulm\OneDrive\Escritorio\Programas-P3\x08a-arrayInit-proc-for_loop-in\default.gpr</vfs_project>
+      <vfs_file >C:\Users\raulm\OneDrive\Escritorio\Programas-P3\x08a-arrayInit-proc-for_loop-in\src\example.adb</vfs_file>
+    </file_marker>
+    <file_marker current="true" column=" 1" line=" 1">
+      <vfs_project >C:\Users\raulm\OneDrive\Escritorio\Programas-P3\x08a-arrayInit-proc-for_loop-in\default.gpr</vfs_project>
+      <vfs_file >C:\Users\raulm\OneDrive\Escritorio\Programas-P3\x08a-arrayInit-proc-for_loop-in\src\example.ads</vfs_file>
+    </file_marker>
+  </Project>
+</Locations>
