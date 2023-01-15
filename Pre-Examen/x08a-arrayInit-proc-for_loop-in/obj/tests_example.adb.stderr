@@ -1,0 +1,6 @@
+tests_example.adb:7:30: warning: too few elements for type "T_Vector" defined at example.ads:3 [enabled by default]
+tests_example.adb:7:30: warning: expected 16 at system.ads:17 "fff"_ "ffff" at system.ads:1 elements; found 3 elements [enabled by default]
+tests_example.adb:7:30: warning: "Constraint_Error" will be raised at run time [enabled by default]
+tests_example.adb:8:39: warning: too few elements for type "T_Vector" defined at example.ads:3 [enabled by default]
+tests_example.adb:8:39: warning: expected 16 at system.ads:17 "fff"_ "ffff" at system.ads:1 elements; found 3 elements [enabled by default]
+tests_example.adb:8:39: warning: "Constraint_Error" will be raised at run time [enabled by default]

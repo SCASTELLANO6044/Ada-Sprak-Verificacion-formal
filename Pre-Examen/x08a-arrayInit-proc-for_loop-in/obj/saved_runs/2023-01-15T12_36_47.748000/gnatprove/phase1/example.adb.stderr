@@ -1,0 +1,4 @@
+example.adb:7:12: error: "j" is undefined
+example.ads:11:17: error: expected type "Standard.Boolean"
+example.ads:11:17: error: found type "Standard.Integer"
+example.ads:11:21: error: missing ")"

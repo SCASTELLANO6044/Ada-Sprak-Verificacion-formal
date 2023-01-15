@@ -1,0 +1,822 @@
+module Standard__integer
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  
+  type integer = <range -2147483648 2147483647>
+  
+  val function first : int
+    ensures { result = ((- 2147483648) : int) }
+  
+  val function last : int
+    ensures { result = (2147483647 : int) }
+  
+  predicate in_range (x: int) = ((first <= x) /\ (x <= last))
+  
+  val in_range (x: int) : bool
+    ensures { result <-> (in_range (x : int)) }
+  
+  clone export ada__model.Static_Discrete with
+    axiom .,
+    type t = integer,
+    function first = first,
+    function last = last,
+    predicate in_range = in_range
+  
+  type integer__ref = { mutable integer__content : integer }
+  
+  function integer__ref_integer__content__projection (a: integer__ref) : integer =
+    a.integer__content
+  
+  meta "model_projection" function integer__ref_integer__content__projection
+  
+  meta "inline:no" function integer__ref_integer__content__projection
+  
+  val integer__havoc (x: integer__ref) : unit
+    writes { x }
+end
+
+module Standard__integer___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Standard__integer as Standard__integer
+  
+  predicate dynamic_invariant (temp___expr_18: int) (temp___is_init_14: bool) (temp___skip_constant_15: bool) (temp___do_toplevel_16: bool) (temp___do_typ_inv_17: bool) =
+    if ((temp___is_init_14 = True) \/
+          (Standard__integer.first <= Standard__integer.last)) then
+      (((Standard__integer.dynamic_property Standard__integer.first)
+          Standard__integer.last)
+         temp___expr_18)
+    else true
+  
+  val dynamic_invariant (temp___expr_18: int) (temp___is_init_14: bool) (temp___skip_constant_15: bool) (temp___do_toplevel_16: bool) (temp___do_typ_inv_17: bool) : 
+    bool
+    ensures { result
+                <->
+                (((((dynamic_invariant (temp___expr_18 : int))
+                      (temp___is_init_14 : bool))
+                     (temp___skip_constant_15 : bool))
+                    (temp___do_toplevel_16 : bool))
+                   (temp___do_typ_inv_17 : bool)) }
+  
+  predicate default_initial_assumption (temp___expr_19: int) (temp___skip_top_level_20: bool) =
+    true
+  
+  val default_initial_assumption (temp___expr_19: int) (temp___skip_top_level_20: bool) : 
+    bool
+    ensures { result
+                <->
+                ((default_initial_assumption (temp___expr_19 : int))
+                   (temp___skip_top_level_20 : bool)) }
+end
+
+module Standard__integer__rep
+  use Standard__integer as Standard__integer
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  function to_rep (x: Standard__integer.integer) : int =
+    Standard__integer.integer'int x
+  
+  clone export ada__model.Rep_Proj_Int with
+    axiom .,
+    type t = Standard__integer.integer,
+    predicate in_range = Standard__integer.in_range,
+    function to_rep = to_rep
+  
+  meta "model_projection" function to_rep
+  
+  meta "inline:no" function to_rep
+end
+
+module Array__Int__Standard__integer
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Standard__integer as Standard__integer
+  use Standard__integer__rep as Standard__integer__rep
+  
+  function index_I1_one : int = 1 : int
+  
+  type component_type = Standard__integer.integer
+  
+  clone export _gnatprove_standard.Array__1 with
+    axiom .,
+    type I1.t = int,
+    predicate I1.le = Int.( <= ),
+    predicate I1.lt = Int.( < ),
+    predicate I1.gt = Int.( > ),
+    function I1.add = Int.( + ),
+    function I1.sub = Int.( - ),
+    function I1.one = index_I1_one,
+    type component_type = component_type
+  
+  function bool_eq (a: map) (a__first: int) (a__last: int) (b: map) (b__first: int) (b__last: int) : bool =
+    ((if (a__first <= a__last) then
+        ((b__first <= b__last) /\
+           ((a__last - a__first) = (b__last - b__first)))
+      else (b__first > b__last)) /\
+       (forall temp___idx_161 : int.
+          if ((a__first <= temp___idx_161) /\ (temp___idx_161 <= a__last)) then
+            ((Standard__integer__rep.to_rep ((get a) temp___idx_161))
+               = (Standard__integer__rep.to_rep
+                    ((get b) ((b__first - a__first) + temp___idx_161))))
+          else true))
+  
+  val bool_eq (a: map) (a__first: int) (a__last: int) (b: map) (b__first: int) (b__last: int) : 
+    bool
+    ensures { result
+      =
+      ((((((bool_eq (a : map)) (a__first : int)) (a__last : int)) (b : map))
+          (b__first : int))
+         (b__last : int)) }
+  
+  axiom bool_eq_rev:
+    forall a : map, b : map.
+      forall a__first : int, a__last : int, b__first : int, b__last : int.
+        ((((((((bool_eq b) b__first) b__last) a) a__first) a__last) = True) ->
+           ((if (a__first <= a__last) then
+               ((b__first <= b__last) /\
+                  ((a__last - a__first) = (b__last - b__first)))
+             else (b__first > b__last)) /\
+              (forall temp___idx_161 : int.
+                 if ((a__first <= temp___idx_161) /\
+                       (temp___idx_161 <= a__last)) then
+                   ((Standard__integer__rep.to_rep ((get a) temp___idx_161))
+                      = (Standard__integer__rep.to_rep
+                           ((get b) ((b__first - a__first) + temp___idx_161))))
+                 else true)))
+end
+
+module Example__init_for_loop__v
+  use _gnatprove_standard.Main
+  use int.Int
+  use Array__Int__Standard__integer as Array__Int__Standard__integer
+  
+  val v : Array__Int__Standard__integer.map__ref
+end
+
+module Example__init_for_loop__value
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  val function value : int
+end
+
+module Example__init_for_loop__L_1__i
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  val i : int__ref
+end
+
+module Example__Tt_vectorD1
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  
+  type tt_vectorD1 = <range 1 2147483647>
+  
+  val function first : int
+    ensures { result = (1 : int) }
+  
+  val function last : int
+    ensures { result = (2147483647 : int) }
+  
+  predicate in_range (x: int) = ((first <= x) /\ (x <= last))
+  
+  val in_range (x: int) : bool
+    ensures { result <-> (in_range (x : int)) }
+  
+  clone export ada__model.Static_Discrete with
+    axiom .,
+    type t = tt_vectorD1,
+    function first = first,
+    function last = last,
+    predicate in_range = in_range
+  
+  type tt_vectorD1__ref = { mutable tt_vectorD1__content : tt_vectorD1 }
+  
+  function tt_vectorD1__ref_tt_vectorD1__content__projection (a: tt_vectorD1__ref) : tt_vectorD1 =
+    a.tt_vectorD1__content
+  
+  meta "model_projection" function tt_vectorD1__ref_tt_vectorD1__content__projection
+  
+  meta "inline:no" function tt_vectorD1__ref_tt_vectorD1__content__projection
+  
+  val tt_vectorD1__havoc (x: tt_vectorD1__ref) : unit
+    writes { x }
+end
+
+module Example__t_vector___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+  use Array__Int__Standard__integer as Array__Int__Standard__integer
+  use Array__Int__Standard__integer as Array__Int__Standard__integer
+  
+  predicate dynamic_invariant (temp___expr_166: Array__Int__Standard__integer.map) (temp___is_init_162: bool) (temp___skip_constant_163: bool) (temp___do_toplevel_164: bool) (temp___do_typ_inv_165: bool) =
+    true
+  
+  val dynamic_invariant (temp___expr_166: Array__Int__Standard__integer.map) (temp___is_init_162: bool) (temp___skip_constant_163: bool) (temp___do_toplevel_164: bool) (temp___do_typ_inv_165: bool) : 
+    bool
+    ensures { result
+                <->
+                (((((dynamic_invariant
+                       (temp___expr_166 : Array__Int__Standard__integer.map))
+                      (temp___is_init_162 : bool))
+                     (temp___skip_constant_163 : bool))
+                    (temp___do_toplevel_164 : bool))
+                   (temp___do_typ_inv_165 : bool)) }
+  
+  predicate default_initial_assumption (temp___expr_168: Array__Int__Standard__integer.map) (temp___skip_top_level_169: bool) =
+    true
+  
+  val default_initial_assumption (temp___expr_168: Array__Int__Standard__integer.map) (temp___skip_top_level_169: bool) : 
+    bool
+    ensures { result
+                <->
+                ((default_initial_assumption
+                    (temp___expr_168 : Array__Int__Standard__integer.map))
+                   (temp___skip_top_level_169 : bool)) }
+end
+
+module Example__init_for_loop__L_1
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  exception L_1
+end
+
+module Example__init_for_loop__L_1__T3b
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  
+  type t3b = <range 1 2147483647>
+  
+  val function first : int
+    ensures { result = (1 : int) }
+  
+  val function last : int
+    ensures { result = (2147483647 : int) }
+  
+  predicate in_range (x: int) = ((first <= x) /\ (x <= last))
+  
+  val in_range (x: int) : bool
+    ensures { result <-> (in_range (x : int)) }
+  
+  clone export ada__model.Static_Discrete with
+    axiom .,
+    type t = t3b,
+    function first = first,
+    function last = last,
+    predicate in_range = in_range
+  
+  type t3b__ref = { mutable t3b__content : t3b }
+  
+  function t3b__ref_t3b__content__projection (a: t3b__ref) : t3b =
+    a.t3b__content
+  
+  meta "model_projection" function t3b__ref_t3b__content__projection
+  
+  meta "inline:no" function t3b__ref_t3b__content__projection
+  
+  val t3b__havoc (x: t3b__ref) : unit
+    writes { x }
+end
+
+module Temp_____aggregate_def_174
+  use _gnatprove_standard.Main
+  use int.Int
+  use Array__Int__Standard__integer as Array__Int__Standard__integer
+  
+  val function temp_____aggregate_def_174 (temp___176: int) : Array__Int__Standard__integer.map
+end
+
+module Temp_____aggregate_def_174___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+  use Standard__integer as Standard__integer
+  use Array__Int__Standard__integer as Array__Int__Standard__integer
+  use Temp_____aggregate_def_174 as Temp_____aggregate_def_174
+  use Array__Int__Standard__integer as Array__Int__Standard__integer
+  
+  axiom def_axiom:
+    forall temp___176 : int.
+      let temp___175 =
+        Temp_____aggregate_def_174.temp_____aggregate_def_174 temp___176 in
+      forall temp___177 : int.
+        (((Array__Int__Standard__integer.get temp___175) temp___177)
+           = (0 : Standard__integer.integer))
+end
+
+module Example__init_for_loop__L_1__i___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Example__init_for_loop__L_1___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Example__init_for_loop__v___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Example__init_for_loop__value___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Example__Tt_vectorD1___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Example__init_for_loop__L_1__T3b___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Example__init_for_loop__subprogram_def
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use _gnatprove_standard.Boolean as Boolean
+  use Standard__integer as Standard__integer
+  use Standard__integer as Standard__integer
+  use Standard__integer___axiom as Standard__integer___axiom
+  use Standard__integer__rep as Standard__integer__rep
+  use Array__Int__Standard__integer as Array__Int__Standard__integer
+  use Example__init_for_loop__v as Example__init_for_loop__v
+  use Example__init_for_loop__value as Example__init_for_loop__value
+  use Example__init_for_loop__L_1__i as Example__init_for_loop__L_1__i
+  use Example__Tt_vectorD1 as Example__Tt_vectorD1
+  use Array__Int__Standard__integer as Array__Int__Standard__integer
+  use Example__t_vector___axiom as Example__t_vector___axiom
+  use Example__init_for_loop__L_1 as Example__init_for_loop__L_1
+  use Example__init_for_loop__L_1__T3b as Example__init_for_loop__L_1__T3b
+  use Array__Int__Standard__integer as Array__Int__Standard__integer
+  use Temp_____aggregate_def_174 as Temp_____aggregate_def_174
+  use Array__Int__Standard__integer as Array__Int__Standard__integer
+  use Standard__integer___axiom as Standard__integer___axiom
+  use Standard__integer___axiom as Standard__integer___axiom
+  use Temp_____aggregate_def_174___axiom as Temp_____aggregate_def_174___axiom
+  use Example__init_for_loop__L_1__i___axiom as Example__init_for_loop__L_1__i___axiom
+  use Example__init_for_loop__L_1___axiom as Example__init_for_loop__L_1___axiom
+  use Example__t_vector___axiom as Example__t_vector___axiom
+  use Example__init_for_loop__v___axiom as Example__init_for_loop__v___axiom
+  use Example__init_for_loop__value___axiom as Example__init_for_loop__value___axiom
+  use Example__Tt_vectorD1___axiom as Example__Tt_vectorD1___axiom
+  use Example__init_for_loop__L_1__T3b___axiom as Example__init_for_loop__L_1__T3b___axiom
+  
+  let def (__void_param : unit)
+    requires { [#"example.ads" 6 0 0] true }
+    ensures { [#"example.ads" 6 0 0]
+              [#"example.ads" 10 0 0]
+              [@GP_Shape:pragargs__forall]
+              [@GP_Reason:VC_POSTCONDITION]
+              [@model_vc_post]
+              [@GP_Id:4]
+              [@comment:     Post => (for all J in V'Range =>              ^ example.ads:10:14:VC_POSTCONDITION]
+              [@GP_Sloc:example.ads:10:14]
+              (forall j : int.
+                 ((((1 : int) <= j) /\ (j <= (2147483647 : int))) ->
+                    ([@GP_Sloc:example.ads:11:17]
+                     [@GP_Pretty_Ada:964]
+                     ((Standard__integer__rep.to_rep
+                         ((Array__Int__Standard__integer.get
+                             (Example__init_for_loop__v.v.Array__Int__Standard__integer.map__content))
+                            j))
+                        = Example__init_for_loop__value.value)))) }
+  = [@vc:divergent]
+    (([@GNAT-comment:Assume dynamic invariants of inputs of the subprogram example.ads:6]
+      ());
+     assume {
+       ((((Example__t_vector___axiom.dynamic_invariant
+             (Example__init_for_loop__v.v.Array__Int__Standard__integer.map__content))
+            False)
+           False)
+          True)
+         True };
+     assume {
+       ((((Standard__integer___axiom.dynamic_invariant
+             Example__init_for_loop__value.value)
+            True)
+           False)
+          True)
+         True };
+     ([@GNAT-comment:Assume moved pointers in outputs of the subprogram example.ads:6]
+      ());
+     ([@GNAT-comment:Check for RTE in the Pre of the subprogram example.ads:6]
+      ());
+     (begin
+        ensures { true }
+        let _ =
+          let _ =
+            (Example__init_for_loop__value.value > (0 : int))
+             && (Boolean.of_int (0 : int)) in
+          () in
+        ()
+      end);
+     ([@GNAT-comment:Assume Pre of the subprogram example.ads:6] ());
+     assume {
+       (([@GP_Pretty_Ada:941]
+         (Example__init_for_loop__value.value > (0 : int))) /\
+          ([@GP_Pretty_Ada:947] false)) };
+     (try
+        ([#"example.adb" 6 0 0] ());
+        ([@GP_Sloc:example.adb:5:9]
+         [#"example.adb" 5 0 0]
+         [#"example.adb" 5 0 0]
+         (Example__init_for_loop__v.v.Array__Int__Standard__integer.map__content <-
+            (let temp___178 =
+               Temp_____aggregate_def_174.temp_____aggregate_def_174
+                 (0 : int) in
+             temp___178)));
+        ([@GP_Sloc:example.adb:6:24]
+         [#"example.adb" 6 0 0]
+         (let temp___179 = 1 : int in
+          let temp___180 = 2147483647 : int in
+          ([#"example.adb" 6 0 0]
+           (Example__init_for_loop__L_1__i.i.int__content <- temp___179));
+          ([@GNAT-comment:Translation of an Ada loop from example.adb:6] ());
+          (if ((Boolean.andb
+                  (temp___179
+                     <= (Example__init_for_loop__L_1__i.i.int__content)))
+                 ((Example__init_for_loop__L_1__i.i.int__content)
+                    <= temp___180)) then
+             ([#"example.adb" 6 0 0]
+              (try
+                 let temp___loop_entry_182 =
+                   Example__init_for_loop__v.v.Array__Int__Standard__integer.map__content in
+                 ([@GNAT-comment:While loop translating the Ada loop from example.adb:6]
+                  ());
+                 ([#"'@Loop 865@'example.adb" 10 0 0]
+                  [#"'@Loop 865@'example.adb" 10 0 0]
+                  ((([@GP_Sloc:example.adb:7:15]
+                     [#"example.adb" 7 0 0]
+                     [#"example.adb" 7 0 0]
+                     (Example__init_for_loop__v.v.Array__Int__Standard__integer.map__content <-
+                        (((Array__Int__Standard__integer.set
+                             (Example__init_for_loop__v.v.Array__Int__Standard__integer.map__content))
+                            (Example__init_for_loop__L_1__i.i.int__content))
+                           (Standard__integer__rep.of_rep
+                              Example__init_for_loop__value.value))));
+                    ([@GNAT-comment:Check for absence of RTE in the loop invariant and variant]
+                     ());
+                    (let temp___inv_185 =
+                       (let j = val _f : int in
+                                _f in
+                        if ((Boolean.andb ((1 : int) <= j))
+                              (j
+                                 <= (Example__init_for_loop__L_1__i.i.int__content))) then
+                          (begin
+                             ensures { true }
+                             let _ =
+                               let _ =
+                                 ((Standard__integer__rep.to_rep
+                                     ((Array__Int__Standard__integer.get
+                                         (Example__init_for_loop__v.v.
+                                            Array__Int__Standard__integer.map__content))
+                                        j))
+                                    = Example__init_for_loop__value.value) in
+                               () in
+                             ()
+                           end)
+                        else ());
+                       (val _f : bool
+                          ensures { ((result = True) <->
+                                       (forall j : int.
+                                          ((((1 : int) <= j) /\
+                                              (j
+                                                 <= (Example__init_for_loop__L_1__i.i.int__content))) ->
+                                             ((Standard__integer__rep.to_rep
+                                                 ((Array__Int__Standard__integer.get
+                                                     (Example__init_for_loop__v.v.
+                                                        Array__Int__Standard__integer.map__content))
+                                                    j))
+                                                = Example__init_for_loop__value.value)))) } in
+                        _f) in
+                     begin
+                       ensures { true }
+                       let _ =
+                         let _ =
+                           let temp___inv_184 =
+                             (let k = val _f : int in
+                                      _f in
+                              if ((Boolean.andb
+                                     (([#"example.adb" 10 0 0]
+                                       [@GP_Shape:L_1_while__pragargs__forall__range__add]
+                                       [@GP_Sloc:example.adb:10:46]
+                                       [@vc:annotation]
+                                       [@GP_Reason:VC_OVERFLOW_CHECK]
+                                       [@comment:         pragma Loop_Invariant(for all K in i+1 .. V'Last =>                                              ^ example.adb:10:46:VC_OVERFLOW_CHECK]
+                                       [@GP_Id:0]
+                                       (Standard__integer.range_check_
+                                          ((Example__init_for_loop__L_1__i.i.int__content)
+                                             + (1 : int))))
+                                        <= k))
+                                    (k <= (2147483647 : int))) then
+                                (begin
+                                   ensures { true }
+                                   let _ =
+                                     let _ =
+                                       ((Standard__integer__rep.to_rep
+                                           ((Array__Int__Standard__integer.get
+                                               (Example__init_for_loop__v.v.
+                                                  Array__Int__Standard__integer.map__content))
+                                              (assert {
+                                                 [#"example.adb" 11 0 0]
+                                                 [@comment:                              V(K) = 0);                                 ^ example.adb:11:33:VC_INDEX_CHECK]
+                                                 [@vc:annotation]
+                                                 [@GP_Shape:L_1_while__pragargs__forall__cmp__ixdcomp]
+                                                 [@GP_Reason:VC_INDEX_CHECK]
+                                                 [@GP_Id:1]
+                                                 [@GP_Sloc:example.adb:11:33]
+                                                 ((Example__Tt_vectorD1.first
+                                                     <= k) /\
+                                                    (k
+                                                       <= Example__Tt_vectorD1.last)) };
+                                               k)))
+                                          = (0 : int)) in
+                                     () in
+                                   ()
+                                 end)
+                              else ());
+                             (val _f : bool
+                                ensures { ((result = True) <->
+                                             (forall k : int.
+                                                (((((Example__init_for_loop__L_1__i.i.int__content)
+                                                      + (1 : int))
+                                                     <= k) /\
+                                                    (k <= (2147483647 : int))) ->
+                                                   ((Standard__integer__rep.to_rep
+                                                       ((Array__Int__Standard__integer.get
+                                                           (Example__init_for_loop__v.v.
+                                                              Array__Int__Standard__integer.map__content))
+                                                          k))
+                                                      = (0 : int))))) } in
+                              _f) in
+                           () in
+                         () in
+                       ()
+                     end));
+                   while True do
+                     invariant LoopInvariant {
+                       [#"example.adb" 8 0 0]
+                       [@GP_Reason:VC_LOOP_INVARIANT]
+                       [@comment:         pragma Loop_Invariant(for all J in V'First .. i =>                                ^ example.adb:8:32:VC_LOOP_INVARIANT]
+                       [@vc:annotation]
+                       [@GP_Shape:L_1_while__pragargs__forall]
+                       [@GP_Id:3]
+                       [@GP_Sloc:example.adb:8:32]
+                       (forall j : int.
+                          ((((1 : int) <= j) /\
+                              (j
+                                 <= (Example__init_for_loop__L_1__i.i.int__content))) ->
+                             ([@GP_Sloc:example.adb:9:34]
+                              [@GP_Pretty_Ada:864]
+                              ((Standard__integer__rep.to_rep
+                                  ((Array__Int__Standard__integer.get
+                                      (Example__init_for_loop__v.v.Array__Int__Standard__integer.map__content))
+                                     j))
+                                 = Example__init_for_loop__value.value)))) }
+                     invariant LoopInvariant {
+                       [#"example.adb" 10 0 0]
+                       [@GP_Reason:VC_LOOP_INVARIANT]
+                       [@vc:annotation]
+                       [@GP_Shape:L_1_while__pragargs__forall]
+                       [@GP_Sloc:example.adb:10:32]
+                       [@comment:         pragma Loop_Invariant(for all K in i+1 .. V'Last =>                                ^ example.adb:10:32:VC_LOOP_INVARIANT]
+                       [@GP_Id:2]
+                       (forall k : int.
+                          (((((Example__init_for_loop__L_1__i.i.int__content)
+                                + (1 : int))
+                               <= k) /\
+                              (k <= (2147483647 : int))) ->
+                             ([@GP_Sloc:example.adb:11:31]
+                              [@GP_Pretty_Ada:882]
+                              ((Standard__integer__rep.to_rep
+                                  ((Array__Int__Standard__integer.get
+                                      (Example__init_for_loop__v.v.Array__Int__Standard__integer.map__content))
+                                     k))
+                                 = (0 : int))))) }
+                     ([@GNAT-comment:gnat_ast_to_ptree: code after the loop invariant]
+                      (([@GNAT-comment:Assume implicit invariants from the loop example.adb:6]
+                        ());
+                       assume {
+                         (Boolean.andb
+                            ((((true /\
+                                  (((((Example__t_vector___axiom.dynamic_invariant
+                                         (Example__init_for_loop__v.v.
+                                            Array__Int__Standard__integer.map__content))
+                                        False)
+                                       True)
+                                      True)
+                                     True)) /\
+                                 (true /\
+                                    (forall temp___183 : int.
+                                       if ((Example__Tt_vectorD1.first
+                                              <= temp___183) /\
+                                             (temp___183
+                                                <= Example__Tt_vectorD1.last)) then
+                                         (if ((temp___180 < temp___183) \/
+                                                ((temp___183 < temp___179) \/
+                                                   ((Example__init_for_loop__L_1__i.i.int__content)
+                                                      < temp___183))) then
+                                            (((Array__Int__Standard__integer.get
+                                                 (Example__init_for_loop__v.v.
+                                                    Array__Int__Standard__integer.map__content))
+                                                temp___183)
+                                               = ((Array__Int__Standard__integer.get
+                                                     temp___loop_entry_182)
+                                                    temp___183))
+                                          else true)
+                                       else true))) /\
+                                (if ((True = True) \/
+                                       (Example__init_for_loop__L_1__T3b.first
+                                          <= Example__init_for_loop__L_1__T3b.last)) then
+                                   (((Example__init_for_loop__L_1__T3b.dynamic_property
+                                        Example__init_for_loop__L_1__T3b.first)
+                                       Example__init_for_loop__L_1__T3b.last)
+                                      (Example__init_for_loop__L_1__i.i.int__content))
+                                 else true)) /\
+                               (true /\ true)))
+                           (((1 : int)
+                               <= (Example__init_for_loop__L_1__i.i.int__content)) /\
+                              ((Example__init_for_loop__L_1__i.i.int__content)
+                                 <= (2147483647 : int))) };
+                       ([@GNAT-comment:Continuation of loop after loop invariant and variant]
+                        ());
+                       ([@GNAT-comment:Check for the exit condition and loop statements appearing before the loop invariant of loop example.adb:6]
+                        ());
+                       (if ((Example__init_for_loop__L_1__i.i.int__content)
+                              = temp___180) then
+                          (raise Example__init_for_loop__L_1.L_1)
+                        else ());
+                       ([#"example.adb" 6 0 0]
+                        [#"example.adb" 6 0 0]
+                        (Example__init_for_loop__L_1__i.i.int__content <-
+                           ((Example__init_for_loop__L_1__i.i.int__content)
+                              + (1 : int))))));
+                     ([@GNAT-comment:gnat_ast_to_ptree: code before the loop invariant]
+                      (([@GP_Sloc:example.adb:7:15]
+                        [#"example.adb" 7 0 0]
+                        [#"example.adb" 7 0 0]
+                        (Example__init_for_loop__v.v.Array__Int__Standard__integer.map__content <-
+                           (((Array__Int__Standard__integer.set
+                                (Example__init_for_loop__v.v.Array__Int__Standard__integer.map__content))
+                               (Example__init_for_loop__L_1__i.i.int__content))
+                              (Standard__integer__rep.of_rep
+                                 Example__init_for_loop__value.value))));
+                       ([@GNAT-comment:Check for absence of RTE in the loop invariant and variant]
+                        ());
+                       (let temp___inv_185 =
+                          (let j = val _f : int in
+                                   _f in
+                           if ((Boolean.andb ((1 : int) <= j))
+                                 (j
+                                    <= (Example__init_for_loop__L_1__i.i.int__content))) then
+                             (begin
+                                ensures { true }
+                                let _ =
+                                  let _ =
+                                    ((Standard__integer__rep.to_rep
+                                        ((Array__Int__Standard__integer.get
+                                            (Example__init_for_loop__v.v.
+                                               Array__Int__Standard__integer.map__content))
+                                           j))
+                                       = Example__init_for_loop__value.value) in
+                                  () in
+                                ()
+                              end)
+                           else ());
+                          (val _f : bool
+                             ensures { ((result = True) <->
+                                          (forall j : int.
+                                             ((((1 : int) <= j) /\
+                                                 (j
+                                                    <= (Example__init_for_loop__L_1__i.i.int__content))) ->
+                                                ((Standard__integer__rep.to_rep
+                                                    ((Array__Int__Standard__integer.get
+                                                        (Example__init_for_loop__v.v.
+                                                           Array__Int__Standard__integer.map__content))
+                                                       j))
+                                                   = Example__init_for_loop__value.value)))) } in
+                           _f) in
+                        begin
+                          ensures { true }
+                          let _ =
+                            let _ =
+                              let temp___inv_184 =
+                                (let k = val _f : int in
+                                         _f in
+                                 if ((Boolean.andb
+                                        (([#"example.adb" 10 0 0]
+                                          [@GP_Shape:L_1_while__pragargs__forall__range__add]
+                                          [@GP_Sloc:example.adb:10:46]
+                                          [@vc:annotation]
+                                          [@GP_Reason:VC_OVERFLOW_CHECK]
+                                          [@comment:         pragma Loop_Invariant(for all K in i+1 .. V'Last =>                                              ^ example.adb:10:46:VC_OVERFLOW_CHECK]
+                                          [@GP_Id:0]
+                                          (Standard__integer.range_check_
+                                             ((Example__init_for_loop__L_1__i.i.int__content)
+                                                + (1 : int))))
+                                           <= k))
+                                       (k <= (2147483647 : int))) then
+                                   (begin
+                                      ensures { true }
+                                      let _ =
+                                        let _ =
+                                          ((Standard__integer__rep.to_rep
+                                              ((Array__Int__Standard__integer.get
+                                                  (Example__init_for_loop__v.v.
+                                                     Array__Int__Standard__integer.map__content))
+                                                 (assert {
+                                                    [#"example.adb" 11 0 0]
+                                                    [@comment:                              V(K) = 0);                                 ^ example.adb:11:33:VC_INDEX_CHECK]
+                                                    [@vc:annotation]
+                                                    [@GP_Shape:L_1_while__pragargs__forall__cmp__ixdcomp]
+                                                    [@GP_Reason:VC_INDEX_CHECK]
+                                                    [@GP_Id:1]
+                                                    [@GP_Sloc:example.adb:11:33]
+                                                    ((Example__Tt_vectorD1.first
+                                                        <= k) /\
+                                                       (k
+                                                          <= Example__Tt_vectorD1.last)) };
+                                                  k)))
+                                             = (0 : int)) in
+                                        () in
+                                      ()
+                                    end)
+                                 else ());
+                                (val _f : bool
+                                   ensures { ((result = True) <->
+                                                (forall k : int.
+                                                   (((((Example__init_for_loop__L_1__i.i.int__content)
+                                                         + (1 : int))
+                                                        <= k) /\
+                                                       (k
+                                                          <= (2147483647 :
+                                                                int))) ->
+                                                      ((Standard__integer__rep.to_rep
+                                                          ((Array__Int__Standard__integer.get
+                                                              (Example__init_for_loop__v.v.
+                                                                 Array__Int__Standard__integer.map__content))
+                                                             k))
+                                                         = (0 : int))))) } in
+                                 _f) in
+                              () in
+                            () in
+                          ()
+                        end)));
+                     ([@GNAT-comment:gnat_ast_to_ptree: code checking the variants]
+                      ())
+                   done))
+               with Example__init_for_loop__L_1.L_1 -> ()
+               end))
+           else ())));
+        (raise Return__exc)
+      with Return__exc -> ()
+      end);
+     (begin
+        ensures { true }
+        let _ =
+          let _ =
+            (let j = val _f : int in
+                     _f in
+             if ((Boolean.andb ((1 : int) <= j)) (j <= (2147483647 : int))) then
+               (begin
+                  ensures { true }
+                  let _ =
+                    let _ =
+                      ((Standard__integer__rep.to_rep
+                          ((Array__Int__Standard__integer.get
+                              (Example__init_for_loop__v.v.Array__Int__Standard__integer.map__content))
+                             j))
+                         = Example__init_for_loop__value.value) in
+                    () in
+                  ()
+                end)
+             else ());
+            (val _f : bool
+               ensures { ((result = True) <->
+                            (forall j : int.
+                               ((((1 : int) <= j) /\
+                                   (j <= (2147483647 : int))) ->
+                                  ([@GP_Pretty_Ada:964]
+                                   ((Standard__integer__rep.to_rep
+                                       ((Array__Int__Standard__integer.get
+                                           (Example__init_for_loop__v.v.
+                                              Array__Int__Standard__integer.map__content))
+                                          j))
+                                      = Example__init_for_loop__value.value))))) } in
+             _f) in
+          () in
+        ()
+      end))
+end
