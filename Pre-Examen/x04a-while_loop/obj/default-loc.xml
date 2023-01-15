@@ -1,10 +1,85 @@
 <?xml version="1.0"?>
 <Locations >
   <Project>
-    <vfs_file>C:\Users\raulm\OneDrive\Escritorio\Programas-P3\x04a-while_loop\default.gpr</vfs_file>
-    <file_marker current="true" column=" 1" line=" 1" >
-      <vfs_project>C:\Users\raulm\OneDrive\Escritorio\Programas-P3\x04a-while_loop\default.gpr</vfs_project>
-      <vfs_file>C:\Users\raulm\OneDrive\Escritorio\Programas-P3\x04a-while_loop\src\example.adb</vfs_file>
+    <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen\x04a-while_loop\default.gpr</vfs_file>
+    <file_marker column=" 1" line=" 27" >
+      <vfs_project />
+      <vfs_file>C:\GNAT\2021\bin\src\main.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>C:\GNAT\2021\bin\src\main2.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen\x04a-while_loop\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen\x04a-while_loop\src\example.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 14" line=" 14" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen\x04a-while_loop\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen\x04a-while_loop\src\example.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen\x04a-while_loop\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen\x04a-while_loop\src\example.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen\x04a-while_loop\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen\x04a-while_loop\src\main.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen\x04a-while_loop\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen\x04a-while_loop\src\test_example.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 3" line=" 15" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen\x04a-while_loop\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen\x04a-while_loop\src\example.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen\x04a-while_loop\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen\x04a-while_loop\src\main.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen\x04a-while_loop\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen\x04a-while_loop\src\example.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen\x04a-while_loop\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen\x04a-while_loop\src\example.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen\x04a-while_loop\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen\x04a-while_loop\src\test_example.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 19" line=" 7" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen\x04a-while_loop\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen\x04a-while_loop\src\example.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 25" line=" 6" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen\x04a-while_loop\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen\x04a-while_loop\src\example.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 27" line=" 8" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen\x04a-while_loop\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen\x04a-while_loop\src\example.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 17" line=" 11" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen\x04a-while_loop\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen\x04a-while_loop\src\example.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 44" line=" 10" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen\x04a-while_loop\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen\x04a-while_loop\src\example.adb</vfs_file>
+    </file_marker>
+    <file_marker current="true" column=" 16" line=" 8" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen\x04a-while_loop\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen\x04a-while_loop\src\example.ads</vfs_file>
+    </file_marker>
+  </Project>
+  <Project >
+    <vfs_file >C:\Users\raulm\OneDrive\Escritorio\Programas-P3\x04a-while_loop\default.gpr</vfs_file>
+    <file_marker current="true" column=" 1" line=" 1">
+      <vfs_project >C:\Users\raulm\OneDrive\Escritorio\Programas-P3\x04a-while_loop\default.gpr</vfs_project>
+      <vfs_file >C:\Users\raulm\OneDrive\Escritorio\Programas-P3\x04a-while_loop\src\example.adb</vfs_file>
     </file_marker>
   </Project>
 </Locations>
