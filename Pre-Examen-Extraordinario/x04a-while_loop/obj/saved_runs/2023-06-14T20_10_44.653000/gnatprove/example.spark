@@ -1,0 +1,70 @@
+{
+  "spark": [
+    {
+      "name": "Example",
+      "sloc": [
+        {
+          "file": "example.ads",
+          "line": 1
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "Example.While_Test",
+      "sloc": [
+        {
+          "file": "example.ads",
+          "line": 3
+        }
+      ],
+      "spark": "all"
+    }
+  ],
+  "flow": [
+    {
+      "file": "example.ads",
+      "line": 3,
+      "col": 39,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Example.While_Test",
+        "sloc": [
+          {
+            "file": "example.ads",
+            "line": 3
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    }
+  ],
+  "assumptions": [
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Example.While_Test",
+          "sloc": [
+            {
+              "file": "example.ads",
+              "line": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "timings": {
+    "globals (advanced)": 6.86899991706014E-04,
+    "flow analysis": 3.66190006025136E-03,
+    "marking": 1.64299999596551E-04,
+    "properties (advanced)": 3.84999984817114E-05,
+    "globals (basic)": 6.32199982646853E-04
+  }
+}

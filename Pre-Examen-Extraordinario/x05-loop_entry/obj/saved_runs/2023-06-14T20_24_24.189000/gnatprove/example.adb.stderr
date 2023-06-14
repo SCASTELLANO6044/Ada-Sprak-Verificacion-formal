@@ -1,0 +1,4 @@
+example.adb:7:10: error: unknown pragma "Loopvariant" is not allowed in SPARK
+example.adb:7:10: error: violation of aspect SPARK_Mode at line 1
+example.adb:7:17: warning: unrecognized pragma "Loopvariant" [-gnatwg]
+example.adb:7:17: warning: possible misspelling of "Loop_Variant" [-gnatwg]

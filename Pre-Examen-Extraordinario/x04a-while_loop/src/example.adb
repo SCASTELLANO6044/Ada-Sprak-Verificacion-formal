@@ -8,7 +8,8 @@ package body Example with SPARK_Mode is
       while A <= B loop
          pragma Loop_Variant (Increases => A);
          pragma Loop_Variant (Decreases => B);
-         pragma Loop_Invariant (A+B=N);
+
+         pragma Loop_Invariant(B + A = N);
          A := A + 1;
          B := B - 1;
       end loop;

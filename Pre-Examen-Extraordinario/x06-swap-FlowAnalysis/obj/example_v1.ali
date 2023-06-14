@@ -1,0 +1,31 @@
+V "GNAT Lib v2021"
+A -gnatA
+A -g
+A -fstack-check=specific
+A -gnata
+A -gnato
+A -gnat12
+A -gnatwa
+A -gnateE
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_IMPLEMENTATION_PRAGMAS
+
+U example_v1%b		example_v1.adb		4b2b701a NE OO PK
+
+U example_v1%s		example_v1.ads		c278d757 EE NE OO PK
+
+D example_v1.ads	20191006170650 c278d757 example_v1%s
+D example_v1.adb	20180921121226 8953a74d example_v1%b
+D system.ads		20210520051136 2ffa5114 system%s
+G a e
+G c Z s b [swap example_v1 7 14 none]
+X 1 example_v1.ads
+5K9*Example_V1 9l5 9e15 2|1b14 11l5 11t15
+7U14*Swap 7=20 7=23 2|5b14 9l8 9t12
+7i20 X{integer} 2|5b20 7m7 8r12
+7i23 Y{integer} 2|5b23 7r12 8m7
+

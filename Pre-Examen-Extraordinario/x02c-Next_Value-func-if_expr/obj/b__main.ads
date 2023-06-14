@@ -248,7 +248,7 @@ package ada_main is
    pragma Export (C, u00103, "system__string_hashB");
    u00104 : constant Version_32 := 16#09668980#;
    pragma Export (C, u00104, "system__string_hashS");
-   u00105 : constant Version_32 := 16#af1dc52a#;
+   u00105 : constant Version_32 := 16#df808f6d#;
    pragma Export (C, u00105, "tests_next_valueB");
    u00106 : constant Version_32 := 16#d8bb58e0#;
    pragma Export (C, u00106, "ada__text_ioB");
@@ -282,9 +282,9 @@ package ada_main is
    pragma Export (C, u00120, "system__finalization_rootS");
    u00121 : constant Version_32 := 16#d265cbbc#;
    pragma Export (C, u00121, "system__file_control_blockS");
-   u00122 : constant Version_32 := 16#3480a72b#;
+   u00122 : constant Version_32 := 16#441ded6c#;
    pragma Export (C, u00122, "exampleB");
-   u00123 : constant Version_32 := 16#027f97eb#;
+   u00123 : constant Version_32 := 16#72e2ddac#;
    pragma Export (C, u00123, "exampleS");
    u00124 : constant Version_32 := 16#48433bbe#;
    pragma Export (C, u00124, "system__assertionsB");
@@ -294,14 +294,10 @@ package ada_main is
    pragma Export (C, u00126, "ada__assertionsB");
    u00127 : constant Version_32 := 16#d1602bfd#;
    pragma Export (C, u00127, "ada__assertionsS");
-   u00128 : constant Version_32 := 16#fd83e873#;
-   pragma Export (C, u00128, "system__concat_2B");
-   u00129 : constant Version_32 := 16#2d5a86c4#;
-   pragma Export (C, u00129, "system__concat_2S");
-   u00130 : constant Version_32 := 16#eca5ecae#;
-   pragma Export (C, u00130, "system__memoryB");
-   u00131 : constant Version_32 := 16#76873720#;
-   pragma Export (C, u00131, "system__memoryS");
+   u00128 : constant Version_32 := 16#eca5ecae#;
+   pragma Export (C, u00128, "system__memoryB");
+   u00129 : constant Version_32 := 16#76873720#;
+   pragma Export (C, u00129, "system__memoryS");
 
    --  BEGIN ELABORATION ORDER
    --  ada%s
@@ -337,8 +333,6 @@ package ada_main is
    --  system.wch_jis%b
    --  system.wch_cnv%s
    --  system.wch_cnv%b
-   --  system.concat_2%s
-   --  system.concat_2%b
    --  system.traceback%s
    --  system.traceback%b
    --  ada.characters.handling%s

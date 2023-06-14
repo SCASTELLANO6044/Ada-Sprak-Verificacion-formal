@@ -16,7 +16,7 @@ RN
 RV NO_IO
 RV NO_IMPLEMENTATION_PRAGMAS
 
-U tests_max%b		tests_max.adb		9d801d5f NE OO SU
+U tests_max%b		tests_max.adb		5ee09599 NE OO SU
 W ada%s			ada.ads			ada.ali
 Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
@@ -34,7 +34,7 @@ D a-stuten.ads		20210520051130 808c40ad ada.strings.utf_encoding%s
 D a-tags.ads		20210520051130 9eaa38c6 ada.tags%s
 D a-textio.ads		20210520051130 aef4d56d ada.text_io%s
 D a-unccon.ads		20210520051130 0e9b276f ada.unchecked_conversion%s
-D example.ads		20220915101232 d0d55be2 example%s
+D example.ads		20230614181712 13b5d324 example%s
 D interfac.ads		20210520051132 edec285f interfaces%s
 D i-cstrea.ads		20210520051132 e53d8b8e interfaces.c_streams%s
 D system.ads		20210520051136 2ffa5114 system%s
@@ -65,7 +65,7 @@ X 10 a-textio.ads
 463U14*Put 31|8s7 17s7 26s7
 506U14*Put_Line 31|12s7 21s7 30s7 34s4
 X 12 example.ads
-1K9*Example 13e12 31|2w6 2r23
+1K9*Example 18e12 31|2w6 2r23
 5V13*Max{integer} 31|10s22 19s22 28s22
 X 31 tests_max.adb
 4U11*Tests_Max 4b11 38l5 38t14

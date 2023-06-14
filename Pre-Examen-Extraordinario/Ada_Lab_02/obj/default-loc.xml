@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<Locations >
+  <Project >
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\ESTUDIOS\UNI3\ASIGNATURAS\PROGRAMACION3\PRACTICA\Ejemplos\Ada_Lab_02\default.gpr</vfs_project>
+      <vfs_file>D:\ESTUDIOS\UNI3\ASIGNATURAS\PROGRAMACION3\PRACTICA\Ejemplos\Ada_Lab_02\src\test_tables.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\ESTUDIOS\UNI3\ASIGNATURAS\PROGRAMACION3\PRACTICA\Ejemplos\Ada_Lab_02\default.gpr</vfs_project>
+      <vfs_file>D:\ESTUDIOS\UNI3\ASIGNATURAS\PROGRAMACION3\PRACTICA\Ejemplos\Ada_Lab_02\src\tables.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\ESTUDIOS\UNI3\ASIGNATURAS\PROGRAMACION3\PRACTICA\Ejemplos\Ada_Lab_02\default.gpr</vfs_project>
+      <vfs_file>D:\ESTUDIOS\UNI3\ASIGNATURAS\PROGRAMACION3\PRACTICA\Ejemplos\Ada_Lab_02\src\test_tables.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 51" line=" 242" >
+      <vfs_project>D:\ESTUDIOS\UNI3\ASIGNATURAS\PROGRAMACION3\PRACTICA\Ejemplos\Ada_Lab_02\default.gpr</vfs_project>
+      <vfs_file>D:\ESTUDIOS\UNI3\ASIGNATURAS\PROGRAMACION3\PRACTICA\Ejemplos\Ada_Lab_02\src\test_tables.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\ESTUDIOS\UNI3\ASIGNATURAS\PROGRAMACION3\PRACTICA\Ejemplos\Ada_Lab_02\default.gpr</vfs_project>
+      <vfs_file>D:\ESTUDIOS\UNI3\ASIGNATURAS\PROGRAMACION3\PRACTICA\Ejemplos\Ada_Lab_02\src\strings.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 51" line=" 242" >
+      <vfs_project>D:\ESTUDIOS\UNI3\ASIGNATURAS\PROGRAMACION3\PRACTICA\Ejemplos\Ada_Lab_02\default.gpr</vfs_project>
+      <vfs_file>D:\ESTUDIOS\UNI3\ASIGNATURAS\PROGRAMACION3\PRACTICA\Ejemplos\Ada_Lab_02\src\test_tables.adb</vfs_file>
+    </file_marker>
+    <file_marker current="true" column=" 1" line=" 1" >
+      <vfs_project>D:\ESTUDIOS\UNI3\ASIGNATURAS\PROGRAMACION3\PRACTICA\Ejemplos\Ada_Lab_02\default.gpr</vfs_project>
+      <vfs_file>D:\ESTUDIOS\UNI3\ASIGNATURAS\PROGRAMACION3\PRACTICA\Ejemplos\Ada_Lab_02\src\tables.ads</vfs_file>
+    </file_marker>
+  </Project>
+  <Project >
+    <vfs_file >D:\ESTUDIOS\UNI3\ASIGNATURAS\PROGRAMACION3\PRACTICA\Ada_Lab_02\default.gpr</vfs_file>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project >D:\ESTUDIOS\UNI3\ASIGNATURAS\PROGRAMACION3\PRACTICA\Ada_Lab_02\default.gpr</vfs_project>
+      <vfs_file >D:\ESTUDIOS\UNI3\ASIGNATURAS\PROGRAMACION3\PRACTICA\Ada_Lab_02\src\tables.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project >D:\ESTUDIOS\UNI3\ASIGNATURAS\PROGRAMACION3\PRACTICA\Ada_Lab_02\default.gpr</vfs_project>
+      <vfs_file >D:\ESTUDIOS\UNI3\ASIGNATURAS\PROGRAMACION3\PRACTICA\Ada_Lab_02\src\tables.ads</vfs_file>
+    </file_marker>
+    <file_marker current="true" column=" 1" line=" 1">
+      <vfs_project >D:\ESTUDIOS\UNI3\ASIGNATURAS\PROGRAMACION3\PRACTICA\Ada_Lab_02\default.gpr</vfs_project>
+      <vfs_file >D:\ESTUDIOS\UNI3\ASIGNATURAS\PROGRAMACION3\PRACTICA\Ada_Lab_02\src\test_tables.adb</vfs_file>
+    </file_marker>
+  </Project>
+</Locations>

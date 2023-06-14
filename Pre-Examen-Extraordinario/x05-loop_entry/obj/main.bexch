@@ -1,19 +1,19 @@
 [GENERATED OBJECT FILE]
 b__main.o
 [PROJECT FILES]
-D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\x05-loop_entry\default.gpr
-20190928172842 51d200fc36abdc4a27be755c97128f89
+D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\x05-loop_entry\default.gpr
+20190928172842 9ca6ac0a05ee04d6fb3ac624cccf3aa5
 [BOUND OBJECT FILES]
-D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\x05-loop_entry\obj\example.o
-D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\x05-loop_entry\obj\test_example.o
-D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\x05-loop_entry\obj\main.o
+D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\x05-loop_entry\obj\example.o
+D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\x05-loop_entry\obj\test_example.o
+D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\x05-loop_entry\obj\main.o
 [GENERATED SOURCE FILES]
 b__main.ads
 b__main.adb
 b__main.ali
 [RESULTING OPTIONS]
--LD:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\x05-loop_entry\obj\
--LD:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\x05-loop_entry\obj\
+-LD:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\x05-loop_entry\obj\
+-LD:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\x05-loop_entry\obj\
 -LC:/gnat/2021/lib/gcc/x86_64-w64-mingw32/10.3.1/adalib/
 -static
 -static-libgcc

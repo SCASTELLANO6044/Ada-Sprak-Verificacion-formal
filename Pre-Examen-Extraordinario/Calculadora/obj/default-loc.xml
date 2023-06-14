@@ -1,0 +1,283 @@
+<?xml version="1.0"?>
+<Locations >
+  <Project >
+    <file_marker column=" 1" line=" 27" >
+      <vfs_project />
+      <vfs_file>C:\GNAT\2021\bin\src\main.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>C:\GNAT\2021\bin\src\main2.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>C:\GNAT\2021\bin\src\main2.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\x01-absolute_value-func-proc\src\main.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 18" line=" 4" >
+      <vfs_project />
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\x01-absolute_value-func-proc\src\main.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\x01-absolute_value-func-proc\src\example.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\x01-absolute_value-func-proc\src\example.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 8" line=" 9" >
+      <vfs_project />
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\x01-absolute_value-func-proc\src\example.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\x01-absolute_value-func-proc\default.gpr</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\x01-absolute_value-func-proc\src\example.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 11" line=" 4" >
+      <vfs_project />
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\x01-absolute_value-func-proc\src\main.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\x02a-Next_Value-proc\src\example.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\x02a-Next_Value-proc\src\example.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 7" line=" 6" >
+      <vfs_project />
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\x02a-Next_Value-proc\src\example.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\x02a-Next_Value-proc\src\main.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\x02a-Next_Value-proc\src\example.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Ada_Lab_01\src\main.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\main.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 3" line=" 3" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\main.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_add.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 36" line=" 7" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_add.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_add.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 62" line=" 15" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_add.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 8" line=" 9" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_add.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 28" line=" 7" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_add.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 36" line=" 13" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_add.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 28" line=" 7" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_add.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 14" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_add.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 7" line=" 4" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_add.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 9" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\main.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_subtract.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_subtract.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 55" line=" 16" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_subtract.ads</vfs_file>
+    </file_marker>
+    <file_marker current="true" column=" 36" line=" 10" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_subtract.adb</vfs_file>
+    </file_marker>
+  </Project>
+  <Project >
+    <vfs_file >D:\1. ESTUDIOS\UNI3\ASIGNATURAS\1er Semestre\PROGRAMACION3\PRACTICA\Ejemplos_Ada_Spark\Calculadora\default.gpr</vfs_file>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >D:\1. ESTUDIOS\UNI3\ASIGNATURAS\1er Semestre\PROGRAMACION3\PRACTICA\Proyecto_Spark_Lab\SPARK_Lab\src\pkg_addTenXTimes.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 4">
+      <vfs_project  />
+      <vfs_file >D:\1. ESTUDIOS\UNI3\ASIGNATURAS\1er Semestre\PROGRAMACION3\PRACTICA\Proyecto_Spark_Lab\SPARK_Lab\src\pkg_addTenXTimes.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >D:\1. ESTUDIOS\UNI3\ASIGNATURAS\1er Semestre\PROGRAMACION3\PRACTICA\Proyecto_Spark_Lab\SPARK_Lab\src\pkg_fromNegativeToZero.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 37" line=" 14">
+      <vfs_project  />
+      <vfs_file >D:\1. ESTUDIOS\UNI3\ASIGNATURAS\1er Semestre\PROGRAMACION3\PRACTICA\Proyecto_Spark_Lab\SPARK_Lab\src\pkg_fromNegativeToZero.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >D:\1. ESTUDIOS\UNI3\ASIGNATURAS\1er Semestre\PROGRAMACION3\PRACTICA\Proyecto_Spark_Lab\SPARK_Lab\src\pkg_fromNegativeToZero.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 69" line=" 14">
+      <vfs_project  />
+      <vfs_file >D:\1. ESTUDIOS\UNI3\ASIGNATURAS\1er Semestre\PROGRAMACION3\PRACTICA\Proyecto_Spark_Lab\SPARK_Lab\src\pkg_fromNegativeToZero.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 38" line=" 14">
+      <vfs_project  />
+      <vfs_file >D:\1. ESTUDIOS\UNI3\ASIGNATURAS\1er Semestre\PROGRAMACION3\PRACTICA\Proyecto_Spark_Lab\SPARK_Lab\src\pkg_fromNegativeToZero.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >D:\1. ESTUDIOS\UNI3\ASIGNATURAS\1er Semestre\PROGRAMACION3\PRACTICA\Proyecto_Spark_Lab\SPARK_Lab\src\tests_addTenXTimes.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 43" line=" 10">
+      <vfs_project  />
+      <vfs_file >D:\1. ESTUDIOS\UNI3\ASIGNATURAS\1er Semestre\PROGRAMACION3\PRACTICA\Proyecto_Spark_Lab\SPARK_Lab\src\tests_addTenXTimes.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >D:\1. ESTUDIOS\UNI3\ASIGNATURAS\1er Semestre\PROGRAMACION3\PRACTICA\Proyecto_Spark_Lab\SPARK_Lab\src\tests_fromNegativeToZero.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 41" line=" 14">
+      <vfs_project  />
+      <vfs_file >D:\1. ESTUDIOS\UNI3\ASIGNATURAS\1er Semestre\PROGRAMACION3\PRACTICA\Proyecto_Spark_Lab\SPARK_Lab\src\tests_fromNegativeToZero.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >D:\1. ESTUDIOS\UNI3\ASIGNATURAS\1er Semestre\PROGRAMACION3\PRACTICA\Proyecto_Spark_Lab\SPARK_Lab\src\tests_median.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >D:\1. ESTUDIOS\UNI3\ASIGNATURAS\1er Semestre\PROGRAMACION3\PRACTICA\Proyecto_Spark_Lab\SPARK_Lab\src\tests_substractTenAddTen.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >D:\1. ESTUDIOS\UNI3\ASIGNATURAS\1er Semestre\PROGRAMACION3\PRACTICA\Proyecto_Spark_Lab\SPARK_Lab\src\main.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 23" line=" 9">
+      <vfs_project  />
+      <vfs_file >D:\1. ESTUDIOS\UNI3\ASIGNATURAS\1er Semestre\PROGRAMACION3\PRACTICA\Proyecto_Spark_Lab\SPARK_Lab\src\main.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >D:\1. ESTUDIOS\UNI3\ASIGNATURAS\1er Semestre\PROGRAMACION3\PRACTICA\Proyecto_Spark_Lab\SPARK_Lab\src\pkg_addTenXTimes.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >D:\1. ESTUDIOS\UNI3\ASIGNATURAS\1er Semestre\PROGRAMACION3\PRACTICA\Proyecto_Spark_Lab\SPARK_Lab\src\pkg_addTenXTimes.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project  />
+      <vfs_file >D:\1. ESTUDIOS\UNI3\ASIGNATURAS\1er Semestre\PROGRAMACION3\PRACTICA\Proyecto_Spark_Lab\SPARK_Lab\src\tests_addTenXTimes.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project >D:\1. ESTUDIOS\UNI3\ASIGNATURAS\1er Semestre\PROGRAMACION3\PRACTICA\Ejemplos_Ada_Spark\Calculadora\default.gpr</vfs_project>
+      <vfs_file >D:\1. ESTUDIOS\UNI3\ASIGNATURAS\1er Semestre\PROGRAMACION3\PRACTICA\Ejemplos_Ada_Spark\Calculadora\src\pkg_add.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project >D:\1. ESTUDIOS\UNI3\ASIGNATURAS\1er Semestre\PROGRAMACION3\PRACTICA\Ejemplos_Ada_Spark\Calculadora\default.gpr</vfs_project>
+      <vfs_file >D:\1. ESTUDIOS\UNI3\ASIGNATURAS\1er Semestre\PROGRAMACION3\PRACTICA\Ejemplos_Ada_Spark\Calculadora\src\pkg_add.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project >D:\1. ESTUDIOS\UNI3\ASIGNATURAS\1er Semestre\PROGRAMACION3\PRACTICA\Ejemplos_Ada_Spark\Calculadora\default.gpr</vfs_project>
+      <vfs_file >D:\1. ESTUDIOS\UNI3\ASIGNATURAS\1er Semestre\PROGRAMACION3\PRACTICA\Ejemplos_Ada_Spark\Calculadora\src\pkg_add.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project >D:\1. ESTUDIOS\UNI3\ASIGNATURAS\1er Semestre\PROGRAMACION3\PRACTICA\Ejemplos_Ada_Spark\Calculadora\default.gpr</vfs_project>
+      <vfs_file >D:\1. ESTUDIOS\UNI3\ASIGNATURAS\1er Semestre\PROGRAMACION3\PRACTICA\Ejemplos_Ada_Spark\Calculadora\src\pkg_add.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 26" line=" 6">
+      <vfs_project >D:\1. ESTUDIOS\UNI3\ASIGNATURAS\1er Semestre\PROGRAMACION3\PRACTICA\Ejemplos_Ada_Spark\Calculadora\default.gpr</vfs_project>
+      <vfs_file >D:\1. ESTUDIOS\UNI3\ASIGNATURAS\1er Semestre\PROGRAMACION3\PRACTICA\Ejemplos_Ada_Spark\Calculadora\src\pkg_add.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project >D:\1. ESTUDIOS\UNI3\ASIGNATURAS\1er Semestre\PROGRAMACION3\PRACTICA\Ejemplos_Ada_Spark\Calculadora\default.gpr</vfs_project>
+      <vfs_file >D:\1. ESTUDIOS\UNI3\ASIGNATURAS\1er Semestre\PROGRAMACION3\PRACTICA\Ejemplos_Ada_Spark\Calculadora\src\main.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 18">
+      <vfs_project >D:\1. ESTUDIOS\UNI3\ASIGNATURAS\1er Semestre\PROGRAMACION3\PRACTICA\Ejemplos_Ada_Spark\Calculadora\default.gpr</vfs_project>
+      <vfs_file >D:\1. ESTUDIOS\UNI3\ASIGNATURAS\1er Semestre\PROGRAMACION3\PRACTICA\Ejemplos_Ada_Spark\Calculadora\src\pkg_add.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project >D:\1. ESTUDIOS\UNI3\ASIGNATURAS\1er Semestre\PROGRAMACION3\PRACTICA\Ejemplos_Ada_Spark\Calculadora\default.gpr</vfs_project>
+      <vfs_file >D:\1. ESTUDIOS\UNI3\ASIGNATURAS\1er Semestre\PROGRAMACION3\PRACTICA\Ejemplos_Ada_Spark\Calculadora\src\tests_add.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 39" line=" 11">
+      <vfs_project >D:\1. ESTUDIOS\UNI3\ASIGNATURAS\1er Semestre\PROGRAMACION3\PRACTICA\Ejemplos_Ada_Spark\Calculadora\default.gpr</vfs_project>
+      <vfs_file >D:\1. ESTUDIOS\UNI3\ASIGNATURAS\1er Semestre\PROGRAMACION3\PRACTICA\Ejemplos_Ada_Spark\Calculadora\src\pkg_add.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project >D:\1. ESTUDIOS\UNI3\ASIGNATURAS\1er Semestre\PROGRAMACION3\PRACTICA\Ejemplos_Ada_Spark\Calculadora\default.gpr</vfs_project>
+      <vfs_file >D:\1. ESTUDIOS\UNI3\ASIGNATURAS\1er Semestre\PROGRAMACION3\PRACTICA\Ejemplos_Ada_Spark\Calculadora\src\pkg_subtract.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project >D:\1. ESTUDIOS\UNI3\ASIGNATURAS\1er Semestre\PROGRAMACION3\PRACTICA\Ejemplos_Ada_Spark\Calculadora\default.gpr</vfs_project>
+      <vfs_file >D:\1. ESTUDIOS\UNI3\ASIGNATURAS\1er Semestre\PROGRAMACION3\PRACTICA\Ejemplos_Ada_Spark\Calculadora\src\pkg_subtract.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project >D:\1. ESTUDIOS\UNI3\ASIGNATURAS\1er Semestre\PROGRAMACION3\PRACTICA\Ejemplos_Ada_Spark\Calculadora\default.gpr</vfs_project>
+      <vfs_file >D:\1. ESTUDIOS\UNI3\ASIGNATURAS\1er Semestre\PROGRAMACION3\PRACTICA\Ejemplos_Ada_Spark\Calculadora\src\pkg_subtract.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project >D:\1. ESTUDIOS\UNI3\ASIGNATURAS\1er Semestre\PROGRAMACION3\PRACTICA\Ejemplos_Ada_Spark\Calculadora\default.gpr</vfs_project>
+      <vfs_file >D:\1. ESTUDIOS\UNI3\ASIGNATURAS\1er Semestre\PROGRAMACION3\PRACTICA\Ejemplos_Ada_Spark\Calculadora\src\pkg_multiply.ads</vfs_file>
+    </file_marker>
+    <file_marker current="true" column=" 1" line=" 1">
+      <vfs_project >D:\1. ESTUDIOS\UNI3\ASIGNATURAS\1er Semestre\PROGRAMACION3\PRACTICA\Ejemplos_Ada_Spark\Calculadora\default.gpr</vfs_project>
+      <vfs_file >D:\1. ESTUDIOS\UNI3\ASIGNATURAS\1er Semestre\PROGRAMACION3\PRACTICA\Ejemplos_Ada_Spark\Calculadora\src\pkg_divide.ads</vfs_file>
+    </file_marker>
+  </Project>
+  <Project >
+    <vfs_file >D:\ESTUDIOS\UNI3\ASIGNATURAS\PROGRAMACION3\PRACTICA\Ejemplos\Calculadora\default.gpr</vfs_file>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project >D:\ESTUDIOS\UNI3\ASIGNATURAS\PROGRAMACION3\PRACTICA\Ejemplos\Calculadora\default.gpr</vfs_project>
+      <vfs_file >D:\ESTUDIOS\UNI3\ASIGNATURAS\PROGRAMACION3\PRACTICA\Ejemplos\Calculadora\src\main.adb</vfs_file>
+    </file_marker>
+    <file_marker current="true" column=" 68" line=" 11">
+      <vfs_project >D:\ESTUDIOS\UNI3\ASIGNATURAS\PROGRAMACION3\PRACTICA\Ejemplos\Calculadora\default.gpr</vfs_project>
+      <vfs_file >D:\ESTUDIOS\UNI3\ASIGNATURAS\PROGRAMACION3\PRACTICA\Ejemplos\Calculadora\src\pkg_add.ads</vfs_file>
+    </file_marker>
+  </Project>
+</Locations>

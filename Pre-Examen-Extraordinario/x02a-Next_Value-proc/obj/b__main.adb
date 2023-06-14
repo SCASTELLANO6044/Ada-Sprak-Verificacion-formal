@@ -250,10 +250,10 @@ package body ada_main is
    end;
 
 --  BEGIN Object file/option list
-   --   D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\x02a-Next_Value-proc\obj\example.o
-   --   D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\x02a-Next_Value-proc\obj\main.o
-   --   -LD:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\x02a-Next_Value-proc\obj\
-   --   -LD:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\x02a-Next_Value-proc\obj\
+   --   D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\x02a-Next_Value-proc\obj\example.o
+   --   D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\x02a-Next_Value-proc\obj\main.o
+   --   -LD:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\x02a-Next_Value-proc\obj\
+   --   -LD:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\x02a-Next_Value-proc\obj\
    --   -LC:/gnat/2021/lib/gcc/x86_64-w64-mingw32/10.3.1/adalib/
    --   -static
    --   -lgnat

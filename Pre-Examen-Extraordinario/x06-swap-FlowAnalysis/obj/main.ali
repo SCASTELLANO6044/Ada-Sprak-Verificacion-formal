@@ -1,0 +1,38 @@
+V "GNAT Lib v2021"
+M P W=b
+A -gnatA
+A -g
+A -fstack-check=specific
+A -gnata
+A -gnato
+A -gnat12
+A -gnatwa
+A -gnateE
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_IMPLEMENTATION_PRAGMAS
+
+U main%b		main.adb		45a367a8 NE OO SU
+W example_v1%s		example_v1.adb		example_v1.ali
+W interfaces%s		interfac.ads		interfac.ali
+
+D example_v1.ads	20191006170650 c278d757 example_v1%s
+D interfac.ads		20210520051132 edec285f interfaces%s
+D main.adb		20230614193152 6a3798a0 main%b
+D system.ads		20210520051136 2ffa5114 system%s
+G a e
+G c Z b b [main standard 8 11 none]
+G r c none [main standard 8 11 none] [swap example_v1 7 14 none]
+X 1 example_v1.ads
+5K9*Example_V1 9e15 3|1w6 15r4
+7U14*Swap 3|15s15
+X 2 interfac.ads
+38K9*Interfaces 231e15 3|6w6 6r22
+X 3 main.adb
+8U11*Main 8b11 20l5 20t9
+9i4 A{integer} 15m21 15r21
+10i4 B{integer} 15m24 15r24
+

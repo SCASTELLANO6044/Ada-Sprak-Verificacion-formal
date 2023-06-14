@@ -4,7 +4,7 @@ package body Example with SPARK_Mode is
    begin
       for i in 1 .. N loop
          X := X+1;
-         pragma Loop_Invariant(X = X'Loop_Entry+ i);
+         pragma Loop_Invariant(X'Loop_Entry + i = X);
       end loop;
    end Increment;
 

@@ -1,0 +1,1 @@
+example.ads:17:13: error: attribute "Old" can only appear in postcondition

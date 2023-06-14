@@ -13,9 +13,10 @@ P ZX
 
 RN
 RV NO_IMPLEMENTATION_ASPECT_SPECIFICATIONS
+RV NO_IMPLEMENTATION_ATTRIBUTES
 RV NO_IMPLEMENTATION_PRAGMAS
 
-U example%b		example.adb		bd9da119 NE OO PK
+U example%b		example.adb		1765f72b NE OO PK
 Z system.assertions%s	s-assert.adb		s-assert.ali
 
 U example%s		example.ads		0771f9c5 EE NE OO PK
@@ -23,8 +24,8 @@ U example%s		example.ads		0771f9c5 EE NE OO PK
 D ada.ads		20210520051132 76789da1 ada%s
 D a-assert.ads		20210520051128 a718b65c ada.assertions%s
 D a-unccon.ads		20210520051130 0e9b276f ada.unchecked_conversion%s
-D example.ads		20220915182528 0771f9c5 example%s
-D example.adb		20220915182238 baec58dc example%b
+D example.ads		20230614192234 0771f9c5 example%s
+D example.adb		20230614192744 10140eee example%b
 D system.ads		20210520051136 2ffa5114 system%s
 D s-assert.ads		20210520051132 6a49a4e4 system.assertions%s
 D s-exctab.ads		20210520051132 54135002 system.exception_table%s
@@ -32,10 +33,10 @@ D s-stalib.ads		20210520051134 472fbca8 system.standard_library%s
 G a e
 G c Z s b [increment example 7 14 none]
 X 4 example.ads
-1K9*Example 12l5 12e12 5|1b14 10l5 10t12
-7U14*Increment 7=25 7>45 5|3b14 8l8 8t17
-7i25 X{natural} 9r19 9r25 10r18 11r18 11r22 5|3b25 6m10 6r15
-7i45 N{natural} 9r28 10r38 11r30 5|3b45 5r21
+1K9*Example 12l8 12e15 5|1b14 11l5 11t12
+7U14*Increment 7=25 7>45 5|3b14 9l8 9t17
+7i25 X{natural} 9r18 9r24 10r13 11r14 11r18 5|3b25 6m10 6r15 7r32 7r51
+7i45 N{natural} 9r27 10r33 11r26 5|3b45 5r21
 X 5 example.adb
-5i11 i{integer}
+5i11 i{integer} 7r47
 

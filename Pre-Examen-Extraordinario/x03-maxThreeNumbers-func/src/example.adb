@@ -8,11 +8,15 @@ package body Example with SPARK_Mode is
          else
             return N3;
          end if;
-      elsif N2 > N3 then
-         return N2;
       else
-         return N3;
+         if N2 > N3 then
+            return N2;
+         else
+            return N3;
+         end if;
       end if;
+
+
    end Max;
 
 end Example;

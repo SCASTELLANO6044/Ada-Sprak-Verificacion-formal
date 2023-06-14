@@ -21,16 +21,16 @@ U example%b		example.adb		9af9c1d2 OO PK
 
 U example%s		example.ads		c04fc805 OO PK
 
-D example.ads		20220914200012 c04fc805 example%s
-D example.adb		20220914192016 5ab609d7 example%b
+D example.ads		20230614174400 c04fc805 example%s
+D example.adb		20230614173512 5ab609d7 example%b
 D system.ads		20210520051134 2ffa5114 system%s
 G a Z
 X 1 example.ads
 4K9*Example 20l5 20e12 2|2b14 14l5 14t12
 8V13*Next_Value{integer} 8>25 2|4b13 7l8 7t18
-8i25 X{integer} 10r40 11r18 12r38 2|4b25 6r14
+8i25 X{integer} 10r39 11r13 12r34 2|4b25 6r14
 14U14*Next_Value 14=26 2|9b14 12l8 12t18
-14i26 X{integer} 16r19 16r24 17r18 18r18 18r22 2|9b26 11m7 11r10
+14i26 X{integer} 16r18 16r23 17r13 18r14 18r18 2|9b26 11m7 11r12
 
 QQ SPARKVERSION SPARK Community 2021 (20210519)
 GG EK_DIRECT_CALLS example__next_value 0

@@ -1,0 +1,421 @@
+(* Module for axiomatizing type "integer", created in Gnat2Why.Types.Translate_Type *)
+module Standard__integer
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use import int.Int
+  
+  type integer  = <range -2147483648 2147483647>
+  
+  function   first () requires { True } ensures  { True } returns
+    int = -2147483648
+  
+  function   last () requires { True } ensures  { True } returns
+    int = 2147483647
+  
+  function   in_range (x : int) requires { True } ensures  { True } returns
+     = ((first <= x) /\ (x <= last))
+  
+  clone export ada__model.Static_Discrete with axiom . type t = integer,
+    function first = first, function last = last,
+    predicate in_range = in_range
+  
+  type integer__ref  = { mutable integer__content : integer }
+  
+  function   integer__ref_integer__content__projection (a : integer__ref)
+    requires {  } ensures  {  } returns integer = a.integer__content
+  
+  meta model_projection function integer__ref_integer__content__projection
+  
+  meta inline:no function integer__ref_integer__content__projection
+  
+  function   integer__havoc (x : integer__ref) requires {  } ensures  {  }
+    returns unit
+
+end
+
+(* Module giving axioms for type "integer", created in Gnat2Why.Types.Generate_Type_Completion *)
+module Standard__integer___axiom
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use import int.Int
+  use        Standard__integer
+  
+  function   dynamic_invariant
+    (([mlw:proxy_symbol] [introduced] temp___expr_18) : int
+    ([mlw:proxy_symbol] [introduced] temp___is_init_14) : bool
+    ([mlw:proxy_symbol] [introduced] temp___skip_constant_15) : bool
+    ([mlw:proxy_symbol] [introduced] temp___do_toplevel_16) : bool
+    ([mlw:proxy_symbol] [introduced] temp___do_typ_inv_17) : bool) requires
+    { True } ensures  { True } returns
+     = (if
+       ((([mlw:proxy_symbol] [introduced] temp___is_init_14) = True) \/
+          (Standard__integer.first <= Standard__integer.last))
+       then
+       (Standard__integer.dynamic_property Standard__integer.first
+          Standard__integer.last ([mlw:proxy_symbol]
+          [introduced] temp___expr_18))
+       )
+  
+  function   default_initial_assumption
+    (([mlw:proxy_symbol] [introduced] temp___expr_19) : int
+    ([mlw:proxy_symbol] [introduced] temp___skip_top_level_20) : bool)
+    requires { True } ensures  { True } returns  = True
+
+end
+
+(* Module for axiomatizing type "natural", created in Gnat2Why.Types.Translate_Type *)
+module Standard__natural
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use import int.Int
+  
+  type natural  = <range 0 2147483647>
+  
+  function   first () requires { True } ensures  { True } returns int = 0
+  
+  function   last () requires { True } ensures  { True } returns
+    int = 2147483647
+  
+  function   in_range (x : int) requires { True } ensures  { True } returns
+     = ((first <= x) /\ (x <= last))
+  
+  clone export ada__model.Static_Discrete with axiom . type t = natural,
+    function first = first, function last = last,
+    predicate in_range = in_range
+  
+  type natural__ref  = { mutable natural__content : natural }
+  
+  function   natural__ref_natural__content__projection (a : natural__ref)
+    requires {  } ensures  {  } returns natural = a.natural__content
+  
+  meta model_projection function natural__ref_natural__content__projection
+  
+  meta inline:no function natural__ref_natural__content__projection
+  
+  function   natural__havoc (x : natural__ref) requires {  } ensures  {  }
+    returns unit
+
+end
+
+(* Module giving axioms for type "natural", created in Gnat2Why.Types.Generate_Type_Completion *)
+module Standard__natural___axiom
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use import int.Int
+  use        Standard__natural
+  
+  function   dynamic_invariant
+    (([mlw:proxy_symbol] [introduced] temp___expr_46) : int
+    ([mlw:proxy_symbol] [introduced] temp___is_init_42) : bool
+    ([mlw:proxy_symbol] [introduced] temp___skip_constant_43) : bool
+    ([mlw:proxy_symbol] [introduced] temp___do_toplevel_44) : bool
+    ([mlw:proxy_symbol] [introduced] temp___do_typ_inv_45) : bool) requires
+    { True } ensures  { True } returns
+     = (if
+       ((([mlw:proxy_symbol] [introduced] temp___is_init_42) = True) \/
+          (Standard__natural.first <= Standard__natural.last))
+       then
+       (Standard__natural.dynamic_property Standard__natural.first
+          Standard__natural.last ([mlw:proxy_symbol]
+          [introduced] temp___expr_46))
+       )
+  
+  function   default_initial_assumption
+    (([mlw:proxy_symbol] [introduced] temp___expr_47) : int
+    ([mlw:proxy_symbol] [introduced] temp___skip_top_level_48) : bool)
+    requires { True } ensures  { True } returns  = True
+
+end
+
+(* Module for defining the constant "n" defined at example.ads:3, created in Gnat2Why.Decls.Translate_Constant *)
+module Example__while_test__n
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  function [model_trace:896] [name:N] [sloc:example.ads:3] n () requires {  }
+    ensures  {  } returns int
+
+end
+
+(* Module for defining a ref holding the value of variable "x" defined at example.ads:3, created in Gnat2Why.Decls.Translate_Variable *)
+module Example__while_test__x
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  val x [model_trace:899] [model_projected]
+  [name:X] [sloc:example.ads:3]: int
+
+end
+
+(* Module for defining a ref holding the value of variable "a" defined at example.adb:4, created in Gnat2Why.Decls.Translate_Variable *)
+module Example__while_test__a
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  val a [model_trace:829] [model_projected]
+  [name:A] [sloc:example.adb:4]: int
+
+end
+
+(* Module for defining a ref holding the value of variable "b" defined at example.adb:5, created in Gnat2Why.Decls.Translate_Variable *)
+module Example__while_test__b
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  val b [model_projected] [name:B]
+  [model_trace:834] [sloc:example.adb:5]: int
+
+end
+
+(* Module for defining the loop exit exception for the loop "L_1" defined at example.adb:8, created in Gnat2Why.Decls.Translate_Loop_Entity *)
+module Example__while_test__L_1
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  --pp_exception_declaration NOT IMPLEMENTED
+
+end
+
+(* Module giving an empty axiom for the entity "a" defined at example.adb:4, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Example__while_test__a___axiom
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  
+
+end
+
+(* Module giving an empty axiom for the entity "b" defined at example.adb:5, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Example__while_test__b___axiom
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  
+
+end
+
+(* Module giving an empty axiom for the entity "L_1" defined at example.adb:8, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Example__while_test__L_1___axiom
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  
+
+end
+
+(* Module giving an empty axiom for the entity "n" defined at example.ads:3, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Example__while_test__n___axiom
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  
+
+end
+
+(* Module giving an empty axiom for the entity "x" defined at example.ads:3, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Example__while_test__x___axiom
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  
+
+end
+
+(* Module for checking contracts and absence of run-time errors in subprogram "while_test" defined at example.ads:3, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
+module Example__while_test__subprogram_def
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use import int.Int
+  use        _gnatprove_standard.Boolean
+  use        Standard__integer
+  use        Standard__integer___axiom
+  use        Standard__natural___axiom
+  use        Example__while_test__n
+  use        Example__while_test__x
+  use        Example__while_test__a
+  use        Example__while_test__b
+  use        Example__while_test__L_1
+  use        Standard__integer___axiom
+  use        Standard__natural___axiom
+  use        Standard__integer___axiom
+  use        Example__while_test__a___axiom
+  use        Example__while_test__b___axiom
+  use        Example__while_test__L_1___axiom
+  use        Example__while_test__n___axiom
+  use        Example__while_test__x___axiom
+  
+  function [GP_Subp:example.ads:3] [sloc:example.ads:3] def
+    (__void_param : unit) requires { True } ensures  {  } returns
+     = (* Assume dynamic invariants of inputs of the subprogram example.ads:3 *);
+        assume
+        { (Standard__natural___axiom.dynamic_invariant
+             Example__while_test__n.n True False True True) };
+        assume
+        { (Standard__integer___axiom.dynamic_invariant
+             !Example__while_test__x.x False False True True) };
+        (* Assume moved pointers in outputs of the subprogram example.ads:3 *);
+        (* Check for RTE in the Pre of the subprogram example.ads:3 *);
+        abstract ensures
+        { True } begin  (let _ = True in ())  end;
+        (* Assume Pre of the subprogram example.ads:3 *);
+        (try
+        ();
+          ([sloc:example.adb:4] ( Example__while_test__a.a := ( 0));
+          assume
+          { (Standard__integer___axiom.dynamic_invariant
+               !Example__while_test__a.a True False True True) });
+          ([sloc:example.adb:5] ( Example__while_test__b.b :=
+          ( Example__while_test__n.n));
+          assume
+          { (Standard__integer___axiom.dynamic_invariant
+               !Example__while_test__b.b True False True True) });
+          ([sloc:example.adb:8] ());
+          ();
+          ([GP_Sloc:example.adb:8:20] ([sloc:example.adb:8] (* Translation of an Ada loop from example.adb:8 *);
+                                      (if
+                                      (!Example__while_test__a.a
+                                         <= !Example__while_test__b.b)
+                                      then
+                                      (try
+                                      (* While loop translating the Ada loop from example.adb:8 *);
+                                        ([sloc:example.adb:12] loop
+                                                                 (* Check for absence of RTE in the loop invariant and variant *);
+                                                                 (let ([mlw:proxy_symbol]
+                                                                 [introduced] temp___inv_163)
+                                                                 =
+                                                                 (([sloc:example.adb:12] 
+                                                                  ([GP_Sloc:example.adb:12:33]
+                                                                  [vc:annotation]
+                                                                  [GP_Reason:VC_OVERFLOW_CHECK]
+                                                                  [GP_Shape:L_1_while__pragargs__cmp__sub]
+                                                                  [comment:         pragma Loop_Invariant(B-A <= N);                                 ^ example.adb:12:33:VC_OVERFLOW_CHECK]
+                                                                  [GP_Id:2] (
+                                                                  Standard__integer.range_check_
+                                                                    (
+                                                                    !Example__while_test__b.b
+                                                                    - !Example__while_test__a.a))))
+                                                                    <= Example__while_test__n.n)
+                                                                 in abstract
+                                                                 ensures
+                                                                 { True } begin 
+                                                                  (let _ = 
+                                                                 () in ())  end);
+                                                                 abstract
+                                                                 ensures
+                                                                 { True } begin 
+                                                                  (let _ =
+                                                                 !Example__while_test__a.a
+                                                                 in ())  end;
+                                                                 abstract
+                                                                 ensures
+                                                                 { True } begin 
+                                                                  (let _ =
+                                                                 !Example__while_test__b.b
+                                                                 in ())  end
+                                                                 invariant
+                                                                 {([sloc:example.adb:12] 
+                                                                  ([GP_Reason:VC_LOOP_INVARIANT]
+                                                                  [GP_Sloc:example.adb:12:32]
+                                                                  [vc:annotation]
+                                                                  [GP_Shape:L_1_while__pragargs__cmp]
+                                                                  [comment:         pragma Loop_Invariant(B-A <= N);                                ^ example.adb:12:32:VC_LOOP_INVARIANT]
+                                                                  [GP_Id:3] 
+                                                                  ([GP_Sloc:example.adb:12:32]
+                                                                  [GP_Pretty_Ada:862] (
+                                                                  (!Example__while_test__b.b
+                                                                    - !Example__while_test__a.a)
+                                                                    <= Example__while_test__n.n))))}
+                                                                 variant 
+                                                                 {> =>
+                                                                  !Example__while_test__a.a}
+                                                                 variant 
+                                                                 {< =>
+                                                                  !Example__while_test__b.b}
+                                                                 (* Assume implicit invariants from the loop example.adb:8 *);
+                                                                 assume
+                                                                 { (_gnatprove_standard.Boolean.andb
+                                                                    ((True /\
+                                                                    (Standard__integer___axiom.dynamic_invariant
+                                                                    !Example__while_test__a.a
+                                                                    True True
+                                                                    True True)
+                                                                    /\ True
+                                                                    /\ True)
+                                                                    /\
+                                                                    (Standard__integer___axiom.dynamic_invariant
+                                                                    !Example__while_test__b.b
+                                                                    True True
+                                                                    True True)
+                                                                    /\ True
+                                                                    /\ True)
+                                                                    (!Example__while_test__a.a
+                                                                    <= !Example__while_test__b.b)) };
+                                                                 (* Continuation of loop after loop invariant and variant *);
+                                                                 ();
+                                                                 ([GP_Sloc:example.adb:13:10] 
+                                                                 ([sloc:example.adb:13] ()));
+                                                                 ([GP_Sloc:example.adb:13:15] 
+                                                                 ([sloc:example.adb:13] ()));
+                                                                 ([GP_Sloc:example.adb:13:12] 
+                                                                 ([sloc:example.adb:13] (
+                                                                 Example__while_test__a.a
+                                                                 :=
+                                                                 ( ([sloc:example.adb:13] 
+                                                                   ([comment:         A := A + 1;                 ^ example.adb:13:17:VC_OVERFLOW_CHECK]
+                                                                   [GP_Sloc:example.adb:13:17]
+                                                                   [vc:annotation]
+                                                                   [GP_Reason:VC_OVERFLOW_CHECK]
+                                                                   [GP_Shape:L_1_while__a_assign__add]
+                                                                   [GP_Id:0] (
+                                                                   Standard__integer.range_check_
+                                                                    (!Example__while_test__a.a
+                                                                    + 1))))))));
+                                                                 ([GP_Sloc:example.adb:14:10] 
+                                                                 ([sloc:example.adb:14] ()));
+                                                                 ([GP_Sloc:example.adb:14:15] 
+                                                                 ([sloc:example.adb:14] ()));
+                                                                 ([GP_Sloc:example.adb:14:12] 
+                                                                 ([sloc:example.adb:14] (
+                                                                 Example__while_test__b.b
+                                                                 :=
+                                                                 ( ([sloc:example.adb:14] 
+                                                                   ([GP_Shape:L_1_while__b_assign__sub]
+                                                                   [vc:annotation]
+                                                                   [GP_Reason:VC_OVERFLOW_CHECK]
+                                                                   [GP_Sloc:example.adb:14:17]
+                                                                   [GP_Id:1]
+                                                                   [comment:         B := B - 1;                 ^ example.adb:14:17:VC_OVERFLOW_CHECK] (
+                                                                   Standard__integer.range_check_
+                                                                    (!Example__while_test__b.b
+                                                                    - 1))))))));
+                                                                 (* Check for the exit condition and loop statements appearing before the loop invariant of loop example.adb:8 *);
+                                                                 (if
+                                                                 --pp_not NOT IMPLEMENTED
+                                                                 then
+                                                                 raise Example__while_test__L_1.L_1
+                                                                 )
+                                                                  end loop) with
+                                      | Example__while_test__L_1.L_1  -> ()) )));
+          ([GP_Sloc:example.adb:17:12] ([sloc:example.adb:17] ()));
+          ([GP_Sloc:example.adb:17:9] ([sloc:example.adb:17] (
+                                      Example__while_test__x.x :=
+                                      !Example__while_test__b.b)));
+          raise Return__exc with | Return__exc  -> ());
+        abstract ensures { True } begin  (let _ = True in ())  end
+
+end

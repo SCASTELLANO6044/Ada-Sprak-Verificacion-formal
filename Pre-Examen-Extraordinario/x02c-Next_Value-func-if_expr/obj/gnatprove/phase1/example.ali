@@ -17,19 +17,19 @@ RV NO_IMPLEMENTATION_ASPECT_SPECIFICATIONS
 RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_ELABORATION_CODE
 
-U example%b		example.adb		3480a72b OO PK
+U example%b		example.adb		441ded6c OO PK
 
-U example%s		example.ads		027f97eb OO PK
+U example%s		example.ads		72e2ddac OO PK
 
-D example.ads		20220915095022 027f97eb example%s
+D example.ads		20230614180704 72e2ddac example%s
 D example.adb		20220915094636 36ff30c0 example%b
 D system.ads		20210520051134 2ffa5114 system%s
 G a Z
 X 1 example.ads
-1K9*Example 20l5 20e12 2|1b14 14l5 14t12
-10V13*Next_Value{integer} 10>25 12r19 17r45 18r29 2|5b13 12l8 12t18
-10i25 X{integer} 12r40 13r19 13r35 13r54 13r73 17r27 17r65 18r9 18r49 2|5b25
-. 7r10 8r17 10r17
+1K9*Example 21l5 21e12 2|1b14 14l5 14t12
+10V13*Next_Value{integer} 10>25 12r18 17r19 19r23 2|5b13 12l8 12t18
+10i25 X{integer} 12r39 13r14 13r30 15r14 15r30 16r20 17r39 19r43 2|5b25 7r10
+. 8r17 10r17
 
 QQ SPARKVERSION SPARK Community 2021 (20210519)
 GG EK_DIRECT_CALLS example__next_value 0

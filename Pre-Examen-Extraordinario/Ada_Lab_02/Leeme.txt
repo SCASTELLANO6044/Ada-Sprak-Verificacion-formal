@@ -1,0 +1,29 @@
+En este proyecto tienes tres paquetes Ada incompletos (con sus
+tests unitarios, tambien incompletos) que puedes utilizar para
+continuar familarizandote con Ada durante esta segunda semana.
+
+  - tables.ads, tables.adb, test_tables.adb
+
+  - strings.ads, strings.adb, test_strings.adb
+
+  - stacks.ads, stacks.adb, test_stacks.adb
+
+El fichero main.adb llama a los procedimientos de los ficheros
+test_strings.adb, test_tables.adb y test_stacks.adb para ejecutar
+todos los tests. Inicialmente sólo tiene activos los tests del
+paquete tables; cuando finalices la programación de este paquete
+modifica main.adb para activar los tests del paquete strings, y
+finalmente los tests del paquete stacks.
+
+1) Comienza escribiendo el codigo de las rutinas de tables.adb.
+
+2) Cuando te funcionen todos los tests de test_tables.adb, añade
+   a test_tables.adb el codigo de tests para las rutinas que
+   faltan por comprobar (faltan los tests de las dos versiones
+   de 'Swap' y los tests de todas las rutinas de ordenacion).
+
+3) Continua escribiendo el codigo de las rutinas de strings.adb
+
+4) Terminamos la practica escribiendo el codigo de las rutinas
+   del paquete stacks.adb
+

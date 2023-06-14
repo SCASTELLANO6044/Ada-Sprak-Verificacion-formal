@@ -1,0 +1,2 @@
+main.adb:6:06: warning: no entities of "Interfaces" are referenced [-gnatwu]
+main.adb:6:18: warning: use clause for package "Interfaces" has no effect [-gnatwu]

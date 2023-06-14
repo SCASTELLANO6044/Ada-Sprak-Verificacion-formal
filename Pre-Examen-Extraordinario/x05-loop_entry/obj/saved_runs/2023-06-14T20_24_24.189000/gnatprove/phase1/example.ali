@@ -1,0 +1,44 @@
+V "GNAT Lib v2021"
+A -x
+A ada
+A -gnatA
+A -g
+A -fstack-check
+A -gnata
+A -gnato
+A -gnat12
+A -gnatwa
+A -gnateE
+A -gnatc
+P GP FX
+
+RN
+RV NO_IMPLEMENTATION_ASPECT_SPECIFICATIONS
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+RV NO_UNRECOGNIZED_PRAGMAS
+
+U example%b		example.adb		56b4a1c7 OO PK
+
+U example%s		example.ads		0771f9c5 OO PK
+
+D example.ads		20230614192234 0771f9c5 example%s
+D example.adb		20230614192418 51c55802 example%b
+D system.ads		20210520051134 2ffa5114 system%s
+G a Z
+X 1 example.ads
+1K9*Example 12l8 12e15 2|1b14 11l5 11t12
+7U14*Increment 7=25 7>45 2|3b14 9l8 9t17
+7i25 X{natural} 9r18 9r24 10r13 11r14 11r18 2|3b25 6m10 6r15
+7i45 N{natural} 9r27 10r33 11r26 2|3b45 5r21
+X 2 example.adb
+5i11 i{integer}
+
+QQ SPARKVERSION SPARK Community 2021 (20210519)
+GG EK_DIRECT_CALLS example__increment 0
+GG EK_GLOBALS example__increment local FALSE E_PROCEDURE FALSE ORIGIN_FLOW 1 example proper_proof_in 0 proper_input 0 proper_output 0 refined_proof_in 0 refined_input 0 refined_output 0 calls_proof 0 calls 0 calls_conditional 0 FALSE FALSE TRUE FALSE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
+GG EK_DIRECT_CALLS example 0
+GG EK_GLOBALS example local FALSE E_PACKAGE TRUE ORIGIN_FLOW 0 proper_proof_in 0 proper_input 0 proper_output 0 refined_proof_in 0 refined_input 0 refined_output 0 initializes 0 refined_initializes 0 calls_proof 0 calls 0 calls_conditional 0 local_var 0 FALSE FALSE FALSE FALSE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
+GG EK_FLOW_SCOPE example TRUE FALSE FALSE FALSE FALSE __standard
+GG EK_FLOW_SCOPE example__increment FALSE FALSE FALSE FALSE TRUE example VISIBLE_PART
+GG EK_END_MARKER

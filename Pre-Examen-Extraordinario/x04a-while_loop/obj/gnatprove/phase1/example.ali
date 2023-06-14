@@ -16,22 +16,22 @@ RN
 RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_ELABORATION_CODE
 
-U example%b		example.adb		b19012eb OO PK
+U example%b		example.adb		3b0325bb OO PK
 
 U example%s		example.ads		02d31bac OO PK
 
 D example.ads		20201018172622 02d31bac example%s
-D example.adb		20220915104704 b3430947 example%b
+D example.adb		20230614191358 39d03e17 example%b
 D system.ads		20210520051134 2ffa5114 system%s
 G a Z
 X 1 example.ads
-1K9*Example 5l5 5e12 2|1b14 19l5 19t12
-3U14*While_Test 3>26 3<39 2|3b14 17l8 17t18
-3i26 N{natural} 2|3b26 5r22 11r37
-3i39 X{integer} 2|3b39 16m7
+1K9*Example 5l5 5e12 2|1b14 20l5 20t12
+3U14*While_Test 3>26 3<39 2|3b14 18l8 18t18
+3i26 N{natural} 2|3b26 5r22 12r40
+3i39 X{integer} 2|3b39 17m7
 X 2 example.adb
-4i7 A{integer} 8r13 9r44 11r33 12m10 12r15
-5i7 B{integer} 8r18 10r44 11r35 13m10 13r15 16r12
+4i7 A{integer} 8r13 9r44 12r36 13m10 13r15
+5i7 B{integer} 8r18 10r44 12r32 14m10 14r15 17r12
 
 QQ SPARKVERSION SPARK Community 2021 (20210519)
 GG EK_DIRECT_CALLS example__while_test 0

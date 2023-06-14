@@ -8,13 +8,14 @@ is
    --    - For negative values of X, return X + 1
 
    function Next_Value (X : Integer) return Integer with
-      Global  => null,
-      Depends => (Next_Value'Result => X),
-      Pre     => X in -100 .. 100,
-      --Post    =>
-      --(if X > 0 then Next_Value'Result = X - 1elsif X < 0 then Next_Value'Result = X + 1);
-
-      Contract_Cases => ((X in 0 .. 100) => Next_Value'Result = X - 1,
-       (X in -100 .. -1) => Next_Value'Result = X + 1);
+     Global => null,
+     Depends => (Next_Value'Result => X),
+     Pre => (X <= 0 and then X >= -100)
+            or else
+            (X >= 0 and then X <= 100),
+       Post => (if X >= 0 then
+                  Next_Value'Result = X - 1
+                    else
+                      Next_Value'Result = X + 1);
 
 end Example;
