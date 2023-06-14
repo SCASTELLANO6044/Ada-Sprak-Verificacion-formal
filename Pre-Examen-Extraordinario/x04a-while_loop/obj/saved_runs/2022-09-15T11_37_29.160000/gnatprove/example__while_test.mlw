@@ -1,0 +1,453 @@
+module Standard__integer
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  
+  type integer = <range -2147483648 2147483647>
+  
+  val function first : int
+    ensures { result = ((- 2147483648) : int) }
+  
+  val function last : int
+    ensures { result = (2147483647 : int) }
+  
+  predicate in_range (x: int) = ((first <= x) /\ (x <= last))
+  
+  val in_range (x: int) : bool
+    ensures { result <-> (in_range (x : int)) }
+  
+  clone export ada__model.Static_Discrete with
+    axiom .,
+    type t = integer,
+    function first = first,
+    function last = last,
+    predicate in_range = in_range
+  
+  type integer__ref = { mutable integer__content : integer }
+  
+  function integer__ref_integer__content__projection (a: integer__ref) : integer =
+    a.integer__content
+  
+  meta "model_projection" function integer__ref_integer__content__projection
+  
+  meta "inline:no" function integer__ref_integer__content__projection
+  
+  val integer__havoc (x: integer__ref) : unit
+    writes { x }
+end
+
+module Standard__integer___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Standard__integer as Standard__integer
+  
+  predicate dynamic_invariant (temp___expr_18: int) (temp___is_init_14: bool) (temp___skip_constant_15: bool) (temp___do_toplevel_16: bool) (temp___do_typ_inv_17: bool) =
+    if ((temp___is_init_14 = True) \/
+          (Standard__integer.first <= Standard__integer.last)) then
+      (((Standard__integer.dynamic_property Standard__integer.first)
+          Standard__integer.last)
+         temp___expr_18)
+    else true
+  
+  val dynamic_invariant (temp___expr_18: int) (temp___is_init_14: bool) (temp___skip_constant_15: bool) (temp___do_toplevel_16: bool) (temp___do_typ_inv_17: bool) : 
+    bool
+    ensures { result
+                <->
+                (((((dynamic_invariant (temp___expr_18 : int))
+                      (temp___is_init_14 : bool))
+                     (temp___skip_constant_15 : bool))
+                    (temp___do_toplevel_16 : bool))
+                   (temp___do_typ_inv_17 : bool)) }
+  
+  predicate default_initial_assumption (temp___expr_19: int) (temp___skip_top_level_20: bool) =
+    true
+  
+  val default_initial_assumption (temp___expr_19: int) (temp___skip_top_level_20: bool) : 
+    bool
+    ensures { result
+                <->
+                ((default_initial_assumption (temp___expr_19 : int))
+                   (temp___skip_top_level_20 : bool)) }
+end
+
+module Standard__natural
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  
+  type natural = <range 0 2147483647>
+  
+  val function first : int
+    ensures { result = (0 : int) }
+  
+  val function last : int
+    ensures { result = (2147483647 : int) }
+  
+  predicate in_range (x: int) = ((first <= x) /\ (x <= last))
+  
+  val in_range (x: int) : bool
+    ensures { result <-> (in_range (x : int)) }
+  
+  clone export ada__model.Static_Discrete with
+    axiom .,
+    type t = natural,
+    function first = first,
+    function last = last,
+    predicate in_range = in_range
+  
+  type natural__ref = { mutable natural__content : natural }
+  
+  function natural__ref_natural__content__projection (a: natural__ref) : natural =
+    a.natural__content
+  
+  meta "model_projection" function natural__ref_natural__content__projection
+  
+  meta "inline:no" function natural__ref_natural__content__projection
+  
+  val natural__havoc (x: natural__ref) : unit
+    writes { x }
+end
+
+module Standard__natural___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Standard__natural as Standard__natural
+  
+  predicate dynamic_invariant (temp___expr_46: int) (temp___is_init_42: bool) (temp___skip_constant_43: bool) (temp___do_toplevel_44: bool) (temp___do_typ_inv_45: bool) =
+    if ((temp___is_init_42 = True) \/
+          (Standard__natural.first <= Standard__natural.last)) then
+      (((Standard__natural.dynamic_property Standard__natural.first)
+          Standard__natural.last)
+         temp___expr_46)
+    else true
+  
+  val dynamic_invariant (temp___expr_46: int) (temp___is_init_42: bool) (temp___skip_constant_43: bool) (temp___do_toplevel_44: bool) (temp___do_typ_inv_45: bool) : 
+    bool
+    ensures { result
+                <->
+                (((((dynamic_invariant (temp___expr_46 : int))
+                      (temp___is_init_42 : bool))
+                     (temp___skip_constant_43 : bool))
+                    (temp___do_toplevel_44 : bool))
+                   (temp___do_typ_inv_45 : bool)) }
+  
+  predicate default_initial_assumption (temp___expr_47: int) (temp___skip_top_level_48: bool) =
+    true
+  
+  val default_initial_assumption (temp___expr_47: int) (temp___skip_top_level_48: bool) : 
+    bool
+    ensures { result
+                <->
+                ((default_initial_assumption (temp___expr_47 : int))
+                   (temp___skip_top_level_48 : bool)) }
+end
+
+module Example__while_test__n
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  val function n : int
+end
+
+module Example__while_test__x
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  val x : int__ref
+end
+
+module Example__while_test__a
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  val a : int__ref
+end
+
+module Example__while_test__b
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  val b : int__ref
+end
+
+module Example__while_test__L_1
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  exception L_1
+end
+
+module Example__while_test__a___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Example__while_test__b___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Example__while_test__L_1___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Example__while_test__n___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Example__while_test__x___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Example__while_test__subprogram_def
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use _gnatprove_standard.Boolean as Boolean
+  use Standard__integer as Standard__integer
+  use Standard__integer___axiom as Standard__integer___axiom
+  use Standard__natural___axiom as Standard__natural___axiom
+  use Example__while_test__n as Example__while_test__n
+  use Example__while_test__x as Example__while_test__x
+  use Example__while_test__a as Example__while_test__a
+  use Example__while_test__b as Example__while_test__b
+  use Example__while_test__L_1 as Example__while_test__L_1
+  use Standard__integer___axiom as Standard__integer___axiom
+  use Standard__natural___axiom as Standard__natural___axiom
+  use Standard__integer___axiom as Standard__integer___axiom
+  use Example__while_test__a___axiom as Example__while_test__a___axiom
+  use Example__while_test__b___axiom as Example__while_test__b___axiom
+  use Example__while_test__L_1___axiom as Example__while_test__L_1___axiom
+  use Example__while_test__n___axiom as Example__while_test__n___axiom
+  use Example__while_test__x___axiom as Example__while_test__x___axiom
+  
+  let def (__void_param : unit)
+    requires { [#"example.ads" 3 0 0] true }
+  = [@vc:divergent]
+    (([@GNAT-comment:Assume dynamic invariants of inputs of the subprogram example.ads:3]
+      ());
+     ([#"example.ads" 3 0 0]
+      assume {
+        [#"example.ads" 3 0 0]
+        (((((Standard__natural___axiom.dynamic_invariant
+               Example__while_test__n.n)
+              True)
+             False)
+            True)
+           True) });
+     ([#"example.ads" 3 0 0]
+      assume {
+        [#"example.ads" 3 0 0]
+        (((((Standard__integer___axiom.dynamic_invariant
+               (Example__while_test__x.x.int__content))
+              False)
+             False)
+            True)
+           True) });
+     ([@GNAT-comment:Assume moved pointers in outputs of the subprogram example.ads:3]
+      ());
+     ([@GNAT-comment:Check for RTE in the Pre of the subprogram example.ads:3]
+      ());
+     ([#"example.ads" 3 0 0] ());
+     ([@GNAT-comment:Assume Pre of the subprogram example.ads:3] ());
+     ([#"example.ads" 3 0 0]
+      (try
+         ([#"example.adb" 4 0 0]
+          (([#"example.adb" 4 0 0]
+            (Example__while_test__a.a.int__content <- (0 : int)));
+           ([#"example.adb" 4 0 0]
+            assume {
+              [#"example.adb" 4 0 0]
+              (((((Standard__integer___axiom.dynamic_invariant
+                     (Example__while_test__a.a.int__content))
+                    True)
+                   False)
+                  True)
+                 True) })));
+         ([#"example.adb" 5 0 0]
+          (([#"example.adb" 5 0 0]
+            (Example__while_test__b.b.int__content <-
+               Example__while_test__n.n));
+           ([#"example.adb" 5 0 0]
+            assume {
+              [#"example.adb" 5 0 0]
+              (((((Standard__integer___axiom.dynamic_invariant
+                     (Example__while_test__b.b.int__content))
+                    True)
+                   False)
+                  True)
+                 True) })));
+         ([#"example.adb" 8 0 0] ());
+         ([@GP_Sloc:example.adb:8:20]
+          [#"example.adb" 8 0 0]
+          (([@GNAT-comment:Translation of an Ada loop from example.adb:8] ());
+           (if ((Example__while_test__a.a.int__content)
+                  <= (Example__while_test__b.b.int__content)) then
+              ([#"example.adb" 8 0 0]
+               (try
+                  ([@GNAT-comment:While loop translating the Ada loop from example.adb:8]
+                   ());
+                  ([#"'@Loop 850@'example.adb" 13 0 0]
+                   [#"'@Loop 850@'example.adb" 13 0 0]
+                   ((([@GNAT-comment:Check for absence of RTE in the loop invariant and variant]
+                      ());
+                     (let temp___inv_163 =
+                        (([#"example.adb" 13 0 0]
+                          [@GP_Shape:L_1_while__pragargs__cmp__add]
+                          [@vc:annotation]
+                          [@GP_Reason:VC_OVERFLOW_CHECK]
+                          [@GP_Sloc:example.adb:13:35]
+                          [@GP_Id:2]
+                          [@comment:         pragma Loop_Invariant (A + B = N);                                   ^ example.adb:13:35:VC_OVERFLOW_CHECK]
+                          (Standard__integer.range_check_
+                             ((Example__while_test__a.a.int__content)
+                                + (Example__while_test__b.b.int__content))))
+                           = Example__while_test__n.n) in
+                      ());
+                     (begin
+                        ensures { true }
+                        let _ =
+                          let _ = Example__while_test__a.a.int__content in () in
+                        ()
+                      end));
+                    while True do
+                      invariant LoopInvariant {
+                        [#"example.adb" 13 0 0]
+                        [@GP_Reason:VC_LOOP_INVARIANT]
+                        [@comment:         pragma Loop_Invariant (A + B = N);                                 ^ example.adb:13:33:VC_LOOP_INVARIANT]
+                        [@vc:annotation]
+                        [@GP_Shape:L_1_while__pragargs__cmp]
+                        [@GP_Sloc:example.adb:13:33]
+                        [@GP_Id:3]
+                        [@GP_Sloc:example.adb:13:33]
+                        [@GP_Pretty_Ada:857]
+                        (((Example__while_test__a.a.int__content)
+                            + (Example__while_test__b.b.int__content))
+                           = Example__while_test__n.n) }
+                      let loop_var___970 =
+                        Example__while_test__a.a.int__content in
+                      ([@GNAT-comment:gnat_ast_to_ptree: code after the loop invariant]
+                       (([@GNAT-comment:Assume implicit invariants from the loop example.adb:8]
+                         ());
+                        assume {
+                          (Boolean.andb
+                             ((((true /\
+                                   (((((Standard__integer___axiom.dynamic_invariant
+                                          (Example__while_test__a.a.int__content))
+                                         True)
+                                        True)
+                                       True)
+                                      True)) /\
+                                  (true /\ true)) /\
+                                 (((((Standard__integer___axiom.dynamic_invariant
+                                        (Example__while_test__b.b.int__content))
+                                       True)
+                                      True)
+                                     True)
+                                    True)) /\
+                                (true /\ true)))
+                            ((Example__while_test__a.a.int__content)
+                               <= (Example__while_test__b.b.int__content)) };
+                        ([@GNAT-comment:Continuation of loop after loop invariant and variant]
+                         ());
+                        ([@GP_Sloc:example.adb:15:10]
+                         [#"example.adb" 15 0 0] ());
+                        ([@GP_Sloc:example.adb:15:15]
+                         [#"example.adb" 15 0 0] ());
+                        ([@GP_Sloc:example.adb:15:12]
+                         [#"example.adb" 15 0 0]
+                         [#"example.adb" 15 0 0]
+                         (Example__while_test__a.a.int__content <-
+                            ([#"example.adb" 15 0 0]
+                             [@GP_Sloc:example.adb:15:17]
+                             [@vc:annotation]
+                             [@GP_Reason:VC_OVERFLOW_CHECK]
+                             [@GP_Shape:L_1_while__a_assign__add]
+                             [@comment:         A := A + 1;                 ^ example.adb:15:17:VC_OVERFLOW_CHECK]
+                             [@GP_Id:0]
+                             (Standard__integer.range_check_
+                                ((Example__while_test__a.a.int__content)
+                                   + (1 : int))))));
+                        ([@GP_Sloc:example.adb:16:10]
+                         [#"example.adb" 16 0 0] ());
+                        ([@GP_Sloc:example.adb:16:15]
+                         [#"example.adb" 16 0 0] ());
+                        ([@GP_Sloc:example.adb:16:12]
+                         [#"example.adb" 16 0 0]
+                         [#"example.adb" 16 0 0]
+                         (Example__while_test__b.b.int__content <-
+                            ([#"example.adb" 16 0 0]
+                             [@GP_Shape:L_1_while__b_assign__sub]
+                             [@vc:annotation]
+                             [@GP_Reason:VC_OVERFLOW_CHECK]
+                             [@comment:         B := B - 1;                 ^ example.adb:16:17:VC_OVERFLOW_CHECK]
+                             [@GP_Sloc:example.adb:16:17]
+                             [@GP_Id:1]
+                             (Standard__integer.range_check_
+                                ((Example__while_test__b.b.int__content)
+                                   - (1 : int))))));
+                        ([@GNAT-comment:Check for the exit condition and loop statements appearing before the loop invariant of loop example.adb:8]
+                         ());
+                        (if (not ((Example__while_test__a.a.int__content)
+                                    <= (Example__while_test__b.b.int__content))) then
+                           (raise Example__while_test__L_1.L_1)
+                         else ())));
+                      ([@GNAT-comment:gnat_ast_to_ptree: code before the loop invariant]
+                       (([@GNAT-comment:Check for absence of RTE in the loop invariant and variant]
+                         ());
+                        (let temp___inv_163 =
+                           (([#"example.adb" 13 0 0]
+                             [@GP_Shape:L_1_while__pragargs__cmp__add]
+                             [@vc:annotation]
+                             [@GP_Reason:VC_OVERFLOW_CHECK]
+                             [@GP_Sloc:example.adb:13:35]
+                             [@GP_Id:2]
+                             [@comment:         pragma Loop_Invariant (A + B = N);                                   ^ example.adb:13:35:VC_OVERFLOW_CHECK]
+                             (Standard__integer.range_check_
+                                ((Example__while_test__a.a.int__content)
+                                   + (Example__while_test__b.b.int__content))))
+                              = Example__while_test__n.n) in
+                         ());
+                        (begin
+                           ensures { true }
+                           let _ =
+                             let _ = Example__while_test__a.a.int__content in
+                             () in
+                           ()
+                         end)));
+                      ([@GNAT-comment:gnat_ast_to_ptree: code checking the variants]
+                       (assert {
+                          [@GP_Reason:VC_LOOP_VARIANT]
+                          [@GP_Sloc:example.adb:9:31]
+                          [@vc:annotation]
+                          [@GP_Id:4]
+                          [@GP_Shape:L_1_while__pragargs]
+                          [@comment:         pragma Loop_Variant (Increases => A);                               ^ example.adb:9:31:VC_LOOP_VARIANT]
+                          (((Example__while_test__a.a.int__content)
+                              > loop_var___970)
+                             ||
+                             ((Example__while_test__a.a.int__content)
+                              =
+                              loop_var___970)
+                             &&
+                             False) };
+                        ()))
+                    done))
+                with Example__while_test__L_1.L_1 -> ()
+                end))
+            else ())));
+         ([@GP_Sloc:example.adb:19:12] [#"example.adb" 19 0 0] ());
+         ([@GP_Sloc:example.adb:19:9]
+          [#"example.adb" 19 0 0]
+          [#"example.adb" 19 0 0]
+          (Example__while_test__x.x.int__content <-
+             (Example__while_test__b.b.int__content)));
+         (raise Return__exc)
+       with Return__exc -> ()
+       end)))
+end

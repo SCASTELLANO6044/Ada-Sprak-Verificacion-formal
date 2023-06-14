@@ -1,0 +1,369 @@
+module Standard__integer
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  
+  type integer = <range -2147483648 2147483647>
+  
+  val function first : int
+    ensures { result = ((- 2147483648) : int) }
+  
+  val function last : int
+    ensures { result = (2147483647 : int) }
+  
+  predicate in_range (x: int) = ((first <= x) /\ (x <= last))
+  
+  val in_range (x: int) : bool
+    ensures { result <-> (in_range (x : int)) }
+  
+  clone export ada__model.Static_Discrete with
+    axiom .,
+    type t = integer,
+    function first = first,
+    function last = last,
+    predicate in_range = in_range
+  
+  type integer__ref = { mutable integer__content : integer }
+  
+  function integer__ref_integer__content__projection (a: integer__ref) : integer =
+    a.integer__content
+  
+  meta "model_projection" function integer__ref_integer__content__projection
+  
+  meta "inline:no" function integer__ref_integer__content__projection
+  
+  val integer__havoc (x: integer__ref) : unit
+    writes { x }
+end
+
+module Standard__natural
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  
+  type natural = <range 0 2147483647>
+  
+  val function first : int
+    ensures { result = (0 : int) }
+  
+  val function last : int
+    ensures { result = (2147483647 : int) }
+  
+  predicate in_range (x: int) = ((first <= x) /\ (x <= last))
+  
+  val in_range (x: int) : bool
+    ensures { result <-> (in_range (x : int)) }
+  
+  clone export ada__model.Static_Discrete with
+    axiom .,
+    type t = natural,
+    function first = first,
+    function last = last,
+    predicate in_range = in_range
+  
+  type natural__ref = { mutable natural__content : natural }
+  
+  function natural__ref_natural__content__projection (a: natural__ref) : natural =
+    a.natural__content
+  
+  meta "model_projection" function natural__ref_natural__content__projection
+  
+  meta "inline:no" function natural__ref_natural__content__projection
+  
+  val natural__havoc (x: natural__ref) : unit
+    writes { x }
+end
+
+module Standard__natural___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Standard__natural as Standard__natural
+  
+  predicate dynamic_invariant (temp___expr_46: int) (temp___is_init_42: bool) (temp___skip_constant_43: bool) (temp___do_toplevel_44: bool) (temp___do_typ_inv_45: bool) =
+    if ((temp___is_init_42 = True) \/
+          (Standard__natural.first <= Standard__natural.last)) then
+      (((Standard__natural.dynamic_property Standard__natural.first)
+          Standard__natural.last)
+         temp___expr_46)
+    else true
+  
+  val dynamic_invariant (temp___expr_46: int) (temp___is_init_42: bool) (temp___skip_constant_43: bool) (temp___do_toplevel_44: bool) (temp___do_typ_inv_45: bool) : 
+    bool
+    ensures { result
+                <->
+                (((((dynamic_invariant (temp___expr_46 : int))
+                      (temp___is_init_42 : bool))
+                     (temp___skip_constant_43 : bool))
+                    (temp___do_toplevel_44 : bool))
+                   (temp___do_typ_inv_45 : bool)) }
+  
+  predicate default_initial_assumption (temp___expr_47: int) (temp___skip_top_level_48: bool) =
+    true
+  
+  val default_initial_assumption (temp___expr_47: int) (temp___skip_top_level_48: bool) : 
+    bool
+    ensures { result
+                <->
+                ((default_initial_assumption (temp___expr_47 : int))
+                   (temp___skip_top_level_48 : bool)) }
+end
+
+module Example__increment__x
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  val x : int__ref
+end
+
+module Example__increment__n
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  val function n : int
+end
+
+module Example__increment__L_1__i
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  val i : int__ref
+end
+
+module Example__increment__L_1
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  exception L_1
+end
+
+module Standard__integer___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Standard__integer as Standard__integer
+  
+  predicate dynamic_invariant (temp___expr_18: int) (temp___is_init_14: bool) (temp___skip_constant_15: bool) (temp___do_toplevel_16: bool) (temp___do_typ_inv_17: bool) =
+    if ((temp___is_init_14 = True) \/
+          (Standard__integer.first <= Standard__integer.last)) then
+      (((Standard__integer.dynamic_property Standard__integer.first)
+          Standard__integer.last)
+         temp___expr_18)
+    else true
+  
+  val dynamic_invariant (temp___expr_18: int) (temp___is_init_14: bool) (temp___skip_constant_15: bool) (temp___do_toplevel_16: bool) (temp___do_typ_inv_17: bool) : 
+    bool
+    ensures { result
+                <->
+                (((((dynamic_invariant (temp___expr_18 : int))
+                      (temp___is_init_14 : bool))
+                     (temp___skip_constant_15 : bool))
+                    (temp___do_toplevel_16 : bool))
+                   (temp___do_typ_inv_17 : bool)) }
+  
+  predicate default_initial_assumption (temp___expr_19: int) (temp___skip_top_level_20: bool) =
+    true
+  
+  val default_initial_assumption (temp___expr_19: int) (temp___skip_top_level_20: bool) : 
+    bool
+    ensures { result
+                <->
+                ((default_initial_assumption (temp___expr_19 : int))
+                   (temp___skip_top_level_20 : bool)) }
+end
+
+module Example__increment__L_1__i___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Example__increment__L_1___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Example__increment__x___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Example__increment__n___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Example__increment__subprogram_def
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use _gnatprove_standard.Boolean as Boolean
+  use Standard__integer as Standard__integer
+  use Standard__natural___axiom as Standard__natural___axiom
+  use Example__increment__x as Example__increment__x
+  use Example__increment__n as Example__increment__n
+  use Example__increment__L_1__i as Example__increment__L_1__i
+  use Example__increment__L_1 as Example__increment__L_1
+  use Standard__natural___axiom as Standard__natural___axiom
+  use Standard__integer___axiom as Standard__integer___axiom
+  use Example__increment__L_1__i___axiom as Example__increment__L_1__i___axiom
+  use Example__increment__L_1___axiom as Example__increment__L_1___axiom
+  use Example__increment__x___axiom as Example__increment__x___axiom
+  use Example__increment__n___axiom as Example__increment__n___axiom
+  
+  let def (__void_param : unit)
+    requires { [#"example.ads" 7 0 0] true }
+    ensures { [#"example.ads" 7 0 0]
+              [#"example.ads" 11 0 0]
+              [@GP_Reason:VC_POSTCONDITION]
+              [@GP_Shape:pragargs__cmp]
+              [@GP_Sloc:example.ads:11:18]
+              [@comment:      Post    => X = X'Old + N;                  ^ example.ads:11:18:VC_POSTCONDITION]
+              [@model_vc_post]
+              [@GP_Id:3]
+              [@GP_Sloc:example.ads:11:18]
+              [@GP_Pretty_Ada:947]
+              ((Example__increment__x.x.int__content)
+                 = ((old (Example__increment__x.x.int__content))
+                      + Example__increment__n.n)) }
+  = [@vc:divergent]
+    (([@GNAT-comment:Assume dynamic invariants of inputs of the subprogram example.ads:7]
+      ());
+     assume {
+       ((((Standard__natural___axiom.dynamic_invariant
+             (Example__increment__x.x.int__content))
+            True)
+           False)
+          True)
+         True };
+     assume {
+       ((((Standard__natural___axiom.dynamic_invariant
+             Example__increment__n.n)
+            True)
+           False)
+          True)
+         True };
+     ([@GNAT-comment:Assume moved pointers in outputs of the subprogram example.ads:7]
+      ());
+     ([@GNAT-comment:Check for RTE in the Pre of the subprogram example.ads:7]
+      ());
+     (begin
+        ensures { true }
+        let _ =
+          let _ =
+            ((Example__increment__x.x.int__content)
+               <= ([#"example.ads" 10 0 0]
+                   [@vc:annotation]
+                   [@GP_Sloc:example.ads:10:36]
+                   [@GP_Reason:VC_OVERFLOW_CHECK]
+                   [@comment:      Pre     => X <= Natural'Last - N,                                    ^ example.ads:10:36:VC_OVERFLOW_CHECK]
+                   [@GP_Id:2]
+                   [@GP_Shape:pragargs__cmp__sub]
+                   (Standard__integer.range_check_
+                      ((2147483647 : int) - Example__increment__n.n)))) in
+          () in
+        ()
+      end);
+     ([@GNAT-comment:Assume Pre of the subprogram example.ads:7] ());
+     assume {
+       [@GP_Pretty_Ada:934]
+       ((Example__increment__x.x.int__content)
+          <= ((2147483647 : int) - Example__increment__n.n)) };
+     (let temp___old_164 = Example__increment__x.x.int__content in
+      (try
+         ([#"example.adb" 5 0 0] ());
+         ([@GP_Sloc:example.adb:5:23]
+          [#"example.adb" 5 0 0]
+          (let temp___161 = 1 : int in
+           let temp___162 = Example__increment__n.n in
+           ([#"example.adb" 5 0 0]
+            (Example__increment__L_1__i.i.int__content <- temp___161));
+           ([@GNAT-comment:Translation of an Ada loop from example.adb:5] ());
+           (if ((Boolean.andb
+                   (temp___161
+                      <= (Example__increment__L_1__i.i.int__content)))
+                  ((Example__increment__L_1__i.i.int__content) <= temp___162)) then
+              ([#"example.adb" 5 0 0]
+               (try
+                  ([@GNAT-comment:While loop translating the Ada loop from example.adb:5]
+                   ());
+                  ([#"example.adb" 5 0 0]
+                   [#"example.adb" 5 0 0]
+                   (([@GNAT-comment:Check for absence of RTE in the loop invariant and variant]
+                     ());
+                    while True do
+                      ([@GNAT-comment:gnat_ast_to_ptree: code after the loop invariant]
+                       (([@GNAT-comment:Assume implicit invariants from the loop example.adb:5]
+                         ());
+                        ([#"example.adb" 5 0 0]
+                         assume {
+                           [#"example.adb" 5 0 0]
+                           ((Boolean.andb
+                               ((true /\
+                                   (((((Standard__natural___axiom.dynamic_invariant
+                                          (Example__increment__x.x.int__content))
+                                         True)
+                                        True)
+                                       True)
+                                      True)) /\
+                                  (true /\ true)))
+                              (((1 : int)
+                                  <= (Example__increment__L_1__i.i.int__content)) /\
+                                 ((Example__increment__L_1__i.i.int__content)
+                                    <= Example__increment__n.n))) });
+                        ([@GNAT-comment:Continuation of loop after loop invariant and variant]
+                         ());
+                        ([@GP_Sloc:example.adb:6:12]
+                         [#"example.adb" 6 0 0]
+                         [#"example.adb" 6 0 0]
+                         (Example__increment__x.x.int__content <-
+                            ([#"example.adb" 6 0 0]
+                             [@GP_Shape:L_1_while__x_assign__add]
+                             [@vc:annotation]
+                             [@GP_Reason:VC_OVERFLOW_CHECK]
+                             [@comment:         x := X+1;                ^ example.adb:6:16:VC_OVERFLOW_CHECK]
+                             [@GP_Id:0]
+                             [@GP_Sloc:example.adb:6:16]
+                             (Standard__integer.range_check_
+                                ((Example__increment__x.x.int__content)
+                                   + (1 : int))))));
+                        ([@GNAT-comment:Check for the exit condition and loop statements appearing before the loop invariant of loop example.adb:5]
+                         ());
+                        (if ((Example__increment__L_1__i.i.int__content)
+                               = temp___162) then
+                           (raise Example__increment__L_1.L_1)
+                         else ());
+                        ([#"example.adb" 5 0 0]
+                         [#"example.adb" 5 0 0]
+                         (Example__increment__L_1__i.i.int__content <-
+                            ((Example__increment__L_1__i.i.int__content)
+                               + (1 : int))))));
+                      ([@GNAT-comment:gnat_ast_to_ptree: code before the loop invariant]
+                       [@GNAT-comment:Check for absence of RTE in the loop invariant and variant]
+                       ());
+                      ([@GNAT-comment:gnat_ast_to_ptree: code checking the variants]
+                       ())
+                    done))
+                with Example__increment__L_1.L_1 -> ()
+                end))
+            else ())));
+         (raise Return__exc)
+       with Return__exc -> ()
+       end);
+      (begin
+         ensures { true }
+         let _ =
+           let _ =
+             ((Example__increment__x.x.int__content)
+                = ([#"example.ads" 11 0 0]
+                   [@GP_Sloc:example.ads:11:28]
+                   [@vc:annotation]
+                   [@GP_Reason:VC_OVERFLOW_CHECK]
+                   [@comment:      Post    => X = X'Old + N;                            ^ example.ads:11:28:VC_OVERFLOW_CHECK]
+                   [@GP_Shape:pragargs__cmp__add]
+                   [@GP_Id:1]
+                   (Standard__integer.range_check_
+                      (temp___old_164 + Example__increment__n.n)))) in
+           () in
+         ()
+       end)))
+end

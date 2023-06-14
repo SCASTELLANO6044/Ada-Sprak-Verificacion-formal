@@ -1,0 +1,63 @@
+'2022-09-15T19:26:53.538000':
+  category: GNATprove
+  files:
+  - D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\x05-loop_entry\obj\gnatprove
+  label: Examine Single File
+  output: 'Phase 1 of 2: generation of Global contracts ...
+
+    Phase 2 of 2: analysis of data and information flow ...
+
+    Summary logged in D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\x05-loop_entry\obj\gnatprove\gnatprove.out
+
+    '
+  output_parser: GNATprove_Parser
+  timestamp: '2022-09-15T19:26:53.538000'
+'2022-09-15T19:26:57.553000':
+  category: GNATprove
+  files:
+  - D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\x05-loop_entry\obj\gnatprove
+  label: Prove File
+  output: 'Phase 1 of 2: generation of Global contracts ...
+
+    Phase 2 of 2: flow analysis and proof ...
+
+    example.adb:6:16: medium: overflow check might fail [reason for check: result
+    of addition must fit in a 32-bits machine integer] [possible fix: loop at line
+    5 should mention X in a loop invariant][#0]
+
+    example.ads:11:18: medium: postcondition might fail [possible fix: loop at example.adb:5
+    should mention X in a loop invariant][#1]
+
+    Summary logged in D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\x05-loop_entry\obj\gnatprove\gnatprove.out
+
+    '
+  output_parser: GNATprove_Parser
+  timestamp: '2022-09-15T19:26:57.553000'
+'2022-09-15T19:28:32.584000':
+  category: GNATprove
+  files:
+  - D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\x05-loop_entry\obj\gnatprove
+  label: Examine Single File
+  output: 'Phase 1 of 2: generation of Global contracts ...
+
+    Phase 2 of 2: analysis of data and information flow ...
+
+    Summary logged in D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\x05-loop_entry\obj\gnatprove\gnatprove.out
+
+    '
+  output_parser: GNATprove_Parser
+  timestamp: '2022-09-15T19:28:32.584000'
+'2022-09-15T19:28:38.689000':
+  category: GNATprove
+  files:
+  - D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\x05-loop_entry\obj\gnatprove
+  label: Prove File
+  output: 'Phase 1 of 2: generation of Global contracts ...
+
+    Phase 2 of 2: flow analysis and proof ...
+
+    Summary logged in D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\x05-loop_entry\obj\gnatprove\gnatprove.out
+
+    '
+  output_parser: GNATprove_Parser
+  timestamp: '2022-09-15T19:28:38.689000'

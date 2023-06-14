@@ -1,0 +1,290 @@
+module Standard__integer
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  
+  type integer = <range -2147483648 2147483647>
+  
+  val function first : int
+    ensures { result = ((- 2147483648) : int) }
+  
+  val function last : int
+    ensures { result = (2147483647 : int) }
+  
+  predicate in_range (x: int) = ((first <= x) /\ (x <= last))
+  
+  val in_range (x: int) : bool
+    ensures { result <-> (in_range (x : int)) }
+  
+  clone export ada__model.Static_Discrete with
+    axiom .,
+    type t = integer,
+    function first = first,
+    function last = last,
+    predicate in_range = in_range
+  
+  type integer__ref = { mutable integer__content : integer }
+  
+  function integer__ref_integer__content__projection (a: integer__ref) : integer =
+    a.integer__content
+  
+  meta "model_projection" function integer__ref_integer__content__projection
+  
+  meta "inline:no" function integer__ref_integer__content__projection
+  
+  val integer__havoc (x: integer__ref) : unit
+    writes { x }
+end
+
+module Standard__integer___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Standard__integer as Standard__integer
+  
+  predicate dynamic_invariant (temp___expr_18: int) (temp___is_init_14: bool) (temp___skip_constant_15: bool) (temp___do_toplevel_16: bool) (temp___do_typ_inv_17: bool) =
+    if ((temp___is_init_14 = True) \/
+          (Standard__integer.first <= Standard__integer.last)) then
+      (((Standard__integer.dynamic_property Standard__integer.first)
+          Standard__integer.last)
+         temp___expr_18)
+    else true
+  
+  val dynamic_invariant (temp___expr_18: int) (temp___is_init_14: bool) (temp___skip_constant_15: bool) (temp___do_toplevel_16: bool) (temp___do_typ_inv_17: bool) : 
+    bool
+    ensures { result
+                <->
+                (((((dynamic_invariant (temp___expr_18 : int))
+                      (temp___is_init_14 : bool))
+                     (temp___skip_constant_15 : bool))
+                    (temp___do_toplevel_16 : bool))
+                   (temp___do_typ_inv_17 : bool)) }
+  
+  predicate default_initial_assumption (temp___expr_19: int) (temp___skip_top_level_20: bool) =
+    true
+  
+  val default_initial_assumption (temp___expr_19: int) (temp___skip_top_level_20: bool) : 
+    bool
+    ensures { result
+                <->
+                ((default_initial_assumption (temp___expr_19 : int))
+                   (temp___skip_top_level_20 : bool)) }
+end
+
+module Example__next_value__x
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  val function x : int
+end
+
+module Example__next_value__x___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Example__next_value__subprogram_def
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use _gnatprove_standard.Main as Main
+  use _gnatprove_standard.Boolean as Boolean
+  use Standard__integer as Standard__integer
+  use Standard__integer___axiom as Standard__integer___axiom
+  use Example__next_value__x as Example__next_value__x
+  use Standard__integer___axiom as Standard__integer___axiom
+  use Standard__integer___axiom as Standard__integer___axiom
+  use Example__next_value__x___axiom as Example__next_value__x___axiom
+  
+  val example__next_value__result : int__ref
+  
+  let def (__void_param : unit)
+    requires { [#"example.ads" 10 0 0] true }
+  = [@vc:divergent]
+    (([@GNAT-comment:Assume dynamic invariants of inputs of the subprogram example.ads:10]
+      ());
+     ([#"example.ads" 10 0 0]
+      assume {
+        [#"example.ads" 10 0 0]
+        (((((Standard__integer___axiom.dynamic_invariant
+               Example__next_value__x.x)
+              True)
+             False)
+            True)
+           True) });
+     ([@GNAT-comment:Assume moved pointers in outputs of the subprogram example.ads:10]
+      ());
+     ([@GNAT-comment:Check for RTE in the Pre of the subprogram example.ads:10]
+      ());
+     ([#"example.ads" 10 0 0]
+      (begin
+         ensures { true }
+         let _ =
+           let _ =
+             ((Example__next_value__x.x >= (0 : int))
+               && (Example__next_value__x.x <= (100 : int)))
+              ||
+               ((Example__next_value__x.x >= ((- 100) : int))
+                 && (Example__next_value__x.x < (0 : int))) in
+           () in
+         ()
+       end));
+     ([@GNAT-comment:Assume Pre of the subprogram example.ads:10] ());
+     ([#"example.ads" 10 0 0]
+      assume {
+        [#"example.ads" 10 0 0]
+        [@GP_Pretty_Ada:981]
+        (((Example__next_value__x.x >= (0 : int)) /\
+            (Example__next_value__x.x <= (100 : int))) \/
+           ((Example__next_value__x.x >= ((- 100) : int)) /\
+              (Example__next_value__x.x < (0 : int)))) });
+     (let temp___163 =
+        (Boolean.andb (((- 100) : int) <= Example__next_value__x.x))
+          (Example__next_value__x.x <= ((- 1) : int)) in
+      let temp___162 =
+        (Boolean.andb ((0 : int) <= Example__next_value__x.x))
+          (Example__next_value__x.x <= (100 : int)) in
+      (if temp___163 then ([#"example.ads" 10 0 0] ())
+       else ());
+      (if temp___162 then ([#"example.ads" 10 0 0] ())
+       else ());
+      ([#"example.ads" 10 0 0]
+       (begin
+          ensures { true }
+          let _ =
+            let _ =
+              ([#"example.ads" 10 0 0]
+               check {
+                 [#"example.ads" 10 0 0]
+                 [#"example.ads" 17 0 0]
+                 [@GP_Sloc:example.ads:17:7]
+                 [@vc:annotation]
+                 [@GP_Reason:VC_DISJOINT_CONTRACT_CASES]
+                 [@comment:      Contract_Cases => ((X in 0 .. 100) => Next_Value'Result = X - 1,       ^ example.ads:17:7:VC_DISJOINT_CONTRACT_CASES]
+                 [@GP_Id:0]
+                 ((((0 : int)
+                      + (if (temp___162 = True) then (1 : int)
+                         else (0 : int)))
+                     + (if (temp___163 = True) then (1 : int)
+                        else (0 : int)))
+                    <= (1 : int)) });
+              check {
+                [#"example.ads" 17 0 0]
+                [@GP_Reason:VC_COMPLETE_CONTRACT_CASES]
+                [@comment:      Contract_Cases => ((X in 0 .. 100) => Next_Value'Result = X - 1,       ^ example.ads:17:7:VC_COMPLETE_CONTRACT_CASES]
+                [@GP_Sloc:example.ads:17:7]
+                [@vc:annotation]
+                [@GP_Id:1]
+                ((((0 : int)
+                     + (if (temp___162 = True) then (1 : int)
+                        else (0 : int)))
+                    + (if (temp___163 = True) then (1 : int)
+                       else (0 : int)))
+                   >= (1 : int)) } in
+            () in
+          ()
+        end));
+      (try
+         ([@GP_Sloc:example.adb:7:7]
+          [#"example.adb" 7 0 0]
+          (if (([#"example.adb" 7 0 0]
+                [#"example.adb" 7 0 0]
+                (([@branch_id=829] Main.spark__branch).bool__content <-
+                   (Example__next_value__x.x >= (0 : int))));
+               (([@branch_id=829] Main.spark__branch).bool__content)) then
+             ([@GP_Sloc:example.adb:8:10]
+              [#"example.adb" 8 0 0]
+              (([#"example.adb" 8 0 0]
+                (example__next_value__result.int__content <-
+                   ([#"example.adb" 8 0 0]
+                    [@vc:annotation]
+                    [@GP_Reason:VC_OVERFLOW_CHECK]
+                    [@GP_Shape:if__return__sub]
+                    [@GP_Sloc:example.adb:8:19]
+                    [@GP_Id:2]
+                    [@comment:         return X - 1;                   ^ example.adb:8:19:VC_OVERFLOW_CHECK]
+                    (Standard__integer.range_check_
+                       (Example__next_value__x.x - (1 : int))))));
+               ((raise Return__exc) : unit)))
+           else
+             ([@GP_Sloc:example.adb:10:10]
+              [#"example.adb" 10 0 0]
+              (([#"example.adb" 10 0 0]
+                (example__next_value__result.int__content <-
+                   ([#"example.adb" 10 0 0]
+                    [@GP_Shape:if__return__add]
+                    [@GP_Sloc:example.adb:10:19]
+                    [@vc:annotation]
+                    [@GP_Reason:VC_OVERFLOW_CHECK]
+                    [@comment:         return X + 1;                   ^ example.adb:10:19:VC_OVERFLOW_CHECK]
+                    [@GP_Id:3]
+                    (Standard__integer.range_check_
+                       (Example__next_value__x.x + (1 : int))))));
+               ((raise Return__exc) : unit)))));
+         (raise Return__exc)
+       with Return__exc -> ()
+       end);
+      (begin
+         ensures { true }
+         let _ =
+           let _ =
+             if temp___162 then
+               ((example__next_value__result.int__content)
+                  = ([#"example.ads" 17 0 0]
+                     [@GP_Shape:pragargs__aggr__cmp__sub]
+                     [@GP_Sloc:example.ads:17:67]
+                     [@vc:annotation]
+                     [@GP_Reason:VC_OVERFLOW_CHECK]
+                     [@comment:      Contract_Cases => ((X in 0 .. 100) => Next_Value'Result = X - 1,                                                                   ^ example.ads:17:67:VC_OVERFLOW_CHECK]
+                     [@GP_Id:4]
+                     (Standard__integer.range_check_
+                        (Example__next_value__x.x - (1 : int)))))
+             else True in
+           () in
+         ()
+       end);
+      assert {
+        [#"example.ads" 17 0 0]
+        [@GP_Reason:VC_CONTRACT_CASE]
+        [@vc:annotation]
+        [@comment:      Contract_Cases => ((X in 0 .. 100) => Next_Value'Result = X - 1,                                          ^ example.ads:17:42:VC_CONTRACT_CASE]
+        [@GP_Sloc:example.ads:17:42]
+        [@GP_Id:5]
+        [@GP_Shape:pragargs__aggr]
+        (if (temp___162 = True) then
+           ((example__next_value__result.int__content)
+              = (Example__next_value__x.x - (1 : int)))
+         else true) };
+      (begin
+         ensures { true }
+         let _ =
+           let _ =
+             if temp___163 then
+               ((example__next_value__result.int__content)
+                  = ([#"example.ads" 18 0 0]
+                     [@vc:annotation]
+                     [@GP_Reason:VC_OVERFLOW_CHECK]
+                     [@comment:       (X in -100 .. -1) => Next_Value'Result = X + 1);                                                   ^ example.ads:18:51:VC_OVERFLOW_CHECK]
+                     [@GP_Shape:pragargs__aggr__cmp__add]
+                     [@GP_Sloc:example.ads:18:51]
+                     [@GP_Id:6]
+                     (Standard__integer.range_check_
+                        (Example__next_value__x.x + (1 : int)))))
+             else True in
+           () in
+         ()
+       end);
+      assert {
+        [#"example.ads" 18 0 0]
+        [@GP_Reason:VC_CONTRACT_CASE]
+        [@vc:annotation]
+        [@comment:       (X in -100 .. -1) => Next_Value'Result = X + 1);                          ^ example.ads:18:26:VC_CONTRACT_CASE]
+        [@GP_Sloc:example.ads:18:26]
+        [@GP_Id:7]
+        [@GP_Shape:pragargs__aggr]
+        (if (temp___163 = True) then
+           ((example__next_value__result.int__content)
+              = (Example__next_value__x.x + (1 : int)))
+         else true) };
+      (example__next_value__result.int__content)))
+end

@@ -1,0 +1,153 @@
+{
+  "spark": [
+    {
+      "name": "Example",
+      "sloc": [
+        {
+          "file": "example.ads",
+          "line": 4
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "Example.Next_Value",
+      "sloc": [
+        {
+          "file": "example.ads",
+          "line": 8
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "Example.Next_Value",
+      "sloc": [
+        {
+          "file": "example.ads",
+          "line": 14
+        }
+      ],
+      "spark": "all"
+    }
+  ],
+  "flow": [
+    {
+      "file": "example.ads",
+      "line": 15,
+      "col": 7,
+      "rule": "GLOBAL_WRONG",
+      "severity": "info",
+      "entity": {
+        "name": "Example.Next_Value",
+        "sloc": [
+          {
+            "file": "example.ads",
+            "line": 14
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    },
+    {
+      "file": "example.ads",
+      "line": 16,
+      "col": 7,
+      "rule": "DEPENDS_WRONG",
+      "severity": "info",
+      "entity": {
+        "name": "Example.Next_Value",
+        "sloc": [
+          {
+            "file": "example.ads",
+            "line": 14
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    },
+    {
+      "file": "example.ads",
+      "line": 9,
+      "col": 7,
+      "rule": "GLOBAL_WRONG",
+      "severity": "info",
+      "entity": {
+        "name": "Example.Next_Value",
+        "sloc": [
+          {
+            "file": "example.ads",
+            "line": 8
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    },
+    {
+      "file": "example.ads",
+      "line": 10,
+      "col": 7,
+      "rule": "DEPENDS_WRONG",
+      "severity": "info",
+      "entity": {
+        "name": "Example.Next_Value",
+        "sloc": [
+          {
+            "file": "example.ads",
+            "line": 8
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    }
+  ],
+  "assumptions": [
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Example.Next_Value",
+          "sloc": [
+            {
+              "file": "example.ads",
+              "line": 8
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Example.Next_Value",
+          "sloc": [
+            {
+              "file": "example.ads",
+              "line": 14
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "timings": {
+    "globals (advanced)": 8.68370011448860E-03,
+    "flow analysis": 9.24179982393980E-03,
+    "marking": 9.31000031414442E-05,
+    "properties (advanced)": 5.84700028412044E-04,
+    "globals (basic)": 2.07690009847283E-03
+  }
+}

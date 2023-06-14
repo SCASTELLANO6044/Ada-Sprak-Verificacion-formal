@@ -1,0 +1,171 @@
+module Standard__integer
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  
+  type integer = <range -2147483648 2147483647>
+  
+  val function first : int
+    ensures { result = ((- 2147483648) : int) }
+  
+  val function last : int
+    ensures { result = (2147483647 : int) }
+  
+  predicate in_range (x: int) = ((first <= x) /\ (x <= last))
+  
+  val in_range (x: int) : bool
+    ensures { result <-> (in_range (x : int)) }
+  
+  clone export ada__model.Static_Discrete with
+    axiom .,
+    type t = integer,
+    function first = first,
+    function last = last,
+    predicate in_range = in_range
+  
+  type integer__ref = { mutable integer__content : integer }
+  
+  function integer__ref_integer__content__projection (a: integer__ref) : integer =
+    a.integer__content
+  
+  meta "model_projection" function integer__ref_integer__content__projection
+  
+  meta "inline:no" function integer__ref_integer__content__projection
+  
+  val integer__havoc (x: integer__ref) : unit
+    writes { x }
+end
+
+module Standard__integer___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Standard__integer as Standard__integer
+  
+  predicate dynamic_invariant (temp___expr_18: int) (temp___is_init_14: bool) (temp___skip_constant_15: bool) (temp___do_toplevel_16: bool) (temp___do_typ_inv_17: bool) =
+    if ((temp___is_init_14 = True) \/
+          (Standard__integer.first <= Standard__integer.last)) then
+      (((Standard__integer.dynamic_property Standard__integer.first)
+          Standard__integer.last)
+         temp___expr_18)
+    else true
+  
+  val dynamic_invariant (temp___expr_18: int) (temp___is_init_14: bool) (temp___skip_constant_15: bool) (temp___do_toplevel_16: bool) (temp___do_typ_inv_17: bool) : 
+    bool
+    ensures { result
+                <->
+                (((((dynamic_invariant (temp___expr_18 : int))
+                      (temp___is_init_14 : bool))
+                     (temp___skip_constant_15 : bool))
+                    (temp___do_toplevel_16 : bool))
+                   (temp___do_typ_inv_17 : bool)) }
+  
+  predicate default_initial_assumption (temp___expr_19: int) (temp___skip_top_level_20: bool) =
+    true
+  
+  val default_initial_assumption (temp___expr_19: int) (temp___skip_top_level_20: bool) : 
+    bool
+    ensures { result
+                <->
+                ((default_initial_assumption (temp___expr_19 : int))
+                   (temp___skip_top_level_20 : bool)) }
+end
+
+module Example__next_value__x
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  val function x : int
+end
+
+module Example__next_value__x___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Example__next_value__subprogram_def
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Standard__integer as Standard__integer
+  use Standard__integer___axiom as Standard__integer___axiom
+  use Example__next_value__x as Example__next_value__x
+  use Standard__integer___axiom as Standard__integer___axiom
+  use Standard__integer___axiom as Standard__integer___axiom
+  use Example__next_value__x___axiom as Example__next_value__x___axiom
+  
+  val example__next_value__result : int__ref
+  
+  let def (__void_param : unit)
+    requires { [#"example.ads" 6 0 0] true }
+    ensures { [#"example.ads" 6 0 0]
+              [#"example.ads" 11 0 0]
+              [@GP_Reason:VC_POSTCONDITION]
+              [@comment:       Post => Next_Value'Result = X+1;                ^ example.ads:11:16:VC_POSTCONDITION]
+              [@GP_Shape:pragargs__cmp]
+              [@GP_Sloc:example.ads:11:16]
+              [@model_vc_post]
+              [@GP_Id:2]
+              [@GP_Sloc:example.ads:11:16]
+              [@GP_Pretty_Ada:948]
+              ((example__next_value__result.int__content)
+                 = (Example__next_value__x.x + (1 : int))) }
+  = [@vc:divergent]
+    (([@GNAT-comment:Assume dynamic invariants of inputs of the subprogram example.ads:6]
+      ());
+     assume {
+       ((((Standard__integer___axiom.dynamic_invariant
+             Example__next_value__x.x)
+            True)
+           False)
+          True)
+         True };
+     ([@GNAT-comment:Assume moved pointers in outputs of the subprogram example.ads:6]
+      ());
+     ([@GNAT-comment:Check for RTE in the Pre of the subprogram example.ads:6]
+      ());
+     (begin
+        ensures { true }
+        let _ = let _ = (Example__next_value__x.x < (2147483647 : int)) in () in
+        ()
+      end);
+     ([@GNAT-comment:Assume Pre of the subprogram example.ads:6] ());
+     assume {
+       [@GP_Pretty_Ada:935] (Example__next_value__x.x < (2147483647 : int)) };
+     (try
+        ([@GP_Sloc:example.adb:6:7]
+         [#"example.adb" 6 0 0]
+         (([#"example.adb" 6 0 0]
+           (example__next_value__result.int__content <-
+              ([#"example.adb" 6 0 0]
+               [@vc:annotation]
+               [@GP_Reason:VC_OVERFLOW_CHECK]
+               [@comment:      return X+1;               ^ example.adb:6:15:VC_OVERFLOW_CHECK]
+               [@GP_Shape:return__add]
+               [@GP_Id:0]
+               [@GP_Sloc:example.adb:6:15]
+               (Standard__integer.range_check_
+                  (Example__next_value__x.x + (1 : int))))));
+          ((raise Return__exc) : unit)));
+        (raise Return__exc)
+      with Return__exc -> ()
+      end);
+     (begin
+        ensures { true }
+        let _ =
+          let _ =
+            ((example__next_value__result.int__content)
+               = ([#"example.ads" 11 0 0]
+                  [@vc:annotation]
+                  [@GP_Reason:VC_OVERFLOW_CHECK]
+                  [@GP_Shape:pragargs__cmp__add]
+                  [@GP_Sloc:example.ads:11:37]
+                  [@GP_Id:1]
+                  [@comment:       Post => Next_Value'Result = X+1;                                     ^ example.ads:11:37:VC_OVERFLOW_CHECK]
+                  (Standard__integer.range_check_
+                     (Example__next_value__x.x + (1 : int))))) in
+          () in
+        ()
+      end);
+     (example__next_value__result.int__content))
+end
