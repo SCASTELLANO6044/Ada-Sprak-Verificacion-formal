@@ -1,0 +1,108 @@
+{
+  "spark": [
+    {
+      "name": "Pkg_Subtract",
+      "sloc": [
+        {
+          "file": "pkg_subtract.ads",
+          "line": 1
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "Pkg_Subtract.Subtract",
+      "sloc": [
+        {
+          "file": "pkg_subtract.ads",
+          "line": 5
+        }
+      ],
+      "spark": "all"
+    }
+  ],
+  "flow": [
+    {
+      "file": "pkg_subtract.ads",
+      "line": 7,
+      "col": 7,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Pkg_Subtract.Subtract",
+        "sloc": [
+          {
+            "file": "pkg_subtract.ads",
+            "line": 5
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    },
+    {
+      "file": "pkg_subtract.ads",
+      "line": 11,
+      "col": 7,
+      "rule": "GLOBAL_WRONG",
+      "severity": "info",
+      "entity": {
+        "name": "Pkg_Subtract.Subtract",
+        "sloc": [
+          {
+            "file": "pkg_subtract.ads",
+            "line": 5
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    },
+    {
+      "file": "pkg_subtract.ads",
+      "line": 12,
+      "col": 7,
+      "rule": "DEPENDS_WRONG",
+      "severity": "info",
+      "entity": {
+        "name": "Pkg_Subtract.Subtract",
+        "sloc": [
+          {
+            "file": "pkg_subtract.ads",
+            "line": 5
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    }
+  ],
+  "assumptions": [
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Pkg_Subtract.Subtract",
+          "sloc": [
+            {
+              "file": "pkg_subtract.ads",
+              "line": 5
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "timings": {
+    "globals (advanced)": 8.81369970738888E-03,
+    "flow analysis": 7.64109985902905E-03,
+    "marking": 8.36999970488250E-05,
+    "properties (advanced)": 6.93999987561256E-04,
+    "globals (basic)": 1.64979998953640E-03
+  }
+}
