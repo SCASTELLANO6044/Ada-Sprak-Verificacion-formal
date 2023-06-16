@@ -1,0 +1,421 @@
+module Standard__integer
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  
+  type integer = <range -2147483648 2147483647>
+  
+  val function first : int
+    ensures { result = ((- 2147483648) : int) }
+  
+  val function last : int
+    ensures { result = (2147483647 : int) }
+  
+  predicate in_range (x: int) = ((first <= x) /\ (x <= last))
+  
+  val in_range (x: int) : bool
+    ensures { result <-> (in_range (x : int)) }
+  
+  clone export ada__model.Static_Discrete with
+    axiom .,
+    type t = integer,
+    function first = first,
+    function last = last,
+    predicate in_range = in_range
+  
+  type integer__ref = { mutable integer__content : integer }
+  
+  function integer__ref_integer__content__projection (a: integer__ref) : integer =
+    a.integer__content
+  
+  meta "model_projection" function integer__ref_integer__content__projection
+  
+  meta "inline:no" function integer__ref_integer__content__projection
+  
+  val integer__havoc (x: integer__ref) : unit
+    writes { x }
+end
+
+module Standard__natural
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  
+  type natural = <range 0 2147483647>
+  
+  val function first : int
+    ensures { result = (0 : int) }
+  
+  val function last : int
+    ensures { result = (2147483647 : int) }
+  
+  predicate in_range (x: int) = ((first <= x) /\ (x <= last))
+  
+  val in_range (x: int) : bool
+    ensures { result <-> (in_range (x : int)) }
+  
+  clone export ada__model.Static_Discrete with
+    axiom .,
+    type t = natural,
+    function first = first,
+    function last = last,
+    predicate in_range = in_range
+  
+  type natural__ref = { mutable natural__content : natural }
+  
+  function natural__ref_natural__content__projection (a: natural__ref) : natural =
+    a.natural__content
+  
+  meta "model_projection" function natural__ref_natural__content__projection
+  
+  meta "inline:no" function natural__ref_natural__content__projection
+  
+  val natural__havoc (x: natural__ref) : unit
+    writes { x }
+end
+
+module Standard__natural___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Standard__natural as Standard__natural
+  
+  predicate dynamic_invariant (temp___expr_46: int) (temp___is_init_42: bool) (temp___skip_constant_43: bool) (temp___do_toplevel_44: bool) (temp___do_typ_inv_45: bool) =
+    if ((temp___is_init_42 = True) \/
+          (Standard__natural.first <= Standard__natural.last)) then
+      (((Standard__natural.dynamic_property Standard__natural.first)
+          Standard__natural.last)
+         temp___expr_46)
+    else true
+  
+  val dynamic_invariant (temp___expr_46: int) (temp___is_init_42: bool) (temp___skip_constant_43: bool) (temp___do_toplevel_44: bool) (temp___do_typ_inv_45: bool) : 
+    bool
+    ensures { result
+                <->
+                (((((dynamic_invariant (temp___expr_46 : int))
+                      (temp___is_init_42 : bool))
+                     (temp___skip_constant_43 : bool))
+                    (temp___do_toplevel_44 : bool))
+                   (temp___do_typ_inv_45 : bool)) }
+  
+  predicate default_initial_assumption (temp___expr_47: int) (temp___skip_top_level_48: bool) =
+    true
+  
+  val default_initial_assumption (temp___expr_47: int) (temp___skip_top_level_48: bool) : 
+    bool
+    ensures { result
+                <->
+                ((default_initial_assumption (temp___expr_47 : int))
+                   (temp___skip_top_level_48 : bool)) }
+end
+
+module Pkg_add__add__a
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  val function a : int
+end
+
+module Pkg_add__add__b
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  val function b : int
+end
+
+module Pkg_add__add__c
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  val function c : int
+end
+
+module Pkg_add__add__d
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  val function d : int
+end
+
+module Standard__integer___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Standard__integer as Standard__integer
+  
+  predicate dynamic_invariant (temp___expr_18: int) (temp___is_init_14: bool) (temp___skip_constant_15: bool) (temp___do_toplevel_16: bool) (temp___do_typ_inv_17: bool) =
+    if ((temp___is_init_14 = True) \/
+          (Standard__integer.first <= Standard__integer.last)) then
+      (((Standard__integer.dynamic_property Standard__integer.first)
+          Standard__integer.last)
+         temp___expr_18)
+    else true
+  
+  val dynamic_invariant (temp___expr_18: int) (temp___is_init_14: bool) (temp___skip_constant_15: bool) (temp___do_toplevel_16: bool) (temp___do_typ_inv_17: bool) : 
+    bool
+    ensures { result
+                <->
+                (((((dynamic_invariant (temp___expr_18 : int))
+                      (temp___is_init_14 : bool))
+                     (temp___skip_constant_15 : bool))
+                    (temp___do_toplevel_16 : bool))
+                   (temp___do_typ_inv_17 : bool)) }
+  
+  predicate default_initial_assumption (temp___expr_19: int) (temp___skip_top_level_20: bool) =
+    true
+  
+  val default_initial_assumption (temp___expr_19: int) (temp___skip_top_level_20: bool) : 
+    bool
+    ensures { result
+                <->
+                ((default_initial_assumption (temp___expr_19 : int))
+                   (temp___skip_top_level_20 : bool)) }
+end
+
+module Pkg_add__add__a___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Pkg_add__add__b___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Pkg_add__add__c___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Pkg_add__add__d___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Pkg_add__add__subprogram_def
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use _gnatprove_standard.Int_Division as Int_Division
+  use _gnatprove_standard.Boolean as Boolean
+  use Standard__integer as Standard__integer
+  use Standard__natural___axiom as Standard__natural___axiom
+  use Pkg_add__add__a as Pkg_add__add__a
+  use Pkg_add__add__b as Pkg_add__add__b
+  use Pkg_add__add__c as Pkg_add__add__c
+  use Pkg_add__add__d as Pkg_add__add__d
+  use Standard__natural___axiom as Standard__natural___axiom
+  use Standard__integer___axiom as Standard__integer___axiom
+  use Pkg_add__add__a___axiom as Pkg_add__add__a___axiom
+  use Pkg_add__add__b___axiom as Pkg_add__add__b___axiom
+  use Pkg_add__add__c___axiom as Pkg_add__add__c___axiom
+  use Pkg_add__add__d___axiom as Pkg_add__add__d___axiom
+  
+  val pkg_add__add__result : int__ref
+  
+  let def (__void_param : unit)
+    requires { [#"pkg_add.ads" 3 0 0] true }
+    ensures { [#"pkg_add.ads" 3 0 0]
+              [#"pkg_add.ads" 19 0 0]
+              [@GP_Id:11]
+              [@GP_Reason:VC_POSTCONDITION]
+              [@GP_Sloc:pkg_add.ads:19:16]
+              [@GP_Shape:pragargs__cmp]
+              [@comment:       Post => Add'Result = (A / C) * (D + B);                ^ pkg_add.ads:19:16:VC_POSTCONDITION]
+              [@model_vc_post]
+              [@GP_Sloc:pkg_add.ads:19:16]
+              [@GP_Pretty_Ada:1061]
+              ((pkg_add__add__result.int__content)
+                 = (((Int_Division.div Pkg_add__add__a.a) Pkg_add__add__c.c)
+                      * (Pkg_add__add__d.d + Pkg_add__add__b.b))) }
+  = [@vc:divergent]
+    (([@GNAT-comment:Assume dynamic invariants of inputs of the subprogram pkg_add.ads:3]
+      ());
+     assume {
+       ((((Standard__natural___axiom.dynamic_invariant Pkg_add__add__a.a)
+            True)
+           False)
+          True)
+         True };
+     assume {
+       ((((Standard__natural___axiom.dynamic_invariant Pkg_add__add__b.b)
+            True)
+           False)
+          True)
+         True };
+     assume {
+       ((((Standard__natural___axiom.dynamic_invariant Pkg_add__add__c.c)
+            True)
+           False)
+          True)
+         True };
+     assume {
+       ((((Standard__natural___axiom.dynamic_invariant Pkg_add__add__d.d)
+            True)
+           False)
+          True)
+         True };
+     ([@GNAT-comment:Assume moved pointers in outputs of the subprogram pkg_add.ads:3]
+      ());
+     ([@GNAT-comment:Check for RTE in the Pre of the subprogram pkg_add.ads:3]
+      ());
+     (begin
+        ensures { true }
+        let _ =
+          let _ =
+            (((if ((Boolean.andb (Pkg_add__add__d.d > (0 : int)))
+                     (Pkg_add__add__b.b > (0 : int))) then
+                 (Pkg_add__add__d.d
+                    <= ([#"pkg_add.ads" 13 0 0]
+                        [@GP_Shape:pragargs__andthen__andthen__andthen__if__cmp__sub]
+                        [@vc:annotation]
+                        [@GP_Reason:VC_OVERFLOW_CHECK]
+                        [@GP_Sloc:pkg_add.ads:13:40]
+                        [@GP_Id:6]
+                        [@comment:                     D <= Natural'Last - B                                        ^ pkg_add.ads:13:40:VC_OVERFLOW_CHECK]
+                        (Standard__integer.range_check_
+                           ((2147483647 : int) - Pkg_add__add__b.b))))
+               else
+                 (if ((Boolean.andb (Pkg_add__add__d.d < (0 : int)))
+                        (Pkg_add__add__b.b < (0 : int))) then
+                    (Pkg_add__add__d.d >= ((0 : int) - Pkg_add__add__b.b))
+                  else (Boolean.of_int (1 : int))))
+               && (Pkg_add__add__c.c <> (0 : int)))
+              &&
+               (let temp___166 =
+                  [#"pkg_add.ads" 17 0 0]
+                  [@GP_Shape:pragargs__andthen__andthen__in__div]
+                  [@vc:annotation]
+                  [@GP_Reason:VC_DIVISION_CHECK]
+                  [@comment:                   A / C in Natural'Range and then                      ^ pkg_add.ads:17:22:VC_DIVISION_CHECK]
+                  [@GP_Sloc:pkg_add.ads:17:22]
+                  [@GP_Id:7]
+                  ((Int_Division.div_ Pkg_add__add__a.a) Pkg_add__add__c.c) in
+                (Boolean.andb ((0 : int) <= temp___166))
+                  (temp___166 <= (2147483647 : int))))
+             &&
+              (let temp___167 =
+                 [#"pkg_add.ads" 18 0 0]
+                 [@GP_Id:10]
+                 [@comment:                 (A / C) * (D + B) in 30 .. 150),                          ^ pkg_add.ads:18:26:VC_OVERFLOW_CHECK]
+                 [@GP_Sloc:pkg_add.ads:18:26]
+                 [@vc:annotation]
+                 [@GP_Reason:VC_OVERFLOW_CHECK]
+                 [@GP_Shape:pragargs__andthen__in__mult]
+                 (Standard__integer.range_check_
+                    (([#"pkg_add.ads" 18 0 0]
+                      [@comment:                 (A / C) * (D + B) in 30 .. 150),                     ^ pkg_add.ads:18:21:VC_DIVISION_CHECK]
+                      [@GP_Sloc:pkg_add.ads:18:21]
+                      [@GP_Shape:pragargs__andthen__in__mult__div]
+                      [@vc:annotation]
+                      [@GP_Reason:VC_DIVISION_CHECK]
+                      [@GP_Id:8]
+                      ((Int_Division.div_ Pkg_add__add__a.a)
+                         Pkg_add__add__c.c))
+                       * ([#"pkg_add.ads" 18 0 0]
+                          [@vc:annotation]
+                          [@GP_Reason:VC_OVERFLOW_CHECK]
+                          [@comment:                 (A / C) * (D + B) in 30 .. 150),                               ^ pkg_add.ads:18:31:VC_OVERFLOW_CHECK]
+                          [@GP_Sloc:pkg_add.ads:18:31]
+                          [@GP_Id:9]
+                          [@GP_Shape:pragargs__andthen__in__mult__add]
+                          (Standard__integer.range_check_
+                             (Pkg_add__add__d.d + Pkg_add__add__b.b))))) in
+               (Boolean.andb ((30 : int) <= temp___167))
+                 (temp___167 <= (150 : int))) in
+          () in
+        ()
+      end);
+     ([@GNAT-comment:Assume Pre of the subprogram pkg_add.ads:3] ());
+     assume {
+       ((((if ((Pkg_add__add__d.d > (0 : int)) /\
+                 (Pkg_add__add__b.b > (0 : int))) then
+             ([@GP_Pretty_Ada:908]
+              (Pkg_add__add__d.d <= ((2147483647 : int) - Pkg_add__add__b.b)))
+           else
+             (if ((Pkg_add__add__d.d < (0 : int)) /\
+                    (Pkg_add__add__b.b < (0 : int))) then
+                ([@GP_Pretty_Ada:922]
+                 (Pkg_add__add__d.d >= ((0 : int) - Pkg_add__add__b.b)))
+              else ([@GP_Pretty_Ada:1075] true))) /\
+            ([@GP_Pretty_Ada:932] (Pkg_add__add__c.c <> (0 : int)))) /\
+           ([@GP_Pretty_Ada:938]
+            (let temp___168 =
+               (Int_Division.div Pkg_add__add__a.a) Pkg_add__add__c.c in
+             (((0 : int) <= temp___168) /\
+                (temp___168 <= (2147483647 : int)))))) /\
+          ([@GP_Pretty_Ada:949]
+           (let temp___169 =
+              ((Int_Division.div Pkg_add__add__a.a) Pkg_add__add__c.c)
+                * (Pkg_add__add__d.d + Pkg_add__add__b.b) in
+            (((30 : int) <= temp___169) /\ (temp___169 <= (150 : int)))))) };
+     (try
+        ([@GP_Sloc:pkg_add.adb:9:7]
+         [#"pkg_add.adb" 9 0 0]
+         (([#"pkg_add.adb" 9 0 0]
+           (pkg_add__add__result.int__content <-
+              ([#"pkg_add.adb" 9 0 0]
+               [@vc:annotation]
+               [@GP_Shape:return__mult]
+               [@GP_Reason:VC_OVERFLOW_CHECK]
+               [@GP_Sloc:pkg_add.adb:9:22]
+               [@GP_Id:2]
+               [@comment:      return (A / C) * (D + B);                      ^ pkg_add.adb:9:22:VC_OVERFLOW_CHECK]
+               (Standard__integer.range_check_
+                  (([#"pkg_add.adb" 9 0 0]
+                    [@GP_Shape:return__mult__div]
+                    [@vc:annotation]
+                    [@GP_Reason:VC_DIVISION_CHECK]
+                    [@comment:      return (A / C) * (D + B);                 ^ pkg_add.adb:9:17:VC_DIVISION_CHECK]
+                    [@GP_Id:0]
+                    [@GP_Sloc:pkg_add.adb:9:17]
+                    ((Int_Division.div_ Pkg_add__add__a.a) Pkg_add__add__c.c))
+                     * ([#"pkg_add.adb" 9 0 0]
+                        [@GP_Shape:return__mult__add]
+                        [@vc:annotation]
+                        [@comment:      return (A / C) * (D + B);                           ^ pkg_add.adb:9:27:VC_OVERFLOW_CHECK]
+                        [@GP_Reason:VC_OVERFLOW_CHECK]
+                        [@GP_Sloc:pkg_add.adb:9:27]
+                        [@GP_Id:1]
+                        (Standard__integer.range_check_
+                           (Pkg_add__add__d.d + Pkg_add__add__b.b))))))));
+          ((raise Return__exc) : unit)));
+        (raise Return__exc)
+      with Return__exc -> ()
+      end);
+     (begin
+        ensures { true }
+        let _ =
+          let _ =
+            ((pkg_add__add__result.int__content)
+               = ([#"pkg_add.ads" 19 0 0]
+                  [@comment:       Post => Add'Result = (A / C) * (D + B);                                     ^ pkg_add.ads:19:37:VC_OVERFLOW_CHECK]
+                  [@vc:annotation]
+                  [@GP_Reason:VC_OVERFLOW_CHECK]
+                  [@GP_Shape:pragargs__cmp__mult]
+                  [@GP_Sloc:pkg_add.ads:19:37]
+                  [@GP_Id:5]
+                  (Standard__integer.range_check_
+                     (([#"pkg_add.ads" 19 0 0]
+                       [@comment:       Post => Add'Result = (A / C) * (D + B);                                ^ pkg_add.ads:19:32:VC_DIVISION_CHECK]
+                       [@vc:annotation]
+                       [@GP_Shape:pragargs__cmp__mult__div]
+                       [@GP_Reason:VC_DIVISION_CHECK]
+                       [@GP_Sloc:pkg_add.ads:19:32]
+                       [@GP_Id:3]
+                       ((Int_Division.div_ Pkg_add__add__a.a)
+                          Pkg_add__add__c.c))
+                        * ([#"pkg_add.ads" 19 0 0]
+                           [@GP_Shape:pragargs__cmp__mult__add]
+                           [@GP_Sloc:pkg_add.ads:19:42]
+                           [@comment:       Post => Add'Result = (A / C) * (D + B);                                          ^ pkg_add.ads:19:42:VC_OVERFLOW_CHECK]
+                           [@vc:annotation]
+                           [@GP_Reason:VC_OVERFLOW_CHECK]
+                           [@GP_Id:4]
+                           (Standard__integer.range_check_
+                              (Pkg_add__add__d.d + Pkg_add__add__b.b))))))) in
+          () in
+        ()
+      end);
+     (pkg_add__add__result.int__content))
+end

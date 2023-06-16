@@ -16,18 +16,18 @@ RV NO_DIRECT_BOOLEAN_OPERATORS
 RV NO_IMPLEMENTATION_ASPECT_SPECIFICATIONS
 RV NO_IMPLEMENTATION_PRAGMAS
 
-U pkg_multiply%b	pkg_multiply.adb	e6f14830 NE OO PK
+U pkg_multiply%b	pkg_multiply.adb	e872eb8d NE OO PK
 W pkg_add%s		pkg_add.adb		pkg_add.ali
 Z system.assertions%s	s-assert.adb		s-assert.ali
 
-U pkg_multiply%s	pkg_multiply.ads	2acd5504 EE NE OO PK
+U pkg_multiply%s	pkg_multiply.ads	4a699eca EE NE OO PK
 
 D ada.ads		20210520051132 76789da1 ada%s
 D a-assert.ads		20210520051128 a718b65c ada.assertions%s
 D a-unccon.ads		20210520051130 0e9b276f ada.unchecked_conversion%s
 D pkg_add.ads		20230114171706 5176345e pkg_add%s
-D pkg_multiply.ads	20230114184010 2acd5504 pkg_multiply%s
-D pkg_multiply.adb	20230114190254 9d4a296a pkg_multiply%b
+D pkg_multiply.ads	20230615172526 4a699eca pkg_multiply%s
+D pkg_multiply.adb	20230615172422 f36d4119 pkg_multiply%b
 D system.ads		20210520051136 2ffa5114 system%s
 D s-assert.ads		20210520051132 6a49a4e4 system.assertions%s
 D s-exctab.ads		20210520051132 54135002 system.exception_table%s
@@ -37,20 +37,19 @@ G c Z s b [multiply pkg_multiply 5 14 none]
 G r c none [multiply pkg_multiply 5 14 none] [add pkg_add 5 13 none]
 X 4 pkg_add.ads
 1K9*Pkg_Add 16e12 6|1w6 1r19
-5V13*Add{integer} 6|15s23 22s23 29s23 36s23
+5V13*Add{integer} 6|13s23 17s23 21s23 25s23
 X 5 pkg_multiply.ads
-1K9*Pkg_Multiply 24l5 24e17 6|2b14 75l5 75t17
-5U14*Multiply 6>7 6>36 7<7 6|6b14 73l8 73t16
-6i7 First_Operand{integer} 12r30 14r11 15r10 16r14 17r44 18r14 19r10 20r14
-. 21r10 22r24 6|7b7 12r10 15r35 16r44 19r13 21r24 26r13 29r35 30r44 33r13
-. 36r36 37r46
-6i36 Second_Operand{integer} 12r45 14r33 15r42 16r36 17r10 18r36 19r43 20r36
-. 21r42 22r40 6|7b32 12r37 14r24 19r40 22r35 23r44 26r40 28r24 33r40 35r25
-7i7 Result{integer} 12r19 22r15 6|7b58 10m7 15m13 15r27 16r35 22m13 22r27
-. 23r35 29m13 29r27 30r35 36m13 36r27 37r35
+1K9*Pkg_Multiply 23l5 23e17 6|2b14 78l5 78t17
+5U14*Multiply 6>7 6>36 7<7 6|6b14 76l8 76t16
+6i7 First_Operand{integer} 12r31 13r18 14r17 15r25 16r55 17r29 18r59 19r33
+. 20r29 21r26 6|7b7 11r10 13r35 15r13 16r24 19r13 21r35 23r13 24r25
+6i36 Second_Operand{integer} 12r46 13r40 14r49 15r47 16r21 17r51 18r25 19r55
+. 20r61 21r42 6|7b32 11r32 12r24 15r35 17r35 19r35 20r24 23r35 25r36
+7i7 Result{integer} 12r20 21r17 6|7b58 10m7 13m13 13r27 17m13 17r27 21m13
+. 21r27 25m13 25r27
 X 6 pkg_multiply.adb
-14i14 i{integer} 16r58
-21i14 i{integer} 23r59
-28i14 i{integer} 30r58
-35i14 i{integer} 37r61
+12i14 i{integer}
+16i14 i{integer}
+20i14 i{integer}
+24i14 i{integer}
 

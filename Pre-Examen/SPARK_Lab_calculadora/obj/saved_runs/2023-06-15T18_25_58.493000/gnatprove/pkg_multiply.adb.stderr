@@ -1,0 +1,6 @@
+pkg_multiply.adb:13:23: medium: precondition might fail, cannot prove First_Operand <= Integer'Last - Second_Operand [possible fix: loop at line 12 should mention Result in a loop invariant][#0]
+pkg_multiply.adb:17:23: medium: precondition might fail, cannot prove First_Operand >= Integer'First - Second_Operand [possible fix: loop at line 16 should mention Result in a loop invariant][#3]
+pkg_multiply.adb:21:23: medium: precondition might fail, cannot prove First_Operand >= Integer'First - Second_Operand [possible fix: loop at line 20 should mention Result in a loop invariant][#2]
+pkg_multiply.adb:25:23: medium: precondition might fail, cannot prove First_Operand <= Integer'Last - Second_Operand [possible fix: loop at line 24 should mention Result in a loop invariant][#1]
+pkg_multiply.ads:18:57: medium: overflow check might fail [reason for check: result of division must fit in a 32-bits machine integer][#4]
+pkg_multiply.ads:21:16: medium: postcondition might fail[#5]

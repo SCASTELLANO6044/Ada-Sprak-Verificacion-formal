@@ -1,0 +1,770 @@
+(* Module for axiomatizing type "integer", created in Gnat2Why.Types.Translate_Type *)
+module Standard__integer
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use import int.Int
+  
+  type integer  = <range -2147483648 2147483647>
+  
+  function   first () requires { True } ensures  { True } returns
+    int = -2147483648
+  
+  function   last () requires { True } ensures  { True } returns
+    int = 2147483647
+  
+  function   in_range (x : int) requires { True } ensures  { True } returns
+     = ((first <= x) /\ (x <= last))
+  
+  clone export ada__model.Static_Discrete with axiom . type t = integer,
+    function first = first, function last = last,
+    predicate in_range = in_range
+  
+  type integer__ref  = { mutable integer__content : integer }
+  
+  function   integer__ref_integer__content__projection (a : integer__ref)
+    requires {  } ensures  {  } returns integer = a.integer__content
+  
+  meta model_projection function integer__ref_integer__content__projection
+  
+  meta inline:no function integer__ref_integer__content__projection
+  
+  function   integer__havoc (x : integer__ref) requires {  } ensures  {  }
+    returns unit
+
+end
+
+(* Module for axiomatizing type "natural", created in Gnat2Why.Types.Translate_Type *)
+module Standard__natural
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use import int.Int
+  
+  type natural  = <range 0 2147483647>
+  
+  function   first () requires { True } ensures  { True } returns int = 0
+  
+  function   last () requires { True } ensures  { True } returns
+    int = 2147483647
+  
+  function   in_range (x : int) requires { True } ensures  { True } returns
+     = ((first <= x) /\ (x <= last))
+  
+  clone export ada__model.Static_Discrete with axiom . type t = natural,
+    function first = first, function last = last,
+    predicate in_range = in_range
+  
+  type natural__ref  = { mutable natural__content : natural }
+  
+  function   natural__ref_natural__content__projection (a : natural__ref)
+    requires {  } ensures  {  } returns natural = a.natural__content
+  
+  meta model_projection function natural__ref_natural__content__projection
+  
+  meta inline:no function natural__ref_natural__content__projection
+  
+  function   natural__havoc (x : natural__ref) requires {  } ensures  {  }
+    returns unit
+
+end
+
+(* Module giving axioms for type "natural", created in Gnat2Why.Types.Generate_Type_Completion *)
+module Standard__natural___axiom
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use import int.Int
+  use        Standard__natural
+  
+  function   dynamic_invariant
+    (([mlw:proxy_symbol] [introduced] temp___expr_46) : int
+    ([mlw:proxy_symbol] [introduced] temp___is_init_42) : bool
+    ([mlw:proxy_symbol] [introduced] temp___skip_constant_43) : bool
+    ([mlw:proxy_symbol] [introduced] temp___do_toplevel_44) : bool
+    ([mlw:proxy_symbol] [introduced] temp___do_typ_inv_45) : bool) requires
+    { True } ensures  { True } returns
+     = (if
+       ((([mlw:proxy_symbol] [introduced] temp___is_init_42) = True) \/
+          (Standard__natural.first <= Standard__natural.last))
+       then
+       (Standard__natural.dynamic_property Standard__natural.first
+          Standard__natural.last ([mlw:proxy_symbol]
+          [introduced] temp___expr_46))
+       )
+  
+  function   default_initial_assumption
+    (([mlw:proxy_symbol] [introduced] temp___expr_47) : int
+    ([mlw:proxy_symbol] [introduced] temp___skip_top_level_48) : bool)
+    requires { True } ensures  { True } returns  = True
+
+end
+
+(* Module for defining the constant "a" defined at pkg_add.ads:4, created in Gnat2Why.Decls.Translate_Constant *)
+module Pkg_add__add__a
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  function [name:A] [model_trace:863] [sloc:pkg_add.ads:4] a () requires {  }
+    ensures  {  } returns int
+
+end
+
+(* Module for defining the constant "b" defined at pkg_add.ads:5, created in Gnat2Why.Decls.Translate_Constant *)
+module Pkg_add__add__b
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  function [model_trace:866] [name:B] [sloc:pkg_add.ads:5] b () requires {  }
+    ensures  {  } returns int
+
+end
+
+(* Module for defining the constant "c" defined at pkg_add.ads:6, created in Gnat2Why.Decls.Translate_Constant *)
+module Pkg_add__add__c
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  function [model_trace:869] [name:C] [sloc:pkg_add.ads:6] c () requires {  }
+    ensures  {  } returns int
+
+end
+
+(* Module for defining the constant "d" defined at pkg_add.ads:7, created in Gnat2Why.Decls.Translate_Constant *)
+module Pkg_add__add__d
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  function [name:D] [model_trace:872] [sloc:pkg_add.ads:7] d () requires {  }
+    ensures  {  } returns int
+
+end
+
+(* Module giving axioms for type "integer", created in Gnat2Why.Types.Generate_Type_Completion *)
+module Standard__integer___axiom
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use import int.Int
+  use        Standard__integer
+  
+  function   dynamic_invariant
+    (([mlw:proxy_symbol] [introduced] temp___expr_18) : int
+    ([mlw:proxy_symbol] [introduced] temp___is_init_14) : bool
+    ([mlw:proxy_symbol] [introduced] temp___skip_constant_15) : bool
+    ([mlw:proxy_symbol] [introduced] temp___do_toplevel_16) : bool
+    ([mlw:proxy_symbol] [introduced] temp___do_typ_inv_17) : bool) requires
+    { True } ensures  { True } returns
+     = (if
+       ((([mlw:proxy_symbol] [introduced] temp___is_init_14) = True) \/
+          (Standard__integer.first <= Standard__integer.last))
+       then
+       (Standard__integer.dynamic_property Standard__integer.first
+          Standard__integer.last ([mlw:proxy_symbol]
+          [introduced] temp___expr_18))
+       )
+  
+  function   default_initial_assumption
+    (([mlw:proxy_symbol] [introduced] temp___expr_19) : int
+    ([mlw:proxy_symbol] [introduced] temp___skip_top_level_20) : bool)
+    requires { True } ensures  { True } returns  = True
+
+end
+
+(* Module giving an empty axiom for the entity "a" defined at pkg_add.ads:4, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Pkg_add__add__a___axiom
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  
+
+end
+
+(* Module giving an empty axiom for the entity "b" defined at pkg_add.ads:5, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Pkg_add__add__b___axiom
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  
+
+end
+
+(* Module giving an empty axiom for the entity "c" defined at pkg_add.ads:6, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Pkg_add__add__c___axiom
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  
+
+end
+
+(* Module giving an empty axiom for the entity "d" defined at pkg_add.ads:7, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Pkg_add__add__d___axiom
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  
+
+end
+
+(* Module for checking contracts and absence of run-time errors in subprogram "add" defined at pkg_add.ads:3, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
+module Pkg_add__add__subprogram_def
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use import int.Int
+  use        _gnatprove_standard.Int_Division
+  use        _gnatprove_standard.Boolean
+  use        Standard__integer
+  use        Standard__natural___axiom
+  use        Pkg_add__add__a
+  use        Pkg_add__add__b
+  use        Pkg_add__add__c
+  use        Pkg_add__add__d
+  use        Standard__natural___axiom
+  use        Standard__integer___axiom
+  use        Pkg_add__add__a___axiom
+  use        Pkg_add__add__b___axiom
+  use        Pkg_add__add__c___axiom
+  use        Pkg_add__add__d___axiom
+  
+  val pkg_add__add__result [model_projected] [name:Add]
+  [model_trace:862@result] : int
+  
+  function [GP_Subp:pkg_add.ads:3] [sloc:pkg_add.ads:3] def
+    (__void_param : unit) requires { True } ensures 
+    { ([sloc:pkg_add.ads:26] ([GP_Reason:VC_POSTCONDITION] [GP_Id:40]
+                             [GP_Shape:pragargs__cmp]
+                             [comment:       Post => Add'Result = (A / C) * (D + B);                ^ pkg_add.ads:26:16:VC_POSTCONDITION]
+                             [model_vc_post]
+                             [GP_Sloc:pkg_add.ads:26:16] ([GP_Sloc:pkg_add.ads:26:16]
+                                                         [GP_Pretty_Ada:1287] (
+                                                         !pkg_add__add__result
+                                                           = ((_gnatprove_standard.Int_Division.div
+                                                                 Pkg_add__add__a.a
+                                                                 Pkg_add__add__c.c)
+                                                                * (Pkg_add__add__d.d
+                                                                    + Pkg_add__add__b.b)))))) }
+    returns
+     = (* Assume dynamic invariants of inputs of the subprogram pkg_add.ads:3 *);
+        assume
+        { (Standard__natural___axiom.dynamic_invariant Pkg_add__add__a.a True
+             False True True) };
+        assume
+        { (Standard__natural___axiom.dynamic_invariant Pkg_add__add__b.b True
+             False True True) };
+        assume
+        { (Standard__natural___axiom.dynamic_invariant Pkg_add__add__c.c True
+             False True True) };
+        assume
+        { (Standard__natural___axiom.dynamic_invariant Pkg_add__add__d.d True
+             False True True) };
+        (* Assume moved pointers in outputs of the subprogram pkg_add.ads:3 *);
+        (* Check for RTE in the Pre of the subprogram pkg_add.ads:3 *);
+        abstract ensures
+        { True } begin  (let _ =
+                       ((((if
+                          (_gnatprove_standard.Boolean.andb
+                             (Pkg_add__add__d.d > 0) (Pkg_add__add__b.b > 0))
+                          then
+                          (Pkg_add__add__d.d
+                             <= ([sloc:pkg_add.ads:13] ([GP_Shape:pragargs__andthen__andthen__andthen__if__cmp__sub]
+                                                       [vc:annotation]
+                                                       [GP_Reason:VC_OVERFLOW_CHECK]
+                                                       [GP_Sloc:pkg_add.ads:13:40]
+                                                       [GP_Id:6]
+                                                       [comment:                     D <= Natural'Last - B                                        ^ pkg_add.ads:13:40:VC_OVERFLOW_CHECK] (
+                                                       Standard__integer.range_check_
+                                                         (2147483647
+                                                            - Pkg_add__add__b.b)))))
+                           else
+                          (if
+                          (_gnatprove_standard.Boolean.andb
+                             (Pkg_add__add__d.d < 0) (Pkg_add__add__b.b < 0))
+                          then (Pkg_add__add__d.d >= (0 - Pkg_add__add__b.b))
+                           else (_gnatprove_standard.Boolean.of_int 1))) &&
+                            (Pkg_add__add__c.c <> 0)) &&
+                           (let ([mlw:proxy_symbol] [introduced] temp___164)
+                           =
+                           ([sloc:pkg_add.ads:17] ([GP_Shape:pragargs__andthen__andthen__in__div]
+                                                  [vc:annotation]
+                                                  [GP_Reason:VC_DIVISION_CHECK]
+                                                  [comment:                   A / C in Natural'Range and then                      ^ pkg_add.ads:17:22:VC_DIVISION_CHECK]
+                                                  [GP_Sloc:pkg_add.ads:17:22]
+                                                  [GP_Id:7] (_gnatprove_standard.Int_Division.div_
+                                                               Pkg_add__add__a.a
+                                                               Pkg_add__add__c.c)))
+                           in
+                           (_gnatprove_standard.Boolean.andb
+                              (0 <= ([mlw:proxy_symbol]
+                                 [introduced] temp___164))
+                              (([mlw:proxy_symbol] [introduced] temp___164)
+                                 <= 2147483647)))) &&
+                          (if
+                          (_gnatprove_standard.Boolean.andb
+                             (([sloc:pkg_add.ads:18] ([GP_Sloc:pkg_add.ads:18:24]
+                                                     [vc:annotation]
+                                                     [GP_Reason:VC_DIVISION_CHECK]
+                                                     [GP_Shape:pragargs__andthen__if__and__cmp__div]
+                                                     [GP_Id:38]
+                                                     [comment:                 (if (A/C) > 0 and (D+B) > 0 then                        ^ pkg_add.ads:18:24:VC_DIVISION_CHECK] (
+                                                     _gnatprove_standard.Int_Division.div_
+                                                       Pkg_add__add__a.a
+                                                       Pkg_add__add__c.c)))
+                                > 0)
+                             (([sloc:pkg_add.ads:18] ([comment:                 (if (A/C) > 0 and (D+B) > 0 then                                      ^ pkg_add.ads:18:38:VC_OVERFLOW_CHECK]
+                                                     [GP_Sloc:pkg_add.ads:18:38]
+                                                     [GP_Shape:pragargs__andthen__if__and__cmp__add]
+                                                     [vc:annotation]
+                                                     [GP_Reason:VC_OVERFLOW_CHECK]
+                                                     [GP_Id:39] (Standard__integer.range_check_
+                                                                   (Pkg_add__add__d.d
+                                                                    + Pkg_add__add__b.b))))
+                                > 0))
+                          then
+                          ((([sloc:pkg_add.ads:19] ([GP_Id:10]
+                                                   [comment:                    (A/C) * (D+B) <= 150 and then (A/C) * (D+B) >= 30                           ^ pkg_add.ads:19:27:VC_OVERFLOW_CHECK]
+                                                   [vc:annotation]
+                                                   [GP_Reason:VC_OVERFLOW_CHECK]
+                                                   [GP_Shape:pragargs__andthen__if__andthen__cmp__mult]
+                                                   [GP_Sloc:pkg_add.ads:19:27] (
+                                                   Standard__integer.range_check_
+                                                     (([sloc:pkg_add.ads:19] 
+                                                      ([comment:                    (A/C) * (D+B) <= 150 and then (A/C) * (D+B) >= 30                       ^ pkg_add.ads:19:23:VC_DIVISION_CHECK]
+                                                      [vc:annotation]
+                                                      [GP_Reason:VC_DIVISION_CHECK]
+                                                      [GP_Shape:pragargs__andthen__if__andthen__cmp__mult__div]
+                                                      [GP_Sloc:pkg_add.ads:19:23]
+                                                      [GP_Id:8] (_gnatprove_standard.Int_Division.div_
+                                                                   Pkg_add__add__a.a
+                                                                   Pkg_add__add__c.c)))
+                                                        * ([sloc:pkg_add.ads:19] 
+                                                          ([GP_Shape:pragargs__andthen__if__andthen__cmp__mult__add]
+                                                          [vc:annotation]
+                                                          [GP_Reason:VC_OVERFLOW_CHECK]
+                                                          [GP_Sloc:pkg_add.ads:19:31]
+                                                          [GP_Id:9]
+                                                          [comment:                    (A/C) * (D+B) <= 150 and then (A/C) * (D+B) >= 30                               ^ pkg_add.ads:19:31:VC_OVERFLOW_CHECK] (
+                                                          Standard__integer.range_check_
+                                                            (Pkg_add__add__d.d
+                                                               + Pkg_add__add__b.b))))))))
+                              <= 150) &&
+                             (([sloc:pkg_add.ads:19] ([GP_Sloc:pkg_add.ads:19:57]
+                                                     [GP_Id:13]
+                                                     [vc:annotation]
+                                                     [GP_Reason:VC_OVERFLOW_CHECK]
+                                                     [comment:                    (A/C) * (D+B) <= 150 and then (A/C) * (D+B) >= 30                                                         ^ pkg_add.ads:19:57:VC_OVERFLOW_CHECK]
+                                                     [GP_Shape:pragargs__andthen__if__andthen__cmp__mult] (
+                                                     Standard__integer.range_check_
+                                                       (([sloc:pkg_add.ads:19] 
+                                                        ([GP_Id:11]
+                                                        [vc:annotation]
+                                                        [GP_Reason:VC_DIVISION_CHECK]
+                                                        [GP_Shape:pragargs__andthen__if__andthen__cmp__mult__div]
+                                                        [comment:                    (A/C) * (D+B) <= 150 and then (A/C) * (D+B) >= 30                                                     ^ pkg_add.ads:19:53:VC_DIVISION_CHECK]
+                                                        [GP_Sloc:pkg_add.ads:19:53] (
+                                                        _gnatprove_standard.Int_Division.div_
+                                                          Pkg_add__add__a.a
+                                                          Pkg_add__add__c.c)))
+                                                          * ([sloc:pkg_add.ads:19] 
+                                                            ([GP_Id:12]
+                                                            [comment:                    (A/C) * (D+B) <= 150 and then (A/C) * (D+B) >= 30                                                             ^ pkg_add.ads:19:61:VC_OVERFLOW_CHECK]
+                                                            [GP_Shape:pragargs__andthen__if__andthen__cmp__mult__add]
+                                                            [vc:annotation]
+                                                            [GP_Reason:VC_OVERFLOW_CHECK]
+                                                            [GP_Sloc:pkg_add.ads:19:61] (
+                                                            Standard__integer.range_check_
+                                                              (Pkg_add__add__d.d
+                                                                 + Pkg_add__add__b.b))))))))
+                                >= 30))
+                           else
+                          (if
+                          (_gnatprove_standard.Boolean.andb
+                             (([sloc:pkg_add.ads:20] ([GP_Shape:pragargs__andthen__if__if__and__cmp__div]
+                                                     [vc:annotation]
+                                                     [comment:                      elsif (A/C) > 0 and (D+B) < 0 then                               ^ pkg_add.ads:20:31:VC_DIVISION_CHECK]
+                                                     [GP_Reason:VC_DIVISION_CHECK]
+                                                     [GP_Id:36]
+                                                     [GP_Sloc:pkg_add.ads:20:31] (
+                                                     _gnatprove_standard.Int_Division.div_
+                                                       Pkg_add__add__a.a
+                                                       Pkg_add__add__c.c)))
+                                > 0)
+                             (([sloc:pkg_add.ads:20] ([vc:annotation]
+                                                     [GP_Reason:VC_OVERFLOW_CHECK]
+                                                     [GP_Id:37]
+                                                     [GP_Sloc:pkg_add.ads:20:45]
+                                                     [GP_Shape:pragargs__andthen__if__if__and__cmp__add]
+                                                     [comment:                      elsif (A/C) > 0 and (D+B) < 0 then                                             ^ pkg_add.ads:20:45:VC_OVERFLOW_CHECK] (
+                                                     Standard__integer.range_check_
+                                                       (Pkg_add__add__d.d
+                                                          + Pkg_add__add__b.b))))
+                                < 0))
+                          then
+                          ((([sloc:pkg_add.ads:21] ([comment:                    (A/C) * (D+B) >= 30 and then (A/C) * (D+B) <= 150                           ^ pkg_add.ads:21:27:VC_OVERFLOW_CHECK]
+                                                   [GP_Id:16] [vc:annotation]
+                                                   [GP_Reason:VC_OVERFLOW_CHECK]
+                                                   [GP_Sloc:pkg_add.ads:21:27]
+                                                   [GP_Shape:pragargs__andthen__if__if__andthen__cmp__mult] (
+                                                   Standard__integer.range_check_
+                                                     (([sloc:pkg_add.ads:21] 
+                                                      ([GP_Id:14]
+                                                      [vc:annotation]
+                                                      [GP_Reason:VC_DIVISION_CHECK]
+                                                      [GP_Sloc:pkg_add.ads:21:23]
+                                                      [GP_Shape:pragargs__andthen__if__if__andthen__cmp__mult__div]
+                                                      [comment:                    (A/C) * (D+B) >= 30 and then (A/C) * (D+B) <= 150                       ^ pkg_add.ads:21:23:VC_DIVISION_CHECK] (
+                                                      _gnatprove_standard.Int_Division.div_
+                                                        Pkg_add__add__a.a
+                                                        Pkg_add__add__c.c)))
+                                                        * ([sloc:pkg_add.ads:21] 
+                                                          ([GP_Id:15]
+                                                          [GP_Sloc:pkg_add.ads:21:31]
+                                                          [GP_Shape:pragargs__andthen__if__if__andthen__cmp__mult__add]
+                                                          [vc:annotation]
+                                                          [GP_Reason:VC_OVERFLOW_CHECK]
+                                                          [comment:                    (A/C) * (D+B) >= 30 and then (A/C) * (D+B) <= 150                               ^ pkg_add.ads:21:31:VC_OVERFLOW_CHECK] (
+                                                          Standard__integer.range_check_
+                                                            (Pkg_add__add__d.d
+                                                               + Pkg_add__add__b.b))))))))
+                              >= 30) &&
+                             (([sloc:pkg_add.ads:21] ([GP_Id:19]
+                                                     [vc:annotation]
+                                                     [GP_Reason:VC_OVERFLOW_CHECK]
+                                                     [GP_Sloc:pkg_add.ads:21:56]
+                                                     [comment:                    (A/C) * (D+B) >= 30 and then (A/C) * (D+B) <= 150                                                        ^ pkg_add.ads:21:56:VC_OVERFLOW_CHECK]
+                                                     [GP_Shape:pragargs__andthen__if__if__andthen__cmp__mult] (
+                                                     Standard__integer.range_check_
+                                                       (([sloc:pkg_add.ads:21] 
+                                                        ([GP_Id:17]
+                                                        [comment:                    (A/C) * (D+B) >= 30 and then (A/C) * (D+B) <= 150                                                    ^ pkg_add.ads:21:52:VC_DIVISION_CHECK]
+                                                        [vc:annotation]
+                                                        [GP_Reason:VC_DIVISION_CHECK]
+                                                        [GP_Shape:pragargs__andthen__if__if__andthen__cmp__mult__div]
+                                                        [GP_Sloc:pkg_add.ads:21:52] (
+                                                        _gnatprove_standard.Int_Division.div_
+                                                          Pkg_add__add__a.a
+                                                          Pkg_add__add__c.c)))
+                                                          * ([sloc:pkg_add.ads:21] 
+                                                            ([GP_Id:18]
+                                                            [GP_Shape:pragargs__andthen__if__if__andthen__cmp__mult__add]
+                                                            [vc:annotation]
+                                                            [GP_Sloc:pkg_add.ads:21:60]
+                                                            [GP_Reason:VC_OVERFLOW_CHECK]
+                                                            [comment:                    (A/C) * (D+B) >= 30 and then (A/C) * (D+B) <= 150                                                            ^ pkg_add.ads:21:60:VC_OVERFLOW_CHECK] (
+                                                            Standard__integer.range_check_
+                                                              (Pkg_add__add__d.d
+                                                                 + Pkg_add__add__b.b))))))))
+                                <= 150))
+                           else
+                          (if
+                          (_gnatprove_standard.Boolean.andb
+                             (([sloc:pkg_add.ads:22] ([comment:                      elsif (A/C) < 0 and (D+B) > 0 then                               ^ pkg_add.ads:22:31:VC_DIVISION_CHECK]
+                                                     [vc:annotation]
+                                                     [GP_Reason:VC_DIVISION_CHECK]
+                                                     [GP_Id:34]
+                                                     [GP_Sloc:pkg_add.ads:22:31]
+                                                     [GP_Shape:pragargs__andthen__if__if__if__and__cmp__div] (
+                                                     _gnatprove_standard.Int_Division.div_
+                                                       Pkg_add__add__a.a
+                                                       Pkg_add__add__c.c)))
+                                < 0)
+                             (([sloc:pkg_add.ads:22] ([vc:annotation]
+                                                     [GP_Reason:VC_OVERFLOW_CHECK]
+                                                     [comment:                      elsif (A/C) < 0 and (D+B) > 0 then                                             ^ pkg_add.ads:22:45:VC_OVERFLOW_CHECK]
+                                                     [GP_Id:35]
+                                                     [GP_Sloc:pkg_add.ads:22:45]
+                                                     [GP_Shape:pragargs__andthen__if__if__if__and__cmp__add] (
+                                                     Standard__integer.range_check_
+                                                       (Pkg_add__add__d.d
+                                                          + Pkg_add__add__b.b))))
+                                > 0))
+                          then
+                          ((([sloc:pkg_add.ads:23] ([GP_Shape:pragargs__andthen__if__if__if__andthen__cmp__mult]
+                                                   [vc:annotation]
+                                                   [GP_Reason:VC_OVERFLOW_CHECK]
+                                                   [comment:                    (A/C) * (D+B) >= 30 and then (A/C) * (D+B) <= 150                           ^ pkg_add.ads:23:27:VC_OVERFLOW_CHECK]
+                                                   [GP_Sloc:pkg_add.ads:23:27]
+                                                   [GP_Id:22] (Standard__integer.range_check_
+                                                                 (([sloc:pkg_add.ads:23] 
+                                                                  ([vc:annotation]
+                                                                  [GP_Reason:VC_DIVISION_CHECK]
+                                                                  [comment:                    (A/C) * (D+B) >= 30 and then (A/C) * (D+B) <= 150                       ^ pkg_add.ads:23:23:VC_DIVISION_CHECK]
+                                                                  [GP_Sloc:pkg_add.ads:23:23]
+                                                                  [GP_Id:20]
+                                                                  [GP_Shape:pragargs__andthen__if__if__if__andthen__cmp__mult__div] (
+                                                                  _gnatprove_standard.Int_Division.div_
+                                                                    Pkg_add__add__a.a
+                                                                    Pkg_add__add__c.c)))
+                                                                    * 
+                                                                    ([sloc:pkg_add.ads:23] 
+                                                                    ([GP_Sloc:pkg_add.ads:23:31]
+                                                                    [vc:annotation]
+                                                                    [GP_Reason:VC_OVERFLOW_CHECK]
+                                                                    [GP_Shape:pragargs__andthen__if__if__if__andthen__cmp__mult__add]
+                                                                    [GP_Id:21]
+                                                                    [comment:                    (A/C) * (D+B) >= 30 and then (A/C) * (D+B) <= 150                               ^ pkg_add.ads:23:31:VC_OVERFLOW_CHECK] (
+                                                                    Standard__integer.range_check_
+                                                                    (Pkg_add__add__d.d
+                                                                    + Pkg_add__add__b.b))))))))
+                              >= 30) &&
+                             (([sloc:pkg_add.ads:23] ([GP_Shape:pragargs__andthen__if__if__if__andthen__cmp__mult]
+                                                     [comment:                    (A/C) * (D+B) >= 30 and then (A/C) * (D+B) <= 150                                                        ^ pkg_add.ads:23:56:VC_OVERFLOW_CHECK]
+                                                     [vc:annotation]
+                                                     [GP_Reason:VC_OVERFLOW_CHECK]
+                                                     [GP_Sloc:pkg_add.ads:23:56]
+                                                     [GP_Id:25] (Standard__integer.range_check_
+                                                                   (([sloc:pkg_add.ads:23] 
+                                                                    ([vc:annotation]
+                                                                    [GP_Reason:VC_DIVISION_CHECK]
+                                                                    [GP_Sloc:pkg_add.ads:23:52]
+                                                                    [comment:                    (A/C) * (D+B) >= 30 and then (A/C) * (D+B) <= 150                                                    ^ pkg_add.ads:23:52:VC_DIVISION_CHECK]
+                                                                    [GP_Id:23]
+                                                                    [GP_Shape:pragargs__andthen__if__if__if__andthen__cmp__mult__div] (
+                                                                    _gnatprove_standard.Int_Division.div_
+                                                                    Pkg_add__add__a.a
+                                                                    Pkg_add__add__c.c)))
+                                                                    * ([sloc:pkg_add.ads:23] 
+                                                                    ([GP_Sloc:pkg_add.ads:23:60]
+                                                                    [vc:annotation]
+                                                                    [GP_Reason:VC_OVERFLOW_CHECK]
+                                                                    [GP_Shape:pragargs__andthen__if__if__if__andthen__cmp__mult__add]
+                                                                    [GP_Id:24]
+                                                                    [comment:                    (A/C) * (D+B) >= 30 and then (A/C) * (D+B) <= 150                                                            ^ pkg_add.ads:23:60:VC_OVERFLOW_CHECK] (
+                                                                    Standard__integer.range_check_
+                                                                    (Pkg_add__add__d.d
+                                                                    + Pkg_add__add__b.b))))))))
+                                <= 150))
+                           else
+                          (if
+                          (_gnatprove_standard.Boolean.andb
+                             (([sloc:pkg_add.ads:24] ([vc:annotation]
+                                                     [GP_Reason:VC_DIVISION_CHECK]
+                                                     [GP_Sloc:pkg_add.ads:24:31]
+                                                     [GP_Id:32]
+                                                     [GP_Shape:pragargs__andthen__if__if__if__if__and__cmp__div]
+                                                     [comment:                      elsif (A/C) < 0 and (D+B) < 0 then                               ^ pkg_add.ads:24:31:VC_DIVISION_CHECK] (
+                                                     _gnatprove_standard.Int_Division.div_
+                                                       Pkg_add__add__a.a
+                                                       Pkg_add__add__c.c)))
+                                < 0)
+                             (([sloc:pkg_add.ads:24] ([comment:                      elsif (A/C) < 0 and (D+B) < 0 then                                             ^ pkg_add.ads:24:45:VC_OVERFLOW_CHECK]
+                                                     [GP_Shape:pragargs__andthen__if__if__if__if__and__cmp__add]
+                                                     [GP_Sloc:pkg_add.ads:24:45]
+                                                     [vc:annotation]
+                                                     [GP_Reason:VC_OVERFLOW_CHECK]
+                                                     [GP_Id:33] (Standard__integer.range_check_
+                                                                   (Pkg_add__add__d.d
+                                                                    + Pkg_add__add__b.b))))
+                                < 0))
+                          then
+                          ((([sloc:pkg_add.ads:25] ([GP_Sloc:pkg_add.ads:25:27]
+                                                   [vc:annotation]
+                                                   [GP_Reason:VC_OVERFLOW_CHECK]
+                                                   [comment:                    (A/C) * (D+B) <= 150 and then (A/C) * (D+B) >= 30)),                           ^ pkg_add.ads:25:27:VC_OVERFLOW_CHECK]
+                                                   [GP_Id:28]
+                                                   [GP_Shape:pragargs__andthen__if__if__if__if__andthen__cmp__mult] (
+                                                   Standard__integer.range_check_
+                                                     (([sloc:pkg_add.ads:25] 
+                                                      ([GP_Sloc:pkg_add.ads:25:23]
+                                                      [GP_Shape:pragargs__andthen__if__if__if__if__andthen__cmp__mult__div]
+                                                      [vc:annotation]
+                                                      [GP_Reason:VC_DIVISION_CHECK]
+                                                      [comment:                    (A/C) * (D+B) <= 150 and then (A/C) * (D+B) >= 30)),                       ^ pkg_add.ads:25:23:VC_DIVISION_CHECK]
+                                                      [GP_Id:26] (_gnatprove_standard.Int_Division.div_
+                                                                    Pkg_add__add__a.a
+                                                                    Pkg_add__add__c.c)))
+                                                        * ([sloc:pkg_add.ads:25] 
+                                                          ([comment:                    (A/C) * (D+B) <= 150 and then (A/C) * (D+B) >= 30)),                               ^ pkg_add.ads:25:31:VC_OVERFLOW_CHECK]
+                                                          [vc:annotation]
+                                                          [GP_Reason:VC_OVERFLOW_CHECK]
+                                                          [GP_Sloc:pkg_add.ads:25:31]
+                                                          [GP_Id:27]
+                                                          [GP_Shape:pragargs__andthen__if__if__if__if__andthen__cmp__mult__add] (
+                                                          Standard__integer.range_check_
+                                                            (Pkg_add__add__d.d
+                                                               + Pkg_add__add__b.b))))))))
+                              <= 150) &&
+                             (([sloc:pkg_add.ads:25] ([comment:                    (A/C) * (D+B) <= 150 and then (A/C) * (D+B) >= 30)),                                                         ^ pkg_add.ads:25:57:VC_OVERFLOW_CHECK]
+                                                     [vc:annotation]
+                                                     [GP_Sloc:pkg_add.ads:25:57]
+                                                     [GP_Reason:VC_OVERFLOW_CHECK]
+                                                     [GP_Id:31]
+                                                     [GP_Shape:pragargs__andthen__if__if__if__if__andthen__cmp__mult] (
+                                                     Standard__integer.range_check_
+                                                       (([sloc:pkg_add.ads:25] 
+                                                        ([GP_Shape:pragargs__andthen__if__if__if__if__andthen__cmp__mult__div]
+                                                        [comment:                    (A/C) * (D+B) <= 150 and then (A/C) * (D+B) >= 30)),                                                     ^ pkg_add.ads:25:53:VC_DIVISION_CHECK]
+                                                        [GP_Sloc:pkg_add.ads:25:53]
+                                                        [vc:annotation]
+                                                        [GP_Reason:VC_DIVISION_CHECK]
+                                                        [GP_Id:29] (_gnatprove_standard.Int_Division.div_
+                                                                    Pkg_add__add__a.a
+                                                                    Pkg_add__add__c.c)))
+                                                          * ([sloc:pkg_add.ads:25] 
+                                                            ([GP_Sloc:pkg_add.ads:25:61]
+                                                            [vc:annotation]
+                                                            [GP_Reason:VC_OVERFLOW_CHECK]
+                                                            [GP_Id:30]
+                                                            [comment:                    (A/C) * (D+B) <= 150 and then (A/C) * (D+B) >= 30)),                                                             ^ pkg_add.ads:25:61:VC_OVERFLOW_CHECK]
+                                                            [GP_Shape:pragargs__andthen__if__if__if__if__andthen__cmp__mult__add] (
+                                                            Standard__integer.range_check_
+                                                              (Pkg_add__add__d.d
+                                                                 + Pkg_add__add__b.b))))))))
+                                >= 30))
+                           else (_gnatprove_standard.Boolean.of_int 1))))))
+                       in ())  end;
+        (* Assume Pre of the subprogram pkg_add.ads:3 *);
+        assume
+        { ((((if ((Pkg_add__add__d.d > 0) /\ (Pkg_add__add__b.b > 0)) then
+             ([GP_Pretty_Ada:908] (Pkg_add__add__d.d
+                                     <= (2147483647 - Pkg_add__add__b.b)))
+              else
+             (if ((Pkg_add__add__d.d < 0) /\ (Pkg_add__add__b.b < 0)) then
+             ([GP_Pretty_Ada:922] (Pkg_add__add__d.d
+                                     >= (0 - Pkg_add__add__b.b)))
+              else ([GP_Pretty_Ada:1301] True))) /\
+               ([GP_Pretty_Ada:932] (Pkg_add__add__c.c <> 0))) /\
+              ([GP_Pretty_Ada:938] (let ([mlw:proxy_symbol]
+              [introduced] temp___165) =
+              (_gnatprove_standard.Int_Division.div Pkg_add__add__a.a
+                 Pkg_add__add__c.c)
+              in
+              ((0 <= ([mlw:proxy_symbol] [introduced] temp___165)) /\
+                 (([mlw:proxy_symbol] [introduced] temp___165) <= 2147483647)))))
+             /\
+             (if
+             (((_gnatprove_standard.Int_Division.div Pkg_add__add__a.a
+                  Pkg_add__add__c.c) > 0) /\
+                ((Pkg_add__add__d.d + Pkg_add__add__b.b) > 0))
+             then
+             (([GP_Pretty_Ada:960] (((_gnatprove_standard.Int_Division.div
+                                        Pkg_add__add__a.a Pkg_add__add__c.c)
+                                       * (Pkg_add__add__d.d
+                                            + Pkg_add__add__b.b)) <= 150)) /\
+                ([GP_Pretty_Ada:970] (((_gnatprove_standard.Int_Division.div
+                                          Pkg_add__add__a.a Pkg_add__add__c.c)
+                                         * (Pkg_add__add__d.d
+                                              + Pkg_add__add__b.b)) >= 30)))
+              else
+             (if
+             (((_gnatprove_standard.Int_Division.div Pkg_add__add__a.a
+                  Pkg_add__add__c.c) > 0) /\
+                ((Pkg_add__add__d.d + Pkg_add__add__b.b) < 0))
+             then
+             (([GP_Pretty_Ada:990] (((_gnatprove_standard.Int_Division.div
+                                        Pkg_add__add__a.a Pkg_add__add__c.c)
+                                       * (Pkg_add__add__d.d
+                                            + Pkg_add__add__b.b)) >= 30)) /\
+                ([GP_Pretty_Ada:1000] (((_gnatprove_standard.Int_Division.div
+                                           Pkg_add__add__a.a
+                                           Pkg_add__add__c.c)
+                                          * (Pkg_add__add__d.d
+                                               + Pkg_add__add__b.b)) <= 150)))
+              else
+             (if
+             (((_gnatprove_standard.Int_Division.div Pkg_add__add__a.a
+                  Pkg_add__add__c.c) < 0) /\
+                ((Pkg_add__add__d.d + Pkg_add__add__b.b) > 0))
+             then
+             (([GP_Pretty_Ada:1020] (((_gnatprove_standard.Int_Division.div
+                                         Pkg_add__add__a.a Pkg_add__add__c.c)
+                                        * (Pkg_add__add__d.d
+                                             + Pkg_add__add__b.b)) >= 30)) /\
+                ([GP_Pretty_Ada:1030] (((_gnatprove_standard.Int_Division.div
+                                           Pkg_add__add__a.a
+                                           Pkg_add__add__c.c)
+                                          * (Pkg_add__add__d.d
+                                               + Pkg_add__add__b.b)) <= 150)))
+              else
+             (if
+             (((_gnatprove_standard.Int_Division.div Pkg_add__add__a.a
+                  Pkg_add__add__c.c) < 0) /\
+                ((Pkg_add__add__d.d + Pkg_add__add__b.b) < 0))
+             then
+             (([GP_Pretty_Ada:1050] (((_gnatprove_standard.Int_Division.div
+                                         Pkg_add__add__a.a Pkg_add__add__c.c)
+                                        * (Pkg_add__add__d.d
+                                             + Pkg_add__add__b.b)) <= 150))
+                /\
+                ([GP_Pretty_Ada:1060] (((_gnatprove_standard.Int_Division.div
+                                           Pkg_add__add__a.a
+                                           Pkg_add__add__c.c)
+                                          * (Pkg_add__add__d.d
+                                               + Pkg_add__add__b.b)) >= 30)))
+              else ([GP_Pretty_Ada:1312] True)))))) };
+        (try
+        ();
+          ([GP_Sloc:pkg_add.adb:9:7] ([sloc:pkg_add.adb:9] (
+                                     pkg_add__add__result :=
+                                     ( ([sloc:pkg_add.adb:9] ([vc:annotation]
+                                                             [GP_Shape:return__mult]
+                                                             [GP_Reason:VC_OVERFLOW_CHECK]
+                                                             [GP_Sloc:pkg_add.adb:9:22]
+                                                             [GP_Id:2]
+                                                             [comment:      return (A / C) * (D + B);                      ^ pkg_add.adb:9:22:VC_OVERFLOW_CHECK] (
+                                                             Standard__integer.range_check_
+                                                               (([sloc:pkg_add.adb:9] 
+                                                                ([GP_Shape:return__mult__div]
+                                                                [vc:annotation]
+                                                                [GP_Reason:VC_DIVISION_CHECK]
+                                                                [comment:      return (A / C) * (D + B);                 ^ pkg_add.adb:9:17:VC_DIVISION_CHECK]
+                                                                [GP_Id:0]
+                                                                [GP_Sloc:pkg_add.adb:9:17] (
+                                                                _gnatprove_standard.Int_Division.div_
+                                                                  Pkg_add__add__a.a
+                                                                  Pkg_add__add__c.c)))
+                                                                  * ([sloc:pkg_add.adb:9] 
+                                                                    ([GP_Shape:return__mult__add]
+                                                                    [vc:annotation]
+                                                                    [comment:      return (A / C) * (D + B);                           ^ pkg_add.adb:9:27:VC_OVERFLOW_CHECK]
+                                                                    [GP_Reason:VC_OVERFLOW_CHECK]
+                                                                    [GP_Sloc:pkg_add.adb:9:27]
+                                                                    [GP_Id:1] (
+                                                                    Standard__integer.range_check_
+                                                                    (Pkg_add__add__d.d
+                                                                    + Pkg_add__add__b.b))))))))));
+                                     raise Return__exc));
+          raise Return__exc with | Return__exc  -> ());
+        abstract ensures
+        { True } begin  (let _ =
+                       (!pkg_add__add__result
+                          = ([sloc:pkg_add.ads:26] ([GP_Sloc:pkg_add.ads:26:37]
+                                                   [vc:annotation]
+                                                   [GP_Reason:VC_OVERFLOW_CHECK]
+                                                   [GP_Shape:pragargs__cmp__mult]
+                                                   [comment:       Post => Add'Result = (A / C) * (D + B);                                     ^ pkg_add.ads:26:37:VC_OVERFLOW_CHECK]
+                                                   [GP_Id:5] (Standard__integer.range_check_
+                                                                (([sloc:pkg_add.ads:26] 
+                                                                 ([GP_Sloc:pkg_add.ads:26:32]
+                                                                 [vc:annotation]
+                                                                 [GP_Shape:pragargs__cmp__mult__div]
+                                                                 [GP_Reason:VC_DIVISION_CHECK]
+                                                                 [comment:       Post => Add'Result = (A / C) * (D + B);                                ^ pkg_add.ads:26:32:VC_DIVISION_CHECK]
+                                                                 [GP_Id:3] (
+                                                                 _gnatprove_standard.Int_Division.div_
+                                                                   Pkg_add__add__a.a
+                                                                   Pkg_add__add__c.c)))
+                                                                   * 
+                                                                   ([sloc:pkg_add.ads:26] 
+                                                                   ([GP_Shape:pragargs__cmp__mult__add]
+                                                                   [vc:annotation]
+                                                                   [GP_Reason:VC_OVERFLOW_CHECK]
+                                                                   [comment:       Post => Add'Result = (A / C) * (D + B);                                          ^ pkg_add.ads:26:42:VC_OVERFLOW_CHECK]
+                                                                   [GP_Id:4]
+                                                                   [GP_Sloc:pkg_add.ads:26:42] (
+                                                                   Standard__integer.range_check_
+                                                                    (Pkg_add__add__d.d
+                                                                    + Pkg_add__add__b.b)))))))))
+                       in ())  end;
+        !pkg_add__add__result
+
+end

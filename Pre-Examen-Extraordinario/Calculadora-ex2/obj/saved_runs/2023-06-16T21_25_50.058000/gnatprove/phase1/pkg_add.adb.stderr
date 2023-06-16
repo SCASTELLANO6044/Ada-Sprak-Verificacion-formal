@@ -1,0 +1,1 @@
+pkg_add.ads:24:26: error: != should be /=

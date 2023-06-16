@@ -1,0 +1,1 @@
+pkg_multiply.ads:18:57: medium: overflow check might fail [reason for check: result of division must fit in a 32-bits machine integer][#0]

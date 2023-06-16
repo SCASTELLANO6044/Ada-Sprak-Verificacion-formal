@@ -1,0 +1,4 @@
+pkg_subtract.adb:10:17: medium: precondition might fail, cannot prove First_Operand >= Integer'First - Second_Operand (e.g. when First_Operand = -2 and Second_Operand = Integer'Last)[#1]
+pkg_subtract.adb:10:36: medium: overflow check might fail (e.g. when Second_Operand = Integer'First)[#0]
+pkg_subtract.ads:13:51: medium: overflow check might fail (e.g. when Second_Operand = -1)[#2]
+pkg_subtract.ads:15:52: medium: overflow check might fail (e.g. when Second_Operand = -1)[#3]

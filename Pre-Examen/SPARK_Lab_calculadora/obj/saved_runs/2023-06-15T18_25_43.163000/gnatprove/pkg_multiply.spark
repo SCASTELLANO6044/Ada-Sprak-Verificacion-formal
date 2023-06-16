@@ -1,0 +1,120 @@
+{
+  "spark": [
+    {
+      "name": "Pkg_Multiply",
+      "sloc": [
+        {
+          "file": "pkg_multiply.ads",
+          "line": 1
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "Pkg_Multiply.Multiply",
+      "sloc": [
+        {
+          "file": "pkg_multiply.ads",
+          "line": 5
+        }
+      ],
+      "spark": "all"
+    }
+  ],
+  "flow": [
+    {
+      "file": "pkg_multiply.ads",
+      "line": 7,
+      "col": 7,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Pkg_Multiply.Multiply",
+        "sloc": [
+          {
+            "file": "pkg_multiply.ads",
+            "line": 5
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    },
+    {
+      "file": "pkg_multiply.ads",
+      "line": 11,
+      "col": 8,
+      "rule": "GLOBAL_WRONG",
+      "severity": "info",
+      "entity": {
+        "name": "Pkg_Multiply.Multiply",
+        "sloc": [
+          {
+            "file": "pkg_multiply.ads",
+            "line": 5
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    },
+    {
+      "file": "pkg_multiply.ads",
+      "line": 12,
+      "col": 8,
+      "rule": "DEPENDS_WRONG",
+      "severity": "info",
+      "entity": {
+        "name": "Pkg_Multiply.Multiply",
+        "sloc": [
+          {
+            "file": "pkg_multiply.ads",
+            "line": 5
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    }
+  ],
+  "assumptions": [
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "Pkg_Add.Add",
+            "sloc": [
+              {
+                "file": "pkg_add.ads",
+                "line": 5
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Pkg_Multiply.Multiply",
+          "sloc": [
+            {
+              "file": "pkg_multiply.ads",
+              "line": 5
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "timings": {
+    "globals (advanced)": 4.46999998530373E-04,
+    "flow analysis": 1.96489994414151E-03,
+    "marking": 1.18500000098720E-04,
+    "properties (advanced)": 2.97999995382270E-05,
+    "globals (basic)": 3.84100014343858E-04
+  }
+}

@@ -16,7 +16,7 @@ RN
 RV NO_IO
 RV NO_IMPLEMENTATION_PRAGMAS
 
-U tests_multiply%b	tests_multiply.adb	9d36b540 NE OO SU
+U tests_multiply%b	tests_multiply.adb	fd927e8e NE OO SU
 W ada%s			ada.ads			ada.ali
 Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
 W ada.text_io%s		a-textio.adb		a-textio.ali
@@ -36,7 +36,7 @@ D a-textio.ads		20210520051130 aef4d56d ada.text_io%s
 D a-unccon.ads		20210520051130 0e9b276f ada.unchecked_conversion%s
 D interfac.ads		20210520051132 edec285f interfaces%s
 D i-cstrea.ads		20210520051132 e53d8b8e interfaces.c_streams%s
-D pkg_multiply.ads	20230114184010 2acd5504 pkg_multiply%s
+D pkg_multiply.ads	20230615172526 4a699eca pkg_multiply%s
 D system.ads		20210520051136 2ffa5114 system%s
 D s-assert.ads		20210520051132 6a49a4e4 system.assertions%s
 D s-crtl.ads		20210520051132 0ebbdb71 system.crtl%s
@@ -65,7 +65,7 @@ X 10 a-textio.ads
 463U14*Put 31|12s7 24s7 35s7 46s7 57s7 68s7
 506U14*Put_Line 31|18s7 29s7 40s7 51s7 62s7 73s7 77s4
 X 14 pkg_multiply.ads
-1K9*Pkg_Multiply 24e17 31|5w6 5r25
+1K9*Pkg_Multiply 23e17 31|5w6 5r25
 5U14*Multiply 31|14s7 26s7 37s7 48s7 59s7 70s7
 X 31 tests_multiply.adb
 7U11*Tests_Multiply 7b11 84l5 84t19

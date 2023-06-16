@@ -1,0 +1,1 @@
+pkg_multiply.ads:13:17: attribute "Result" can only appear in postcondition of function

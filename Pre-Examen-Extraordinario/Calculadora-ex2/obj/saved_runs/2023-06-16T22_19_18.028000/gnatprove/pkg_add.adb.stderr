@@ -1,0 +1,3 @@
+pkg_add.ads:15:19: medium: overflow check might fail (e.g. when B = 1 and D = Natural'Last) [reason for check: result of addition must fit in a 32-bits machine integer][#0]
+pkg_add.ads:18:19: medium: overflow check might fail (e.g. when B = 1 and D = Natural'Last) [reason for check: result of addition must fit in a 32-bits machine integer][#1]
+pkg_add.ads:19:24: medium: overflow check might fail (e.g. when A = 2 and B = 2 and C = 1 and D = 3) [reason for check: result of multiplication must fit in a 32-bits machine integer][#2]

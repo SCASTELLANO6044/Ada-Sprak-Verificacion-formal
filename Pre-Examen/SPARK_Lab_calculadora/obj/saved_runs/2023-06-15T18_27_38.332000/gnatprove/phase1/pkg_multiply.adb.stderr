@@ -1,0 +1,2 @@
+pkg_multiply.adb:19:54: error: parentheses required for unary minus
+pkg_multiply.adb:24:54: error: parentheses required for unary minus

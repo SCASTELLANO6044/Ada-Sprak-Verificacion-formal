@@ -1,0 +1,1363 @@
+module Standard__integer
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  
+  type integer = <range -2147483648 2147483647>
+  
+  val function first : int
+    ensures { result = ((- 2147483648) : int) }
+  
+  val function last : int
+    ensures { result = (2147483647 : int) }
+  
+  predicate in_range (x: int) = ((first <= x) /\ (x <= last))
+  
+  val in_range (x: int) : bool
+    ensures { result <-> (in_range (x : int)) }
+  
+  clone export ada__model.Static_Discrete with
+    axiom .,
+    type t = integer,
+    function first = first,
+    function last = last,
+    predicate in_range = in_range
+  
+  type integer__ref = { mutable integer__content : integer }
+  
+  function integer__ref_integer__content__projection (a: integer__ref) : integer =
+    a.integer__content
+  
+  meta "model_projection" function integer__ref_integer__content__projection
+  
+  meta "inline:no" function integer__ref_integer__content__projection
+  
+  val integer__havoc (x: integer__ref) : unit
+    writes { x }
+end
+
+module Standard__integer___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Standard__integer as Standard__integer
+  
+  predicate dynamic_invariant (temp___expr_18: int) (temp___is_init_14: bool) (temp___skip_constant_15: bool) (temp___do_toplevel_16: bool) (temp___do_typ_inv_17: bool) =
+    if ((temp___is_init_14 = True) \/
+          (Standard__integer.first <= Standard__integer.last)) then
+      (((Standard__integer.dynamic_property Standard__integer.first)
+          Standard__integer.last)
+         temp___expr_18)
+    else true
+  
+  val dynamic_invariant (temp___expr_18: int) (temp___is_init_14: bool) (temp___skip_constant_15: bool) (temp___do_toplevel_16: bool) (temp___do_typ_inv_17: bool) : 
+    bool
+    ensures { result
+                <->
+                (((((dynamic_invariant (temp___expr_18 : int))
+                      (temp___is_init_14 : bool))
+                     (temp___skip_constant_15 : bool))
+                    (temp___do_toplevel_16 : bool))
+                   (temp___do_typ_inv_17 : bool)) }
+  
+  predicate default_initial_assumption (temp___expr_19: int) (temp___skip_top_level_20: bool) =
+    true
+  
+  val default_initial_assumption (temp___expr_19: int) (temp___skip_top_level_20: bool) : 
+    bool
+    ensures { result
+                <->
+                ((default_initial_assumption (temp___expr_19 : int))
+                   (temp___skip_top_level_20 : bool)) }
+end
+
+module Pkg_multiply__multiply__first_operand
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  val function first_operand : int
+end
+
+module Pkg_multiply__multiply__second_operand
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  val function second_operand : int
+end
+
+module Pkg_multiply__multiply__result
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  val result__ : int__ref
+end
+
+module Pkg_multiply__multiply__L_1__i
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  val i : int__ref
+end
+
+module Pkg_add__add
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  val function add (first_operand: int) (second_operand: int) : int
+  
+  val predicate add__function_guard (temp___result_161: int) (first_operand: int) (second_operand: int)
+end
+
+module Pkg_add__add___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Standard__integer___axiom as Standard__integer___axiom
+  use Pkg_add__add as Pkg_add__add
+  
+  val add (first_operand: int) (second_operand: int) : int
+    requires { if ((first_operand < (0 : int)) /\
+                     (second_operand < (0 : int))) then
+                 ([@GP_Pretty_Ada:1122]
+                  (first_operand
+                     >= (((- 2147483648) : int) - second_operand)))
+               else
+                 (if ((first_operand > (0 : int)) /\
+                        (second_operand > (0 : int))) then
+                    ([@GP_Pretty_Ada:1136]
+                     (first_operand <= ((2147483647 : int) - second_operand)))
+                  else ([@GP_Pretty_Ada:1215] true))
+    }
+    ensures { (((result = ((Pkg_add__add.add first_operand) second_operand)) /\
+                  (((Pkg_add__add.add__function_guard result) first_operand)
+                     second_operand)) /\
+                 ((((((Standard__integer___axiom.dynamic_invariant result)
+                        True)
+                       False)
+                      True)
+                     True) /\
+                    ([@GP_Pretty_Ada:1201]
+                     (result = (first_operand + second_operand))))) }
+  
+  axiom add__post_axiom:
+    forall first_operand : int, second_operand : int
+          [(Pkg_add__add.add first_operand) second_operand].
+      ((((((((Standard__integer___axiom.dynamic_invariant first_operand) True)
+              True)
+             True)
+            True) /\
+           (((((Standard__integer___axiom.dynamic_invariant second_operand)
+                 True)
+                True)
+               True)
+              True)) /\
+          (if ((first_operand < (0 : int)) /\ (second_operand < (0 : int))) then
+             ([@GP_Pretty_Ada:1122]
+              (first_operand >= (((- 2147483648) : int) - second_operand)))
+           else
+             (if ((first_operand > (0 : int)) /\
+                    (second_operand > (0 : int))) then
+                ([@GP_Pretty_Ada:1136]
+                 (first_operand <= ((2147483647 : int) - second_operand)))
+              else ([@GP_Pretty_Ada:1215] true)))) ->
+         (let result = (Pkg_add__add.add first_operand) second_operand in
+          if (((Pkg_add__add.add__function_guard result) first_operand)
+                second_operand) then
+            ((([@GP_Pretty_Ada:1201]
+               (result = (first_operand + second_operand))) /\
+                (((((Standard__integer___axiom.dynamic_invariant result) True)
+                     False)
+                    True)
+                   True)) /\
+               true)
+          else true))
+end
+
+module Pkg_multiply__multiply__L_2__i
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  val i : int__ref
+end
+
+module Pkg_multiply__multiply__L_3__i
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  val i : int__ref
+end
+
+module Pkg_multiply__multiply__L_4__i
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  val i : int__ref
+end
+
+module Pkg_multiply__multiply__L_1
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  exception L_1
+end
+
+module Standard__integer__rep
+  use Standard__integer as Standard__integer
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  function to_rep (x: Standard__integer.integer) : int =
+    Standard__integer.integer'int x
+  
+  clone export ada__model.Rep_Proj_Int with
+    axiom .,
+    type t = Standard__integer.integer,
+    predicate in_range = Standard__integer.in_range,
+    function to_rep = to_rep
+  
+  meta "model_projection" function to_rep
+  
+  meta "inline:no" function to_rep
+end
+
+module Pkg_multiply__multiply__L_1__T1b
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Standard__integer as Standard__integer
+  use Standard__integer__rep as Standard__integer__rep
+  
+  type t1b = Standard__integer.integer
+  
+  predicate dynamic_property (first_int: int) (last_int: int) (x: int) =
+    ((first_int <= x) /\ (x <= last_int))
+  
+  val dynamic_property (first_int: int) (last_int: int) (x: int) : bool
+    ensures { result
+                <->
+                (((dynamic_property (first_int : int)) (last_int : int))
+                   (x : int)) }
+  
+  clone export ada__model.Dynamic_Discrete with
+    axiom .,
+    type t = t1b,
+    type rep_type = int,
+    function base_to_rep = Standard__integer__rep.to_rep,
+    function base_of_rep = Standard__integer__rep.of_rep,
+    predicate dynamic_property = dynamic_property
+  
+  type t1b__ref = { mutable t1b__content : t1b }
+  
+  function t1b__ref_t1b__content__projection (a: t1b__ref) : t1b =
+    a.t1b__content
+  
+  meta "model_projection" function t1b__ref_t1b__content__projection
+  
+  meta "inline:no" function t1b__ref_t1b__content__projection
+  
+  val t1b__havoc (x: t1b__ref) : unit
+    writes { x }
+end
+
+module Pkg_multiply__multiply__L_2
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  exception L_2
+end
+
+module Pkg_multiply__multiply__L_2__T2b
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Standard__integer as Standard__integer
+  use Standard__integer__rep as Standard__integer__rep
+  
+  type t2b = Standard__integer.integer
+  
+  predicate dynamic_property (first_int: int) (last_int: int) (x: int) =
+    ((first_int <= x) /\ (x <= last_int))
+  
+  val dynamic_property (first_int: int) (last_int: int) (x: int) : bool
+    ensures { result
+                <->
+                (((dynamic_property (first_int : int)) (last_int : int))
+                   (x : int)) }
+  
+  clone export ada__model.Dynamic_Discrete with
+    axiom .,
+    type t = t2b,
+    type rep_type = int,
+    function base_to_rep = Standard__integer__rep.to_rep,
+    function base_of_rep = Standard__integer__rep.of_rep,
+    predicate dynamic_property = dynamic_property
+  
+  type t2b__ref = { mutable t2b__content : t2b }
+  
+  function t2b__ref_t2b__content__projection (a: t2b__ref) : t2b =
+    a.t2b__content
+  
+  meta "model_projection" function t2b__ref_t2b__content__projection
+  
+  meta "inline:no" function t2b__ref_t2b__content__projection
+  
+  val t2b__havoc (x: t2b__ref) : unit
+    writes { x }
+end
+
+module Pkg_multiply__multiply__L_3
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  exception L_3
+end
+
+module Pkg_multiply__multiply__L_3__T3b
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Standard__integer as Standard__integer
+  use Standard__integer__rep as Standard__integer__rep
+  
+  type t3b = Standard__integer.integer
+  
+  predicate dynamic_property (first_int: int) (last_int: int) (x: int) =
+    ((first_int <= x) /\ (x <= last_int))
+  
+  val dynamic_property (first_int: int) (last_int: int) (x: int) : bool
+    ensures { result
+                <->
+                (((dynamic_property (first_int : int)) (last_int : int))
+                   (x : int)) }
+  
+  clone export ada__model.Dynamic_Discrete with
+    axiom .,
+    type t = t3b,
+    type rep_type = int,
+    function base_to_rep = Standard__integer__rep.to_rep,
+    function base_of_rep = Standard__integer__rep.of_rep,
+    predicate dynamic_property = dynamic_property
+  
+  type t3b__ref = { mutable t3b__content : t3b }
+  
+  function t3b__ref_t3b__content__projection (a: t3b__ref) : t3b =
+    a.t3b__content
+  
+  meta "model_projection" function t3b__ref_t3b__content__projection
+  
+  meta "inline:no" function t3b__ref_t3b__content__projection
+  
+  val t3b__havoc (x: t3b__ref) : unit
+    writes { x }
+end
+
+module Pkg_multiply__multiply__L_4
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  exception L_4
+end
+
+module Pkg_multiply__multiply__L_4__T4b
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Standard__integer as Standard__integer
+  use Standard__integer__rep as Standard__integer__rep
+  
+  type t4b = Standard__integer.integer
+  
+  predicate dynamic_property (first_int: int) (last_int: int) (x: int) =
+    ((first_int <= x) /\ (x <= last_int))
+  
+  val dynamic_property (first_int: int) (last_int: int) (x: int) : bool
+    ensures { result
+                <->
+                (((dynamic_property (first_int : int)) (last_int : int))
+                   (x : int)) }
+  
+  clone export ada__model.Dynamic_Discrete with
+    axiom .,
+    type t = t4b,
+    type rep_type = int,
+    function base_to_rep = Standard__integer__rep.to_rep,
+    function base_of_rep = Standard__integer__rep.of_rep,
+    predicate dynamic_property = dynamic_property
+  
+  type t4b__ref = { mutable t4b__content : t4b }
+  
+  function t4b__ref_t4b__content__projection (a: t4b__ref) : t4b =
+    a.t4b__content
+  
+  meta "model_projection" function t4b__ref_t4b__content__projection
+  
+  meta "inline:no" function t4b__ref_t4b__content__projection
+  
+  val t4b__havoc (x: t4b__ref) : unit
+    writes { x }
+end
+
+module Pkg_multiply__multiply__L_1__i___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Pkg_multiply__multiply__L_2__i___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Pkg_multiply__multiply__L_3__i___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Pkg_multiply__multiply__L_4__i___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Pkg_multiply__multiply__L_1___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Pkg_multiply__multiply__L_2___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Pkg_multiply__multiply__L_3___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Pkg_multiply__multiply__L_4___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Pkg_multiply__multiply__first_operand___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Pkg_multiply__multiply__second_operand___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Pkg_multiply__multiply__result___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Pkg_multiply__multiply__L_1__T1b___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Pkg_multiply__multiply__L_2__T2b___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Pkg_multiply__multiply__L_3__T3b___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Pkg_multiply__multiply__L_4__T4b___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Pkg_multiply__multiply__subprogram_def
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use _gnatprove_standard.Main as Main
+  use _gnatprove_standard.Int_Division as Int_Division
+  use _gnatprove_standard.Boolean as Boolean
+  use Standard__integer as Standard__integer
+  use Standard__integer___axiom as Standard__integer___axiom
+  use Pkg_multiply__multiply__first_operand as Pkg_multiply__multiply__first_operand
+  use Pkg_multiply__multiply__second_operand as Pkg_multiply__multiply__second_operand
+  use Pkg_multiply__multiply__result as Pkg_multiply__multiply__result
+  use Pkg_multiply__multiply__L_1__i as Pkg_multiply__multiply__L_1__i
+  use Pkg_add__add___axiom as Pkg_add__add___axiom
+  use Pkg_multiply__multiply__L_2__i as Pkg_multiply__multiply__L_2__i
+  use Pkg_multiply__multiply__L_3__i as Pkg_multiply__multiply__L_3__i
+  use Pkg_multiply__multiply__L_4__i as Pkg_multiply__multiply__L_4__i
+  use Pkg_multiply__multiply__L_1 as Pkg_multiply__multiply__L_1
+  use Pkg_multiply__multiply__L_1__T1b as Pkg_multiply__multiply__L_1__T1b
+  use Pkg_multiply__multiply__L_2 as Pkg_multiply__multiply__L_2
+  use Pkg_multiply__multiply__L_2__T2b as Pkg_multiply__multiply__L_2__T2b
+  use Pkg_multiply__multiply__L_3 as Pkg_multiply__multiply__L_3
+  use Pkg_multiply__multiply__L_3__T3b as Pkg_multiply__multiply__L_3__T3b
+  use Pkg_multiply__multiply__L_4 as Pkg_multiply__multiply__L_4
+  use Pkg_multiply__multiply__L_4__T4b as Pkg_multiply__multiply__L_4__T4b
+  use Standard__integer___axiom as Standard__integer___axiom
+  use Standard__integer___axiom as Standard__integer___axiom
+  use Pkg_multiply__multiply__L_1__i___axiom as Pkg_multiply__multiply__L_1__i___axiom
+  use Pkg_multiply__multiply__L_2__i___axiom as Pkg_multiply__multiply__L_2__i___axiom
+  use Pkg_multiply__multiply__L_3__i___axiom as Pkg_multiply__multiply__L_3__i___axiom
+  use Pkg_multiply__multiply__L_4__i___axiom as Pkg_multiply__multiply__L_4__i___axiom
+  use Pkg_multiply__multiply__L_1___axiom as Pkg_multiply__multiply__L_1___axiom
+  use Pkg_multiply__multiply__L_2___axiom as Pkg_multiply__multiply__L_2___axiom
+  use Pkg_multiply__multiply__L_3___axiom as Pkg_multiply__multiply__L_3___axiom
+  use Pkg_multiply__multiply__L_4___axiom as Pkg_multiply__multiply__L_4___axiom
+  use Pkg_multiply__multiply__first_operand___axiom as Pkg_multiply__multiply__first_operand___axiom
+  use Pkg_multiply__multiply__second_operand___axiom as Pkg_multiply__multiply__second_operand___axiom
+  use Pkg_multiply__multiply__result___axiom as Pkg_multiply__multiply__result___axiom
+  use Pkg_add__add___axiom as Pkg_add__add___axiom
+  use Pkg_multiply__multiply__L_1__T1b___axiom as Pkg_multiply__multiply__L_1__T1b___axiom
+  use Pkg_multiply__multiply__L_2__T2b___axiom as Pkg_multiply__multiply__L_2__T2b___axiom
+  use Pkg_multiply__multiply__L_3__T3b___axiom as Pkg_multiply__multiply__L_3__T3b___axiom
+  use Pkg_multiply__multiply__L_4__T4b___axiom as Pkg_multiply__multiply__L_4__T4b___axiom
+  
+  let def (__void_param : unit)
+    requires { [#"pkg_multiply.ads" 5 0 0] true }
+    ensures { [#"pkg_multiply.ads" 5 0 0]
+              [#"pkg_multiply.ads" 21 0 0]
+              [@GP_Reason:VC_POSTCONDITION]
+              [@GP_Shape:pragargs__cmp]
+              [@comment:       Post => (Result = First_Operand * Second_Operand);                ^ pkg_multiply.ads:21:16:VC_POSTCONDITION]
+              [@model_vc_post]
+              [@GP_Sloc:pkg_multiply.ads:21:16]
+              [@GP_Id:21]
+              [@GP_Pretty_Ada:1306]
+              [@GP_Sloc:pkg_multiply.ads:21:16]
+              ((Pkg_multiply__multiply__result.result__.int__content)
+                 = (Pkg_multiply__multiply__first_operand.first_operand
+                      * Pkg_multiply__multiply__second_operand.second_operand)) }
+  = [@vc:divergent]
+    (([@GNAT-comment:Assume dynamic invariants of inputs of the subprogram pkg_multiply.ads:5]
+      ());
+     assume {
+       ((((Standard__integer___axiom.dynamic_invariant
+             Pkg_multiply__multiply__first_operand.first_operand)
+            True)
+           False)
+          True)
+         True };
+     assume {
+       ((((Standard__integer___axiom.dynamic_invariant
+             Pkg_multiply__multiply__second_operand.second_operand)
+            True)
+           False)
+          True)
+         True };
+     assume {
+       ((((Standard__integer___axiom.dynamic_invariant
+             (Pkg_multiply__multiply__result.result__.int__content))
+            False)
+           False)
+          True)
+         True };
+     ([@GNAT-comment:Assume moved pointers in outputs of the subprogram pkg_multiply.ads:5]
+      ());
+     ([@GNAT-comment:Check for RTE in the Pre of the subprogram pkg_multiply.ads:5]
+      ());
+     (begin
+        ensures { true }
+        let _ =
+          let _ =
+            if ((Boolean.andb
+                   (Pkg_multiply__multiply__first_operand.first_operand
+                      > (0 : int)))
+                  (Pkg_multiply__multiply__second_operand.second_operand
+                     > (0 : int))) then
+              (Pkg_multiply__multiply__first_operand.first_operand
+                 <= ([#"pkg_multiply.ads" 14 0 0]
+                     [@comment:                First_Operand <= Integer'Last / Second_Operand                                               ^ pkg_multiply.ads:14:47:VC_DIVISION_CHECK]
+                     [@GP_Id:15]
+                     [@vc:annotation]
+                     [@GP_Reason:VC_DIVISION_CHECK]
+                     [@GP_Shape:pragargs__if__cmp__div]
+                     [@GP_Sloc:pkg_multiply.ads:14:47]
+                     ((Int_Division.div_ (2147483647 : int))
+                        Pkg_multiply__multiply__second_operand.second_operand)))
+            else
+              (if ((Boolean.andb
+                      (Pkg_multiply__multiply__first_operand.first_operand
+                         > (0 : int)))
+                     (Pkg_multiply__multiply__second_operand.second_operand
+                        < (0 : int))) then
+                 (Pkg_multiply__multiply__second_operand.second_operand
+                    >= ([#"pkg_multiply.ads" 16 0 0]
+                        [@GP_Id:17]
+                        [@GP_Sloc:pkg_multiply.ads:16:53]
+                        [@vc:annotation]
+                        [@GP_Reason:VC_OVERFLOW_CHECK]
+                        [@comment:                    Second_Operand >= Integer'First / First_Operand                                                     ^ pkg_multiply.ads:16:53:VC_OVERFLOW_CHECK]
+                        [@GP_Shape:pragargs__if__if__cmp__div]
+                        (Standard__integer.range_check_
+                           ([#"pkg_multiply.ads" 16 0 0]
+                            [@GP_Id:16]
+                            [@GP_Sloc:pkg_multiply.ads:16:53]
+                            [@vc:annotation]
+                            [@GP_Reason:VC_DIVISION_CHECK]
+                            [@comment:                    Second_Operand >= Integer'First / First_Operand                                                     ^ pkg_multiply.ads:16:53:VC_DIVISION_CHECK]
+                            [@GP_Shape:pragargs__if__if__cmp__div]
+                            ((Int_Division.div_ ((- 2147483648) : int))
+                               Pkg_multiply__multiply__first_operand.first_operand)))))
+               else
+                 (if ((Boolean.andb
+                         (Pkg_multiply__multiply__first_operand.first_operand
+                            < (0 : int)))
+                        (Pkg_multiply__multiply__second_operand.second_operand
+                           > (0 : int))) then
+                    (Pkg_multiply__multiply__second_operand.second_operand
+                       <= ([#"pkg_multiply.ads" 18 0 0]
+                           [@GP_Shape:pragargs__if__if__if__cmp__div]
+                           [@GP_Id:19]
+                           [@GP_Sloc:pkg_multiply.ads:18:57]
+                           [@vc:annotation]
+                           [@GP_Reason:VC_OVERFLOW_CHECK]
+                           [@comment:                        Second_Operand <= Integer'First / First_Operand                                                         ^ pkg_multiply.ads:18:57:VC_OVERFLOW_CHECK]
+                           (Standard__integer.range_check_
+                              ([#"pkg_multiply.ads" 18 0 0]
+                               [@GP_Shape:pragargs__if__if__if__cmp__div]
+                               [@GP_Id:18]
+                               [@GP_Sloc:pkg_multiply.ads:18:57]
+                               [@vc:annotation]
+                               [@GP_Reason:VC_DIVISION_CHECK]
+                               [@comment:                        Second_Operand <= Integer'First / First_Operand                                                         ^ pkg_multiply.ads:18:57:VC_DIVISION_CHECK]
+                               ((Int_Division.div_ ((- 2147483648) : int))
+                                  Pkg_multiply__multiply__first_operand.first_operand)))))
+                  else
+                    (if ((Boolean.andb
+                            (Pkg_multiply__multiply__first_operand.first_operand
+                               < (0 : int)))
+                           (Pkg_multiply__multiply__second_operand.second_operand
+                              < (0 : int))) then
+                       (Pkg_multiply__multiply__first_operand.first_operand
+                          >= ([#"pkg_multiply.ads" 20 0 0]
+                              [@comment:                            First_Operand >= Integer'Last / Second_Operand),                                                           ^ pkg_multiply.ads:20:59:VC_DIVISION_CHECK]
+                              [@GP_Sloc:pkg_multiply.ads:20:59]
+                              [@GP_Shape:pragargs__if__if__if__if__cmp__div]
+                              [@vc:annotation]
+                              [@GP_Reason:VC_DIVISION_CHECK]
+                              [@GP_Id:20]
+                              ((Int_Division.div_ (2147483647 : int))
+                                 Pkg_multiply__multiply__second_operand.second_operand)))
+                     else (Boolean.of_int (1 : int))))) in
+          () in
+        ()
+      end);
+     ([@GNAT-comment:Assume Pre of the subprogram pkg_multiply.ads:5] ());
+     assume {
+       if ((Pkg_multiply__multiply__first_operand.first_operand > (0 : int)) /\
+             (Pkg_multiply__multiply__second_operand.second_operand
+                > (0 : int))) then
+         ([@GP_Pretty_Ada:1028]
+          (Pkg_multiply__multiply__first_operand.first_operand
+             <= ((Int_Division.div (2147483647 : int))
+                   Pkg_multiply__multiply__second_operand.second_operand)))
+       else
+         (if ((Pkg_multiply__multiply__first_operand.first_operand
+                 > (0 : int)) /\
+                (Pkg_multiply__multiply__second_operand.second_operand
+                   < (0 : int))) then
+            ([@GP_Pretty_Ada:1042]
+             (Pkg_multiply__multiply__second_operand.second_operand
+                >= ((Int_Division.div ((- 2147483648) : int))
+                      Pkg_multiply__multiply__first_operand.first_operand)))
+          else
+            (if ((Pkg_multiply__multiply__first_operand.first_operand
+                    < (0 : int)) /\
+                   (Pkg_multiply__multiply__second_operand.second_operand
+                      > (0 : int))) then
+               ([@GP_Pretty_Ada:1056]
+                (Pkg_multiply__multiply__second_operand.second_operand
+                   <= ((Int_Division.div ((- 2147483648) : int))
+                         Pkg_multiply__multiply__first_operand.first_operand)))
+             else
+               (if ((Pkg_multiply__multiply__first_operand.first_operand
+                       < (0 : int)) /\
+                      (Pkg_multiply__multiply__second_operand.second_operand
+                         < (0 : int))) then
+                  ([@GP_Pretty_Ada:1070]
+                   (Pkg_multiply__multiply__first_operand.first_operand
+                      >= ((Int_Division.div (2147483647 : int))
+                            Pkg_multiply__multiply__second_operand.second_operand)))
+                else ([@GP_Pretty_Ada:1324] true)))) };
+     (try
+        ([#"pkg_multiply.adb" 12 0 0] ());
+        ([#"pkg_multiply.adb" 17 0 0] ());
+        ([#"pkg_multiply.adb" 22 0 0] ());
+        ([#"pkg_multiply.adb" 27 0 0] ());
+        ([@GP_Sloc:pkg_multiply.adb:10:14]
+         [#"pkg_multiply.adb" 10 0 0]
+         [#"pkg_multiply.adb" 10 0 0]
+         (Pkg_multiply__multiply__result.result__.int__content <- (0 : int)));
+        ([@GP_Sloc:pkg_multiply.adb:11:7]
+         [#"pkg_multiply.adb" 11 0 0]
+         (if (([#"pkg_multiply.adb" 11 0 0]
+               [#"pkg_multiply.adb" 11 0 0]
+               (([@branch_id=841] Main.spark__branch).bool__content <-
+                  ((Boolean.andb
+                      (Pkg_multiply__multiply__first_operand.first_operand
+                         > (0 : int)))
+                     (Pkg_multiply__multiply__second_operand.second_operand
+                        > (0 : int)))));
+              (([@branch_id=841] Main.spark__branch).bool__content)) then
+            ([@GP_Sloc:pkg_multiply.adb:12:39]
+             [#"pkg_multiply.adb" 12 0 0]
+             (let temp___163 = 1 : int in
+              let temp___164 =
+                Pkg_multiply__multiply__second_operand.second_operand in
+              ([#"pkg_multiply.adb" 12 0 0]
+               (Pkg_multiply__multiply__L_1__i.i.int__content <- temp___163));
+              ([@GNAT-comment:Translation of an Ada loop from pkg_multiply.adb:12]
+               ());
+              (if ((Boolean.andb
+                      (temp___163
+                         <= (Pkg_multiply__multiply__L_1__i.i.int__content)))
+                     ((Pkg_multiply__multiply__L_1__i.i.int__content)
+                        <= temp___164)) then
+                 ([#"pkg_multiply.adb" 12 0 0]
+                  (try
+                     ([@GNAT-comment:While loop translating the Ada loop from pkg_multiply.adb:12]
+                      ());
+                     ([#"'@Loop 863@'pkg_multiply.adb" 14 0 0]
+                      [#"'@Loop 863@'pkg_multiply.adb" 14 0 0]
+                      ((([@GP_Sloc:pkg_multiply.adb:13:23]
+                         [#"pkg_multiply.adb" 13 0 0] ());
+                        ([@GP_Sloc:pkg_multiply.adb:13:20]
+                         [#"pkg_multiply.adb" 13 0 0]
+                         [#"pkg_multiply.adb" 13 0 0]
+                         (Pkg_multiply__multiply__result.result__.int__content <-
+                            ([#"pkg_multiply.adb" 13 0 0]
+                             [@GP_Reason:VC_PRECONDITION]
+                             [@GP_Sloc:pkg_multiply.adb:13:23]
+                             [@vc:annotation]
+                             [@GP_Shape:if__L_1_while__result_assign__call_add]
+                             [@comment:            Result := Add(Result, First_Operand);                       ^ pkg_multiply.adb:13:23:VC_PRECONDITION]
+                             [@GP_Id:0]
+                             ((Pkg_add__add___axiom.add
+                                 (Pkg_multiply__multiply__result.result__.int__content))
+                                Pkg_multiply__multiply__first_operand.first_operand))));
+                        ([@GNAT-comment:Check for absence of RTE in the loop invariant and variant]
+                         ());
+                        (let temp___inv_166 =
+                           ((Pkg_multiply__multiply__result.result__.int__content)
+                              = ([#"pkg_multiply.adb" 14 0 0]
+                                 [@vc:annotation]
+                                 [@GP_Reason:VC_OVERFLOW_CHECK]
+                                 [@comment:            pragma Loop_Invariant (Result = First_Operand * i);                                                           ^ pkg_multiply.adb:14:59:VC_OVERFLOW_CHECK]
+                                 [@GP_Shape:if__L_1_while__pragargs__cmp__mult]
+                                 [@GP_Id:1]
+                                 [@GP_Sloc:pkg_multiply.adb:14:59]
+                                 (Standard__integer.range_check_
+                                    (Pkg_multiply__multiply__first_operand.first_operand
+                                       * (Pkg_multiply__multiply__L_1__i.i.int__content))))) in
+                         ()));
+                       while True do
+                         invariant LoopInvariant {
+                           [#"pkg_multiply.adb" 14 0 0]
+                           [@GP_Reason:VC_LOOP_INVARIANT]
+                           [@vc:annotation]
+                           [@GP_Sloc:pkg_multiply.adb:14:36]
+                           [@comment:            pragma Loop_Invariant (Result = First_Operand * i);                                    ^ pkg_multiply.adb:14:36:VC_LOOP_INVARIANT]
+                           [@GP_Shape:if__L_1_while__pragargs__cmp]
+                           [@GP_Id:2]
+                           [@GP_Sloc:pkg_multiply.adb:14:36]
+                           [@GP_Pretty_Ada:868]
+                           ((Pkg_multiply__multiply__result.result__.int__content)
+                              = (Pkg_multiply__multiply__first_operand.first_operand
+                                   * (Pkg_multiply__multiply__L_1__i.i.int__content))) }
+                         ([@GNAT-comment:gnat_ast_to_ptree: code after the loop invariant]
+                          (([@GNAT-comment:Assume implicit invariants from the loop pkg_multiply.adb:12]
+                            ());
+                           assume {
+                             (Boolean.andb
+                                ((((true /\
+                                      (if ((True = True) \/
+                                             ((1 : int)
+                                                <= Pkg_multiply__multiply__second_operand.second_operand)) then
+                                         (((Pkg_multiply__multiply__L_1__T1b.dynamic_property
+                                              (1 : int))
+                                             Pkg_multiply__multiply__second_operand.second_operand)
+                                            (Pkg_multiply__multiply__L_1__i.i.int__content))
+                                       else true)) /\
+                                     (true /\ true)) /\
+                                    (((((Standard__integer___axiom.dynamic_invariant
+                                           (Pkg_multiply__multiply__result.result__.int__content))
+                                          False)
+                                         True)
+                                        True)
+                                       True)) /\
+                                   (true /\ true)))
+                               (((1 : int)
+                                   <= (Pkg_multiply__multiply__L_1__i.i.int__content)) /\
+                                  ((Pkg_multiply__multiply__L_1__i.i.int__content)
+                                     <= Pkg_multiply__multiply__second_operand.second_operand)) };
+                           ([@GNAT-comment:Continuation of loop after loop invariant and variant]
+                            ());
+                           ([@GNAT-comment:Check for the exit condition and loop statements appearing before the loop invariant of loop pkg_multiply.adb:12]
+                            ());
+                           (if ((Pkg_multiply__multiply__L_1__i.i.int__content)
+                                  = temp___164) then
+                              (raise Pkg_multiply__multiply__L_1.L_1)
+                            else ());
+                           ([#"pkg_multiply.adb" 12 0 0]
+                            [#"pkg_multiply.adb" 12 0 0]
+                            (Pkg_multiply__multiply__L_1__i.i.int__content <-
+                               ((Pkg_multiply__multiply__L_1__i.i.int__content)
+                                  + (1 : int))))));
+                         ([@GNAT-comment:gnat_ast_to_ptree: code before the loop invariant]
+                          (([@GP_Sloc:pkg_multiply.adb:13:23]
+                            [#"pkg_multiply.adb" 13 0 0] ());
+                           ([@GP_Sloc:pkg_multiply.adb:13:20]
+                            [#"pkg_multiply.adb" 13 0 0]
+                            [#"pkg_multiply.adb" 13 0 0]
+                            (Pkg_multiply__multiply__result.result__.int__content <-
+                               ([#"pkg_multiply.adb" 13 0 0]
+                                [@GP_Reason:VC_PRECONDITION]
+                                [@GP_Sloc:pkg_multiply.adb:13:23]
+                                [@vc:annotation]
+                                [@GP_Shape:if__L_1_while__result_assign__call_add]
+                                [@comment:            Result := Add(Result, First_Operand);                       ^ pkg_multiply.adb:13:23:VC_PRECONDITION]
+                                [@GP_Id:0]
+                                ((Pkg_add__add___axiom.add
+                                    (Pkg_multiply__multiply__result.result__.int__content))
+                                   Pkg_multiply__multiply__first_operand.first_operand))));
+                           ([@GNAT-comment:Check for absence of RTE in the loop invariant and variant]
+                            ());
+                           (let temp___inv_166 =
+                              ((Pkg_multiply__multiply__result.result__.int__content)
+                                 = ([#"pkg_multiply.adb" 14 0 0]
+                                    [@vc:annotation]
+                                    [@GP_Reason:VC_OVERFLOW_CHECK]
+                                    [@comment:            pragma Loop_Invariant (Result = First_Operand * i);                                                           ^ pkg_multiply.adb:14:59:VC_OVERFLOW_CHECK]
+                                    [@GP_Shape:if__L_1_while__pragargs__cmp__mult]
+                                    [@GP_Id:1]
+                                    [@GP_Sloc:pkg_multiply.adb:14:59]
+                                    (Standard__integer.range_check_
+                                       (Pkg_multiply__multiply__first_operand.first_operand
+                                          * (Pkg_multiply__multiply__L_1__i.i.int__content))))) in
+                            ())));
+                         ([@GNAT-comment:gnat_ast_to_ptree: code checking the variants]
+                          ())
+                       done))
+                   with Pkg_multiply__multiply__L_1.L_1 -> ()
+                   end))
+               else ())))
+          else
+            ([@GP_Sloc:pkg_multiply.adb:16:7]
+             (if (([#"pkg_multiply.adb" 16 0 0]
+                   [#"pkg_multiply.adb" 16 0 0]
+                   (([@branch_id=873] Main.spark__branch).bool__content <-
+                      ((Boolean.andb
+                          (Pkg_multiply__multiply__first_operand.first_operand
+                             > (0 : int)))
+                         (Pkg_multiply__multiply__second_operand.second_operand
+                            < (0 : int)))));
+                  (([@branch_id=873] Main.spark__branch).bool__content)) then
+                ([@GP_Sloc:pkg_multiply.adb:17:38]
+                 [#"pkg_multiply.adb" 17 0 0]
+                 (let temp___175 = 1 : int in
+                  let temp___176 =
+                    Pkg_multiply__multiply__first_operand.first_operand in
+                  ([#"pkg_multiply.adb" 17 0 0]
+                   (Pkg_multiply__multiply__L_2__i.i.int__content <-
+                      temp___175));
+                  ([@GNAT-comment:Translation of an Ada loop from pkg_multiply.adb:17]
+                   ());
+                  (if ((Boolean.andb
+                          (temp___175
+                             <= (Pkg_multiply__multiply__L_2__i.i.int__content)))
+                         ((Pkg_multiply__multiply__L_2__i.i.int__content)
+                            <= temp___176)) then
+                     ([#"pkg_multiply.adb" 17 0 0]
+                      (try
+                         ([@GNAT-comment:While loop translating the Ada loop from pkg_multiply.adb:17]
+                          ());
+                         ([#"'@Loop 894@'pkg_multiply.adb" 19 0 0]
+                          [#"'@Loop 894@'pkg_multiply.adb" 19 0 0]
+                          ((([@GP_Sloc:pkg_multiply.adb:18:23]
+                             [#"pkg_multiply.adb" 18 0 0] ());
+                            ([@GP_Sloc:pkg_multiply.adb:18:20]
+                             [#"pkg_multiply.adb" 18 0 0]
+                             [#"pkg_multiply.adb" 18 0 0]
+                             (Pkg_multiply__multiply__result.result__.int__content <-
+                                ([#"pkg_multiply.adb" 18 0 0]
+                                 [@GP_Id:11]
+                                 [@GP_Reason:VC_PRECONDITION]
+                                 [@GP_Sloc:pkg_multiply.adb:18:23]
+                                 [@vc:annotation]
+                                 [@comment:            Result := Add(Result, Second_Operand);                       ^ pkg_multiply.adb:18:23:VC_PRECONDITION]
+                                 [@GP_Shape:if__L_2_while__result_assign__call_add]
+                                 ((Pkg_add__add___axiom.add
+                                     (Pkg_multiply__multiply__result.result__.int__content))
+                                    Pkg_multiply__multiply__second_operand.second_operand))));
+                            ([@GNAT-comment:Check for absence of RTE in the loop invariant and variant]
+                             ());
+                            (let temp___inv_178 =
+                               ((Pkg_multiply__multiply__result.result__.int__content)
+                                  = ([#"pkg_multiply.adb" 19 0 0]
+                                     [@GP_Id:12]
+                                     [@vc:annotation]
+                                     [@GP_Reason:VC_OVERFLOW_CHECK]
+                                     [@GP_Sloc:pkg_multiply.adb:19:60]
+                                     [@comment:            pragma Loop_Invariant (Result = Second_Operand *i);                                                            ^ pkg_multiply.adb:19:60:VC_OVERFLOW_CHECK]
+                                     [@GP_Shape:if__L_2_while__pragargs__cmp__mult]
+                                     (Standard__integer.range_check_
+                                        (Pkg_multiply__multiply__second_operand.second_operand
+                                           * (Pkg_multiply__multiply__L_2__i.i.int__content))))) in
+                             ()));
+                           while True do
+                             invariant LoopInvariant {
+                               [#"pkg_multiply.adb" 19 0 0]
+                               [@GP_Id:13]
+                               [@GP_Reason:VC_LOOP_INVARIANT]
+                               [@vc:annotation]
+                               [@comment:            pragma Loop_Invariant (Result = Second_Operand *i);                                    ^ pkg_multiply.adb:19:36:VC_LOOP_INVARIANT]
+                               [@GP_Sloc:pkg_multiply.adb:19:36]
+                               [@GP_Shape:if__L_2_while__pragargs__cmp]
+                               [@GP_Sloc:pkg_multiply.adb:19:36]
+                               [@GP_Pretty_Ada:899]
+                               ((Pkg_multiply__multiply__result.result__.int__content)
+                                  = (Pkg_multiply__multiply__second_operand.second_operand
+                                       * (Pkg_multiply__multiply__L_2__i.i.int__content))) }
+                             ([@GNAT-comment:gnat_ast_to_ptree: code after the loop invariant]
+                              (([@GNAT-comment:Assume implicit invariants from the loop pkg_multiply.adb:17]
+                                ());
+                               assume {
+                                 (Boolean.andb
+                                    ((((true /\
+                                          (if ((True = True) \/
+                                                 ((1 : int)
+                                                    <= Pkg_multiply__multiply__first_operand.first_operand)) then
+                                             (((Pkg_multiply__multiply__L_2__T2b.dynamic_property
+                                                  (1 : int))
+                                                 Pkg_multiply__multiply__first_operand.first_operand)
+                                                (Pkg_multiply__multiply__L_2__i.i.int__content))
+                                           else true)) /\
+                                         (true /\ true)) /\
+                                        (((((Standard__integer___axiom.dynamic_invariant
+                                               (Pkg_multiply__multiply__result.result__.int__content))
+                                              False)
+                                             True)
+                                            True)
+                                           True)) /\
+                                       (true /\ true)))
+                                   (((1 : int)
+                                       <= (Pkg_multiply__multiply__L_2__i.i.int__content)) /\
+                                      ((Pkg_multiply__multiply__L_2__i.i.int__content)
+                                         <= Pkg_multiply__multiply__first_operand.first_operand)) };
+                               ([@GNAT-comment:Continuation of loop after loop invariant and variant]
+                                ());
+                               ([@GNAT-comment:Check for the exit condition and loop statements appearing before the loop invariant of loop pkg_multiply.adb:17]
+                                ());
+                               (if ((Pkg_multiply__multiply__L_2__i.i.int__content)
+                                      = temp___176) then
+                                  (raise Pkg_multiply__multiply__L_2.L_2)
+                                else ());
+                               ([#"pkg_multiply.adb" 17 0 0]
+                                [#"pkg_multiply.adb" 17 0 0]
+                                (Pkg_multiply__multiply__L_2__i.i.int__content <-
+                                   ((Pkg_multiply__multiply__L_2__i.i.int__content)
+                                      + (1 : int))))));
+                             ([@GNAT-comment:gnat_ast_to_ptree: code before the loop invariant]
+                              (([@GP_Sloc:pkg_multiply.adb:18:23]
+                                [#"pkg_multiply.adb" 18 0 0] ());
+                               ([@GP_Sloc:pkg_multiply.adb:18:20]
+                                [#"pkg_multiply.adb" 18 0 0]
+                                [#"pkg_multiply.adb" 18 0 0]
+                                (Pkg_multiply__multiply__result.result__.int__content <-
+                                   ([#"pkg_multiply.adb" 18 0 0]
+                                    [@GP_Id:11]
+                                    [@GP_Reason:VC_PRECONDITION]
+                                    [@GP_Sloc:pkg_multiply.adb:18:23]
+                                    [@vc:annotation]
+                                    [@comment:            Result := Add(Result, Second_Operand);                       ^ pkg_multiply.adb:18:23:VC_PRECONDITION]
+                                    [@GP_Shape:if__L_2_while__result_assign__call_add]
+                                    ((Pkg_add__add___axiom.add
+                                        (Pkg_multiply__multiply__result.result__.int__content))
+                                       Pkg_multiply__multiply__second_operand.second_operand))));
+                               ([@GNAT-comment:Check for absence of RTE in the loop invariant and variant]
+                                ());
+                               (let temp___inv_178 =
+                                  ((Pkg_multiply__multiply__result.result__.int__content)
+                                     = ([#"pkg_multiply.adb" 19 0 0]
+                                        [@GP_Id:12]
+                                        [@vc:annotation]
+                                        [@GP_Reason:VC_OVERFLOW_CHECK]
+                                        [@GP_Sloc:pkg_multiply.adb:19:60]
+                                        [@comment:            pragma Loop_Invariant (Result = Second_Operand *i);                                                            ^ pkg_multiply.adb:19:60:VC_OVERFLOW_CHECK]
+                                        [@GP_Shape:if__L_2_while__pragargs__cmp__mult]
+                                        (Standard__integer.range_check_
+                                           (Pkg_multiply__multiply__second_operand.second_operand
+                                              * (Pkg_multiply__multiply__L_2__i.i.int__content))))) in
+                                ())));
+                             ([@GNAT-comment:gnat_ast_to_ptree: code checking the variants]
+                              ())
+                           done))
+                       with Pkg_multiply__multiply__L_2.L_2 -> ()
+                       end))
+                   else ())))
+              else
+                ([@GP_Sloc:pkg_multiply.adb:21:7]
+                 (if (([#"pkg_multiply.adb" 21 0 0]
+                       [#"pkg_multiply.adb" 21 0 0]
+                       (([@branch_id=904] Main.spark__branch).bool__content <-
+                          ((Boolean.andb
+                              (Pkg_multiply__multiply__first_operand.first_operand
+                                 < (0 : int)))
+                             (Pkg_multiply__multiply__second_operand.second_operand
+                                > (0 : int)))));
+                      (([@branch_id=904] Main.spark__branch).bool__content)) then
+                    ([@GP_Sloc:pkg_multiply.adb:22:39]
+                     [#"pkg_multiply.adb" 22 0 0]
+                     (let temp___171 = 1 : int in
+                      let temp___172 =
+                        Pkg_multiply__multiply__second_operand.second_operand in
+                      ([#"pkg_multiply.adb" 22 0 0]
+                       (Pkg_multiply__multiply__L_3__i.i.int__content <-
+                          temp___171));
+                      ([@GNAT-comment:Translation of an Ada loop from pkg_multiply.adb:22]
+                       ());
+                      (if ((Boolean.andb
+                              (temp___171
+                                 <= (Pkg_multiply__multiply__L_3__i.i.int__content)))
+                             ((Pkg_multiply__multiply__L_3__i.i.int__content)
+                                <= temp___172)) then
+                         ([#"pkg_multiply.adb" 22 0 0]
+                          (try
+                             ([@GNAT-comment:While loop translating the Ada loop from pkg_multiply.adb:22]
+                              ());
+                             ([#"'@Loop 925@'pkg_multiply.adb" 24 0 0]
+                              [#"'@Loop 925@'pkg_multiply.adb" 24 0 0]
+                              ((([@GP_Sloc:pkg_multiply.adb:23:23]
+                                 [#"pkg_multiply.adb" 23 0 0] ());
+                                ([@GP_Sloc:pkg_multiply.adb:23:20]
+                                 [#"pkg_multiply.adb" 23 0 0]
+                                 [#"pkg_multiply.adb" 23 0 0]
+                                 (Pkg_multiply__multiply__result.result__.int__content <-
+                                    ([#"pkg_multiply.adb" 23 0 0]
+                                     [@comment:            Result := Add(Result, First_Operand);                       ^ pkg_multiply.adb:23:23:VC_PRECONDITION]
+                                     [@GP_Reason:VC_PRECONDITION]
+                                     [@GP_Sloc:pkg_multiply.adb:23:23]
+                                     [@vc:annotation]
+                                     [@GP_Shape:if__L_3_while__result_assign__call_add]
+                                     [@GP_Id:8]
+                                     ((Pkg_add__add___axiom.add
+                                         (Pkg_multiply__multiply__result.result__.int__content))
+                                        Pkg_multiply__multiply__first_operand.first_operand))));
+                                ([@GNAT-comment:Check for absence of RTE in the loop invariant and variant]
+                                 ());
+                                (let temp___inv_174 =
+                                   ((Pkg_multiply__multiply__result.result__.int__content)
+                                      = ([#"pkg_multiply.adb" 24 0 0]
+                                         [@GP_Shape:if__L_3_while__pragargs__cmp__mult]
+                                         [@vc:annotation]
+                                         [@GP_Reason:VC_OVERFLOW_CHECK]
+                                         [@comment:            pragma Loop_Invariant (Result = First_Operand * i);                                                           ^ pkg_multiply.adb:24:59:VC_OVERFLOW_CHECK]
+                                         [@GP_Sloc:pkg_multiply.adb:24:59]
+                                         [@GP_Id:9]
+                                         (Standard__integer.range_check_
+                                            (Pkg_multiply__multiply__first_operand.first_operand
+                                               * (Pkg_multiply__multiply__L_3__i.i.int__content))))) in
+                                 ()));
+                               while True do
+                                 invariant LoopInvariant {
+                                   [#"pkg_multiply.adb" 24 0 0]
+                                   [@GP_Id:10]
+                                   [@GP_Reason:VC_LOOP_INVARIANT]
+                                   [@vc:annotation]
+                                   [@GP_Sloc:pkg_multiply.adb:24:36]
+                                   [@comment:            pragma Loop_Invariant (Result = First_Operand * i);                                    ^ pkg_multiply.adb:24:36:VC_LOOP_INVARIANT]
+                                   [@GP_Shape:if__L_3_while__pragargs__cmp]
+                                   [@GP_Sloc:pkg_multiply.adb:24:36]
+                                   [@GP_Pretty_Ada:930]
+                                   ((Pkg_multiply__multiply__result.result__.int__content)
+                                      = (Pkg_multiply__multiply__first_operand.first_operand
+                                           * (Pkg_multiply__multiply__L_3__i.i.int__content))) }
+                                 ([@GNAT-comment:gnat_ast_to_ptree: code after the loop invariant]
+                                  (([@GNAT-comment:Assume implicit invariants from the loop pkg_multiply.adb:22]
+                                    ());
+                                   assume {
+                                     (Boolean.andb
+                                        ((((true /\
+                                              (if ((True = True) \/
+                                                     ((1 : int)
+                                                        <= Pkg_multiply__multiply__second_operand.second_operand)) then
+                                                 (((Pkg_multiply__multiply__L_3__T3b.dynamic_property
+                                                      (1 : int))
+                                                     Pkg_multiply__multiply__second_operand.second_operand)
+                                                    (Pkg_multiply__multiply__L_3__i.i.int__content))
+                                               else true)) /\
+                                             (true /\ true)) /\
+                                            (((((Standard__integer___axiom.dynamic_invariant
+                                                   (Pkg_multiply__multiply__result.result__.int__content))
+                                                  False)
+                                                 True)
+                                                True)
+                                               True)) /\
+                                           (true /\ true)))
+                                       (((1 : int)
+                                           <= (Pkg_multiply__multiply__L_3__i.i.int__content)) /\
+                                          ((Pkg_multiply__multiply__L_3__i.i.int__content)
+                                             <= Pkg_multiply__multiply__second_operand.second_operand)) };
+                                   ([@GNAT-comment:Continuation of loop after loop invariant and variant]
+                                    ());
+                                   ([@GNAT-comment:Check for the exit condition and loop statements appearing before the loop invariant of loop pkg_multiply.adb:22]
+                                    ());
+                                   (if ((Pkg_multiply__multiply__L_3__i.i.int__content)
+                                          = temp___172) then
+                                      (raise Pkg_multiply__multiply__L_3.L_3)
+                                    else ());
+                                   ([#"pkg_multiply.adb" 22 0 0]
+                                    [#"pkg_multiply.adb" 22 0 0]
+                                    (Pkg_multiply__multiply__L_3__i.i.int__content <-
+                                       ((Pkg_multiply__multiply__L_3__i.i.int__content)
+                                          + (1 : int))))));
+                                 ([@GNAT-comment:gnat_ast_to_ptree: code before the loop invariant]
+                                  (([@GP_Sloc:pkg_multiply.adb:23:23]
+                                    [#"pkg_multiply.adb" 23 0 0] ());
+                                   ([@GP_Sloc:pkg_multiply.adb:23:20]
+                                    [#"pkg_multiply.adb" 23 0 0]
+                                    [#"pkg_multiply.adb" 23 0 0]
+                                    (Pkg_multiply__multiply__result.result__.int__content <-
+                                       ([#"pkg_multiply.adb" 23 0 0]
+                                        [@comment:            Result := Add(Result, First_Operand);                       ^ pkg_multiply.adb:23:23:VC_PRECONDITION]
+                                        [@GP_Reason:VC_PRECONDITION]
+                                        [@GP_Sloc:pkg_multiply.adb:23:23]
+                                        [@vc:annotation]
+                                        [@GP_Shape:if__L_3_while__result_assign__call_add]
+                                        [@GP_Id:8]
+                                        ((Pkg_add__add___axiom.add
+                                            (Pkg_multiply__multiply__result.result__.int__content))
+                                           Pkg_multiply__multiply__first_operand.first_operand))));
+                                   ([@GNAT-comment:Check for absence of RTE in the loop invariant and variant]
+                                    ());
+                                   (let temp___inv_174 =
+                                      ((Pkg_multiply__multiply__result.result__.int__content)
+                                         = ([#"pkg_multiply.adb" 24 0 0]
+                                            [@GP_Shape:if__L_3_while__pragargs__cmp__mult]
+                                            [@vc:annotation]
+                                            [@GP_Reason:VC_OVERFLOW_CHECK]
+                                            [@comment:            pragma Loop_Invariant (Result = First_Operand * i);                                                           ^ pkg_multiply.adb:24:59:VC_OVERFLOW_CHECK]
+                                            [@GP_Sloc:pkg_multiply.adb:24:59]
+                                            [@GP_Id:9]
+                                            (Standard__integer.range_check_
+                                               (Pkg_multiply__multiply__first_operand.first_operand
+                                                  * (Pkg_multiply__multiply__L_3__i.i.int__content))))) in
+                                    ())));
+                                 ([@GNAT-comment:gnat_ast_to_ptree: code checking the variants]
+                                  ())
+                               done))
+                           with Pkg_multiply__multiply__L_3.L_3 -> ()
+                           end))
+                       else ())))
+                  else
+                    ([@GP_Sloc:pkg_multiply.adb:26:7]
+                     (if (([#"pkg_multiply.adb" 26 0 0]
+                           [#"pkg_multiply.adb" 26 0 0]
+                           (([@branch_id=935] Main.spark__branch).bool__content <-
+                              ((Boolean.andb
+                                  (Pkg_multiply__multiply__first_operand.first_operand
+                                     < (0 : int)))
+                                 (Pkg_multiply__multiply__second_operand.second_operand
+                                    < (0 : int)))));
+                          (([@branch_id=935] Main.spark__branch).bool__content)) then
+                        ([@GP_Sloc:pkg_multiply.adb:27:39]
+                         [#"pkg_multiply.adb" 27 0 0]
+                         (let temp___167 = 1 : int in
+                          let temp___168 =
+                            [#"pkg_multiply.adb" 27 0 0]
+                            [@comment:         for i in 1 .. -First_Operand loop                        ^ pkg_multiply.adb:27:24:VC_OVERFLOW_CHECK]
+                            [@vc:annotation]
+                            [@GP_Reason:VC_OVERFLOW_CHECK]
+                            [@GP_Shape:if__L_4_while__range__minus]
+                            [@GP_Sloc:pkg_multiply.adb:27:24]
+                            [@GP_Id:7]
+                            (Standard__integer.range_check_
+                               (( -_ )
+                                  Pkg_multiply__multiply__first_operand.first_operand)) in
+                          (Pkg_multiply__multiply__L_4__i.i.int__content <-
+                             temp___167);
+                          ([@GNAT-comment:Translation of an Ada loop from pkg_multiply.adb:27]
+                           ());
+                          (if ((Boolean.andb
+                                  (temp___167
+                                     <= (Pkg_multiply__multiply__L_4__i.i.int__content)))
+                                 ((Pkg_multiply__multiply__L_4__i.i.int__content)
+                                    <= temp___168)) then
+                             (try
+                                ([@GNAT-comment:While loop translating the Ada loop from pkg_multiply.adb:27]
+                                 ());
+                                ([#"'@Loop 958@'pkg_multiply.adb" 29 0 0]
+                                 [#"'@Loop 958@'pkg_multiply.adb" 29 0 0]
+                                 ((([@GP_Sloc:pkg_multiply.adb:28:23]
+                                    [#"pkg_multiply.adb" 28 0 0] ());
+                                   ([@GP_Sloc:pkg_multiply.adb:28:20]
+                                    [#"pkg_multiply.adb" 28 0 0]
+                                    [#"pkg_multiply.adb" 28 0 0]
+                                    (Pkg_multiply__multiply__result.result__.int__content <-
+                                       ([#"pkg_multiply.adb" 28 0 0]
+                                        [@GP_Reason:VC_PRECONDITION]
+                                        [@GP_Sloc:pkg_multiply.adb:28:23]
+                                        [@comment:            Result := Add(Result, -Second_Operand);                       ^ pkg_multiply.adb:28:23:VC_PRECONDITION]
+                                        [@vc:annotation]
+                                        [@GP_Id:4]
+                                        [@GP_Shape:if__L_4_while__result_assign__call_add]
+                                        ((Pkg_add__add___axiom.add
+                                            (Pkg_multiply__multiply__result.result__.int__content))
+                                           ([#"pkg_multiply.adb" 28 0 0]
+                                            [@GP_Sloc:pkg_multiply.adb:28:35]
+                                            [@comment:            Result := Add(Result, -Second_Operand);                                   ^ pkg_multiply.adb:28:35:VC_OVERFLOW_CHECK]
+                                            [@GP_Shape:if__L_4_while__result_assign__call_add__minus]
+                                            [@vc:annotation]
+                                            [@GP_Reason:VC_OVERFLOW_CHECK]
+                                            [@GP_Id:3]
+                                            (Standard__integer.range_check_
+                                               (( -_ )
+                                                  Pkg_multiply__multiply__second_operand.second_operand)))))));
+                                   ([@GNAT-comment:Check for absence of RTE in the loop invariant and variant]
+                                    ());
+                                   (let temp___inv_170 =
+                                      ((Pkg_multiply__multiply__result.result__.int__content)
+                                         = ([#"pkg_multiply.adb" 29 0 0]
+                                            [@GP_Shape:if__L_4_while__pragargs__cmp__mult]
+                                            [@vc:annotation]
+                                            [@GP_Reason:VC_OVERFLOW_CHECK]
+                                            [@GP_Sloc:pkg_multiply.adb:29:60]
+                                            [@comment:            pragma Loop_Invariant (Result = Second_Operand * (-i));                                                            ^ pkg_multiply.adb:29:60:VC_OVERFLOW_CHECK]
+                                            [@GP_Id:5]
+                                            (Standard__integer.range_check_
+                                               (Pkg_multiply__multiply__second_operand.second_operand
+                                                  * (( -_ )
+                                                       (Pkg_multiply__multiply__L_4__i.i.int__content)))))) in
+                                    ()));
+                                  while True do
+                                    invariant LoopInvariant {
+                                      [#"pkg_multiply.adb" 29 0 0]
+                                      [@comment:            pragma Loop_Invariant (Result = Second_Operand * (-i));                                    ^ pkg_multiply.adb:29:36:VC_LOOP_INVARIANT]
+                                      [@GP_Reason:VC_LOOP_INVARIANT]
+                                      [@GP_Shape:if__L_4_while__pragargs__cmp]
+                                      [@vc:annotation]
+                                      [@GP_Sloc:pkg_multiply.adb:29:36]
+                                      [@GP_Id:6]
+                                      [@GP_Sloc:pkg_multiply.adb:29:36]
+                                      [@GP_Pretty_Ada:963]
+                                      ((Pkg_multiply__multiply__result.result__.int__content)
+                                         = (Pkg_multiply__multiply__second_operand.second_operand
+                                              * (( -_ )
+                                                   (Pkg_multiply__multiply__L_4__i.i.int__content)))) }
+                                    ([@GNAT-comment:gnat_ast_to_ptree: code after the loop invariant]
+                                     (([@GNAT-comment:Assume implicit invariants from the loop pkg_multiply.adb:27]
+                                       ());
+                                      assume {
+                                        (Boolean.andb
+                                           ((((true /\
+                                                 (if ((True = True) \/
+                                                        ((1 : int)
+                                                           <= (( -_ )
+                                                                 Pkg_multiply__multiply__first_operand.first_operand))) then
+                                                    (((Pkg_multiply__multiply__L_4__T4b.dynamic_property
+                                                         (1 : int))
+                                                        (( -_ )
+                                                           Pkg_multiply__multiply__first_operand.first_operand))
+                                                       (Pkg_multiply__multiply__L_4__i.i.int__content))
+                                                  else true)) /\
+                                                (true /\ true)) /\
+                                               (((((Standard__integer___axiom.dynamic_invariant
+                                                      (Pkg_multiply__multiply__result.result__.int__content))
+                                                     False)
+                                                    True)
+                                                   True)
+                                                  True)) /\
+                                              (true /\ true)))
+                                          (((1 : int)
+                                              <= (Pkg_multiply__multiply__L_4__i.i.int__content)) /\
+                                             ((Pkg_multiply__multiply__L_4__i.i.int__content)
+                                                <= (( -_ )
+                                                      Pkg_multiply__multiply__first_operand.first_operand))) };
+                                      ([@GNAT-comment:Continuation of loop after loop invariant and variant]
+                                       ());
+                                      ([@GNAT-comment:Check for the exit condition and loop statements appearing before the loop invariant of loop pkg_multiply.adb:27]
+                                       ());
+                                      (if ((Pkg_multiply__multiply__L_4__i.i.int__content)
+                                             = temp___168) then
+                                         (raise Pkg_multiply__multiply__L_4.L_4)
+                                       else ());
+                                      ([#"pkg_multiply.adb" 27 0 0]
+                                       [#"pkg_multiply.adb" 27 0 0]
+                                       (Pkg_multiply__multiply__L_4__i.i.int__content <-
+                                          ((Pkg_multiply__multiply__L_4__i.i.int__content)
+                                             + (1 : int))))));
+                                    ([@GNAT-comment:gnat_ast_to_ptree: code before the loop invariant]
+                                     (([@GP_Sloc:pkg_multiply.adb:28:23]
+                                       [#"pkg_multiply.adb" 28 0 0] ());
+                                      ([@GP_Sloc:pkg_multiply.adb:28:20]
+                                       [#"pkg_multiply.adb" 28 0 0]
+                                       [#"pkg_multiply.adb" 28 0 0]
+                                       (Pkg_multiply__multiply__result.result__.int__content <-
+                                          ([#"pkg_multiply.adb" 28 0 0]
+                                           [@GP_Reason:VC_PRECONDITION]
+                                           [@GP_Sloc:pkg_multiply.adb:28:23]
+                                           [@comment:            Result := Add(Result, -Second_Operand);                       ^ pkg_multiply.adb:28:23:VC_PRECONDITION]
+                                           [@vc:annotation]
+                                           [@GP_Id:4]
+                                           [@GP_Shape:if__L_4_while__result_assign__call_add]
+                                           ((Pkg_add__add___axiom.add
+                                               (Pkg_multiply__multiply__result.result__.int__content))
+                                              ([#"pkg_multiply.adb" 28 0 0]
+                                               [@GP_Sloc:pkg_multiply.adb:28:35]
+                                               [@comment:            Result := Add(Result, -Second_Operand);                                   ^ pkg_multiply.adb:28:35:VC_OVERFLOW_CHECK]
+                                               [@GP_Shape:if__L_4_while__result_assign__call_add__minus]
+                                               [@vc:annotation]
+                                               [@GP_Reason:VC_OVERFLOW_CHECK]
+                                               [@GP_Id:3]
+                                               (Standard__integer.range_check_
+                                                  (( -_ )
+                                                     Pkg_multiply__multiply__second_operand.second_operand)))))));
+                                      ([@GNAT-comment:Check for absence of RTE in the loop invariant and variant]
+                                       ());
+                                      (let temp___inv_170 =
+                                         ((Pkg_multiply__multiply__result.result__.int__content)
+                                            = ([#"pkg_multiply.adb" 29 0 0]
+                                               [@GP_Shape:if__L_4_while__pragargs__cmp__mult]
+                                               [@vc:annotation]
+                                               [@GP_Reason:VC_OVERFLOW_CHECK]
+                                               [@GP_Sloc:pkg_multiply.adb:29:60]
+                                               [@comment:            pragma Loop_Invariant (Result = Second_Operand * (-i));                                                            ^ pkg_multiply.adb:29:60:VC_OVERFLOW_CHECK]
+                                               [@GP_Id:5]
+                                               (Standard__integer.range_check_
+                                                  (Pkg_multiply__multiply__second_operand.second_operand
+                                                     * (( -_ )
+                                                          (Pkg_multiply__multiply__L_4__i.i.int__content)))))) in
+                                       ())));
+                                    ([@GNAT-comment:gnat_ast_to_ptree: code checking the variants]
+                                     ())
+                                  done))
+                              with Pkg_multiply__multiply__L_4.L_4 -> ()
+                              end)
+                           else ())))
+                      else ()))))))));
+        (raise Return__exc)
+      with Return__exc -> ()
+      end);
+     (begin
+        ensures { true }
+        let _ =
+          let _ =
+            ((Pkg_multiply__multiply__result.result__.int__content)
+               = ([#"pkg_multiply.ads" 21 0 0]
+                  [@GP_Id:14]
+                  [@vc:annotation]
+                  [@GP_Reason:VC_OVERFLOW_CHECK]
+                  [@GP_Shape:pragargs__cmp__mult]
+                  [@comment:       Post => (Result = First_Operand * Second_Operand);                                        ^ pkg_multiply.ads:21:40:VC_OVERFLOW_CHECK]
+                  [@GP_Sloc:pkg_multiply.ads:21:40]
+                  (Standard__integer.range_check_
+                     (Pkg_multiply__multiply__first_operand.first_operand
+                        * Pkg_multiply__multiply__second_operand.second_operand)))) in
+          () in
+        ()
+      end))
+end

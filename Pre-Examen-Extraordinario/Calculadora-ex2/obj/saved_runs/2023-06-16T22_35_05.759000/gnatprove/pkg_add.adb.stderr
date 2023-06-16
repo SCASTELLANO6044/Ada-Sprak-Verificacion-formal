@@ -1,0 +1,1 @@
+pkg_add.ads:19:52: medium: overflow check might fail [reason for check: result of multiplication must fit in a 32-bits machine integer] [possible fix: use "and then" instead of "and" in precondition][#0]

@@ -1,0 +1,1 @@
+pkg_add.ads:17:34: medium: overflow check might fail (e.g. when First_Operand = -1 and Second_Operand = Integer'First)[#0]

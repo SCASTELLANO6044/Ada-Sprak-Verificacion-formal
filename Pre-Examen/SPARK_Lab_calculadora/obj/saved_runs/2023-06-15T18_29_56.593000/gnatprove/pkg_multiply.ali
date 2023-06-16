@@ -1,0 +1,59 @@
+V "GNAT Lib v2021"
+A -x
+A ada
+A -gnatA
+A -g
+A -fstack-check
+A -gnata
+A -gnato
+A -gnat12
+A -gnatwa
+A -gnateE
+A -gnatc
+P GP FX
+
+RN
+RV NO_DIRECT_BOOLEAN_OPERATORS
+RV NO_IMPLEMENTATION_ASPECT_SPECIFICATIONS
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+
+U pkg_multiply%b	pkg_multiply.adb	9e62fba0 OO PK
+W pkg_add%s		pkg_add.adb		pkg_add.ali
+
+U pkg_multiply%s	pkg_multiply.ads	4a699eca OO PK
+
+D pkg_add.ads		20230114171706 5176345e pkg_add%s
+D pkg_multiply.ads	20230615172526 4a699eca pkg_multiply%s
+D pkg_multiply.adb	20230615172940 857d5134 pkg_multiply%b
+D system.ads		20210520051134 2ffa5114 system%s
+G a Z
+X 1 pkg_add.ads
+1K9*Pkg_Add 16e12 3|1w6 1r19
+5V13*Add{integer} 3|13s23 18s23 23s23 28s23
+X 2 pkg_multiply.ads
+1K9*Pkg_Multiply 23l5 23e17 3|2b14 82l5 82t17
+5U14*Multiply 6>7 6>36 7<7 3|6b14 80l8 80t16
+6i7 First_Operand{integer} 12r31 13r18 14r17 15r25 16r55 17r29 18r59 19r33
+. 20r29 21r26 3|7b7 11r10 13r35 14r45 16r13 17r24 21r13 23r35 24r45 26r13
+. 28r37 29r44
+6i36 Second_Operand{integer} 12r46 13r40 14r49 15r47 16r21 17r51 18r25 19r55
+. 20r61 21r42 3|7b32 11r32 12r24 16r35 18r35 19r45 21r35 22r24 26r35 27r25
+7i7 Result{integer} 12r20 21r17 3|7b58 10m7 13m13 13r27 14r36 18m13 18r27
+. 19r36 23m13 23r27 24r36 28m13 28r28 29r35
+X 3 pkg_multiply.adb
+12i14 i{integer} 14r61
+17i14 i{integer} 19r61
+22i14 i{integer} 24r61
+27i14 i{integer} 29r60
+
+QQ SPARKVERSION SPARK Community 2021 (20210519)
+GG EK_DIRECT_CALLS pkg_multiply__multiply 1 pkg_add__add
+GG EK_GLOBALS pkg_multiply__multiply local FALSE E_PROCEDURE FALSE ORIGIN_FLOW 1 pkg_multiply proper_proof_in 0 proper_input 0 proper_output 0 refined_proof_in 0 refined_input 0 refined_output 0 calls_proof 0 calls 0 calls_conditional 0 FALSE FALSE FALSE TRUE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
+GG EK_DIRECT_CALLS pkg_multiply 0
+GG EK_GLOBALS pkg_multiply local FALSE E_PACKAGE TRUE ORIGIN_FLOW 0 proper_proof_in 0 proper_input 0 proper_output 0 refined_proof_in 0 refined_input 0 refined_output 0 initializes 0 refined_initializes 0 calls_proof 0 calls 0 calls_conditional 0 local_var 0 FALSE FALSE FALSE FALSE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
+GG EK_FLOW_SCOPE pkg_multiply TRUE FALSE FALSE FALSE FALSE __standard
+GG EK_FLOW_SCOPE pkg_add TRUE FALSE FALSE FALSE FALSE __standard
+GG EK_FLOW_SCOPE pkg_multiply__multiply FALSE FALSE FALSE FALSE TRUE pkg_multiply VISIBLE_PART
+GG EK_FLOW_SCOPE pkg_add__add FALSE FALSE FALSE FALSE TRUE pkg_add VISIBLE_PART
+GG EK_END_MARKER

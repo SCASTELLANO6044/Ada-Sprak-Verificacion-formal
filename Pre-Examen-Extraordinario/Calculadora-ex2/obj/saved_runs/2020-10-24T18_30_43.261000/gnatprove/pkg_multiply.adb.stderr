@@ -1,0 +1,4 @@
+pkg_multiply.adb:16:35: medium: loop invariant might fail in first iteration, cannot prove Result = First_Operand * Second_Operand - Result'loop_entry (e.g. when First_Operand = 2 and Result = 2 and Result'Loop_Entry = 2 and Second_Operand = 3)[#2]
+pkg_multiply.adb:16:35: medium: loop invariant might not be preserved by an arbitrary iteration, cannot prove Result = First_Operand * Second_Operand - Result'loop_entry (e.g. when First_Operand = -2 and Result = -8 and Result'Loop_Entry = -2 and Second_Operand = 4)[#3]
+pkg_multiply.adb:16:58: medium: overflow check might fail (e.g. when First_Operand = -2 and Second_Operand = 2)[#0]
+pkg_multiply.adb:16:75: medium: overflow check might fail (e.g. when First_Operand = 2 and Result'Loop_Entry = 2 and Second_Operand = -3)[#1]

@@ -1,0 +1,3 @@
+pkg_multiply.ads:21:17: expected type "Standard.Boolean"
+pkg_multiply.ads:21:17: found type "Standard.Integer"
+pkg_multiply.ads:22:25: missing ")"

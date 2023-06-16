@@ -1,0 +1,2 @@
+pkg_multiply.ads:21:08: warning: "Pos" is not a valid aspect identifier [enabled by default]
+pkg_multiply.ads:21:08: warning: possible misspelling of "Post" [enabled by default]

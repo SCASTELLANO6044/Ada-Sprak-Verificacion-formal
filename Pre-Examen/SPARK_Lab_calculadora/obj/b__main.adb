@@ -32,7 +32,8 @@ package body ada_main is
    E118 : Short_Integer; pragma Import (Ada, E118, "ada__finalization_E");
    E117 : Short_Integer; pragma Import (Ada, E117, "system__file_io_E");
    E107 : Short_Integer; pragma Import (Ada, E107, "ada__text_io_E");
-   E123 : Short_Integer; pragma Import (Ada, E123, "pkg_subtract_E");
+   E123 : Short_Integer; pragma Import (Ada, E123, "pkg_add_E");
+   E130 : Short_Integer; pragma Import (Ada, E130, "pkg_multiply_E");
 
    Sec_Default_Sized_Stacks : array (1 .. 1) of aliased System.Secondary_Stack.SS_Stack (System.Parameters.Runtime_Default_Sec_Stack_Size);
 
@@ -213,6 +214,7 @@ package body ada_main is
       Ada.Text_Io'Elab_Body;
       E107 := E107 + 1;
       E123 := E123 + 1;
+      E130 := E130 + 1;
    end adainit;
 
    procedure Ada_Main_Program;
@@ -250,8 +252,10 @@ package body ada_main is
    end;
 
 --  BEGIN Object file/option list
-   --   D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen\SPARK_Lab_calculadora\obj\pkg_subtract.o
-   --   D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen\SPARK_Lab_calculadora\obj\tests_subtract.o
+   --   D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen\SPARK_Lab_calculadora\obj\pkg_add.o
+   --   D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen\SPARK_Lab_calculadora\obj\pkg_multiply.o
+   --   D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen\SPARK_Lab_calculadora\obj\tests_add.o
+   --   D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen\SPARK_Lab_calculadora\obj\tests_multiply.o
    --   D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen\SPARK_Lab_calculadora\obj\main.o
    --   -LD:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen\SPARK_Lab_calculadora\obj\
    --   -LD:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen\SPARK_Lab_calculadora\obj\

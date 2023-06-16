@@ -1,0 +1,8 @@
+pkg_add.adb:3:13: error: not fully conformant with declaration at pkg_add.ads:3
+pkg_add.adb:3:13: error: name "A" does not match
+pkg_add.adb:7:07: error: "B" conflicts with declaration at line 5
+pkg_add.ads:7:07: error: "B" conflicts with declaration at line 5
+pkg_add.ads:11:08: error: parameter "FA" is missing from input dependence list
+pkg_add.ads:11:08: error: add "null => FA" dependency to ignore this input
+pkg_add.ads:12:20: error: "A" is undefined (more references follow)
+pkg_add.ads:16:22: error: "D" is undefined (more references follow)

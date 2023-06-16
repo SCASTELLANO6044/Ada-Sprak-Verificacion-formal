@@ -1,0 +1,14 @@
+20201021083746
+-c
+-x
+ada
+-gnatA
+-g
+-fstack-check
+-gnata
+-gnato
+-gnat12
+-gnatwa
+-gnateE
+-gnatc
+-gnates=D:\ESTUDIOS\UNI3\ASIGNATURAS\PROGRAMACION3\PRACTICA\SPARK_Lab\obj\gnatprove\e3f168cb.tmp
