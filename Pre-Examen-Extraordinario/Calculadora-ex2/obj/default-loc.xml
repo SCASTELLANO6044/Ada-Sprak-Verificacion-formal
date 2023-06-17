@@ -1,106 +1,229 @@
 <?xml version="1.0"?>
 <Locations >
   <Project>
-    <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_file>
-    <file_marker column=" 4" line=" 9" >
-      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
-      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\main.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 14" line=" 9" >
-      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
-      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_add.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 8" line=" 10" >
-      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
-      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_add.ads</vfs_file>
-    </file_marker>
-    <file_marker column=" 36" line=" 10" >
-      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
-      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_subtract.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 6" line=" 8" >
-      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
-      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\main.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 12" >
-      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
-      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\main.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 8" line=" 10" >
-      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
-      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_add.ads</vfs_file>
+    <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\default.gpr</vfs_file>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\src\pkg_add.adb</vfs_file>
     </file_marker>
     <file_marker column=" 1" line=" 1" >
-      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
-      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_multiply.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 1" line=" 1" >
-      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
-      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_multiply.ads</vfs_file>
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\src\pkg_add.ads</vfs_file>
     </file_marker>
     <file_marker column=" 8" line=" 10" >
-      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
-      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_add.ads</vfs_file>
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\src\pkg_add.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 8" line=" 10" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\src\pkg_add.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 8" line=" 10" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\src\pkg_add.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 8" line=" 10" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\src\pkg_add.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 8" line=" 10" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\src\pkg_add.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 8" line=" 10" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\src\pkg_add.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 8" line=" 10" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\src\pkg_add.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 8" line=" 10" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\src\pkg_add.ads</vfs_file>
     </file_marker>
     <file_marker column=" 1" line=" 1" >
-      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
-      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_subtract.ads</vfs_file>
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\src\pkg_add.ads</vfs_file>
     </file_marker>
-    <file_marker column=" 37" line=" 16" >
-      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
-      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_add.ads</vfs_file>
+    <file_marker column=" 8" line=" 10" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\src\pkg_add.ads</vfs_file>
     </file_marker>
-    <file_marker column=" 13" line=" 3" >
-      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
-      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_add.adb</vfs_file>
+    <file_marker column=" 8" line=" 10" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\src\pkg_add.ads</vfs_file>
     </file_marker>
-    <file_marker column=" 1" line=" 3" >
-      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
-      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_add.ads</vfs_file>
+    <file_marker column=" 8" line=" 10" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\src\pkg_add.ads</vfs_file>
     </file_marker>
-    <file_marker column=" 13" line=" 3" >
-      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
-      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_add.adb</vfs_file>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file />
     </file_marker>
-    <file_marker column=" 1" line=" 3" >
-      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
-      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_add.ads</vfs_file>
-    </file_marker>
-    <file_marker column=" 7" line=" 4" >
-      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
-      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_add.ads</vfs_file>
-    </file_marker>
-    <file_marker column=" 7" line=" 7" >
-      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
-      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_add.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 8" line=" 7" >
-      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
-      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_add.ads</vfs_file>
-    </file_marker>
-    <file_marker column=" 17" line=" 9" >
-      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
-      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_add.adb</vfs_file>
-    </file_marker>
-    <file_marker column=" 8" line=" 9" >
-      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
-      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_add.ads</vfs_file>
+    <file_marker column=" 8" line=" 10" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\src\pkg_add.ads</vfs_file>
     </file_marker>
     <file_marker column=" 22" line=" 9" >
-      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
-      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_add.adb</vfs_file>
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\src\pkg_add.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 31" line=" 24" >
-      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
-      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_add.ads</vfs_file>
+    <file_marker column=" 8" line=" 10" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\src\pkg_add.ads</vfs_file>
     </file_marker>
-    <file_marker column=" 1" line=" 1" >
-      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
-      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_divide.ads</vfs_file>
+    <file_marker column=" 22" line=" 9" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\src\pkg_add.adb</vfs_file>
     </file_marker>
-    <file_marker current="true" column=" 30" line=" 24" >
-      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
-      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_add.ads</vfs_file>
+    <file_marker column=" 8" line=" 10" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\src\pkg_add.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 22" line=" 9" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\src\pkg_add.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 8" line=" 10" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\src\pkg_add.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 8" line=" 10" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\src\pkg_add.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 17" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\src\pkg_add.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 33" line=" 25" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\src\pkg_add.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 26" line=" 19" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\src\pkg_add.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 45" line=" 25" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\src\pkg_add.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 56" line=" 19" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\src\pkg_add.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 51" line=" 25" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\src\pkg_add.ads</vfs_file>
+    </file_marker>
+    <file_marker current="true" column=" 26" line=" 19" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex2\src\pkg_add.ads</vfs_file>
+    </file_marker>
+  </Project>
+  <Project >
+    <vfs_file >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_file>
+    <file_marker column=" 4" line=" 9">
+      <vfs_project >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
+      <vfs_file >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\main.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 14" line=" 9">
+      <vfs_project >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
+      <vfs_file >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_add.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 8" line=" 10">
+      <vfs_project >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
+      <vfs_file >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_add.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 36" line=" 10">
+      <vfs_project >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
+      <vfs_file >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_subtract.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 6" line=" 8">
+      <vfs_project >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
+      <vfs_file >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\main.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 12">
+      <vfs_project >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
+      <vfs_file >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\main.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 8" line=" 10">
+      <vfs_project >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
+      <vfs_file >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_add.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
+      <vfs_file >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_multiply.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
+      <vfs_file >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_multiply.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 8" line=" 10">
+      <vfs_project >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
+      <vfs_file >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_add.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
+      <vfs_file >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_subtract.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 37" line=" 16">
+      <vfs_project >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
+      <vfs_file >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_add.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 13" line=" 3">
+      <vfs_project >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
+      <vfs_file >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_add.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 3">
+      <vfs_project >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
+      <vfs_file >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_add.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 13" line=" 3">
+      <vfs_project >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
+      <vfs_file >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_add.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 3">
+      <vfs_project >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
+      <vfs_file >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_add.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 7" line=" 4">
+      <vfs_project >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
+      <vfs_file >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_add.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 7" line=" 7">
+      <vfs_project >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
+      <vfs_file >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_add.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 8" line=" 7">
+      <vfs_project >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
+      <vfs_file >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_add.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 17" line=" 9">
+      <vfs_project >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
+      <vfs_file >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_add.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 8" line=" 9">
+      <vfs_project >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
+      <vfs_file >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_add.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 22" line=" 9">
+      <vfs_project >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
+      <vfs_file >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_add.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 31" line=" 24">
+      <vfs_project >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
+      <vfs_file >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_add.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1">
+      <vfs_project >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
+      <vfs_file >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_divide.ads</vfs_file>
+    </file_marker>
+    <file_marker current="true" column=" 30" line=" 24">
+      <vfs_project >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\default.gpr</vfs_project>
+      <vfs_file >D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora\src\pkg_add.ads</vfs_file>
     </file_marker>
   </Project>
   <Project >
