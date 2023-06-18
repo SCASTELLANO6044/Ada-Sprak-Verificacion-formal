@@ -1,14 +1,9 @@
 <?xml version="1.0"?>
 <Locations >
-  <Project>
-    <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex1\default.gpr</vfs_file>
-    <file_marker column=" 1" line=" 1" >
+  <Project >
+    <file_marker current="true" column=" 34" line=" 7" >
       <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex1\default.gpr</vfs_project>
       <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex1\src\pkg_add.ads</vfs_file>
-    </file_marker>
-    <file_marker current="true" column=" 1" line=" 1" >
-      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex1\default.gpr</vfs_project>
-      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\Calculadora-ex1\src\pkg_add.adb</vfs_file>
     </file_marker>
   </Project>
   <Project >

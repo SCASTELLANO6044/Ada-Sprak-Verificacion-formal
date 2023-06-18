@@ -1,0 +1,1 @@
+example.adb:8:57: medium: loop invariant might fail in first iteration, cannot prove V(j) = Value[#0]

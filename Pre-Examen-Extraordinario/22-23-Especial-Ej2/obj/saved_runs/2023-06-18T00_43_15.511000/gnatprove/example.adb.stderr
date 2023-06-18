@@ -1,0 +1,3 @@
+example.adb:7:30: medium: array index check might fail [reason for check: value must be a valid index into the array][#0]
+example.adb:25:48: medium: overflow check might fail [reason for check: result of addition must fit in a 32-bits machine integer][#1]
+example.ads:16:31: medium: overflow check might fail [reason for check: result of addition must fit in a 32-bits machine integer][#2]

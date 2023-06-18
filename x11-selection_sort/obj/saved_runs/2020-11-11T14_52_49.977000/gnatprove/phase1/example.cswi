@@ -1,0 +1,14 @@
+20201111145242
+-c
+-x
+ada
+-gnatA
+-g
+-fstack-check
+-gnata
+-gnato
+-gnat12
+-gnatwa
+-gnateE
+-gnatc
+-gnates=C:\Users\raulm\OneDrive\Escritorio\x11-selection_sort\obj\gnatprove\85a74aac.tmp

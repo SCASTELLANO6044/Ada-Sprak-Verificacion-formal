@@ -1,0 +1,3 @@
+example.adb:7:57: medium: "V" might not be initialized[#2]
+example.ads:6:29: medium: "V" might not be initialized in "Init_For_Loop"[#0]
+example.ads:9:39: medium: "V" might not be initialized[#1]

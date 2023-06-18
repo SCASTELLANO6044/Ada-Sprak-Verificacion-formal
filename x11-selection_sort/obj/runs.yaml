@@ -1,0 +1,28 @@
+'2020-11-11T14:52:43.127000':
+  category: GNATprove
+  files:
+  - C:\Users\raulm\OneDrive\Escritorio\x11-selection_sort\obj\gnatprove
+  label: Examine Single File
+  output: 'Phase 1 of 2: generation of Global contracts ...
+
+    Phase 2 of 2: analysis of data and information flow ...
+
+    Summary logged in C:\Users\raulm\OneDrive\Escritorio\x11-selection_sort\obj\gnatprove\gnatprove.out
+
+    '
+  output_parser: GNATprove_Parser
+  timestamp: '2020-11-11T14:52:43.127000'
+'2020-11-11T14:52:49.977000':
+  category: GNATprove
+  files:
+  - C:\Users\raulm\OneDrive\Escritorio\x11-selection_sort\obj\gnatprove
+  label: Basic Prove File
+  output: 'Phase 1 of 2: generation of Global contracts ...
+
+    Phase 2 of 2: flow analysis and proof ...
+
+    Summary logged in C:\Users\raulm\OneDrive\Escritorio\x11-selection_sort\obj\gnatprove\gnatprove.out
+
+    '
+  output_parser: GNATprove_Parser
+  timestamp: '2020-11-11T14:52:49.977000'

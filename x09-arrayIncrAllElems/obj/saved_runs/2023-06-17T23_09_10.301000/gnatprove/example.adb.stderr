@@ -1,0 +1,2 @@
+example.adb:7:40: warning: unused variable "j" [-gnatw.t]
+example.adb:8:40: warning: unused variable "k" [-gnatw.t]

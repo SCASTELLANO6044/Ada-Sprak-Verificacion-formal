@@ -1,0 +1,24 @@
+{
+  "spark": [
+    {
+      "name": "Tests_Add",
+      "sloc": [
+        {
+          "file": "tests_add.adb",
+          "line": 7
+        }
+      ],
+      "spark": "no"
+    }
+  ],
+  "flow": [
+  ],
+  "assumptions": [
+  ],
+  "timings": {
+    "globals/properties (advanced)": 1.33009003475308E-02,
+    "flow analysis": 1.61100004334003E-04,
+    "marking": 4.13489993661642E-03,
+    "globals (basic)": 8.95129982382059E-03
+  }
+}

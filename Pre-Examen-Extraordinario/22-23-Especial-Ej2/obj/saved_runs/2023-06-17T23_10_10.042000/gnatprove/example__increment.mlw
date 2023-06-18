@@ -1,0 +1,1044 @@
+module Standard__integer
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  
+  type integer = <range -2147483648 2147483647>
+  
+  val function first : int
+    ensures { result = ((- 2147483648) : int) }
+  
+  val function last : int
+    ensures { result = (2147483647 : int) }
+  
+  predicate in_range (x: int) = ((first <= x) /\ (x <= last))
+  
+  val in_range (x: int) : bool
+    ensures { result <-> (in_range (x : int)) }
+  
+  clone export ada__model.Static_Discrete with
+    axiom .,
+    type t = integer,
+    function first = first,
+    function last = last,
+    predicate in_range = in_range
+  
+  type integer__ref = { mutable integer__content : integer }
+  
+  function integer__ref_integer__content__projection (a: integer__ref) : integer =
+    a.integer__content
+  
+  meta "model_projection" function integer__ref_integer__content__projection
+  
+  meta "inline:no" function integer__ref_integer__content__projection
+  
+  val integer__havoc (x: integer__ref) : unit
+    writes { x }
+end
+
+module Standard__natural
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  
+  type natural = <range 0 2147483647>
+  
+  val function first : int
+    ensures { result = (0 : int) }
+  
+  val function last : int
+    ensures { result = (2147483647 : int) }
+  
+  predicate in_range (x: int) = ((first <= x) /\ (x <= last))
+  
+  val in_range (x: int) : bool
+    ensures { result <-> (in_range (x : int)) }
+  
+  clone export ada__model.Static_Discrete with
+    axiom .,
+    type t = natural,
+    function first = first,
+    function last = last,
+    predicate in_range = in_range
+  
+  type natural__ref = { mutable natural__content : natural }
+  
+  function natural__ref_natural__content__projection (a: natural__ref) : natural =
+    a.natural__content
+  
+  meta "model_projection" function natural__ref_natural__content__projection
+  
+  meta "inline:no" function natural__ref_natural__content__projection
+  
+  val natural__havoc (x: natural__ref) : unit
+    writes { x }
+end
+
+module Standard__natural__rep
+  use Standard__natural as Standard__natural
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  function to_rep (x: Standard__natural.natural) : int =
+    Standard__natural.natural'int x
+  
+  clone export ada__model.Rep_Proj_Int with
+    axiom .,
+    type t = Standard__natural.natural,
+    predicate in_range = Standard__natural.in_range,
+    function to_rep = to_rep
+  
+  meta "model_projection" function to_rep
+  
+  meta "inline:no" function to_rep
+end
+
+module Array__Int__Standard__natural
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Standard__natural as Standard__natural
+  use Standard__natural__rep as Standard__natural__rep
+  
+  function index_I1_one : int = 1 : int
+  
+  type component_type = Standard__natural.natural
+  
+  clone export _gnatprove_standard.Array__1 with
+    axiom .,
+    type I1.t = int,
+    predicate I1.le = Int.( <= ),
+    predicate I1.lt = Int.( < ),
+    predicate I1.gt = Int.( > ),
+    function I1.add = Int.( + ),
+    function I1.sub = Int.( - ),
+    function I1.one = index_I1_one,
+    type component_type = component_type
+  
+  function bool_eq (a: map) (a__first: int) (a__last: int) (b: map) (b__first: int) (b__last: int) : bool =
+    ((if (a__first <= a__last) then
+        ((b__first <= b__last) /\
+           ((a__last - a__first) = (b__last - b__first)))
+      else (b__first > b__last)) /\
+       (forall temp___idx_161 : int.
+          if ((a__first <= temp___idx_161) /\ (temp___idx_161 <= a__last)) then
+            ((Standard__natural__rep.to_rep ((get a) temp___idx_161))
+               = (Standard__natural__rep.to_rep
+                    ((get b) ((b__first - a__first) + temp___idx_161))))
+          else true))
+  
+  val bool_eq (a: map) (a__first: int) (a__last: int) (b: map) (b__first: int) (b__last: int) : 
+    bool
+    ensures { result
+      =
+      ((((((bool_eq (a : map)) (a__first : int)) (a__last : int)) (b : map))
+          (b__first : int))
+         (b__last : int)) }
+  
+  axiom bool_eq_rev:
+    forall a : map, b : map.
+      forall a__first : int, a__last : int, b__first : int, b__last : int.
+        ((((((((bool_eq b) b__first) b__last) a) a__first) a__last) = True) ->
+           ((if (a__first <= a__last) then
+               ((b__first <= b__last) /\
+                  ((a__last - a__first) = (b__last - b__first)))
+             else (b__first > b__last)) /\
+              (forall temp___idx_161 : int.
+                 if ((a__first <= temp___idx_161) /\
+                       (temp___idx_161 <= a__last)) then
+                   ((Standard__natural__rep.to_rep ((get a) temp___idx_161))
+                      = (Standard__natural__rep.to_rep
+                           ((get b) ((b__first - a__first) + temp___idx_161))))
+                 else true)))
+end
+
+module Example__increment__table
+  use _gnatprove_standard.Main
+  use int.Int
+  use Array__Int__Standard__natural as Array__Int__Standard__natural
+  
+  val table : Array__Int__Standard__natural.map__ref
+end
+
+module Example__increment__L_1__i
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  val i : int__ref
+end
+
+module Example__Tt_tableD1
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  
+  type tt_tableD1 = <range 1 1000>
+  
+  val function first : int
+    ensures { result = (1 : int) }
+  
+  val function last : int
+    ensures { result = (1000 : int) }
+  
+  predicate in_range (x: int) = ((first <= x) /\ (x <= last))
+  
+  val in_range (x: int) : bool
+    ensures { result <-> (in_range (x : int)) }
+  
+  clone export ada__model.Static_Discrete with
+    axiom .,
+    type t = tt_tableD1,
+    function first = first,
+    function last = last,
+    predicate in_range = in_range
+  
+  type tt_tableD1__ref = { mutable tt_tableD1__content : tt_tableD1 }
+  
+  function tt_tableD1__ref_tt_tableD1__content__projection (a: tt_tableD1__ref) : tt_tableD1 =
+    a.tt_tableD1__content
+  
+  meta "model_projection" function tt_tableD1__ref_tt_tableD1__content__projection
+  
+  meta "inline:no" function tt_tableD1__ref_tt_tableD1__content__projection
+  
+  val tt_tableD1__havoc (x: tt_tableD1__ref) : unit
+    writes { x }
+end
+
+module Example__t_table___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+  use Array__Int__Standard__natural as Array__Int__Standard__natural
+  use Array__Int__Standard__natural as Array__Int__Standard__natural
+  
+  predicate dynamic_invariant (temp___expr_166: Array__Int__Standard__natural.map) (temp___is_init_162: bool) (temp___skip_constant_163: bool) (temp___do_toplevel_164: bool) (temp___do_typ_inv_165: bool) =
+    true
+  
+  val dynamic_invariant (temp___expr_166: Array__Int__Standard__natural.map) (temp___is_init_162: bool) (temp___skip_constant_163: bool) (temp___do_toplevel_164: bool) (temp___do_typ_inv_165: bool) : 
+    bool
+    ensures { result
+                <->
+                (((((dynamic_invariant
+                       (temp___expr_166 : Array__Int__Standard__natural.map))
+                      (temp___is_init_162 : bool))
+                     (temp___skip_constant_163 : bool))
+                    (temp___do_toplevel_164 : bool))
+                   (temp___do_typ_inv_165 : bool)) }
+  
+  predicate default_initial_assumption (temp___expr_168: Array__Int__Standard__natural.map) (temp___skip_top_level_169: bool) =
+    true
+  
+  val default_initial_assumption (temp___expr_168: Array__Int__Standard__natural.map) (temp___skip_top_level_169: bool) : 
+    bool
+    ensures { result
+                <->
+                ((default_initial_assumption
+                    (temp___expr_168 : Array__Int__Standard__natural.map))
+                   (temp___skip_top_level_169 : bool)) }
+end
+
+module Example__increment__L_1
+  use _gnatprove_standard.Main
+  use int.Int
+  
+  exception L_1
+end
+
+module Example__increment__L_1__T1b
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  
+  type t1b = <range 1 1000>
+  
+  val function first : int
+    ensures { result = (1 : int) }
+  
+  val function last : int
+    ensures { result = (1000 : int) }
+  
+  predicate in_range (x: int) = ((first <= x) /\ (x <= last))
+  
+  val in_range (x: int) : bool
+    ensures { result <-> (in_range (x : int)) }
+  
+  clone export ada__model.Static_Discrete with
+    axiom .,
+    type t = t1b,
+    function first = first,
+    function last = last,
+    predicate in_range = in_range
+  
+  type t1b__ref = { mutable t1b__content : t1b }
+  
+  function t1b__ref_t1b__content__projection (a: t1b__ref) : t1b =
+    a.t1b__content
+  
+  meta "model_projection" function t1b__ref_t1b__content__projection
+  
+  meta "inline:no" function t1b__ref_t1b__content__projection
+  
+  val t1b__havoc (x: t1b__ref) : unit
+    writes { x }
+end
+
+module Standard__natural___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Standard__natural as Standard__natural
+  
+  predicate dynamic_invariant (temp___expr_46: int) (temp___is_init_42: bool) (temp___skip_constant_43: bool) (temp___do_toplevel_44: bool) (temp___do_typ_inv_45: bool) =
+    if ((temp___is_init_42 = True) \/
+          (Standard__natural.first <= Standard__natural.last)) then
+      (((Standard__natural.dynamic_property Standard__natural.first)
+          Standard__natural.last)
+         temp___expr_46)
+    else true
+  
+  val dynamic_invariant (temp___expr_46: int) (temp___is_init_42: bool) (temp___skip_constant_43: bool) (temp___do_toplevel_44: bool) (temp___do_typ_inv_45: bool) : 
+    bool
+    ensures { result
+                <->
+                (((((dynamic_invariant (temp___expr_46 : int))
+                      (temp___is_init_42 : bool))
+                     (temp___skip_constant_43 : bool))
+                    (temp___do_toplevel_44 : bool))
+                   (temp___do_typ_inv_45 : bool)) }
+  
+  predicate default_initial_assumption (temp___expr_47: int) (temp___skip_top_level_48: bool) =
+    true
+  
+  val default_initial_assumption (temp___expr_47: int) (temp___skip_top_level_48: bool) : 
+    bool
+    ensures { result
+                <->
+                ((default_initial_assumption (temp___expr_47 : int))
+                   (temp___skip_top_level_48 : bool)) }
+end
+
+module Standard__integer___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use Standard__integer as Standard__integer
+  
+  predicate dynamic_invariant (temp___expr_18: int) (temp___is_init_14: bool) (temp___skip_constant_15: bool) (temp___do_toplevel_16: bool) (temp___do_typ_inv_17: bool) =
+    if ((temp___is_init_14 = True) \/
+          (Standard__integer.first <= Standard__integer.last)) then
+      (((Standard__integer.dynamic_property Standard__integer.first)
+          Standard__integer.last)
+         temp___expr_18)
+    else true
+  
+  val dynamic_invariant (temp___expr_18: int) (temp___is_init_14: bool) (temp___skip_constant_15: bool) (temp___do_toplevel_16: bool) (temp___do_typ_inv_17: bool) : 
+    bool
+    ensures { result
+                <->
+                (((((dynamic_invariant (temp___expr_18 : int))
+                      (temp___is_init_14 : bool))
+                     (temp___skip_constant_15 : bool))
+                    (temp___do_toplevel_16 : bool))
+                   (temp___do_typ_inv_17 : bool)) }
+  
+  predicate default_initial_assumption (temp___expr_19: int) (temp___skip_top_level_20: bool) =
+    true
+  
+  val default_initial_assumption (temp___expr_19: int) (temp___skip_top_level_20: bool) : 
+    bool
+    ensures { result
+                <->
+                ((default_initial_assumption (temp___expr_19 : int))
+                   (temp___skip_top_level_20 : bool)) }
+end
+
+module Example__increment__L_1__i___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Example__increment__L_1___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Example__increment__table___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Example__Tt_tableD1___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Example__increment__L_1__T1b___axiom
+  use _gnatprove_standard.Main
+  use int.Int
+end
+
+module Example__increment__subprogram_def
+  use _gnatprove_standard.Main
+  use int.Int
+  use int.Int
+  use _gnatprove_standard.Boolean as Boolean
+  use Standard__integer as Standard__integer
+  use Standard__natural as Standard__natural
+  use Standard__natural__rep as Standard__natural__rep
+  use Array__Int__Standard__natural as Array__Int__Standard__natural
+  use Example__increment__table as Example__increment__table
+  use Example__increment__L_1__i as Example__increment__L_1__i
+  use Example__Tt_tableD1 as Example__Tt_tableD1
+  use Array__Int__Standard__natural as Array__Int__Standard__natural
+  use Example__t_table___axiom as Example__t_table___axiom
+  use Example__increment__L_1 as Example__increment__L_1
+  use Example__increment__L_1__T1b as Example__increment__L_1__T1b
+  use Standard__natural___axiom as Standard__natural___axiom
+  use Standard__integer___axiom as Standard__integer___axiom
+  use Example__increment__L_1__i___axiom as Example__increment__L_1__i___axiom
+  use Example__increment__L_1___axiom as Example__increment__L_1___axiom
+  use Example__t_table___axiom as Example__t_table___axiom
+  use Example__increment__table___axiom as Example__increment__table___axiom
+  use Example__Tt_tableD1___axiom as Example__Tt_tableD1___axiom
+  use Example__increment__L_1__T1b___axiom as Example__increment__L_1__T1b___axiom
+  
+  let def (__void_param : unit)
+    requires { [#"example.ads" 5 0 0] true }
+    ensures { [#"example.ads" 5 0 0]
+              [#"example.ads" 11 0 0]
+              [@GP_Id:10]
+              [@GP_Shape:pragargs__forall]
+              [@GP_Reason:VC_POSTCONDITION]
+              [@comment:     Post=> (for all i in Table'Range => Table(i) = Table'Old (i) + 1);             ^ example.ads:11:13:VC_POSTCONDITION]
+              [@GP_Sloc:example.ads:11:13]
+              [@model_vc_post]
+              (forall i : int.
+                 ((((1 : int) <= i) /\ (i <= (1000 : int))) ->
+                    ([@GP_Sloc:example.ads:11:42]
+                     [@GP_Pretty_Ada:971]
+                     ((Standard__natural__rep.to_rep
+                         ((Array__Int__Standard__natural.get
+                             (Example__increment__table.table.Array__Int__Standard__natural.map__content))
+                            i))
+                        = ((Standard__natural__rep.to_rep
+                              (let temp___187 =
+                                 old (Example__increment__table.table.
+                                        Array__Int__Standard__natural.map__content) in
+                               (Array__Int__Standard__natural.get temp___187)
+                                 i))
+                             + (1 : int)))))) }
+  = [@vc:divergent]
+    (([@GNAT-comment:Assume dynamic invariants of inputs of the subprogram example.ads:5]
+      ());
+     assume {
+       ((((Example__t_table___axiom.dynamic_invariant
+             (Example__increment__table.table.Array__Int__Standard__natural.map__content))
+            True)
+           False)
+          True)
+         True };
+     ([@GNAT-comment:Assume moved pointers in outputs of the subprogram example.ads:5]
+      ());
+     ([@GNAT-comment:Check for RTE in the Pre of the subprogram example.ads:5]
+      ());
+     (begin
+        ensures { true }
+        let _ =
+          let _ =
+            (Boolean.of_int (1 : int))
+             &&
+              ((let i = val _f : int in
+                        _f in
+                if ((Boolean.andb ((1 : int) <= i)) (i <= (1000 : int))) then
+                  (begin
+                     ensures { true }
+                     let _ =
+                       let _ =
+                         (([#"example.ads" 10 0 0]
+                           [@comment:       Pre => Table'Length > 0 and then (for all i in Table'Range => Table(i) + 1 <= T_Table'Last),                                                                               ^ example.ads:10:79:VC_OVERFLOW_CHECK]
+                           [@GP_Sloc:example.ads:10:79]
+                           [@vc:annotation]
+                           [@GP_Reason:VC_OVERFLOW_CHECK]
+                           [@GP_Shape:pragargs__andthen__forall__cmp__add]
+                           [@GP_Id:9]
+                           (Standard__integer.range_check_
+                              ((Standard__natural__rep.to_rep
+                                  ((Array__Int__Standard__natural.get
+                                      (Example__increment__table.table.
+                                         Array__Int__Standard__natural.map__content))
+                                     i))
+                                 + (1 : int))))
+                            <= (1000 : int)) in
+                       () in
+                     ()
+                   end)
+                else ());
+               (val _f : bool
+                  ensures { ((result = True) <->
+                               (forall i : int.
+                                  ((((1 : int) <= i) /\ (i <= (1000 : int))) ->
+                                     ([@GP_Pretty_Ada:956]
+                                      (((Standard__natural__rep.to_rep
+                                           ((Array__Int__Standard__natural.get
+                                               (Example__increment__table.table.
+                                                  Array__Int__Standard__natural.map__content))
+                                              i))
+                                          + (1 : int))
+                                         <= (1000 : int)))))) } in
+                _f)) in
+          () in
+        ()
+      end);
+     ([@GNAT-comment:Assume Pre of the subprogram example.ads:5] ());
+     assume {
+       (([@GP_Pretty_Ada:943] true) /\
+          (forall i : int.
+             ((((1 : int) <= i) /\ (i <= (1000 : int))) ->
+                ([@GP_Pretty_Ada:956]
+                 (((Standard__natural__rep.to_rep
+                      ((Array__Int__Standard__natural.get
+                          (Example__increment__table.table.Array__Int__Standard__natural.map__content))
+                         i))
+                     + (1 : int))
+                    <= (1000 : int)))))) };
+     (let temp___old_185 =
+        Example__increment__table.table.Array__Int__Standard__natural.map__content in
+      (try
+         ([#"example.adb" 5 0 0] ());
+         ([@GP_Sloc:example.adb:5:28]
+          [#"example.adb" 5 0 0]
+          (let temp___175 = 1 : int in
+           let temp___176 = 1000 : int in
+           ([#"example.adb" 5 0 0]
+            (Example__increment__L_1__i.i.int__content <- temp___175));
+           ([@GNAT-comment:Translation of an Ada loop from example.adb:5] ());
+           (if ((Boolean.andb
+                   (temp___175
+                      <= (Example__increment__L_1__i.i.int__content)))
+                  ((Example__increment__L_1__i.i.int__content) <= temp___176)) then
+              ([#"example.adb" 5 0 0]
+               (try
+                  let temp___loop_entry_181 =
+                    Example__increment__table.table.Array__Int__Standard__natural.map__content in
+                  let temp___loop_entry_178 =
+                    Example__increment__table.table.Array__Int__Standard__natural.map__content in
+                  let temp___loop_entry_183 =
+                    Example__increment__table.table.Array__Int__Standard__natural.map__content in
+                  ([@GNAT-comment:While loop translating the Ada loop from example.adb:5]
+                   ());
+                  ([#"'@Loop 866@'example.adb" 8 0 0]
+                   [#"'@Loop 866@'example.adb" 8 0 0]
+                   ((([@GP_Sloc:example.adb:6:19]
+                      [#"example.adb" 6 0 0]
+                      [#"example.adb" 6 0 0]
+                      (Example__increment__table.table.Array__Int__Standard__natural.map__content <-
+                         (((Array__Int__Standard__natural.set
+                              (Example__increment__table.table.Array__Int__Standard__natural.map__content))
+                             (Example__increment__L_1__i.i.int__content))
+                            (Standard__natural__rep.of_rep
+                               ([#"example.adb" 6 0 0]
+                                [@GP_Shape:L_1_while__table_assign__add]
+                                [@GP_Sloc:example.adb:6:31]
+                                [@vc:annotation]
+                                [@GP_Reason:VC_OVERFLOW_CHECK]
+                                [@comment:         Table(i) := Table(i) + 1;                               ^ example.adb:6:31:VC_OVERFLOW_CHECK]
+                                [@GP_Id:0]
+                                (Standard__integer.range_check_
+                                   ((Standard__natural__rep.to_rep
+                                       ((Array__Int__Standard__natural.get
+                                           (Example__increment__table.table.
+                                              Array__Int__Standard__natural.map__content))
+                                          (Example__increment__L_1__i.i.int__content)))
+                                      + (1 : int))))))));
+                     ([@GNAT-comment:Check for absence of RTE in the loop invariant and variant]
+                      ());
+                     (let temp___inv_182 =
+                        (let j = val _f : int in
+                                 _f in
+                         if ((Boolean.andb ((1 : int) <= j))
+                               (j
+                                  <= (Example__increment__L_1__i.i.int__content))) then
+                           (begin
+                              ensures { true }
+                              let _ =
+                                let _ =
+                                  ((Standard__natural__rep.to_rep
+                                      ((Array__Int__Standard__natural.get
+                                          (Example__increment__table.table.
+                                             Array__Int__Standard__natural.map__content))
+                                         (assert {
+                                            [#"example.adb" 7 0 0]
+                                            [@vc:annotation]
+                                            [@GP_Shape:L_1_while__pragargs__forall__cmp__ixdcomp]
+                                            [@comment:         pragma Loop_Invariant(for all j in Table'First .. i => Table(j) = Table'Loop_Entry(j) + 1);                                                                       ^ example.adb:7:71:VC_INDEX_CHECK]
+                                            [@GP_Sloc:example.adb:7:71]
+                                            [@GP_Reason:VC_INDEX_CHECK]
+                                            [@GP_Id:4]
+                                            ((Example__Tt_tableD1.first <= j) /\
+                                               (j
+                                                  <= Example__Tt_tableD1.last)) };
+                                          j)))
+                                     = ([#"example.adb" 7 0 0]
+                                        [@vc:annotation]
+                                        [@comment:         pragma Loop_Invariant(for all j in Table'First .. i => Table(j) = Table'Loop_Entry(j) + 1);                                                                                                ^ example.adb:7:96:VC_OVERFLOW_CHECK]
+                                        [@GP_Reason:VC_OVERFLOW_CHECK]
+                                        [@GP_Shape:L_1_while__pragargs__forall__cmp__add]
+                                        [@GP_Id:6]
+                                        [@GP_Sloc:example.adb:7:96]
+                                        (Standard__integer.range_check_
+                                           ((Standard__natural__rep.to_rep
+                                               ((Array__Int__Standard__natural.get
+                                                   temp___loop_entry_183)
+                                                  (([#"example.adb" 7 0 0]
+                                                    assert {
+                                                      [#"example.adb" 7 0 0]
+                                                      [#"example.adb" 7 0 0]
+                                                      [@GP_Shape:L_1_while__pragargs__forall__cmp__add__ixdcomp]
+                                                      [@vc:annotation]
+                                                      [@GP_Reason:VC_INDEX_CHECK]
+                                                      [@comment:         pragma Loop_Invariant(for all j in Table'First .. i => Table(j) = Table'Loop_Entry(j) + 1);                                                                                             ^ example.adb:7:93:VC_INDEX_CHECK]
+                                                      [@GP_Id:5]
+                                                      [@GP_Sloc:example.adb:7:93]
+                                                      ((Example__Tt_tableD1.first
+                                                          <= j) /\
+                                                         (j
+                                                            <= Example__Tt_tableD1.last)) });
+                                                   j)))
+                                              + (1 : int))))) in
+                                () in
+                              ()
+                            end)
+                         else ());
+                        (val _f : bool
+                           ensures { ((result = True) <->
+                                        (forall j : int.
+                                           ((((1 : int) <= j) /\
+                                               (j
+                                                  <= (Example__increment__L_1__i.i.int__content))) ->
+                                              ((Standard__natural__rep.to_rep
+                                                  ((Array__Int__Standard__natural.get
+                                                      (Example__increment__table.table.
+                                                         Array__Int__Standard__natural.map__content))
+                                                     j))
+                                                 = ((Standard__natural__rep.to_rep
+                                                       ((Array__Int__Standard__natural.get
+                                                           temp___loop_entry_183)
+                                                          j))
+                                                      + (1 : int)))))) } in
+                         _f) in
+                      begin
+                        ensures { true }
+                        let _ =
+                          let _ =
+                            let temp___inv_180 =
+                              (let k = val _f : int in
+                                       _f in
+                               if ((Boolean.andb
+                                      (((Example__increment__L_1__i.i.int__content)
+                                          + (1 : int))
+                                         <= k))
+                                     (k <= (1000 : int))) then
+                                 (begin
+                                    ensures { true }
+                                    let _ =
+                                      let _ =
+                                        ((Standard__natural__rep.to_rep
+                                            ((Array__Int__Standard__natural.get
+                                                (Example__increment__table.table.
+                                                   Array__Int__Standard__natural.map__content))
+                                               (assert {
+                                                  [#"example.adb" 8 0 0]
+                                                  [@comment:         pragma Loop_Invariant(for all k in i + 1 .. Table'Last => Table(k) = Table'Loop_Entry(k));                                                                          ^ example.adb:8:74:VC_INDEX_CHECK]
+                                                  [@vc:annotation]
+                                                  [@GP_Shape:L_1_while__pragargs__forall__cmp__ixdcomp]
+                                                  [@GP_Reason:VC_INDEX_CHECK]
+                                                  [@GP_Id:1]
+                                                  [@GP_Sloc:example.adb:8:74]
+                                                  ((Example__Tt_tableD1.first
+                                                      <= k) /\
+                                                     (k
+                                                        <= Example__Tt_tableD1.last)) };
+                                                k)))
+                                           = (Standard__natural__rep.to_rep
+                                                ((Array__Int__Standard__natural.get
+                                                    temp___loop_entry_181)
+                                                   (assert {
+                                                      [#"example.adb" 8 0 0]
+                                                      [@GP_Sloc:example.adb:8:96]
+                                                      [@vc:annotation]
+                                                      [@GP_Shape:L_1_while__pragargs__forall__cmp__ixdcomp]
+                                                      [@comment:         pragma Loop_Invariant(for all k in i + 1 .. Table'Last => Table(k) = Table'Loop_Entry(k));                                                                                                ^ example.adb:8:96:VC_INDEX_CHECK]
+                                                      [@GP_Reason:VC_INDEX_CHECK]
+                                                      [@GP_Id:2]
+                                                      ((Example__Tt_tableD1.first
+                                                          <= k) /\
+                                                         (k
+                                                            <= Example__Tt_tableD1.last)) };
+                                                    k)))) in
+                                      () in
+                                    ()
+                                  end)
+                               else ());
+                              (val _f : bool
+                                 ensures { ((result = True) <->
+                                              (forall k : int.
+                                                 (((((Example__increment__L_1__i.i.int__content)
+                                                       + (1 : int))
+                                                      <= k) /\
+                                                     (k <= (1000 : int))) ->
+                                                    ((Standard__natural__rep.to_rep
+                                                        ((Array__Int__Standard__natural.get
+                                                            (Example__increment__table.table.
+                                                               Array__Int__Standard__natural.map__content))
+                                                           k))
+                                                       = (Standard__natural__rep.to_rep
+                                                            ((Array__Int__Standard__natural.get
+                                                                temp___loop_entry_181)
+                                                               k)))))) } in
+                               _f) in
+                            () in
+                          () in
+                        ()
+                      end));
+                    while True do
+                      invariant LoopInvariant {
+                        [#"example.adb" 7 0 0]
+                        [@GP_Reason:VC_LOOP_INVARIANT]
+                        [@comment:         pragma Loop_Invariant(for all j in Table'First .. i => Table(j) = Table'Loop_Entry(j) + 1);                                ^ example.adb:7:32:VC_LOOP_INVARIANT]
+                        [@vc:annotation]
+                        [@GP_Shape:L_1_while__pragargs__forall]
+                        [@GP_Sloc:example.adb:7:32]
+                        [@GP_Id:7]
+                        (forall j : int.
+                           ((((1 : int) <= j) /\
+                               (j
+                                  <= (Example__increment__L_1__i.i.int__content))) ->
+                              ([@GP_Sloc:example.adb:7:65]
+                               [@GP_Pretty_Ada:859]
+                               ((Standard__natural__rep.to_rep
+                                   ((Array__Int__Standard__natural.get
+                                       (Example__increment__table.table.
+                                          Array__Int__Standard__natural.map__content))
+                                      j))
+                                  = ((Standard__natural__rep.to_rep
+                                        ((Array__Int__Standard__natural.get
+                                            temp___loop_entry_183)
+                                           j))
+                                       + (1 : int)))))) }
+                      invariant LoopInvariant {
+                        [#"example.adb" 8 0 0]
+                        [@GP_Reason:VC_LOOP_INVARIANT]
+                        [@vc:annotation]
+                        [@GP_Shape:L_1_while__pragargs__forall]
+                        [@GP_Id:3]
+                        [@comment:         pragma Loop_Invariant(for all k in i + 1 .. Table'Last => Table(k) = Table'Loop_Entry(k));                                ^ example.adb:8:32:VC_LOOP_INVARIANT]
+                        [@GP_Sloc:example.adb:8:32]
+                        (forall k : int.
+                           (((((Example__increment__L_1__i.i.int__content)
+                                 + (1 : int))
+                                <= k) /\
+                               (k <= (1000 : int))) ->
+                              ([@GP_Sloc:example.adb:8:68]
+                               [@GP_Pretty_Ada:883]
+                               ((Standard__natural__rep.to_rep
+                                   ((Array__Int__Standard__natural.get
+                                       (Example__increment__table.table.
+                                          Array__Int__Standard__natural.map__content))
+                                      k))
+                                  = (Standard__natural__rep.to_rep
+                                       ((Array__Int__Standard__natural.get
+                                           temp___loop_entry_181)
+                                          k)))))) }
+                      ([@GNAT-comment:gnat_ast_to_ptree: code after the loop invariant]
+                       (([@GNAT-comment:Assume implicit invariants from the loop example.adb:5]
+                         ());
+                        assume {
+                          (Boolean.andb
+                             ((((true /\
+                                   (((((Example__t_table___axiom.dynamic_invariant
+                                          (Example__increment__table.table.
+                                             Array__Int__Standard__natural.map__content))
+                                         True)
+                                        True)
+                                       True)
+                                      True)) /\
+                                  (true /\
+                                     (forall temp___179 : int.
+                                        if ((Example__Tt_tableD1.first
+                                               <= temp___179) /\
+                                              (temp___179
+                                                 <= Example__Tt_tableD1.last)) then
+                                          (if ((temp___176 < temp___179) \/
+                                                 ((temp___179 < temp___175) \/
+                                                    ((Example__increment__L_1__i.i.int__content)
+                                                       < temp___179))) then
+                                             (((Array__Int__Standard__natural.get
+                                                  (Example__increment__table.table.
+                                                     Array__Int__Standard__natural.map__content))
+                                                 temp___179)
+                                                = ((Array__Int__Standard__natural.get
+                                                      temp___loop_entry_178)
+                                                     temp___179))
+                                           else true)
+                                        else true))) /\
+                                 (if ((True = True) \/
+                                        (Example__increment__L_1__T1b.first
+                                           <= Example__increment__L_1__T1b.last)) then
+                                    (((Example__increment__L_1__T1b.dynamic_property
+                                         Example__increment__L_1__T1b.first)
+                                        Example__increment__L_1__T1b.last)
+                                       (Example__increment__L_1__i.i.int__content))
+                                  else true)) /\
+                                (true /\ true)))
+                            (((1 : int)
+                                <= (Example__increment__L_1__i.i.int__content)) /\
+                               ((Example__increment__L_1__i.i.int__content)
+                                  <= (1000 : int))) };
+                        ([@GNAT-comment:Continuation of loop after loop invariant and variant]
+                         ());
+                        ([@GNAT-comment:Check for the exit condition and loop statements appearing before the loop invariant of loop example.adb:5]
+                         ());
+                        (if ((Example__increment__L_1__i.i.int__content)
+                               = temp___176) then
+                           (raise Example__increment__L_1.L_1)
+                         else ());
+                        ([#"example.adb" 5 0 0]
+                         [#"example.adb" 5 0 0]
+                         (Example__increment__L_1__i.i.int__content <-
+                            ((Example__increment__L_1__i.i.int__content)
+                               + (1 : int))))));
+                      ([@GNAT-comment:gnat_ast_to_ptree: code before the loop invariant]
+                       (([@GP_Sloc:example.adb:6:19]
+                         [#"example.adb" 6 0 0]
+                         [#"example.adb" 6 0 0]
+                         (Example__increment__table.table.Array__Int__Standard__natural.map__content <-
+                            (((Array__Int__Standard__natural.set
+                                 (Example__increment__table.table.Array__Int__Standard__natural.map__content))
+                                (Example__increment__L_1__i.i.int__content))
+                               (Standard__natural__rep.of_rep
+                                  ([#"example.adb" 6 0 0]
+                                   [@GP_Shape:L_1_while__table_assign__add]
+                                   [@GP_Sloc:example.adb:6:31]
+                                   [@vc:annotation]
+                                   [@GP_Reason:VC_OVERFLOW_CHECK]
+                                   [@comment:         Table(i) := Table(i) + 1;                               ^ example.adb:6:31:VC_OVERFLOW_CHECK]
+                                   [@GP_Id:0]
+                                   (Standard__integer.range_check_
+                                      ((Standard__natural__rep.to_rep
+                                          ((Array__Int__Standard__natural.get
+                                              (Example__increment__table.table.
+                                                 Array__Int__Standard__natural.map__content))
+                                             (Example__increment__L_1__i.i.int__content)))
+                                         + (1 : int))))))));
+                        ([@GNAT-comment:Check for absence of RTE in the loop invariant and variant]
+                         ());
+                        (let temp___inv_182 =
+                           (let j = val _f : int in
+                                    _f in
+                            if ((Boolean.andb ((1 : int) <= j))
+                                  (j
+                                     <= (Example__increment__L_1__i.i.int__content))) then
+                              (begin
+                                 ensures { true }
+                                 let _ =
+                                   let _ =
+                                     ((Standard__natural__rep.to_rep
+                                         ((Array__Int__Standard__natural.get
+                                             (Example__increment__table.table.
+                                                Array__Int__Standard__natural.map__content))
+                                            (assert {
+                                               [#"example.adb" 7 0 0]
+                                               [@vc:annotation]
+                                               [@GP_Shape:L_1_while__pragargs__forall__cmp__ixdcomp]
+                                               [@comment:         pragma Loop_Invariant(for all j in Table'First .. i => Table(j) = Table'Loop_Entry(j) + 1);                                                                       ^ example.adb:7:71:VC_INDEX_CHECK]
+                                               [@GP_Sloc:example.adb:7:71]
+                                               [@GP_Reason:VC_INDEX_CHECK]
+                                               [@GP_Id:4]
+                                               ((Example__Tt_tableD1.first
+                                                   <= j) /\
+                                                  (j
+                                                     <= Example__Tt_tableD1.last)) };
+                                             j)))
+                                        = ([#"example.adb" 7 0 0]
+                                           [@vc:annotation]
+                                           [@comment:         pragma Loop_Invariant(for all j in Table'First .. i => Table(j) = Table'Loop_Entry(j) + 1);                                                                                                ^ example.adb:7:96:VC_OVERFLOW_CHECK]
+                                           [@GP_Reason:VC_OVERFLOW_CHECK]
+                                           [@GP_Shape:L_1_while__pragargs__forall__cmp__add]
+                                           [@GP_Id:6]
+                                           [@GP_Sloc:example.adb:7:96]
+                                           (Standard__integer.range_check_
+                                              ((Standard__natural__rep.to_rep
+                                                  ((Array__Int__Standard__natural.get
+                                                      temp___loop_entry_183)
+                                                     (([#"example.adb" 7 0 0]
+                                                       assert {
+                                                         [#"example.adb" 7 0 0]
+                                                         [#"example.adb" 7 0 0]
+                                                         [@GP_Shape:L_1_while__pragargs__forall__cmp__add__ixdcomp]
+                                                         [@vc:annotation]
+                                                         [@GP_Reason:VC_INDEX_CHECK]
+                                                         [@comment:         pragma Loop_Invariant(for all j in Table'First .. i => Table(j) = Table'Loop_Entry(j) + 1);                                                                                             ^ example.adb:7:93:VC_INDEX_CHECK]
+                                                         [@GP_Id:5]
+                                                         [@GP_Sloc:example.adb:7:93]
+                                                         ((Example__Tt_tableD1.first
+                                                             <= j) /\
+                                                            (j
+                                                               <= Example__Tt_tableD1.last)) });
+                                                      j)))
+                                                 + (1 : int))))) in
+                                   () in
+                                 ()
+                               end)
+                            else ());
+                           (val _f : bool
+                              ensures { ((result = True) <->
+                                           (forall j : int.
+                                              ((((1 : int) <= j) /\
+                                                  (j
+                                                     <= (Example__increment__L_1__i.i.int__content))) ->
+                                                 ((Standard__natural__rep.to_rep
+                                                     ((Array__Int__Standard__natural.get
+                                                         (Example__increment__table.table.
+                                                            Array__Int__Standard__natural.map__content))
+                                                        j))
+                                                    = ((Standard__natural__rep.to_rep
+                                                          ((Array__Int__Standard__natural.get
+                                                              temp___loop_entry_183)
+                                                             j))
+                                                         + (1 : int)))))) } in
+                            _f) in
+                         begin
+                           ensures { true }
+                           let _ =
+                             let _ =
+                               let temp___inv_180 =
+                                 (let k = val _f : int in
+                                          _f in
+                                  if ((Boolean.andb
+                                         (((Example__increment__L_1__i.i.int__content)
+                                             + (1 : int))
+                                            <= k))
+                                        (k <= (1000 : int))) then
+                                    (begin
+                                       ensures { true }
+                                       let _ =
+                                         let _ =
+                                           ((Standard__natural__rep.to_rep
+                                               ((Array__Int__Standard__natural.get
+                                                   (Example__increment__table.table.
+                                                      Array__Int__Standard__natural.map__content))
+                                                  (assert {
+                                                     [#"example.adb" 8 0 0]
+                                                     [@comment:         pragma Loop_Invariant(for all k in i + 1 .. Table'Last => Table(k) = Table'Loop_Entry(k));                                                                          ^ example.adb:8:74:VC_INDEX_CHECK]
+                                                     [@vc:annotation]
+                                                     [@GP_Shape:L_1_while__pragargs__forall__cmp__ixdcomp]
+                                                     [@GP_Reason:VC_INDEX_CHECK]
+                                                     [@GP_Id:1]
+                                                     [@GP_Sloc:example.adb:8:74]
+                                                     ((Example__Tt_tableD1.first
+                                                         <= k) /\
+                                                        (k
+                                                           <= Example__Tt_tableD1.last)) };
+                                                   k)))
+                                              = (Standard__natural__rep.to_rep
+                                                   ((Array__Int__Standard__natural.get
+                                                       temp___loop_entry_181)
+                                                      (assert {
+                                                         [#"example.adb" 8 0 0]
+                                                         [@GP_Sloc:example.adb:8:96]
+                                                         [@vc:annotation]
+                                                         [@GP_Shape:L_1_while__pragargs__forall__cmp__ixdcomp]
+                                                         [@comment:         pragma Loop_Invariant(for all k in i + 1 .. Table'Last => Table(k) = Table'Loop_Entry(k));                                                                                                ^ example.adb:8:96:VC_INDEX_CHECK]
+                                                         [@GP_Reason:VC_INDEX_CHECK]
+                                                         [@GP_Id:2]
+                                                         ((Example__Tt_tableD1.first
+                                                             <= k) /\
+                                                            (k
+                                                               <= Example__Tt_tableD1.last)) };
+                                                       k)))) in
+                                         () in
+                                       ()
+                                     end)
+                                  else ());
+                                 (val _f : bool
+                                    ensures { ((result = True) <->
+                                                 (forall k : int.
+                                                    (((((Example__increment__L_1__i.i.int__content)
+                                                          + (1 : int))
+                                                         <= k) /\
+                                                        (k <= (1000 : int))) ->
+                                                       ((Standard__natural__rep.to_rep
+                                                           ((Array__Int__Standard__natural.get
+                                                               (Example__increment__table.table.
+                                                                  Array__Int__Standard__natural.map__content))
+                                                              k))
+                                                          = (Standard__natural__rep.to_rep
+                                                               ((Array__Int__Standard__natural.get
+                                                                   temp___loop_entry_181)
+                                                                  k)))))) } in
+                                  _f) in
+                               () in
+                             () in
+                           ()
+                         end)));
+                      ([@GNAT-comment:gnat_ast_to_ptree: code checking the variants]
+                       ())
+                    done))
+                with Example__increment__L_1.L_1 -> ()
+                end))
+            else ())));
+         (raise Return__exc)
+       with Return__exc -> ()
+       end);
+      (begin
+         ensures { true }
+         let _ =
+           let _ =
+             (let i = val _f : int in
+                      _f in
+              if ((Boolean.andb ((1 : int) <= i)) (i <= (1000 : int))) then
+                (begin
+                   ensures { true }
+                   let _ =
+                     let _ =
+                       ((Standard__natural__rep.to_rep
+                           ((Array__Int__Standard__natural.get
+                               (Example__increment__table.table.Array__Int__Standard__natural.map__content))
+                              i))
+                          = ([#"example.ads" 11 0 0]
+                             [@vc:annotation]
+                             [@GP_Reason:VC_OVERFLOW_CHECK]
+                             [@comment:     Post=> (for all i in Table'Range => Table(i) = Table'Old (i) + 1);                                                                   ^ example.ads:11:67:VC_OVERFLOW_CHECK]
+                             [@GP_Shape:pragargs__forall__cmp__add]
+                             [@GP_Sloc:example.ads:11:67]
+                             [@GP_Id:8]
+                             (Standard__integer.range_check_
+                                ((Standard__natural__rep.to_rep
+                                    ((Array__Int__Standard__natural.get
+                                        temp___old_185)
+                                       i))
+                                   + (1 : int))))) in
+                     () in
+                   ()
+                 end)
+              else ());
+             (val _f : bool
+                ensures { ((result = True) <->
+                             (forall i : int.
+                                ((((1 : int) <= i) /\ (i <= (1000 : int))) ->
+                                   ([@GP_Pretty_Ada:971]
+                                    ((Standard__natural__rep.to_rep
+                                        ((Array__Int__Standard__natural.get
+                                            (Example__increment__table.table.
+                                               Array__Int__Standard__natural.map__content))
+                                           i))
+                                       = ((Standard__natural__rep.to_rep
+                                             ((Array__Int__Standard__natural.get
+                                                 temp___old_185)
+                                                i))
+                                            + (1 : int))))))) } in
+              _f) in
+           () in
+         ()
+       end)))
+end

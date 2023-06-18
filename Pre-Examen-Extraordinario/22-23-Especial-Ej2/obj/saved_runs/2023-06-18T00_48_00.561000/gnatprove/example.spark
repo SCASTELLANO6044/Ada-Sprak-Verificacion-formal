@@ -1,0 +1,89 @@
+{
+  "spark": [
+    {
+      "name": "Example",
+      "sloc": [
+        {
+          "file": "example.ads",
+          "line": 1
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "Example.Increment",
+      "sloc": [
+        {
+          "file": "example.ads",
+          "line": 5
+        }
+      ],
+      "spark": "all"
+    }
+  ],
+  "flow": [
+    {
+      "file": "example.ads",
+      "line": 9,
+      "col": 8,
+      "rule": "GLOBAL_WRONG",
+      "severity": "info",
+      "entity": {
+        "name": "Example.Increment",
+        "sloc": [
+          {
+            "file": "example.ads",
+            "line": 5
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    },
+    {
+      "file": "example.ads",
+      "line": 10,
+      "col": 8,
+      "rule": "DEPENDS_WRONG",
+      "severity": "info",
+      "entity": {
+        "name": "Example.Increment",
+        "sloc": [
+          {
+            "file": "example.ads",
+            "line": 5
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    }
+  ],
+  "assumptions": [
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Example.Increment",
+          "sloc": [
+            {
+              "file": "example.ads",
+              "line": 5
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "timings": {
+    "globals (advanced)": 4.44600009359419E-04,
+    "flow analysis": 3.40840010903776E-03,
+    "marking": 1.84499993338250E-04,
+    "properties (advanced)": 2.52999998338055E-05,
+    "globals (basic)": 4.64799988549203E-04
+  }
+}

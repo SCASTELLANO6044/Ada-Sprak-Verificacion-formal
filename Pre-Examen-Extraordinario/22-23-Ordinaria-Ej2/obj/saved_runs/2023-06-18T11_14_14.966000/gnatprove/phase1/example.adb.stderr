@@ -1,0 +1,6 @@
+example.adb:16:33: error: quantified expression must be parenthesized
+example.adb:17:79: error: missing operand
+example.adb:19:70: error: "=" should be ":="
+example.adb:21:67: error: "=" should be ":="
+example.adb:23:59: error: no "if" for this "end if"
+example.adb:24:57: error: statement expected

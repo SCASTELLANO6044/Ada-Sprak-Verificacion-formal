@@ -1,0 +1,84 @@
+V "GNAT Lib v2021"
+M P W=b
+A -gnatA
+A -g
+A -fstack-check=specific
+A -gnata
+A -gnato
+A -gnat12
+A -gnatwa
+A -gnateE
+A -mtune=generic
+A -march=x86-64
+P ZX
+
+RN
+RV NO_IO
+RV NO_IMPLEMENTATION_PRAGMAS
+
+U tests_multiply%b	tests_multiply.adb	a79cecf8 NE OO SU
+W ada%s			ada.ads			ada.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W pkg_multiply%s	pkg_multiply.adb	pkg_multiply.ali
+Z system.assertions%s	s-assert.adb		s-assert.ali
+
+D ada.ads		20210520051132 76789da1 ada%s
+D a-assert.ads		20210520051128 a718b65c ada.assertions%s
+D a-except.ads		20210520051128 946f3014 ada.exceptions%s
+D a-ioexce.ads		20210520051128 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20210520051130 119b8fb3 ada.streams%s
+D a-string.ads		20210520051130 90ac6797 ada.strings%s
+D a-sttebu.ads		20210520051130 18209c64 ada.strings.text_buffers%s
+D a-stuten.ads		20210520051130 808c40ad ada.strings.utf_encoding%s
+D a-tags.ads		20210520051130 9eaa38c6 ada.tags%s
+D a-textio.ads		20210520051130 aef4d56d ada.text_io%s
+D a-unccon.ads		20210520051130 0e9b276f ada.unchecked_conversion%s
+D interfac.ads		20210520051132 edec285f interfaces%s
+D i-cstrea.ads		20210520051132 e53d8b8e interfaces.c_streams%s
+D pkg_multiply.ads	20201029180218 10670cbc pkg_multiply%s
+D system.ads		20210520051136 2ffa5114 system%s
+D s-assert.ads		20210520051132 6a49a4e4 system.assertions%s
+D s-crtl.ads		20210520051132 0ebbdb71 system.crtl%s
+D s-exctab.ads		20210520051132 54135002 system.exception_table%s
+D s-ficobl.ads		20210520051132 078245e4 system.file_control_block%s
+D s-parame.ads		20210520051134 4752c4cb system.parameters%s
+D s-putima.ads		20210520051134 4e095881 system.put_images%s
+D s-secsta.ads		20210520051134 9b3ab94b system.secondary_stack%s
+D s-soflin.ads		20210520051134 a7318a92 system.soft_links%s
+D s-stache.ads		20210520051134 a37c21ec system.stack_checking%s
+D s-stalib.ads		20210520051134 472fbca8 system.standard_library%s
+D s-stoele.ads		20210520051134 2dc34a04 system.storage_elements%s
+D s-stoele.adb		20210520051134 ed88f8fb system.storage_elements%b
+D s-traent.ads		20210520051134 26a8d361 system.traceback_entries%s
+D s-unstyp.ads		20210520051134 2b077493 system.unsigned_types%s
+D s-wchcon.ads		20210520051136 1b7d22d2 system.wch_con%s
+D tests_multiply.adb	20190924162954 190f3529 tests_multiply%b
+D unchconv.ads		20210520051136 ca2f9e18 unchecked_conversion%s
+G a e
+G c Z b b [tests_multiply standard 7 11 none]
+G r c none [tests_multiply standard 7 11 none] [multiply pkg_multiply 3 14 none]
+X 1 ada.ads
+16K9*Ada 20e8 31|4r6 4r25
+X 10 a-textio.ads
+58K13*Text_IO 725e16 31|4w10 4r29
+463U14*Put 31|12s7 23s7 34s7 45s7 56s7 67s7
+506U14*Put_Line 31|17s7 28s7 39s7 50s7 61s7 72s7 76s4
+X 14 pkg_multiply.ads
+1K9*Pkg_Multiply 25e17 31|5w6 5r25
+3U14*Multiply 31|14s7 25s7 36s7 47s7 58s7 69s7
+X 31 tests_multiply.adb
+7U11*Tests_Multiply 7b11 83l5 83t19
+9U14 Test_1 9b14 18l8 18t14 77s4
+10i7 Result{integer} 14m23 15r22
+20U14 Test_2 20b14 29l8 29t14 78s4
+21i7 Result{integer} 25m24 26r22
+31U14 Test_3 31b14 40l8 40t14 79s4
+32i7 Result{integer} 36m24 37r22
+42U14 Test_4 42b14 51l8 51t14 80s4
+43i7 Result{integer} 47m25 48r22
+53U14 Test_5 53b14 62l8 62t14 81s4
+54i7 Result{integer} 58m23 59r22
+64U14 Test_6 64b14 73l8 73t14 82s4
+65i7 Result{integer} 69m23 70r22
+

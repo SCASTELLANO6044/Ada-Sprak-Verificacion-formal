@@ -1,0 +1,7 @@
+example.adb:3:14: error: not fully conformant with declaration at example.ads:5
+example.adb:3:14: error: name "Table" does not match
+example.adb:6:16: error: "Table" is undefined (more references follow)
+example.ads:20:27: error: attribute "Loop_Entry" must appear within appropriate pragma
+example.ads:21:32: error: attribute "Loop_Entry" must appear within appropriate pragma
+example.ads:22:34: error: attribute "Loop_Entry" must appear within appropriate pragma
+example.ads:23:32: error: attribute "Loop_Entry" must appear within appropriate pragma

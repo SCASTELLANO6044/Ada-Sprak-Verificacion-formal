@@ -1,0 +1,1 @@
+example.ads:8:24: error: write-only parameter "V" cannot appear as input in dependence relation

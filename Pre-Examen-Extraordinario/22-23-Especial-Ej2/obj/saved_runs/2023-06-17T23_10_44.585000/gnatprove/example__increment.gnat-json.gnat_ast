@@ -1,0 +1,678 @@
+(* Module for axiomatizing type "integer", created in Gnat2Why.Types.Translate_Type *)
+module Standard__integer
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use import int.Int
+  
+  type integer  = <range -2147483648 2147483647>
+  
+  function   first () requires { True } ensures  { True } returns
+    int = -2147483648
+  
+  function   last () requires { True } ensures  { True } returns
+    int = 2147483647
+  
+  function   in_range (x : int) requires { True } ensures  { True } returns
+     = ((first <= x) /\ (x <= last))
+  
+  clone export ada__model.Static_Discrete with axiom . type t = integer,
+    function first = first, function last = last,
+    predicate in_range = in_range
+  
+  type integer__ref  = { mutable integer__content : integer }
+  
+  function   integer__ref_integer__content__projection (a : integer__ref)
+    requires {  } ensures  {  } returns integer = a.integer__content
+  
+  meta model_projection function integer__ref_integer__content__projection
+  
+  meta inline:no function integer__ref_integer__content__projection
+  
+  function   integer__havoc (x : integer__ref) requires {  } ensures  {  }
+    returns unit
+
+end
+
+(* Module for axiomatizing type "natural", created in Gnat2Why.Types.Translate_Type *)
+module Standard__natural
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use import int.Int
+  
+  type natural  = <range 0 2147483647>
+  
+  function   first () requires { True } ensures  { True } returns int = 0
+  
+  function   last () requires { True } ensures  { True } returns
+    int = 2147483647
+  
+  function   in_range (x : int) requires { True } ensures  { True } returns
+     = ((first <= x) /\ (x <= last))
+  
+  clone export ada__model.Static_Discrete with axiom . type t = natural,
+    function first = first, function last = last,
+    predicate in_range = in_range
+  
+  type natural__ref  = { mutable natural__content : natural }
+  
+  function   natural__ref_natural__content__projection (a : natural__ref)
+    requires {  } ensures  {  } returns natural = a.natural__content
+  
+  meta model_projection function natural__ref_natural__content__projection
+  
+  meta inline:no function natural__ref_natural__content__projection
+  
+  function   natural__havoc (x : natural__ref) requires {  } ensures  {  }
+    returns unit
+
+end
+
+(* Module defining to_rep/of_rep for type "natural", created in Gnat2Why.Types.Translate_Type *)
+module Standard__natural__rep
+  
+  use        Standard__natural
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  function   to_rep (x : Standard__natural.natural) requires { True }
+    ensures  { True } returns int = (Standard__natural.natural'int x)
+  
+  clone export ada__model.Rep_Proj_Int with axiom . type t = Standard__natural.natural,
+    predicate in_range = Standard__natural.in_range, function to_rep = to_rep
+  
+  meta model_projection function to_rep
+  
+  meta inline:no function to_rep
+
+end
+
+(* Module for axiomatizing the array theory associated to type "Tt_tableB" defined at example.ads:3, created in Why.Gen.Arrays.Create_Rep_Array_Theory *)
+module Array__Int__Standard__natural
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use import int.Int
+  use        Standard__natural
+  use        Standard__natural__rep
+  
+  function   index_I1_one () requires { True } ensures  { True } returns
+    int = 1
+  
+  type component_type  = --pp_transparent_type_definition NOT IMPLEMENTED
+  
+  clone export _gnatprove_standard.Array__1 with axiom . type I1.t = int,
+    predicate I1.le = <=, predicate I1.lt = <, predicate I1.gt = >,
+    function I1.add = +, function I1.sub = -, function I1.one = index_I1_one,
+    type component_type = component_type
+  
+  function   bool_eq
+    (a : map a__first : int a__last : int b : map b__first : int
+    b__last : int) requires { True } ensures  { True } returns
+    bool = ((if (a__first <= a__last) then
+            ((b__first <= b__last) /\
+               ((a__last - a__first) = (b__last - b__first)))
+             else (b__first > b__last)) /\
+              --pp_universal_quantif NOT IMPLEMENTED)
+  
+  axiom bool_eq_rev : --pp_universal_quantif NOT IMPLEMENTED
+
+end
+
+(* Module for defining a ref holding the value of variable "table" defined at example.ads:5, created in Gnat2Why.Decls.Translate_Variable *)
+module Example__increment__table
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use        Array__Int__Standard__natural
+  
+  val table [model_projected] [model_trace:921]
+  [name:Table] [sloc:example.ads:5]: Array__Int__Standard__natural.map
+
+end
+
+(* Module for defining a ref holding the value of variable "i" defined at example.adb:5, created in Gnat2Why.Decls.Translate_Variable *)
+module Example__increment__L_1__i
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  val i [model_trace:828] [name:i]
+  [model_projected] [sloc:example.adb:5]: int
+
+end
+
+(* Module for axiomatizing type "Tt_tableD1" defined at example.ads:3, created in Gnat2Why.Types.Translate_Type *)
+module Example__Tt_tableD1
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use import int.Int
+  
+  type tt_tableD1  = <range 1 1000>
+  
+  function   first () requires { True } ensures  { True } returns int = 1
+  
+  function   last () requires { True } ensures  { True } returns int = 1000
+  
+  function   in_range (x : int) requires { True } ensures  { True } returns
+     = ((first <= x) /\ (x <= last))
+  
+  clone export ada__model.Static_Discrete with axiom . type t = tt_tableD1,
+    function first = first, function last = last,
+    predicate in_range = in_range
+  
+  type tt_tableD1__ref  = { mutable tt_tableD1__content : tt_tableD1 }
+  
+  function   tt_tableD1__ref_tt_tableD1__content__projection
+    (a : tt_tableD1__ref) requires {  } ensures  {  } returns
+    tt_tableD1 = a.tt_tableD1__content
+  
+  meta model_projection function tt_tableD1__ref_tt_tableD1__content__projection
+  
+  meta inline:no function tt_tableD1__ref_tt_tableD1__content__projection
+  
+  function   tt_tableD1__havoc (x : tt_tableD1__ref) requires {  } ensures 
+    {  } returns unit
+
+end
+
+(* Module giving axioms for type "t_table" defined at example.ads:3, created in Gnat2Why.Types.Generate_Type_Completion *)
+module Example__t_table___axiom
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use        Array__Int__Standard__natural
+  use        Array__Int__Standard__natural
+  
+  function   dynamic_invariant
+    (([mlw:proxy_symbol]
+    [introduced] temp___expr_166) : Array__Int__Standard__natural.map
+    ([mlw:proxy_symbol] [introduced] temp___is_init_162) : bool
+    ([mlw:proxy_symbol] [introduced] temp___skip_constant_163) : bool
+    ([mlw:proxy_symbol] [introduced] temp___do_toplevel_164) : bool
+    ([mlw:proxy_symbol] [introduced] temp___do_typ_inv_165) : bool) requires
+    { True } ensures  { True } returns  = True
+  
+  function   default_initial_assumption
+    (([mlw:proxy_symbol]
+    [introduced] temp___expr_168) : Array__Int__Standard__natural.map
+    ([mlw:proxy_symbol] [introduced] temp___skip_top_level_169) : bool)
+    requires { True } ensures  { True } returns  = True
+
+end
+
+(* Module for defining the loop exit exception for the loop "L_1" defined at example.adb:5, created in Gnat2Why.Decls.Translate_Loop_Entity *)
+module Example__increment__L_1
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  --pp_exception_declaration NOT IMPLEMENTED
+
+end
+
+(* Module for axiomatizing type "T1b" defined at example.adb:5, created in Gnat2Why.Types.Translate_Type *)
+module Example__increment__L_1__T1b
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use import int.Int
+  
+  type t1b  = <range 1 1000>
+  
+  function   first () requires { True } ensures  { True } returns int = 1
+  
+  function   last () requires { True } ensures  { True } returns int = 1000
+  
+  function   in_range (x : int) requires { True } ensures  { True } returns
+     = ((first <= x) /\ (x <= last))
+  
+  clone export ada__model.Static_Discrete with axiom . type t = t1b,
+    function first = first, function last = last,
+    predicate in_range = in_range
+  
+  type t1b__ref  = { mutable t1b__content : t1b }
+  
+  function   t1b__ref_t1b__content__projection (a : t1b__ref) requires {  }
+    ensures  {  } returns t1b = a.t1b__content
+  
+  meta model_projection function t1b__ref_t1b__content__projection
+  
+  meta inline:no function t1b__ref_t1b__content__projection
+  
+  function   t1b__havoc (x : t1b__ref) requires {  } ensures  {  } returns
+    unit
+
+end
+
+(* Module giving axioms for type "natural", created in Gnat2Why.Types.Generate_Type_Completion *)
+module Standard__natural___axiom
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use import int.Int
+  use        Standard__natural
+  
+  function   dynamic_invariant
+    (([mlw:proxy_symbol] [introduced] temp___expr_46) : int
+    ([mlw:proxy_symbol] [introduced] temp___is_init_42) : bool
+    ([mlw:proxy_symbol] [introduced] temp___skip_constant_43) : bool
+    ([mlw:proxy_symbol] [introduced] temp___do_toplevel_44) : bool
+    ([mlw:proxy_symbol] [introduced] temp___do_typ_inv_45) : bool) requires
+    { True } ensures  { True } returns
+     = (if
+       ((([mlw:proxy_symbol] [introduced] temp___is_init_42) = True) \/
+          (Standard__natural.first <= Standard__natural.last))
+       then
+       (Standard__natural.dynamic_property Standard__natural.first
+          Standard__natural.last ([mlw:proxy_symbol]
+          [introduced] temp___expr_46))
+       )
+  
+  function   default_initial_assumption
+    (([mlw:proxy_symbol] [introduced] temp___expr_47) : int
+    ([mlw:proxy_symbol] [introduced] temp___skip_top_level_48) : bool)
+    requires { True } ensures  { True } returns  = True
+
+end
+
+(* Module giving axioms for type "integer", created in Gnat2Why.Types.Generate_Type_Completion *)
+module Standard__integer___axiom
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use import int.Int
+  use        Standard__integer
+  
+  function   dynamic_invariant
+    (([mlw:proxy_symbol] [introduced] temp___expr_18) : int
+    ([mlw:proxy_symbol] [introduced] temp___is_init_14) : bool
+    ([mlw:proxy_symbol] [introduced] temp___skip_constant_15) : bool
+    ([mlw:proxy_symbol] [introduced] temp___do_toplevel_16) : bool
+    ([mlw:proxy_symbol] [introduced] temp___do_typ_inv_17) : bool) requires
+    { True } ensures  { True } returns
+     = (if
+       ((([mlw:proxy_symbol] [introduced] temp___is_init_14) = True) \/
+          (Standard__integer.first <= Standard__integer.last))
+       then
+       (Standard__integer.dynamic_property Standard__integer.first
+          Standard__integer.last ([mlw:proxy_symbol]
+          [introduced] temp___expr_18))
+       )
+  
+  function   default_initial_assumption
+    (([mlw:proxy_symbol] [introduced] temp___expr_19) : int
+    ([mlw:proxy_symbol] [introduced] temp___skip_top_level_20) : bool)
+    requires { True } ensures  { True } returns  = True
+
+end
+
+(* Module giving an empty axiom for the entity "i" defined at example.adb:5, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Example__increment__L_1__i___axiom
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  
+
+end
+
+(* Module giving an empty axiom for the entity "L_1" defined at example.adb:5, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Example__increment__L_1___axiom
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  
+
+end
+
+(* Module giving an empty axiom for the entity "table" defined at example.ads:5, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Example__increment__table___axiom
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  
+
+end
+
+(* Module giving axioms for type "Tt_tableD1" defined at example.ads:3, created in Gnat2Why.Types.Generate_Type_Completion *)
+module Example__Tt_tableD1___axiom
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  
+
+end
+
+(* Module giving axioms for type "T1b" defined at example.adb:5, created in Gnat2Why.Types.Generate_Type_Completion *)
+module Example__increment__L_1__T1b___axiom
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  
+
+end
+
+(* Module for checking contracts and absence of run-time errors in subprogram "increment" defined at example.ads:5, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
+module Example__increment__subprogram_def
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use import int.Int
+  use        _gnatprove_standard.Boolean
+  use        Standard__integer
+  use        Standard__natural
+  use        Standard__natural__rep
+  use        Array__Int__Standard__natural
+  use        Example__increment__table
+  use        Example__increment__L_1__i
+  use        Example__Tt_tableD1
+  use        Array__Int__Standard__natural
+  use        Example__t_table___axiom
+  use        Example__increment__L_1
+  use        Example__increment__L_1__T1b
+  use        Standard__natural___axiom
+  use        Standard__integer___axiom
+  use        Example__increment__L_1__i___axiom
+  use        Example__increment__L_1___axiom
+  use        Example__t_table___axiom
+  use        Example__increment__table___axiom
+  use        Example__Tt_tableD1___axiom
+  use        Example__increment__L_1__T1b___axiom
+  
+  function [GP_Subp:example.ads:5] [sloc:example.ads:5] def
+    (__void_param : unit) requires { True } ensures 
+    { ([sloc:example.ads:11] ([GP_Shape:pragargs__forall]
+                             [GP_Reason:VC_POSTCONDITION]
+                             [comment:     Post=> (for all i in Table'Range => Table(i) = Table'Old (i) + 1);             ^ example.ads:11:13:VC_POSTCONDITION]
+                             [GP_Sloc:example.ads:11:13] [model_vc_post]
+                             [GP_Id:9] --pp_universal_quantif NOT IMPLEMENTED)) }
+    returns
+     = (* Assume dynamic invariants of inputs of the subprogram example.ads:5 *);
+        assume
+        { (Example__t_table___axiom.dynamic_invariant
+             !Example__increment__table.table True False True True) };
+        (* Assume moved pointers in outputs of the subprogram example.ads:5 *);
+        (* Check for RTE in the Pre of the subprogram example.ads:5 *);
+        abstract ensures
+        { True } begin  (let _ =
+                       ((_gnatprove_standard.Boolean.of_int 1) && (let i =
+                          ( any  pre {} post {} return int) in
+                         (if
+                         (_gnatprove_standard.Boolean.andb (1 <= i)
+                            (i <= 1000))
+                         then
+                         abstract ensures
+                         { True } begin  (let _ =
+                                        ((Standard__natural__rep.to_rep
+                                            (Array__Int__Standard__natural.get
+                                               !Example__increment__table.table
+                                               i)) <= 999)
+                                        in ())  end
+                         ));
+                         ( any  pre {} post
+                         {((result = True) <->
+                             --pp_universal_quantif NOT IMPLEMENTED)} return
+                         bool)) in ())  end;
+  (* Assume Pre of the subprogram example.ads:5 *);
+  assume
+  { (([GP_Pretty_Ada:943] True) /\ --pp_universal_quantif NOT IMPLEMENTED) };
+  (let ([mlw:proxy_symbol] [introduced] temp___old_185) =
+  !Example__increment__table.table in (try
+  ();
+    ([sloc:example.adb:5] ());
+    ();
+    ([GP_Sloc:example.adb:5:28] ([sloc:example.adb:5] (let ([mlw:proxy_symbol]
+                                [introduced] temp___175) = 1 in
+                                (let ([mlw:proxy_symbol]
+                                [introduced] temp___176) = 1000 in (
+                                Example__increment__L_1__i.i :=
+                                ([mlw:proxy_symbol] [introduced] temp___175));
+                                (* Translation of an Ada loop from example.adb:5 *);
+                                (if
+                                (_gnatprove_standard.Boolean.andb
+                                   (([mlw:proxy_symbol]
+                                      [introduced] temp___175)
+                                      <= !Example__increment__L_1__i.i)
+                                   (!Example__increment__L_1__i.i
+                                      <= ([mlw:proxy_symbol]
+                                      [introduced] temp___176)))
+                                then
+                                (try
+                                (let ([model_trace:921'Loop_Entry] temp___loop_entry_181)
+                                  = !Example__increment__table.table in
+                                  (let temp___loop_entry_178 =
+                                  !Example__increment__table.table in
+                                  (let ([model_trace:921'Loop_Entry] temp___loop_entry_183)
+                                  = !Example__increment__table.table in
+                                  (* While loop translating the Ada loop from example.adb:5 *);
+                                  ([sloc:example.adb:8] loop
+                                                          ();
+                                                          ([GP_Sloc:example.adb:6:19] 
+                                                          ([sloc:example.adb:6] (
+                                                          Example__increment__table.table
+                                                          :=
+                                                          (Array__Int__Standard__natural.set
+                                                             !Example__increment__table.table
+                                                             !Example__increment__L_1__i.i
+                                                             (Standard__natural__rep.of_rep
+                                                                ( ([sloc:example.adb:6] 
+                                                                  ([GP_Shape:L_1_while__table_assign__add]
+                                                                  [GP_Sloc:example.adb:6:31]
+                                                                  [vc:annotation]
+                                                                  [GP_Reason:VC_OVERFLOW_CHECK]
+                                                                  [comment:         Table(i) := Table(i) + 1;                               ^ example.adb:6:31:VC_OVERFLOW_CHECK]
+                                                                  [GP_Id:0] (
+                                                                  Standard__integer.range_check_
+                                                                    (
+                                                                    (Standard__natural__rep.to_rep
+                                                                    (Array__Int__Standard__natural.get
+                                                                    !Example__increment__table.table
+                                                                    !Example__increment__L_1__i.i))
+                                                                    + 1))))))))));
+                                                          (* Check for absence of RTE in the loop invariant and variant *);
+                                                          (let ([mlw:proxy_symbol]
+                                                          [introduced] temp___inv_182)
+                                                          =
+                                                          (let j =
+                                                            ( any  pre {}
+                                                              post {} return
+                                                              int) in
+                                                          (if
+                                                          (_gnatprove_standard.Boolean.andb
+                                                             (1 <= j)
+                                                             (j
+                                                                <= !Example__increment__L_1__i.i))
+                                                          then
+                                                          abstract ensures
+                                                          { True } begin 
+                                                           (let _ =
+                                                          ((Standard__natural__rep.to_rep
+                                                              (Array__Int__Standard__natural.get
+                                                                 !Example__increment__table.table
+                                                                 assert
+                                                                 { ([sloc:example.adb:7] 
+                                                                   ([vc:annotation]
+                                                                   [GP_Shape:L_1_while__pragargs__forall__cmp__ixdcomp]
+                                                                   [comment:         pragma Loop_Invariant(for all j in Table'First .. i => Table(j) = Table'Loop_Entry(j) + 1);                                                                       ^ example.adb:7:71:VC_INDEX_CHECK]
+                                                                   [GP_Sloc:example.adb:7:71]
+                                                                   [GP_Reason:VC_INDEX_CHECK]
+                                                                   [GP_Id:4] (
+                                                                   (Example__Tt_tableD1.first
+                                                                    <= j) /\
+                                                                    (j
+                                                                    <= Example__Tt_tableD1.last)))) };
+                                                                 j))
+                                                             = ([sloc:example.adb:7] 
+                                                               ([vc:annotation]
+                                                               [comment:         pragma Loop_Invariant(for all j in Table'First .. i => Table(j) = Table'Loop_Entry(j) + 1);                                                                                                ^ example.adb:7:96:VC_OVERFLOW_CHECK]
+                                                               [GP_Reason:VC_OVERFLOW_CHECK]
+                                                               [GP_Shape:L_1_while__pragargs__forall__cmp__add]
+                                                               [GP_Id:6]
+                                                               [GP_Sloc:example.adb:7:96] (
+                                                               Standard__integer.range_check_
+                                                                 ((Standard__natural__rep.to_rep
+                                                                    (Array__Int__Standard__natural.get
+                                                                    ([model_trace:921'Loop_Entry] temp___loop_entry_183)
+                                                                    assert
+                                                                    { ([sloc:example.adb:7] 
+                                                                    ([GP_Shape:L_1_while__pragargs__forall__cmp__add__ixdcomp]
+                                                                    [vc:annotation]
+                                                                    [GP_Reason:VC_INDEX_CHECK]
+                                                                    [comment:         pragma Loop_Invariant(for all j in Table'First .. i => Table(j) = Table'Loop_Entry(j) + 1);                                                                                             ^ example.adb:7:93:VC_INDEX_CHECK]
+                                                                    [GP_Id:5]
+                                                                    [GP_Sloc:example.adb:7:93] (
+                                                                    (Example__Tt_tableD1.first
+                                                                    <= j) /\
+                                                                    (j
+                                                                    <= Example__Tt_tableD1.last)))) };
+                                                                    j)) + 1)))))
+                                                          in ())  end ));
+                                                          ( any  pre {} post
+                                                          {((result = True)
+                                                              <->
+                                                              --pp_universal_quantif NOT IMPLEMENTED)}
+                                                          return bool) in
+                                  abstract ensures
+                                  { True } begin  (let _ =
+                                                 (let ([mlw:proxy_symbol]
+                                                   [introduced] temp___inv_180)
+                                                   =
+                                                   (let k =
+                                                     ( any  pre {} post {
+                                                       } return int) in
+                                                   (if
+                                                   (_gnatprove_standard.Boolean.andb
+                                                      ((!Example__increment__L_1__i.i
+                                                          + 1) <= k)
+                                                      (k <= 1000))
+                                                   then
+                                                   abstract ensures
+                                                   { True } begin  (let _ =
+                                                                  ((Standard__natural__rep.to_rep
+                                                                    (Array__Int__Standard__natural.get
+                                                                    !Example__increment__table.table
+                                                                    assert
+                                                                    { ([sloc:example.adb:8] 
+                                                                    ([comment:         pragma Loop_Invariant(for all k in i + 1 .. Table'Last => Table(k) = Table'Loop_Entry(k));                                                                          ^ example.adb:8:74:VC_INDEX_CHECK]
+                                                                    [vc:annotation]
+                                                                    [GP_Shape:L_1_while__pragargs__forall__cmp__ixdcomp]
+                                                                    [GP_Reason:VC_INDEX_CHECK]
+                                                                    [GP_Id:1]
+                                                                    [GP_Sloc:example.adb:8:74] (
+                                                                    (Example__Tt_tableD1.first
+                                                                    <= k) /\
+                                                                    (k
+                                                                    <= Example__Tt_tableD1.last)))) };
+                                                                    k))
+                                                                    = (
+                                                                    Standard__natural__rep.to_rep
+                                                                    (Array__Int__Standard__natural.get
+                                                                    ([model_trace:921'Loop_Entry] temp___loop_entry_181)
+                                                                    assert
+                                                                    { ([sloc:example.adb:8] 
+                                                                    ([GP_Sloc:example.adb:8:96]
+                                                                    [vc:annotation]
+                                                                    [GP_Shape:L_1_while__pragargs__forall__cmp__ixdcomp]
+                                                                    [comment:         pragma Loop_Invariant(for all k in i + 1 .. Table'Last => Table(k) = Table'Loop_Entry(k));                                                                                                ^ example.adb:8:96:VC_INDEX_CHECK]
+                                                                    [GP_Reason:VC_INDEX_CHECK]
+                                                                    [GP_Id:2] (
+                                                                    (Example__Tt_tableD1.first
+                                                                    <= k) /\
+                                                                    (k
+                                                                    <= Example__Tt_tableD1.last)))) };
+                                                                    k)))
+                                                                  in ())  end
+                                                   ));
+                                                   ( any  pre {} post
+                                                   {((result = True) <->
+                                                       --pp_universal_quantif NOT IMPLEMENTED)}
+                                                   return bool) in abstract
+                                  ensures
+                                  { True } begin  (let _ = () in ())  end)
+                                in ())  end)
+                                invariant
+                                {([sloc:example.adb:7] ([GP_Reason:VC_LOOP_INVARIANT]
+                                                       [comment:         pragma Loop_Invariant(for all j in Table'First .. i => Table(j) = Table'Loop_Entry(j) + 1);                                ^ example.adb:7:32:VC_LOOP_INVARIANT]
+                                                       [vc:annotation]
+                                                       [GP_Shape:L_1_while__pragargs__forall]
+                                                       [GP_Sloc:example.adb:7:32]
+                                                       [GP_Id:7] --pp_universal_quantif NOT IMPLEMENTED))}
+                                invariant
+                                {([sloc:example.adb:8] ([GP_Reason:VC_LOOP_INVARIANT]
+                                                       [vc:annotation]
+                                                       [GP_Shape:L_1_while__pragargs__forall]
+                                                       [GP_Id:3]
+                                                       [comment:         pragma Loop_Invariant(for all k in i + 1 .. Table'Last => Table(k) = Table'Loop_Entry(k));                                ^ example.adb:8:32:VC_LOOP_INVARIANT]
+                                                       [GP_Sloc:example.adb:8:32] --pp_universal_quantif NOT IMPLEMENTED))}
+                                
+                                (* Assume implicit invariants from the loop example.adb:5 *);
+                                assume
+                                { (_gnatprove_standard.Boolean.andb
+                                     ((True /\
+                                         (Example__t_table___axiom.dynamic_invariant
+                                            !Example__increment__table.table
+                                            True True True True) /\ True /\
+                                         --pp_universal_quantif NOT IMPLEMENTED)
+                                        /\
+                                        (if
+                                        ((True = True) \/
+                                           (Example__increment__L_1__T1b.first
+                                              <= Example__increment__L_1__T1b.last))
+                                        then
+                                        (Example__increment__L_1__T1b.dynamic_property
+                                           Example__increment__L_1__T1b.first
+                                           Example__increment__L_1__T1b.last
+                                           !Example__increment__L_1__i.i)
+                                        ) /\ True /\ True)
+                                     ((1 <= !Example__increment__L_1__i.i) /\
+                                        (!Example__increment__L_1__i.i
+                                           <= 1000))) };
+                                (* Continuation of loop after loop invariant and variant *);
+                                (* Check for the exit condition and loop statements appearing before the loop invariant of loop example.adb:5 *);
+                                (if
+                                (!Example__increment__L_1__i.i
+                                   = ([mlw:proxy_symbol]
+                                   [introduced] temp___176))
+                                then raise Example__increment__L_1.L_1 );
+                                ([sloc:example.adb:5] (
+                                Example__increment__L_1__i.i :=
+                                (!Example__increment__L_1__i.i + 1)))
+                                 end loop)))) with
+    | Example__increment__L_1.L_1  -> ()) )))));
+raise Return__exc with | Return__exc  -> ());
+abstract ensures
+{ True } begin  (let _ = (let i = ( any  pre {} post {} return int) in
+               (if (_gnatprove_standard.Boolean.andb (1 <= i) (i <= 1000))
+               then
+               abstract ensures
+               { True } begin  (let _ =
+                              ((Standard__natural__rep.to_rep
+                                  (Array__Int__Standard__natural.get
+                                     !Example__increment__table.table i))
+                                 = ([sloc:example.ads:11] ([vc:annotation]
+                                                          [GP_Reason:VC_OVERFLOW_CHECK]
+                                                          [comment:     Post=> (for all i in Table'Range => Table(i) = Table'Old (i) + 1);                                                                   ^ example.ads:11:67:VC_OVERFLOW_CHECK]
+                                                          [GP_Shape:pragargs__forall__cmp__add]
+                                                          [GP_Sloc:example.ads:11:67]
+                                                          [GP_Id:8] (
+                                                          Standard__integer.range_check_
+                                                            ((Standard__natural__rep.to_rep
+                                                                (Array__Int__Standard__natural.get
+                                                                   ([mlw:proxy_symbol]
+                                                                   [introduced] temp___old_185)
+                                                                   i)) + 1)))))
+                              in ())  end
+               ));
+               ( any  pre {} post
+               {((result = True) <-> --pp_universal_quantif NOT IMPLEMENTED)}
+               return bool) in
+())  end)
+
+end

@@ -1,0 +1,8 @@
+example.ads:17:43: error: missing ";"
+example.ads:18:33: error: identifier expected
+example.ads:19:20: error: identifier expected
+example.ads:20:20: error: statement not allowed in package spec
+example.ads:21:74: error: "=" should be ":="
+example.ads:22:76: error: "=" should be ":="
+example.ads:23:74: error: "=" should be ":="
+example.ads:25:01: error: "end if;" expected for "if" at line 20

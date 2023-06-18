@@ -1,0 +1,2 @@
+pkg_multiply.adb:15:24: medium: overflow check might fail (e.g. when Second_Operand = Integer'First)[#1]
+pkg_multiply.adb:16:23: medium: precondition might fail, cannot prove First_Operand <= Integer'Last - Second_Operand (e.g. when First_Operand = 1073741824 and Result = 1073741824)[#0]

@@ -1,0 +1,2 @@
+example.ads:9:31: error: unrecognized attribute "Las"
+example.ads:9:31: error: possible misspelling of "Last"

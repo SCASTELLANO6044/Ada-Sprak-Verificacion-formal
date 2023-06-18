@@ -1,0 +1,5 @@
+example.ads:9:13: error: expected type "Standard.Boolean"
+example.ads:9:13: error: found an access type
+example.ads:10:39: error: expected type "Standard.Boolean"
+example.ads:10:39: error: found type "Standard.Integer"
+example.ads:10:43: error: missing ")"

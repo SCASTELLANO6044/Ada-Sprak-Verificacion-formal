@@ -1,0 +1,5 @@
+example.adb:17:79: error: missing operand
+example.adb:19:70: error: "=" should be ":="
+example.adb:21:67: error: "=" should be ":="
+example.adb:22:58: error: extra ")" ignored
+example.adb:25:06: error: missing "end if;" for "if" at line 18

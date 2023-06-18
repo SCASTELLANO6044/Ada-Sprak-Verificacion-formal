@@ -1,0 +1,29 @@
+Summary of SPARK analysis
+=========================
+
+------------------------------------------------------------------------------------------------------------
+SPARK Analysis results        Total       Flow   CodePeer                     Provers   Justified   Unproved
+------------------------------------------------------------------------------------------------------------
+Data Dependencies                 3          3          .                           .           .          .
+Flow Dependencies                 3          3          .                           .           .          .
+Initialization                    2          2          .                           .           .          .
+Non-Aliasing                      .          .          .                           .           .          .
+Run-time Checks                  28          .          .                   28 (CVC4)           .          .
+Assertions                        6          .          .                    6 (CVC4)           .          .
+Functional Contracts              5          .          .    5 (CVC4 95%, Trivial 5%)           .          .
+LSP Verification                  .          .          .                           .           .          .
+Termination                       .          .          .                           .           .          .
+Concurrency                       .          .          .                           .           .          .
+------------------------------------------------------------------------------------------------------------
+Total                            47    8 (17%)          .                    39 (83%)           .          .
+
+
+max steps used for successful proof: 577
+
+Analyzed 1 unit
+in unit example, 5 subprograms and packages out of 5 analyzed
+  Example at example.ads:1 flow analyzed (0 errors, 0 checks and 0 warnings) and proved (0 checks)
+  Example.Is_Sorted at example.ads:35 flow analyzed (0 errors, 0 checks and 0 warnings) and proved (2 checks)
+  Example.Pos_Minimum at example.ads:21 flow analyzed (0 errors, 0 checks and 0 warnings) and proved (15 checks)
+  Example.Selection_Sort at example.ads:40 flow analyzed (0 errors, 0 checks and 0 warnings) and proved (11 checks)
+  Example.Swap at example.ads:5 flow analyzed (0 errors, 0 checks and 0 warnings) and proved (11 checks)

@@ -1,0 +1,316 @@
+{
+  "spark": [
+    {
+      "name": "Example",
+      "sloc": [
+        {
+          "file": "example.ads",
+          "line": 1
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "Example.Swap",
+      "sloc": [
+        {
+          "file": "example.ads",
+          "line": 5
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "Example.Pos_Minimum",
+      "sloc": [
+        {
+          "file": "example.ads",
+          "line": 21
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "Example.Is_Sorted",
+      "sloc": [
+        {
+          "file": "example.ads",
+          "line": 35
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "Example.Selection_Sort",
+      "sloc": [
+        {
+          "file": "example.ads",
+          "line": 40
+        }
+      ],
+      "spark": "all"
+    }
+  ],
+  "flow": [
+    {
+      "file": "example.ads",
+      "line": 9,
+      "col": 8,
+      "rule": "GLOBAL_WRONG",
+      "severity": "info",
+      "entity": {
+        "name": "Example.Swap",
+        "sloc": [
+          {
+            "file": "example.ads",
+            "line": 5
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    },
+    {
+      "file": "example.ads",
+      "line": 10,
+      "col": 8,
+      "rule": "DEPENDS_WRONG",
+      "severity": "info",
+      "entity": {
+        "name": "Example.Swap",
+        "sloc": [
+          {
+            "file": "example.ads",
+            "line": 5
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    },
+    {
+      "file": "example.adb",
+      "line": 23,
+      "col": 7,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Example.Pos_Minimum",
+        "sloc": [
+          {
+            "file": "example.ads",
+            "line": 21
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    },
+    {
+      "file": "example.ads",
+      "line": 26,
+      "col": 8,
+      "rule": "GLOBAL_WRONG",
+      "severity": "info",
+      "entity": {
+        "name": "Example.Pos_Minimum",
+        "sloc": [
+          {
+            "file": "example.ads",
+            "line": 21
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    },
+    {
+      "file": "example.ads",
+      "line": 27,
+      "col": 8,
+      "rule": "DEPENDS_WRONG",
+      "severity": "info",
+      "entity": {
+        "name": "Example.Pos_Minimum",
+        "sloc": [
+          {
+            "file": "example.ads",
+            "line": 21
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    },
+    {
+      "file": "example.adb",
+      "line": 50,
+      "col": 7,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Example.Selection_Sort",
+        "sloc": [
+          {
+            "file": "example.ads",
+            "line": 40
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    },
+    {
+      "file": "example.ads",
+      "line": 42,
+      "col": 8,
+      "rule": "GLOBAL_WRONG",
+      "severity": "info",
+      "entity": {
+        "name": "Example.Selection_Sort",
+        "sloc": [
+          {
+            "file": "example.ads",
+            "line": 40
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    },
+    {
+      "file": "example.ads",
+      "line": 43,
+      "col": 8,
+      "rule": "DEPENDS_WRONG",
+      "severity": "info",
+      "entity": {
+        "name": "Example.Selection_Sort",
+        "sloc": [
+          {
+            "file": "example.ads",
+            "line": 40
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    }
+  ],
+  "assumptions": [
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Example.Is_Sorted",
+          "sloc": [
+            {
+              "file": "example.ads",
+              "line": 35
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Example.Swap",
+          "sloc": [
+            {
+              "file": "example.ads",
+              "line": 5
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Example.Pos_Minimum",
+          "sloc": [
+            {
+              "file": "example.ads",
+              "line": 21
+            }
+          ]
+        }
+      }
+    },
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "Example.Is_Sorted",
+            "sloc": [
+              {
+                "file": "example.ads",
+                "line": 35
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "Example.Pos_Minimum",
+            "sloc": [
+              {
+                "file": "example.ads",
+                "line": 21
+              }
+            ]
+          }
+        },
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "Example.Swap",
+            "sloc": [
+              {
+                "file": "example.ads",
+                "line": 5
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Example.Selection_Sort",
+          "sloc": [
+            {
+              "file": "example.ads",
+              "line": 40
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "timings": {
+    "globals/properties (advanced)": 6.60200021229684E-04,
+    "flow analysis": 5.79399988055229E-03,
+    "marking": 5.84799970965832E-04,
+    "globals (basic)": 3.75900010112673E-04
+  }
+}
