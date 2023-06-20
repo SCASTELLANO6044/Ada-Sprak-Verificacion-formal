@@ -1,0 +1,14 @@
+20210706095806
+-c
+-x
+ada
+-gnatA
+-g
+-fstack-check
+-gnata
+-gnato
+-gnat12
+-gnatwa
+-gnateE
+-gnatc
+-gnates=D:\1. ESTUDIOS\UNI3\ASIGNATURAS\1er Semestre\PROGRAMACION3\PRACTICA\Ejemplos_Ada_Spark\Calculadora\obj\gnatprove\a3c99f28.tmp

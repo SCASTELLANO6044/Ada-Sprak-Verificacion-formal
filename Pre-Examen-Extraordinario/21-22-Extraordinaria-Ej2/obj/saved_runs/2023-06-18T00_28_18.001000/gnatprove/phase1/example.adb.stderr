@@ -1,0 +1,7 @@
+example.adb:20:49: error: extra ";" ignored
+example.adb:22:49: error: extra ";" ignored
+example.adb:25:80: error: "V" is undefined
+example.ads:20:27: error: attribute "Loop_Entry" must appear within appropriate pragma
+example.ads:21:32: error: attribute "Loop_Entry" must appear within appropriate pragma
+example.ads:22:34: error: attribute "Loop_Entry" must appear within appropriate pragma
+example.ads:23:32: error: attribute "Loop_Entry" must appear within appropriate pragma

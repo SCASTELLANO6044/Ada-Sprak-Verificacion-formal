@@ -1,6 +1,6 @@
 package body Example with SPARK_Mode is
 
-   procedure And (V1 : in out T_Vector; V2: T_Vector;
+   procedure AndLogic (V1 : in out T_Vector; V2: T_Vector;
                         From : Natural; To : Natural) is
    i : Natural := From;
    begin
@@ -28,6 +28,6 @@ package body Example with SPARK_Mode is
          pragma Loop_Variant(increases => i);
          i := i + 1;
       end loop;
-   end Increment;
+   end AndLogic;
 
 end Example;

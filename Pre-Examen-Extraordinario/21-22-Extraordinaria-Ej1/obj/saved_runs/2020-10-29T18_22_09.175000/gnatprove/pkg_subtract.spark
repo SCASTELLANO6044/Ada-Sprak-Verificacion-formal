@@ -1,0 +1,119 @@
+{
+  "spark": [
+    {
+      "name": "Pkg_Subtract",
+      "sloc": [
+        {
+          "file": "pkg_subtract.ads",
+          "line": 1
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "Pkg_Subtract.Subtract",
+      "sloc": [
+        {
+          "file": "pkg_subtract.ads",
+          "line": 3
+        }
+      ],
+      "spark": "all"
+    }
+  ],
+  "flow": [
+    {
+      "file": "pkg_subtract.ads",
+      "line": 6,
+      "col": 7,
+      "rule": "UNINITIALIZED",
+      "severity": "info",
+      "entity": {
+        "name": "Pkg_Subtract.Subtract",
+        "sloc": [
+          {
+            "file": "pkg_subtract.ads",
+            "line": 3
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    },
+    {
+      "file": "pkg_subtract.ads",
+      "line": 10,
+      "col": 7,
+      "rule": "GLOBAL_WRONG",
+      "severity": "info",
+      "entity": {
+        "name": "Pkg_Subtract.Subtract",
+        "sloc": [
+          {
+            "file": "pkg_subtract.ads",
+            "line": 3
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    },
+    {
+      "file": "pkg_subtract.ads",
+      "line": 11,
+      "col": 7,
+      "rule": "DEPENDS_WRONG",
+      "severity": "info",
+      "entity": {
+        "name": "Pkg_Subtract.Subtract",
+        "sloc": [
+          {
+            "file": "pkg_subtract.ads",
+            "line": 3
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    }
+  ],
+  "assumptions": [
+    {
+      "assumptions": [
+        {
+          "predicate": "CLAIM_EFFECTS",
+          "arg": {
+            "name": "Pkg_Add.Add",
+            "sloc": [
+              {
+                "file": "pkg_add.ads",
+                "line": 3
+              }
+            ]
+          }
+        }
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Pkg_Subtract.Subtract",
+          "sloc": [
+            {
+              "file": "pkg_subtract.ads",
+              "line": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "timings": {
+    "globals/properties (advanced)": 5.32199977897108E-04,
+    "flow analysis": 1.13109999801964E-03,
+    "marking": 2.68400006461889E-04,
+    "globals (basic)": 2.91500007733703E-04
+  }
+}

@@ -1,0 +1,10 @@
+example.ads:6:39: error: "," should be ";"
+example.ads:14:24: error: range attribute cannot be used in expression
+example.ads:16:40: error: missing ")"
+example.ads:17:31: error: identifier expected
+example.ads:18:20: error: identifier expected
+example.ads:19:20: error: statement not allowed in package spec
+example.ads:20:74: error: "=" should be ":="
+example.ads:21:76: error: "=" should be ":="
+example.ads:22:74: error: "=" should be ":="
+example.ads:24:01: error: "end if;" expected for "if" at line 19

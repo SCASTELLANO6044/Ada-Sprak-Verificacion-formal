@@ -1,0 +1,55 @@
+V "GNAT Lib v2021"
+A -x
+A ada
+A -gnatA
+A -g
+A -fstack-check
+A -gnata
+A -gnato
+A -gnat12
+A -gnatwa
+A -gnateE
+A -gnatc
+P GP FX
+
+RN
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_ASPECT_SPECIFICATIONS
+RV NO_IMPLEMENTATION_ATTRIBUTES
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+
+U example%b		example.adb		4411d8b2 OO PK
+
+U example%s		example.ads		ff3cb371 OO PK
+
+D example.ads		20230618210154 ff3cb371 example%s
+D example.adb		20230618210522 bb2d6bc3 example%b
+D system.ads		20210520051134 2ffa5114 system%s
+G a Z
+X 1 example.ads
+1K9*Example 26l5 26e12 2|1b14 19l5 19t12
+3A9*T_Vector(integer)<integer> 5r37 5r51 2|3r37 3r51
+5U14*Increment 5=25 5>47 6>25 6>41 2|3b14 17l8 17t17
+5a25 V1{3A9} 10r20 10r27 11r16 13r20 14r32 14r44 16r30 17r32 18r32 19r34
+. 21r32 22r34 24r19 24r27 2|3b25 8m10 8r19 10r34 10r42 12r57 12r65
+5a47 V2{3A9} 10r31 12r18 13r32 15r34 15r46 21r43 22r44 24r39 2|3b47 8r27
+. 10r61
+6i25 From{natural} 10r35 16r22 17r24 20r30 23r30 2|4b25 5r19 9r45 13r37
+6i41 To{natural} 10r41 18r26 19r28 20r38 23r38 2|4b41 7r17 12r51 13r45
+14i27 i{integer} 14r47
+15i29 i{integer} 15r49
+23i25 i{integer} 24r22 24r34 24r42
+X 2 example.adb
+5i4 i{natural} 7r13 8r13 8r22 8r30 9r53 12r46 13r32 14r43 15m10 15r15
+9i40 j{integer} 10r37 10r56 10r64
+12i41 j{integer} 12r60 12r79
+
+QQ SPARKVERSION SPARK Community 2021 (20210519)
+GG EK_DIRECT_CALLS example__increment 0
+GG EK_GLOBALS example__increment local FALSE E_PROCEDURE FALSE ORIGIN_FLOW 1 example proper_proof_in 0 proper_input 0 proper_output 0 refined_proof_in 0 refined_input 0 refined_output 0 calls_proof 0 calls 0 calls_conditional 0 FALSE FALSE FALSE TRUE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
+GG EK_DIRECT_CALLS example 0
+GG EK_GLOBALS example local FALSE E_PACKAGE TRUE ORIGIN_FLOW 0 proper_proof_in 0 proper_input 0 proper_output 0 refined_proof_in 0 refined_input 0 refined_output 0 initializes 0 refined_initializes 0 calls_proof 0 calls 0 calls_conditional 0 local_var 0 FALSE FALSE FALSE FALSE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
+GG EK_FLOW_SCOPE example TRUE FALSE FALSE FALSE FALSE __standard
+GG EK_FLOW_SCOPE example__increment FALSE FALSE FALSE FALSE TRUE example VISIBLE_PART
+GG EK_END_MARKER

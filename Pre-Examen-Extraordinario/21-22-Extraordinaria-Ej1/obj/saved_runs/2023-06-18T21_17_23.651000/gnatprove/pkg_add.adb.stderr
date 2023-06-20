@@ -1,0 +1,2 @@
+pkg_add.adb:9:22: medium: divide by zero might fail[#0]
+pkg_add.ads:26:16: medium: postcondition might fail[#1]

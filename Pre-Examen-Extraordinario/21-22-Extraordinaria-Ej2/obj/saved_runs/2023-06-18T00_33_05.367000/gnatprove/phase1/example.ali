@@ -1,0 +1,60 @@
+V "GNAT Lib v2021"
+A -x
+A ada
+A -gnatA
+A -g
+A -fstack-check
+A -gnata
+A -gnato
+A -gnat12
+A -gnatwa
+A -gnateE
+A -gnatc
+P GP FX
+
+RN
+RV NO_DIRECT_BOOLEAN_OPERATORS
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_ASPECT_SPECIFICATIONS
+RV NO_IMPLEMENTATION_ATTRIBUTES
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_ELABORATION_CODE
+
+U example%b		example.adb		c569b510 OO PK
+
+U example%s		example.ads		415342ad OO PK
+
+D example.ads		20230617233116 415342ad example%s
+D example.adb		20230617233252 843af7bd example%b
+D system.ads		20210520051134 2ffa5114 system%s
+G a Z
+X 1 example.ads
+1K9*Example 25l5 25e12 2|1b14 29l5 29t12
+3A9*T_Vector(integer)<integer> 5r37 5r51 2|3r37 3r51
+5U14*Increment 5=25 5>47 6>25 6>41 2|3b14 27l8 27t17
+5a25 V1{3A9} 10r20 10r27 11r16 13r20 14r22 15r24 16r34 17r34 18r32 18r44
+. 20r25 20r58 21r30 21r63 22r36 22r69 23r38 23r71 2|3b25 7r13 8m13 9r16 10m13
+. 11r16 12m13 13r16 14m13 17r38 18r40 19r41 20r40 21r41 22r40 23r41 24r40
+. 25r61 25r80
+5a47 V2{3A9} 10r31 12r18 13r32 14r33 15r34 18r52 20r43 21r48 22r54 23r56
+. 2|3b47 7r27 9r30 11r30 13r30 17r63 19r66 21r66 23r66
+6i25 From{natural} 10r35 16r26 19r30 2|4b25 6r16 16r45
+6i41 To{natural} 10r41 17r28 19r38 2|4b41 6r24 25r55
+18i27 i{integer} 18r47 18r55
+19i25 i{integer} 20r32 20r46 20r61 21r37 21r51 21r66 22r43 22r57 22r72 23r45
+. 23r59 23r74
+X 2 example.adb
+6i11 i{integer} 7r16 7r30 8r16 9r19 9r33 10r16 11r19 11r33 12r16 13r19 13r33
+. 14r16 16r53 25r46
+16i40 j{integer} 17r52 17r66 18r43 19r55 19r69 20r43 21r55 21r69 22r43 23r55
+. 23r69 24r43
+25i41 j{integer} 25r75 25r83
+
+QQ SPARKVERSION SPARK Community 2021 (20210519)
+GG EK_DIRECT_CALLS example__increment 0
+GG EK_GLOBALS example__increment local FALSE E_PROCEDURE FALSE ORIGIN_FLOW 1 example proper_proof_in 0 proper_input 0 proper_output 0 refined_proof_in 0 refined_input 0 refined_output 0 calls_proof 0 calls 0 calls_conditional 0 FALSE FALSE FALSE TRUE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
+GG EK_DIRECT_CALLS example 0
+GG EK_GLOBALS example local FALSE E_PACKAGE TRUE ORIGIN_FLOW 0 proper_proof_in 0 proper_input 0 proper_output 0 refined_proof_in 0 refined_input 0 refined_output 0 initializes 0 refined_initializes 0 calls_proof 0 calls 0 calls_conditional 0 local_var 0 FALSE FALSE FALSE FALSE ENTRY_CALLS 0 SUSPENDS_ON 0 UNSYNCH_ACCESSES 0 LOCKS 0
+GG EK_FLOW_SCOPE example TRUE FALSE FALSE FALSE FALSE __standard
+GG EK_FLOW_SCOPE example__increment FALSE FALSE FALSE FALSE TRUE example VISIBLE_PART
+GG EK_END_MARKER

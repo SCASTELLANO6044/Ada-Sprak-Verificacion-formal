@@ -1,0 +1,4 @@
+example.adb:12:57: medium: loop invariant might not be preserved by an arbitrary iteration, cannot prove V1(j) = V1'Loop_Entry(j)[#1]
+example.adb:12:57: medium: loop invariant might fail in first iteration, cannot prove V1(j) = V1'Loop_Entry(j)[#2]
+example.adb:15:17: medium: overflow check might fail [reason for check: result of addition must fit in a 32-bits machine integer][#0]
+example.ads:24:19: medium: postcondition might fail, cannot prove V1'Old(i) = V1(i) - V2(i)[#3]

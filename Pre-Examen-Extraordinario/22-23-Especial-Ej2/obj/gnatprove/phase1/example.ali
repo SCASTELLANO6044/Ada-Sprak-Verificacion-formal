@@ -24,8 +24,8 @@ U example%b		example.adb		0e4f6787 OO PK
 
 U example%s		example.ads		5a8cd8f4 OO PK
 
-D example.ads		20230618000520 5a8cd8f4 example%s
-D example.adb		20230618000330 54c3bf73 example%b
+D example.ads		20230620165344 5a8cd8f4 example%s
+D example.adb		20230620165344 54c3bf73 example%b
 D system.ads		20210520051134 2ffa5114 system%s
 G a Z
 X 1 example.ads

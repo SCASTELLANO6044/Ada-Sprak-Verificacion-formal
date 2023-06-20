@@ -1,0 +1,2 @@
+example.adb:3:14: error: reserved word "and" cannot be used as identifier
+example.adb:31:04: error: "end And;" expected

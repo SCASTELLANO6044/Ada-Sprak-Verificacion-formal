@@ -1,0 +1,8 @@
+example.ads:17:51: error: misplaced loop
+example.ads:18:33: error: identifier expected
+example.ads:19:22: error: identifier expected
+example.ads:20:22: error: statement not allowed in package spec
+example.ads:21:76: error: "=" should be ":="
+example.ads:22:78: error: "=" should be ":="
+example.ads:23:76: error: "=" should be ":="
+example.ads:25:01: error: "end if;" expected for "if" at line 20

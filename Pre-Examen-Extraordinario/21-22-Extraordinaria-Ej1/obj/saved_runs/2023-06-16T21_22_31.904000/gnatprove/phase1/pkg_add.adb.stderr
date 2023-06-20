@@ -1,0 +1,5 @@
+pkg_add.adb:7:07: error: "B" conflicts with declaration at line 5
+pkg_add.ads:7:07: error: "B" conflicts with declaration at line 5
+pkg_add.ads:11:08: error: parameter "B" is missing from input dependence list
+pkg_add.ads:11:08: error: add "null => B" dependency to ignore this input
+pkg_add.ads:16:22: error: "D" is undefined (more references follow)

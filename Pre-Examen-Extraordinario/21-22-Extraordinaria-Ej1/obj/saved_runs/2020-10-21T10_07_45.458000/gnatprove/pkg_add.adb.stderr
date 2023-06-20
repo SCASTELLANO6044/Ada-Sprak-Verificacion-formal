@@ -1,0 +1,2 @@
+pkg_add.ads:10:46: medium: overflow check might fail (e.g. when Second_Operand = -1)[#0]
+pkg_add.ads:11:47: medium: overflow check might fail (e.g. when First_Operand = 1)[#1]

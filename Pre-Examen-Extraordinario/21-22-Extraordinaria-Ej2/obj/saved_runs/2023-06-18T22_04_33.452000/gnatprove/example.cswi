@@ -1,0 +1,14 @@
+20230618210434
+-c
+-x
+ada
+-gnatA
+-g
+-fstack-check
+-gnata
+-gnato
+-gnat12
+-gnatwa
+-gnateE
+-gnatc
+-gnates=D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\obj\gnatprove\04add226.tmp

@@ -1,0 +1,3 @@
+pkg_add.adb:9:22: medium: divide by zero might fail[#0]
+pkg_add.ads:26:23: medium: divide by zero might fail[#2]
+pkg_add.ads:27:37: medium: divide by zero might fail[#1]

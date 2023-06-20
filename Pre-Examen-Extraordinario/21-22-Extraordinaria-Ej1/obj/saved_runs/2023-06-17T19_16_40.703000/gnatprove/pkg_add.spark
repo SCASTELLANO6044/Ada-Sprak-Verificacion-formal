@@ -1,0 +1,89 @@
+{
+  "spark": [
+    {
+      "name": "Pkg_Add",
+      "sloc": [
+        {
+          "file": "pkg_add.ads",
+          "line": 1
+        }
+      ],
+      "spark": "all"
+    },
+    {
+      "name": "Pkg_Add.Add",
+      "sloc": [
+        {
+          "file": "pkg_add.ads",
+          "line": 3
+        }
+      ],
+      "spark": "all"
+    }
+  ],
+  "flow": [
+    {
+      "file": "pkg_add.ads",
+      "line": 10,
+      "col": 8,
+      "rule": "GLOBAL_WRONG",
+      "severity": "info",
+      "entity": {
+        "name": "Pkg_Add.Add",
+        "sloc": [
+          {
+            "file": "pkg_add.ads",
+            "line": 3
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    },
+    {
+      "file": "pkg_add.ads",
+      "line": 11,
+      "col": 8,
+      "rule": "DEPENDS_WRONG",
+      "severity": "info",
+      "entity": {
+        "name": "Pkg_Add.Add",
+        "sloc": [
+          {
+            "file": "pkg_add.ads",
+            "line": 3
+          }
+        ]
+      },
+      "check_tree": {
+      },
+      "how_proved": "flow"
+    }
+  ],
+  "assumptions": [
+    {
+      "assumptions": [
+      ],
+      "claim": {
+        "predicate": "CLAIM_EFFECTS",
+        "arg": {
+          "name": "Pkg_Add.Add",
+          "sloc": [
+            {
+              "file": "pkg_add.ads",
+              "line": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "timings": {
+    "globals (advanced)": 3.22899990715086E-03,
+    "flow analysis": 5.76499989256263E-03,
+    "marking": 4.77199995657429E-04,
+    "properties (advanced)": 2.16000007640105E-05,
+    "globals (basic)": 1.00179994478822E-03
+  }
+}

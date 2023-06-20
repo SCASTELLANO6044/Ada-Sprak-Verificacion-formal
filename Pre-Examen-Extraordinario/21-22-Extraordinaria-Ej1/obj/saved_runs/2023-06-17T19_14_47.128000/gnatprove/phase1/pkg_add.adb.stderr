@@ -1,0 +1,2 @@
+pkg_add.ads:26:31: error: this expression must be parenthesized
+pkg_add.ads:26:39: error: missing operand

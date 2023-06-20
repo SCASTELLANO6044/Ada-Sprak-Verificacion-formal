@@ -1,0 +1,1325 @@
+(* Module for axiomatizing type "integer", created in Gnat2Why.Types.Translate_Type *)
+module Standard__integer
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use import int.Int
+  
+  type integer  = <range -2147483648 2147483647>
+  
+  function   first () requires { True } ensures  { True } returns
+    int = -2147483648
+  
+  function   last () requires { True } ensures  { True } returns
+    int = 2147483647
+  
+  function   in_range (x : int) requires { True } ensures  { True } returns
+     = ((first <= x) /\ (x <= last))
+  
+  clone export ada__model.Static_Discrete with axiom . type t = integer,
+    function first = first, function last = last,
+    predicate in_range = in_range
+  
+  type integer__ref  = { mutable integer__content : integer }
+  
+  function   integer__ref_integer__content__projection (a : integer__ref)
+    requires {  } ensures  {  } returns integer = a.integer__content
+  
+  meta model_projection function integer__ref_integer__content__projection
+  
+  meta inline:no function integer__ref_integer__content__projection
+  
+  function   integer__havoc (x : integer__ref) requires {  } ensures  {  }
+    returns unit
+
+end
+
+(* Module defining to_rep/of_rep for type "integer", created in Gnat2Why.Types.Translate_Type *)
+module Standard__integer__rep
+  
+  use        Standard__integer
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  function   to_rep (x : Standard__integer.integer) requires { True }
+    ensures  { True } returns int = (Standard__integer.integer'int x)
+  
+  clone export ada__model.Rep_Proj_Int with axiom . type t = Standard__integer.integer,
+    predicate in_range = Standard__integer.in_range, function to_rep = to_rep
+  
+  meta model_projection function to_rep
+  
+  meta inline:no function to_rep
+
+end
+
+(* Module for axiomatizing type "natural", created in Gnat2Why.Types.Translate_Type *)
+module Standard__natural
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use import int.Int
+  
+  type natural  = <range 0 2147483647>
+  
+  function   first () requires { True } ensures  { True } returns int = 0
+  
+  function   last () requires { True } ensures  { True } returns
+    int = 2147483647
+  
+  function   in_range (x : int) requires { True } ensures  { True } returns
+     = ((first <= x) /\ (x <= last))
+  
+  clone export ada__model.Static_Discrete with axiom . type t = natural,
+    function first = first, function last = last,
+    predicate in_range = in_range
+  
+  type natural__ref  = { mutable natural__content : natural }
+  
+  function   natural__ref_natural__content__projection (a : natural__ref)
+    requires {  } ensures  {  } returns natural = a.natural__content
+  
+  meta model_projection function natural__ref_natural__content__projection
+  
+  meta inline:no function natural__ref_natural__content__projection
+  
+  function   natural__havoc (x : natural__ref) requires {  } ensures  {  }
+    returns unit
+
+end
+
+(* Module giving axioms for type "natural", created in Gnat2Why.Types.Generate_Type_Completion *)
+module Standard__natural___axiom
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use import int.Int
+  use        Standard__natural
+  
+  function   dynamic_invariant
+    (([mlw:proxy_symbol] [introduced] temp___expr_46) : int
+    ([mlw:proxy_symbol] [introduced] temp___is_init_42) : bool
+    ([mlw:proxy_symbol] [introduced] temp___skip_constant_43) : bool
+    ([mlw:proxy_symbol] [introduced] temp___do_toplevel_44) : bool
+    ([mlw:proxy_symbol] [introduced] temp___do_typ_inv_45) : bool) requires
+    { True } ensures  { True } returns
+     = (if
+       ((([mlw:proxy_symbol] [introduced] temp___is_init_42) = True) \/
+          (Standard__natural.first <= Standard__natural.last))
+       then
+       (Standard__natural.dynamic_property Standard__natural.first
+          Standard__natural.last ([mlw:proxy_symbol]
+          [introduced] temp___expr_46))
+       )
+  
+  function   default_initial_assumption
+    (([mlw:proxy_symbol] [introduced] temp___expr_47) : int
+    ([mlw:proxy_symbol] [introduced] temp___skip_top_level_48) : bool)
+    requires { True } ensures  { True } returns  = True
+
+end
+
+(* Module for axiomatizing the array theory associated to type "t_vector" defined at example.ads:3, created in Why.Gen.Arrays.Create_Rep_Array_Theory *)
+module Array__Int__Standard__integer
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use import int.Int
+  use        Standard__integer
+  use        Standard__integer__rep
+  
+  function   index_I1_one () requires { True } ensures  { True } returns
+    int = 1
+  
+  type component_type  = --pp_transparent_type_definition NOT IMPLEMENTED
+  
+  clone export _gnatprove_standard.Array__1 with axiom . type I1.t = int,
+    predicate I1.le = <=, predicate I1.lt = <, predicate I1.gt = >,
+    function I1.add = +, function I1.sub = -, function I1.one = index_I1_one,
+    type component_type = component_type
+  
+  function   bool_eq
+    (a : map a__first : int a__last : int b : map b__first : int
+    b__last : int) requires { True } ensures  { True } returns
+    bool = ((if (a__first <= a__last) then
+            ((b__first <= b__last) /\
+               ((a__last - a__first) = (b__last - b__first)))
+             else (b__first > b__last)) /\
+              --pp_universal_quantif NOT IMPLEMENTED)
+  
+  axiom bool_eq_rev : --pp_universal_quantif NOT IMPLEMENTED
+
+end
+
+(* Module for defining a ref holding the value of variable "v1" defined at example.ads:5, created in Gnat2Why.Decls.Translate_Variable *)
+module Example__increment__v1
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use        Standard__integer
+  use        Array__Int__Standard__integer
+  
+  val v1 [name:V1] [model_projected]
+  [model_trace:942] [sloc:example.ads:5]: Array__Int__Standard__integer.map
+  
+  function [model_trace:942'First] [name:V1] [model_projected]
+    [sloc:example.ads:5] v1__first () requires {  } ensures  {  } returns
+    Standard__integer.integer
+  
+  function [name:V1] [model_projected] [model_trace:942'Last]
+    [sloc:example.ads:5] v1__last () requires {  } ensures  {  } returns
+    Standard__integer.integer
+
+end
+
+(* Module for axiomatizing type "t_vector" defined at example.ads:3, created in Gnat2Why.Types.Translate_Type *)
+module Example__t_vector
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use import int.Int
+  use        Standard__integer
+  use        Standard__integer
+  use        Standard__natural
+  use        Standard__integer__rep
+  use        Array__Int__Standard__integer
+  
+  type component_type  = --pp_transparent_type_definition NOT IMPLEMENTED
+  
+  function   index_1_id (x : int) requires { True } ensures  { True } returns
+    int = x
+  
+  clone export ada__model.Unconstr_Array with axiom . type map = Array__Int__Standard__integer.map,
+    function array_bool_eq = Array__Int__Standard__integer.bool_eq,
+    type index_base_type = Standard__integer.integer,
+    type index_rep_type = int,
+    function to_rep = Standard__integer__rep.to_rep,
+    function rep_to_int = index_1_id,
+    predicate in_range_base = Standard__integer.in_range,
+    predicate index_dynamic_property = Standard__natural.dynamic_property,
+    predicate index_rep_le = <=
+  
+  type t_vector  = --pp_transparent_type_definition NOT IMPLEMENTED
+  
+  meta model_projection function to_array
+  
+  meta inline:no function to_array
+  
+  meta model_projection function first
+  
+  meta inline:no function first
+  
+  meta model_projection function last
+  
+  meta inline:no function last
+  
+  type t_vector__ref  = { mutable t_vector__content : t_vector }
+  
+  function   t_vector__ref_t_vector__content__projection (a : t_vector__ref)
+    requires {  } ensures  {  } returns t_vector = a.t_vector__content
+  
+  meta model_projection function t_vector__ref_t_vector__content__projection
+  
+  meta inline:no function t_vector__ref_t_vector__content__projection
+  
+  function   t_vector__havoc (x : t_vector__ref) requires {  } ensures  {  }
+    returns unit
+
+end
+
+(* Module for defining the constant "v2" defined at example.ads:5, created in Gnat2Why.Decls.Translate_Constant *)
+module Example__increment__v2
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use        Example__t_vector
+  
+  function [model_trace:945] [name:V2] [model_projected] [sloc:example.ads:5]
+    v2 () requires {  } ensures  {  } returns Example__t_vector.t_vector
+
+end
+
+(* Module for defining the constant "from" defined at example.ads:6, created in Gnat2Why.Decls.Translate_Constant *)
+module Example__increment__from
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  function [name:From] [model_trace:948] [sloc:example.ads:6] from ()
+    requires {  } ensures  {  } returns int
+
+end
+
+(* Module for defining the constant "to" defined at example.ads:6, created in Gnat2Why.Decls.Translate_Constant *)
+module Example__increment__to
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  function [model_trace:951] [name:To] [sloc:example.ads:6] to__ () requires
+    {  } ensures  {  } returns int
+
+end
+
+(* Module for defining a ref holding the value of variable "i" defined at example.adb:5, created in Gnat2Why.Decls.Translate_Variable *)
+module Example__increment__i
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  val i [name:i] [model_projected]
+  [model_trace:835] [sloc:example.adb:5]: int
+
+end
+
+(* Module giving axioms for type "t_vector" defined at example.ads:3, created in Gnat2Why.Types.Generate_Type_Completion *)
+module Example__t_vector___axiom
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use        Standard__natural
+  use        Example__t_vector
+  
+  function   dynamic_invariant
+    (([mlw:proxy_symbol]
+    [introduced] temp___expr_166) : Example__t_vector.t_vector
+    ([mlw:proxy_symbol] [introduced] temp___is_init_162) : bool
+    ([mlw:proxy_symbol] [introduced] temp___skip_constant_163) : bool
+    ([mlw:proxy_symbol] [introduced] temp___do_toplevel_164) : bool
+    ([mlw:proxy_symbol] [introduced] temp___do_typ_inv_165) : bool) requires
+    { True } ensures  { True } returns
+     = (if ([mlw:proxy_symbol] [introduced] temp___skip_constant_163) then
+       True  else
+       (Example__t_vector.dynamic_property Standard__natural.first
+          Standard__natural.last
+          (Example__t_vector.first ([mlw:proxy_symbol]
+             [introduced] temp___expr_166))
+          (Example__t_vector.last ([mlw:proxy_symbol]
+             [introduced] temp___expr_166))))
+
+end
+
+(* Module for axiomatizing type "S1b" defined at example.adb:3, created in Gnat2Why.Types.Translate_Type *)
+module Example__increment__S1b
+  
+  use export Example__t_vector
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  type s1b  = --pp_transparent_type_definition NOT IMPLEMENTED
+  
+  type s1b__ref  = { mutable s1b__content : s1b }
+  
+  function   s1b__ref_s1b__content__projection (a : s1b__ref) requires {  }
+    ensures  {  } returns s1b = a.s1b__content
+  
+  meta model_projection function s1b__ref_s1b__content__projection
+  
+  meta inline:no function s1b__ref_s1b__content__projection
+  
+  function   s1b__havoc (x : s1b__ref) requires {  } ensures  {  } returns
+    unit
+
+end
+
+(* Module for defining the loop exit exception for the loop "L_1" defined at example.adb:7, created in Gnat2Why.Decls.Translate_Loop_Entity *)
+module Example__increment__L_1
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  --pp_exception_declaration NOT IMPLEMENTED
+
+end
+
+(* Module giving axioms for type "integer", created in Gnat2Why.Types.Generate_Type_Completion *)
+module Standard__integer___axiom
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use import int.Int
+  use        Standard__integer
+  
+  function   dynamic_invariant
+    (([mlw:proxy_symbol] [introduced] temp___expr_18) : int
+    ([mlw:proxy_symbol] [introduced] temp___is_init_14) : bool
+    ([mlw:proxy_symbol] [introduced] temp___skip_constant_15) : bool
+    ([mlw:proxy_symbol] [introduced] temp___do_toplevel_16) : bool
+    ([mlw:proxy_symbol] [introduced] temp___do_typ_inv_17) : bool) requires
+    { True } ensures  { True } returns
+     = (if
+       ((([mlw:proxy_symbol] [introduced] temp___is_init_14) = True) \/
+          (Standard__integer.first <= Standard__integer.last))
+       then
+       (Standard__integer.dynamic_property Standard__integer.first
+          Standard__integer.last ([mlw:proxy_symbol]
+          [introduced] temp___expr_18))
+       )
+  
+  function   default_initial_assumption
+    (([mlw:proxy_symbol] [introduced] temp___expr_19) : int
+    ([mlw:proxy_symbol] [introduced] temp___skip_top_level_20) : bool)
+    requires { True } ensures  { True } returns  = True
+
+end
+
+(* Module giving an empty axiom for the entity "i" defined at example.adb:5, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Example__increment__i___axiom
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  
+
+end
+
+(* Module giving an empty axiom for the entity "L_1" defined at example.adb:7, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Example__increment__L_1___axiom
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  
+
+end
+
+(* Module giving an empty axiom for the entity "v1" defined at example.ads:5, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Example__increment__v1___axiom
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  
+
+end
+
+(* Module giving an empty axiom for the entity "v2" defined at example.ads:5, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Example__increment__v2___axiom
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  
+
+end
+
+(* Module giving an empty axiom for the entity "from" defined at example.ads:6, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Example__increment__from___axiom
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  
+
+end
+
+(* Module giving an empty axiom for the entity "to" defined at example.ads:6, created in Gnat2Why.Driver.Translate_Entity.Generate_Empty_Axiom_Theory *)
+module Example__increment__to___axiom
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  
+  
+
+end
+
+(* Module giving axioms for type "S1b" defined at example.adb:3, created in Gnat2Why.Types.Generate_Type_Completion *)
+module Example__increment__S1b___axiom
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use        Standard__integer__rep
+  use        Example__increment__v1
+  use        Example__increment__S1b
+  
+  function   dynamic_invariant
+    (([mlw:proxy_symbol]
+    [introduced] temp___expr_190) : Example__increment__S1b.s1b
+    ([mlw:proxy_symbol] [introduced] temp___is_init_186) : bool
+    ([mlw:proxy_symbol] [introduced] temp___skip_constant_187) : bool
+    ([mlw:proxy_symbol] [introduced] temp___do_toplevel_188) : bool
+    ([mlw:proxy_symbol] [introduced] temp___do_typ_inv_189) : bool) requires
+    { True } ensures  { True } returns
+     = (if ([mlw:proxy_symbol] [introduced] temp___skip_constant_187) then
+       True  else
+       (((Example__increment__S1b.dynamic_property
+            (Standard__integer__rep.to_rep Example__increment__v1.v1__first)
+            (Standard__integer__rep.to_rep Example__increment__v1.v1__last)
+            (Example__increment__S1b.first ([mlw:proxy_symbol]
+               [introduced] temp___expr_190))
+            (Example__increment__S1b.last ([mlw:proxy_symbol]
+               [introduced] temp___expr_190))) /\
+           ((Example__increment__S1b.first ([mlw:proxy_symbol]
+               [introduced] temp___expr_190))
+              = (Standard__integer__rep.to_rep
+                   Example__increment__v1.v1__first))) /\
+          ((Example__increment__S1b.last ([mlw:proxy_symbol]
+              [introduced] temp___expr_190))
+             = (Standard__integer__rep.to_rep Example__increment__v1.v1__last))))
+  
+  function   default_initial_assumption
+    (([mlw:proxy_symbol]
+    [introduced] temp___expr_192) : Example__increment__S1b.s1b
+    ([mlw:proxy_symbol] [introduced] temp___skip_top_level_193) : bool)
+    requires { True } ensures  { True } returns
+     = (True /\
+          ((Example__increment__S1b.first ([mlw:proxy_symbol]
+              [introduced] temp___expr_192))
+             = (Standard__integer__rep.to_rep
+                  Example__increment__v1.v1__first)) /\
+          ((Example__increment__S1b.last ([mlw:proxy_symbol]
+              [introduced] temp___expr_192))
+             = (Standard__integer__rep.to_rep Example__increment__v1.v1__last)))
+
+end
+
+(* Module for checking contracts and absence of run-time errors in subprogram "increment" defined at example.ads:5, created in Gnat2Why.Subprograms.Generate_VCs_For_Subprogram *)
+module Example__increment__subprogram_def
+  
+  use import _gnatprove_standard.Main
+  use import int.Int
+  use import int.Int
+  use        _gnatprove_standard.Integer
+  use        _gnatprove_standard.Boolean
+  use        Standard__integer
+  use        Standard__integer
+  use        Standard__integer__rep
+  use        Standard__natural
+  use        Standard__natural___axiom
+  use        Standard__integer__rep
+  use        Array__Int__Standard__integer
+  use        Example__increment__v1
+  use        Example__t_vector
+  use        Example__increment__v2
+  use        Example__increment__from
+  use        Example__increment__to
+  use        Example__increment__i
+  use        Array__Int__Standard__integer
+  use        Example__t_vector___axiom
+  use        Example__increment__S1b
+  use        Example__increment__L_1
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Array__Int__Standard__integer
+  use        Standard__integer___axiom
+  use        Standard__natural___axiom
+  use        Standard__integer___axiom
+  use        Example__increment__i___axiom
+  use        Example__increment__L_1___axiom
+  use        Example__t_vector___axiom
+  use        Example__increment__v1___axiom
+  use        Example__increment__v2___axiom
+  use        Example__increment__from___axiom
+  use        Example__increment__to___axiom
+  use        Example__increment__S1b___axiom
+  
+  function [GP_Subp:example.ads:5] [sloc:example.ads:5] def
+    (__void_param : unit) requires { True } ensures 
+    { ([sloc:example.ads:23] ([GP_Shape:pragargs__forall]
+                             [GP_Reason:VC_POSTCONDITION]
+                             [comment:       Post => (for all i in From .. To =>                ^ example.ads:23:16:VC_POSTCONDITION]
+                             [GP_Sloc:example.ads:23:16] [model_vc_post]
+                             [GP_Id:23] --pp_universal_quantif NOT IMPLEMENTED)) }
+    returns
+     = (* Assume dynamic invariants of inputs of the subprogram example.ads:5 *);
+        assume
+        { (if False then True  else
+          (Example__t_vector.dynamic_property Standard__natural.first
+             Standard__natural.last
+             (Example__increment__S1b.first
+                (Example__increment__S1b.of_array !Example__increment__v1.v1
+                   (Standard__integer__rep.to_rep
+                      Example__increment__v1.v1__first)
+                   (Standard__integer__rep.to_rep
+                      Example__increment__v1.v1__last)))
+             (Example__increment__S1b.last
+                (Example__increment__S1b.of_array !Example__increment__v1.v1
+                   (Standard__integer__rep.to_rep
+                      Example__increment__v1.v1__first)
+                   (Standard__integer__rep.to_rep
+                      Example__increment__v1.v1__last))))) };
+        assume
+        { (Example__t_vector___axiom.dynamic_invariant
+             Example__increment__v2.v2 True False True True) };
+        assume
+        { (Standard__natural___axiom.dynamic_invariant
+             Example__increment__from.from True False True True) };
+        assume
+        { (Standard__natural___axiom.dynamic_invariant
+             Example__increment__to.to__ True False True True) };
+        (* Assume moved pointers in outputs of the subprogram example.ads:5 *);
+        (* Check for RTE in the Pre of the subprogram example.ads:5 *);
+        abstract ensures
+        { True } begin  (let _ =
+                       ((((((((((((abstract ensures
+                                     { True } begin  (let _ =
+                                                    (Example__increment__S1b.of_array
+                                                       !Example__increment__v1.v1
+                                                       (Standard__integer__rep.to_rep
+                                                          Example__increment__v1.v1__first)
+                                                       (Standard__integer__rep.to_rep
+                                                          Example__increment__v1.v1__last))
+                                                    in ())  end;
+                                     (_gnatprove_standard.Integer.length
+                                        (Standard__integer__rep.to_rep
+                                           Example__increment__v1.v1__first)
+                                        (Standard__integer__rep.to_rep
+                                           Example__increment__v1.v1__last))
+                                     > 0) &&
+                                    (abstract ensures
+                                       { True } begin  (let _ =
+                                                      Example__increment__v2.v2
+                                                      in ())  end;
+                                       (Example__t_vector.length
+                                          Example__increment__v2.v2) > 0)) &&
+                                   (abstract ensures
+                                      { True } begin  (let _ =
+                                                     (Example__increment__S1b.of_array
+                                                        !Example__increment__v1.v1
+                                                        (Standard__integer__rep.to_rep
+                                                           Example__increment__v1.v1__first)
+                                                        (Standard__integer__rep.to_rep
+                                                           Example__increment__v1.v1__last))
+                                                     in ())  end;
+                                      (_gnatprove_standard.Integer.length
+                                         (Standard__integer__rep.to_rep
+                                            Example__increment__v1.v1__first)
+                                         (Standard__integer__rep.to_rep
+                                            Example__increment__v1.v1__last))
+                                      = abstract ensures
+                                      { True } begin  (let _ =
+                                                     Example__increment__v2.v2
+                                                     in ())  end;
+                                      (Example__t_vector.length
+                                         Example__increment__v2.v2))) &&
+                                  (let i = ( any  pre {} post {} return int)
+                                 in
+                                 (if
+                                 (_gnatprove_standard.Boolean.andb
+                                    ((Standard__integer__rep.to_rep abstract
+                                        ensures
+                                        { True } begin  (let _ =
+                                                       (Example__increment__S1b.of_array
+                                                          !Example__increment__v1.v1
+                                                          (Standard__integer__rep.to_rep
+                                                             Example__increment__v1.v1__first)
+                                                          (Standard__integer__rep.to_rep
+                                                             Example__increment__v1.v1__last))
+                                                       in ())  end;
+                                        Example__increment__v1.v1__first)
+                                       <= i)
+                                    (i
+                                       <= (Standard__integer__rep.to_rep
+                                             abstract ensures
+                                             { True } begin  (let _ =
+                                                            (Example__increment__S1b.of_array
+                                                               !Example__increment__v1.v1
+                                                               (Standard__integer__rep.to_rep
+                                                                  Example__increment__v1.v1__first)
+                                                               (Standard__integer__rep.to_rep
+                                                                  Example__increment__v1.v1__last))
+                                                            in ())  end;
+                                             Example__increment__v1.v1__last)))
+                                 then
+                                 abstract ensures
+                                 { True } begin  (let _ =
+                                                (let ([mlw:proxy_symbol]
+                                                  [introduced] temp___222) =
+                                                  (Standard__integer__rep.to_rep
+                                                     (let ([mlw:proxy_symbol]
+                                                     [introduced] temp___221)
+                                                     =
+                                                     (Example__increment__S1b.of_array
+                                                        !Example__increment__v1.v1
+                                                        (Standard__integer__rep.to_rep
+                                                           Example__increment__v1.v1__first)
+                                                        (Standard__integer__rep.to_rep
+                                                           Example__increment__v1.v1__last))
+                                                     in
+                                                     (Array__Int__Standard__integer.get
+                                                        (Example__increment__S1b.to_array
+                                                           ([mlw:proxy_symbol]
+                                                           [introduced] temp___221))
+                                                        assert
+                                                        { ([sloc:example.ads:14] 
+                                                          ([GP_Id:19]
+                                                          [vc:annotation]
+                                                          [GP_Reason:VC_INDEX_CHECK]
+                                                          [GP_Shape:pragargs__andthen__andthen__andthen__andthen__andthen__andthen__andthen__andthen__andthen__forall__in__ixdcomp]
+                                                          [GP_Sloc:example.ads:14:47]
+                                                          [comment:                 (for all i in V1'Range => V1(i) in 0..1) and then                                               ^ example.ads:14:47:VC_INDEX_CHECK] (
+                                                          ((Example__increment__S1b.first
+                                                              ([mlw:proxy_symbol]
+                                                              [introduced] temp___221))
+                                                             <= i) /\
+                                                            (i
+                                                               <= (Example__increment__S1b.last
+                                                                    ([mlw:proxy_symbol]
+                                                                    [introduced] temp___221)))))) };
+                                                        i))) in
+                                                  (_gnatprove_standard.Boolean.andb
+                                                     (0
+                                                        <= ([mlw:proxy_symbol]
+                                                        [introduced] temp___222))
+                                                     (([mlw:proxy_symbol]
+                                                        [introduced] temp___222)
+                                                        <= 1)))
+                                                in ())  end
+                                 ));
+                                 ( any  pre {} post
+                                 {((result = True) <->
+                                     --pp_universal_quantif NOT IMPLEMENTED)}
+                                 return bool)) && (let i =
+                               ( any  pre {} post {} return int) in
+                              (if
+                              (_gnatprove_standard.Boolean.andb
+                                 (abstract ensures
+                                    { True } begin  (let _ =
+                                                   Example__increment__v2.v2
+                                                   in ())  end;
+                                    (Example__t_vector.first
+                                       Example__increment__v2.v2) <= i)
+                                 (i <= abstract ensures
+                                    { True } begin  (let _ =
+                                                   Example__increment__v2.v2
+                                                   in ())  end;
+                                    (Example__t_vector.last
+                                       Example__increment__v2.v2)))
+                              then
+                              abstract ensures
+                              { True } begin  (let _ =
+                                             (let ([mlw:proxy_symbol]
+                                               [introduced] temp___225) =
+                                               (Standard__integer__rep.to_rep
+                                                  (Array__Int__Standard__integer.get
+                                                     (Example__t_vector.to_array
+                                                        Example__increment__v2.v2)
+                                                     assert
+                                                     { ([sloc:example.ads:15] 
+                                                       ([GP_Sloc:example.ads:15:49]
+                                                       [vc:annotation]
+                                                       [comment:                   (for all i in V2'Range => V2(i) in 0..1) and then                                                 ^ example.ads:15:49:VC_INDEX_CHECK]
+                                                       [GP_Reason:VC_INDEX_CHECK]
+                                                       [GP_Shape:pragargs__andthen__andthen__andthen__andthen__andthen__andthen__andthen__andthen__forall__in__ixdcomp]
+                                                       [GP_Id:20] (((Example__t_vector.first
+                                                                    Example__increment__v2.v2)
+                                                                    <= i) /\
+                                                                    (i
+                                                                    <= (
+                                                                    Example__t_vector.last
+                                                                    Example__increment__v2.v2))))) };
+                                                     i)) in
+                                               (_gnatprove_standard.Boolean.andb
+                                                  (0 <= ([mlw:proxy_symbol]
+                                                     [introduced] temp___225))
+                                                  (([mlw:proxy_symbol]
+                                                     [introduced] temp___225)
+                                                     <= 1)))
+                                             in ())  end
+                              ));
+                              ( any  pre {} post
+                              {((result = True) <->
+                                  --pp_universal_quantif NOT IMPLEMENTED)}
+                              return bool)) &&
+                            (Example__increment__from.from
+                               >= (Standard__integer__rep.to_rep abstract
+                                     ensures
+                                     { True } begin  (let _ =
+                                                    (Example__increment__S1b.of_array
+                                                       !Example__increment__v1.v1
+                                                       (Standard__integer__rep.to_rep
+                                                          Example__increment__v1.v1__first)
+                                                       (Standard__integer__rep.to_rep
+                                                          Example__increment__v1.v1__last))
+                                                    in ())  end;
+                                     Example__increment__v1.v1__first))) &&
+                           (Example__increment__from.from
+                              <= ([sloc:example.ads:17] ([vc:annotation]
+                                                        [GP_Reason:VC_OVERFLOW_CHECK]
+                                                        [comment:                       From <= V1'Last -1 and then                                        ^ example.ads:17:40:VC_OVERFLOW_CHECK]
+                                                        [GP_Sloc:example.ads:17:40]
+                                                        [GP_Id:21]
+                                                        [GP_Shape:pragargs__andthen__andthen__andthen__andthen__andthen__andthen__cmp__sub] (
+                                                        Standard__integer.range_check_
+                                                          ((Standard__integer__rep.to_rep
+                                                              abstract
+                                                              ensures
+                                                              { True } begin 
+                                                               (let _ =
+                                                              (Example__increment__S1b.of_array
+                                                                 !Example__increment__v1.v1
+                                                                 (Standard__integer__rep.to_rep
+                                                                    Example__increment__v1.v1__first)
+                                                                 (Standard__integer__rep.to_rep
+                                                                    Example__increment__v1.v1__last))
+                                                              in ())  end;
+                                                              Example__increment__v1.v1__last)
+                                                             - 1)))))) &&
+                          (Example__increment__to.to__
+                             >= (Standard__integer__rep.to_rep abstract
+                                   ensures
+                                   { True } begin  (let _ =
+                                                  (Example__increment__S1b.of_array
+                                                     !Example__increment__v1.v1
+                                                     (Standard__integer__rep.to_rep
+                                                        Example__increment__v1.v1__first)
+                                                     (Standard__integer__rep.to_rep
+                                                        Example__increment__v1.v1__last))
+                                                  in ())  end;
+                                   Example__increment__v1.v1__first))) &&
+                         (Example__increment__to.to__
+                            <= ([sloc:example.ads:19] ([GP_Shape:pragargs__andthen__andthen__andthen__andthen__cmp__sub]
+                                                      [vc:annotation]
+                                                      [GP_Reason:VC_OVERFLOW_CHECK]
+                                                      [GP_Sloc:example.ads:19:42]
+                                                      [comment:                           To <= V1'Last -1 and then                                          ^ example.ads:19:42:VC_OVERFLOW_CHECK]
+                                                      [GP_Id:22] (Standard__integer.range_check_
+                                                                    (
+                                                                    (Standard__integer__rep.to_rep
+                                                                    abstract
+                                                                    ensures
+                                                                    { True } begin 
+                                                                     (let _ =
+                                                                    (Example__increment__S1b.of_array
+                                                                    !Example__increment__v1.v1
+                                                                    (Standard__integer__rep.to_rep
+                                                                    Example__increment__v1.v1__first)
+                                                                    (Standard__integer__rep.to_rep
+                                                                    Example__increment__v1.v1__last))
+                                                                    in ())  end;
+                                                                    Example__increment__v1.v1__last)
+                                                                    - 1))))))
+                       &&
+                       (Example__increment__from.from
+                          <= Example__increment__to.to__)) &&
+        ((Standard__integer__rep.to_rep abstract ensures
+            { True } begin  (let _ =
+                           (Example__increment__S1b.of_array
+                              !Example__increment__v1.v1
+                              (Standard__integer__rep.to_rep
+                                 Example__increment__v1.v1__first)
+                              (Standard__integer__rep.to_rep
+                                 Example__increment__v1.v1__last))
+                           in ())  end;
+            Example__increment__v1.v1__first) = abstract ensures
+           { True } begin  (let _ = Example__increment__v2.v2 in ())  end;
+           (Example__t_vector.first Example__increment__v2.v2))) &&
+    ((Standard__integer__rep.to_rep abstract ensures
+        { True } begin  (let _ =
+                       (Example__increment__S1b.of_array
+                          !Example__increment__v1.v1
+                          (Standard__integer__rep.to_rep
+                             Example__increment__v1.v1__first)
+                          (Standard__integer__rep.to_rep
+                             Example__increment__v1.v1__last))
+                       in ())  end;
+        Example__increment__v1.v1__last) = abstract ensures
+       { True } begin  (let _ = Example__increment__v2.v2 in ())  end;
+       (Example__t_vector.last Example__increment__v2.v2))) in
+())  end;
+(* Assume Pre of the subprogram example.ads:5 *);
+assume
+{ (((((((((((([GP_Pretty_Ada:977] ((_gnatprove_standard.Integer.length
+                                      (Standard__integer__rep.to_rep
+                                         Example__increment__v1.v1__first)
+                                      (Standard__integer__rep.to_rep
+                                         Example__increment__v1.v1__last))
+                                     > 0)) /\
+               ([GP_Pretty_Ada:983] ((Example__t_vector.length
+                                        Example__increment__v2.v2) > 0))) /\
+              ([GP_Pretty_Ada:989] ((_gnatprove_standard.Integer.length
+                                       (Standard__integer__rep.to_rep
+                                          Example__increment__v1.v1__first)
+                                       (Standard__integer__rep.to_rep
+                                          Example__increment__v1.v1__last))
+                                      = (Example__t_vector.length
+                                           Example__increment__v2.v2)))) /\
+             --pp_universal_quantif NOT IMPLEMENTED) /\
+            --pp_universal_quantif NOT IMPLEMENTED) /\
+           ([GP_Pretty_Ada:1021] (Example__increment__from.from
+                                    >= (Standard__integer__rep.to_rep
+                                          Example__increment__v1.v1__first))))
+          /\
+          ([GP_Pretty_Ada:1027] (Example__increment__from.from
+                                   <= ((Standard__integer__rep.to_rep
+                                          Example__increment__v1.v1__last)
+                                         - 1)))) /\
+         ([GP_Pretty_Ada:1035] (Example__increment__to.to__
+                                  >= (Standard__integer__rep.to_rep
+                                        Example__increment__v1.v1__first))))
+        /\
+        ([GP_Pretty_Ada:1041] (Example__increment__to.to__
+                                 <= ((Standard__integer__rep.to_rep
+                                        Example__increment__v1.v1__last) - 1))))
+       /\
+       ([GP_Pretty_Ada:1049] (Example__increment__from.from
+                                <= Example__increment__to.to__))) /\
+      ([GP_Pretty_Ada:1055] ((Standard__integer__rep.to_rep
+                                Example__increment__v1.v1__first)
+                               = (Example__t_vector.first
+                                    Example__increment__v2.v2)))) /\
+     ([GP_Pretty_Ada:1063] ((Standard__integer__rep.to_rep
+                               Example__increment__v1.v1__last)
+                              = (Example__t_vector.last
+                                   Example__increment__v2.v2)))) };
+(let ([mlw:proxy_symbol] [introduced] temp___old_215) =
+(Example__increment__S1b.of_array !Example__increment__v1.v1
+   (Standard__integer__rep.to_rep Example__increment__v1.v1__first)
+   (Standard__integer__rep.to_rep Example__increment__v1.v1__last)) in (try
+();
+  ([sloc:example.adb:3] ());
+  ([sloc:example.adb:3] ());
+  ([sloc:example.adb:5] ( Example__increment__i.i :=
+  Example__increment__from.from);
+  assume
+  { (Standard__natural___axiom.dynamic_invariant !Example__increment__i.i
+       True False True True) });
+  ([sloc:example.adb:7] ());
+  ();
+  ([GP_Sloc:example.adb:7:20] ([sloc:example.adb:7] (* Translation of an Ada loop from example.adb:7 *);
+                              (if
+                              (!Example__increment__i.i
+                                 < Example__increment__to.to__)
+                              then
+                              (try
+                              (let ([model_trace:942'Loop_Entry] temp___loop_entry_206)
+                                =
+                                (Example__increment__S1b.of_array
+                                   !Example__increment__v1.v1
+                                   (Standard__integer__rep.to_rep
+                                      Example__increment__v1.v1__first)
+                                   (Standard__integer__rep.to_rep
+                                      Example__increment__v1.v1__last)) in
+                                (let temp___loop_entry_201 =
+                                (Example__increment__S1b.of_array
+                                   !Example__increment__v1.v1
+                                   (Standard__integer__rep.to_rep
+                                      Example__increment__v1.v1__first)
+                                   (Standard__integer__rep.to_rep
+                                      Example__increment__v1.v1__last)) in
+                                (let ([model_trace:942'Loop_Entry] temp___loop_entry_211)
+                                =
+                                (Example__increment__S1b.of_array
+                                   !Example__increment__v1.v1
+                                   (Standard__integer__rep.to_rep
+                                      Example__increment__v1.v1__first)
+                                   (Standard__integer__rep.to_rep
+                                      Example__increment__v1.v1__last)) in
+                                (* While loop translating the Ada loop from example.adb:7 *);
+                                ([sloc:example.adb:13] loop
+                                                         ();
+                                                         ([GP_Sloc:example.adb:8:13] 
+                                                         ([sloc:example.adb:8] ()));
+                                                         ([GP_Sloc:example.adb:8:22] 
+                                                         ([sloc:example.adb:8] ()));
+                                                         ([GP_Sloc:example.adb:8:30] 
+                                                         ([sloc:example.adb:8] ()));
+                                                         ([GP_Sloc:example.adb:8:16] 
+                                                         ([sloc:example.adb:8] (
+                                                         Example__increment__v1.v1
+                                                         :=
+                                                         (Example__increment__S1b.to_array
+                                                            (let ([mlw:proxy_symbol]
+                                                            [introduced] temp___198)
+                                                            =
+                                                            (Example__increment__S1b.of_array
+                                                               !Example__increment__v1.v1
+                                                               (Standard__integer__rep.to_rep
+                                                                  Example__increment__v1.v1__first)
+                                                               (Standard__integer__rep.to_rep
+                                                                  Example__increment__v1.v1__last))
+                                                            in
+                                                            --pp_record_update NOT IMPLEMENTED)))));
+                                                         (* Check for absence of RTE in the loop invariant and variant *);
+                                                         (let ([mlw:proxy_symbol]
+                                                         [introduced] temp___inv_209)
+                                                         =
+                                                         (let j =
+                                                           ( any  pre {} post
+                                                             {} return int)
+                                                         in
+                                                         (if
+                                                         (_gnatprove_standard.Boolean.andb
+                                                            (Example__increment__from.from
+                                                               <= j)
+                                                            (j
+                                                               <= !Example__increment__i.i))
+                                                         then
+                                                         abstract ensures
+                                                         { True } begin 
+                                                          (let _ =
+                                                         ((Standard__integer__rep.to_rep
+                                                             (let ([mlw:proxy_symbol]
+                                                             [introduced] temp___210)
+                                                             =
+                                                             (Example__increment__S1b.of_array
+                                                                !Example__increment__v1.v1
+                                                                (Standard__integer__rep.to_rep
+                                                                   Example__increment__v1.v1__first)
+                                                                (Standard__integer__rep.to_rep
+                                                                   Example__increment__v1.v1__last))
+                                                             in
+                                                             (Array__Int__Standard__integer.get
+                                                                (Example__increment__S1b.to_array
+                                                                   ([mlw:proxy_symbol]
+                                                                   [introduced] temp___210))
+                                                                assert
+                                                                { ([sloc:example.adb:10] 
+                                                                  ([vc:annotation]
+                                                                  [GP_Shape:L_1_while__pragargs__forall__cmp__ixdcomp]
+                                                                  [GP_Sloc:example.adb:10:37]
+                                                                  [GP_Reason:VC_INDEX_CHECK]
+                                                                  [comment:                                 V1(j) = V1'Loop_Entry(j) + V2(j));                                     ^ example.adb:10:37:VC_INDEX_CHECK]
+                                                                  [GP_Id:9] (
+                                                                  ((Example__increment__S1b.first
+                                                                    ([mlw:proxy_symbol]
+                                                                    [introduced] temp___210))
+                                                                    <= j) /\
+                                                                    (
+                                                                    j
+                                                                    <= (
+                                                                    Example__increment__S1b.last
+                                                                    ([mlw:proxy_symbol]
+                                                                    [introduced] temp___210)))))) };
+                                                                j)))
+                                                            = ([sloc:example.adb:10] 
+                                                              ([comment:                                 V1(j) = V1'Loop_Entry(j) + V2(j));                                                           ^ example.adb:10:59:VC_OVERFLOW_CHECK]
+                                                              [GP_Id:12]
+                                                              [GP_Sloc:example.adb:10:59]
+                                                              [vc:annotation]
+                                                              [GP_Reason:VC_OVERFLOW_CHECK]
+                                                              [GP_Shape:L_1_while__pragargs__forall__cmp__add] (
+                                                              Standard__integer.range_check_
+                                                                ((Standard__integer__rep.to_rep
+                                                                    (
+                                                                    Array__Int__Standard__integer.get
+                                                                    (Example__increment__S1b.to_array
+                                                                    ([model_trace:942'Loop_Entry] temp___loop_entry_211))
+                                                                    assert
+                                                                    { ([sloc:example.adb:10] 
+                                                                    ([GP_Id:10]
+                                                                    [GP_Sloc:example.adb:10:56]
+                                                                    [GP_Shape:L_1_while__pragargs__forall__cmp__add__ixdcomp]
+                                                                    [vc:annotation]
+                                                                    [GP_Reason:VC_INDEX_CHECK]
+                                                                    [comment:                                 V1(j) = V1'Loop_Entry(j) + V2(j));                                                        ^ example.adb:10:56:VC_INDEX_CHECK] (
+                                                                    ((Example__increment__S1b.first
+                                                                    ([model_trace:942'Loop_Entry] temp___loop_entry_211))
+                                                                    <= j) /\
+                                                                    (j
+                                                                    <= (
+                                                                    Example__increment__S1b.last
+                                                                    ([model_trace:942'Loop_Entry] temp___loop_entry_211)))))) };
+                                                                    j))
+                                                                   + (
+                                                                   Standard__integer__rep.to_rep
+                                                                    (Array__Int__Standard__integer.get
+                                                                    (Example__t_vector.to_array
+                                                                    Example__increment__v2.v2)
+                                                                    assert
+                                                                    { ([sloc:example.adb:10] 
+                                                                    ([GP_Id:11]
+                                                                    [GP_Shape:L_1_while__pragargs__forall__cmp__add__ixdcomp]
+                                                                    [vc:annotation]
+                                                                    [comment:                                 V1(j) = V1'Loop_Entry(j) + V2(j));                                                                ^ example.adb:10:64:VC_INDEX_CHECK]
+                                                                    [GP_Reason:VC_INDEX_CHECK]
+                                                                    [GP_Sloc:example.adb:10:64] (
+                                                                    ((Example__t_vector.first
+                                                                    Example__increment__v2.v2)
+                                                                    <= j) /\
+                                                                    (j
+                                                                    <= (
+                                                                    Example__t_vector.last
+                                                                    Example__increment__v2.v2))))) };
+                                                                    j)))))))
+                                                         in ())  end ));
+                                                         ( any  pre {} post
+                                                         {((result = True)
+                                                             <->
+                                                             --pp_universal_quantif NOT IMPLEMENTED)}
+                                                         return bool) in
+                                abstract ensures
+                                { True } begin  (let _ =
+                                               (let ([mlw:proxy_symbol]
+                                                 [introduced] temp___inv_204)
+                                                 =
+                                                 (let j =
+                                                   ( any  pre {} post {
+                                                     } return int) in
+                                                 (if
+                                                 (_gnatprove_standard.Boolean.andb
+                                                    (!Example__increment__i.i
+                                                       <= j)
+                                                    (j
+                                                       <= Example__increment__to.to__))
+                                                 then
+                                                 abstract ensures
+                                                 { True } begin  (let _ =
+                                                                ((Standard__integer__rep.to_rep
+                                                                    (let ([mlw:proxy_symbol]
+                                                                    [introduced] temp___205)
+                                                                    =
+                                                                    (Example__increment__S1b.of_array
+                                                                    !Example__increment__v1.v1
+                                                                    (Standard__integer__rep.to_rep
+                                                                    Example__increment__v1.v1__first)
+                                                                    (Standard__integer__rep.to_rep
+                                                                    Example__increment__v1.v1__last))
+                                                                    in
+                                                                    (
+                                                                    Array__Int__Standard__integer.get
+                                                                    (Example__increment__S1b.to_array
+                                                                    ([mlw:proxy_symbol]
+                                                                    [introduced] temp___205))
+                                                                    assert
+                                                                    { ([sloc:example.adb:12] 
+                                                                    ([vc:annotation]
+                                                                    [GP_Shape:L_1_while__pragargs__forall__cmp__ixdcomp]
+                                                                    [GP_Sloc:example.adb:12:60]
+                                                                    [comment:         pragma Loop_Invariant (for all j in i .. to => V1(j) = V1'Loop_Entry(j));                                                            ^ example.adb:12:60:VC_INDEX_CHECK]
+                                                                    [GP_Reason:VC_INDEX_CHECK]
+                                                                    [GP_Id:6] (
+                                                                    ((Example__increment__S1b.first
+                                                                    ([mlw:proxy_symbol]
+                                                                    [introduced] temp___205))
+                                                                    <= j) /\
+                                                                    (j
+                                                                    <= (
+                                                                    Example__increment__S1b.last
+                                                                    ([mlw:proxy_symbol]
+                                                                    [introduced] temp___205)))))) };
+                                                                    j)))
+                                                                   = (
+                                                                   Standard__integer__rep.to_rep
+                                                                    (Array__Int__Standard__integer.get
+                                                                    (Example__increment__S1b.to_array
+                                                                    ([model_trace:942'Loop_Entry] temp___loop_entry_206))
+                                                                    assert
+                                                                    { ([sloc:example.adb:12] 
+                                                                    ([GP_Sloc:example.adb:12:79]
+                                                                    [vc:annotation]
+                                                                    [GP_Shape:L_1_while__pragargs__forall__cmp__ixdcomp]
+                                                                    [GP_Reason:VC_INDEX_CHECK]
+                                                                    [comment:         pragma Loop_Invariant (for all j in i .. to => V1(j) = V1'Loop_Entry(j));                                                                               ^ example.adb:12:79:VC_INDEX_CHECK]
+                                                                    [GP_Id:7] (
+                                                                    ((Example__increment__S1b.first
+                                                                    ([model_trace:942'Loop_Entry] temp___loop_entry_206))
+                                                                    <= j) /\
+                                                                    (j
+                                                                    <= (
+                                                                    Example__increment__S1b.last
+                                                                    ([model_trace:942'Loop_Entry] temp___loop_entry_206)))))) };
+                                                                    j)))
+                                                                in ())  end
+                                                 ));
+                                                 ( any  pre {} post
+                                                 {((result = True) <->
+                                                     --pp_universal_quantif NOT IMPLEMENTED)}
+                                                 return bool) in abstract
+                                ensures
+                                { True } begin  (let _ =
+                                               (let ([mlw:proxy_symbol]
+                                                 [introduced] temp___inv_203)
+                                                 =
+                                                 (_gnatprove_standard.Boolean.andb
+                                                    (Example__increment__from.from
+                                                       <= !Example__increment__i.i)
+                                                    (!Example__increment__i.i
+                                                       <= Example__increment__to.to__))
+                                                 in abstract ensures
+                                                 { True } begin  (let _ = 
+                                                                () in ())  end)
+                                               in ())  end)
+                              in ())  end);
+                              abstract ensures
+                              { True } begin  (let _ =
+                                             !Example__increment__i.i in ())  end
+                              invariant
+                              {([sloc:example.adb:9] ([GP_Id:13]
+                                                     [GP_Reason:VC_LOOP_INVARIANT]
+                                                     [comment:         pragma Loop_Invariant(for all j in From .. i =>                                ^ example.adb:9:32:VC_LOOP_INVARIANT]
+                                                     [GP_Sloc:example.adb:9:32]
+                                                     [vc:annotation]
+                                                     [GP_Shape:L_1_while__pragargs__forall] --pp_universal_quantif NOT IMPLEMENTED))}
+                              invariant
+                              {([sloc:example.adb:12] ([GP_Reason:VC_LOOP_INVARIANT]
+                                                      [comment:         pragma Loop_Invariant (for all j in i .. to => V1(j) = V1'Loop_Entry(j));                                 ^ example.adb:12:33:VC_LOOP_INVARIANT]
+                                                      [GP_Sloc:example.adb:12:33]
+                                                      [vc:annotation]
+                                                      [GP_Shape:L_1_while__pragargs__forall]
+                                                      [GP_Id:8] --pp_universal_quantif NOT IMPLEMENTED))}
+                              invariant
+                              {([sloc:example.adb:13] ([comment:         pragma Loop_Invariant(i in From .. To);                                ^ example.adb:13:32:VC_LOOP_INVARIANT]
+                                                      [GP_Reason:VC_LOOP_INVARIANT]
+                                                      [vc:annotation]
+                                                      [GP_Sloc:example.adb:13:32]
+                                                      [GP_Shape:L_1_while__pragargs__in]
+                                                      [GP_Id:5] ([GP_Sloc:example.adb:13:32]
+                                                                [GP_Pretty_Ada:903] (
+                                                                (Example__increment__from.from
+                                                                   <= !Example__increment__i.i)
+                                                                  /\
+                                                                  (!Example__increment__i.i
+                                                                    <= Example__increment__to.to__)))))}
+                              variant 
+                              {> => !Example__increment__i.i}
+                              (* Assume implicit invariants from the loop example.adb:7 *);
+                              assume
+                              { ((True /\
+                                    (Standard__natural___axiom.dynamic_invariant
+                                       !Example__increment__i.i True True
+                                       True True) /\ True /\ True) /\ True /\
+                                   True /\ True) };
+                              (* Continuation of loop after loop invariant and variant *);
+                              ();
+                              ([GP_Sloc:example.adb:15:10] ([sloc:example.adb:15] ()));
+                              ([GP_Sloc:example.adb:15:15] ([sloc:example.adb:15] ()));
+                              ([GP_Sloc:example.adb:15:12] ([sloc:example.adb:15] (
+                                                           Example__increment__i.i
+                                                           :=
+                                                           ( ([sloc:example.adb:15] 
+                                                             ([GP_Sloc:example.adb:15:17]
+                                                             [vc:annotation]
+                                                             [GP_Reason:VC_OVERFLOW_CHECK]
+                                                             [comment:         i := i + 1;                 ^ example.adb:15:17:VC_OVERFLOW_CHECK]
+                                                             [GP_Shape:L_1_while__i_assign__add]
+                                                             [GP_Id:4] (
+                                                             Standard__integer.range_check_
+                                                               (!Example__increment__i.i
+                                                                  + 1))))))));
+                              (* Check for the exit condition and loop statements appearing before the loop invariant of loop example.adb:7 *);
+                              (if --pp_not NOT IMPLEMENTED then
+                              raise Example__increment__L_1.L_1 )
+                               end loop)))) with
+  | Example__increment__L_1.L_1  -> ()) )));
+raise Return__exc with | Return__exc  -> ());
+abstract ensures
+{ True } begin  (let _ = (let i = ( any  pre {} post {} return int) in
+               (if
+               (_gnatprove_standard.Boolean.andb
+                  (Example__increment__from.from <= i)
+                  (i <= Example__increment__to.to__))
+               then
+               abstract ensures
+               { True } begin  (let _ =
+                              ((Standard__integer__rep.to_rep
+                                  (Array__Int__Standard__integer.get
+                                     (Example__increment__S1b.to_array
+                                        ([mlw:proxy_symbol]
+                                        [introduced] temp___old_215)) assert
+                                     { ([sloc:example.ads:24] ([GP_Id:15]
+                                                              [comment:                  V1'Old(i) = V1(i) - V2(i));                          ^ example.ads:24:26:VC_INDEX_CHECK]
+                                                              [GP_Sloc:example.ads:24:26]
+                                                              [vc:annotation]
+                                                              [GP_Shape:pragargs__forall__cmp__ixdcomp]
+                                                              [GP_Reason:VC_INDEX_CHECK] (
+                                                              ((Example__increment__S1b.first
+                                                                  ([mlw:proxy_symbol]
+                                                                  [introduced] temp___old_215))
+                                                                 <= i) /\
+                                                                (i
+                                                                   <= (
+                                                                   Example__increment__S1b.last
+                                                                    ([mlw:proxy_symbol]
+                                                                    [introduced] temp___old_215)))))) };
+                                     i))
+                                 = ([sloc:example.ads:24] ([GP_Sloc:example.ads:24:37]
+                                                          [GP_Id:18]
+                                                          [vc:annotation]
+                                                          [GP_Reason:VC_OVERFLOW_CHECK]
+                                                          [comment:                  V1'Old(i) = V1(i) - V2(i));                                     ^ example.ads:24:37:VC_OVERFLOW_CHECK]
+                                                          [GP_Shape:pragargs__forall__cmp__sub] (
+                                                          Standard__integer.range_check_
+                                                            ((Standard__integer__rep.to_rep
+                                                                (let ([mlw:proxy_symbol]
+                                                                [introduced] temp___216)
+                                                                =
+                                                                (Example__increment__S1b.of_array
+                                                                   !Example__increment__v1.v1
+                                                                   (Standard__integer__rep.to_rep
+                                                                    Example__increment__v1.v1__first)
+                                                                   (Standard__integer__rep.to_rep
+                                                                    Example__increment__v1.v1__last))
+                                                                in
+                                                                (Array__Int__Standard__integer.get
+                                                                   (Example__increment__S1b.to_array
+                                                                    ([mlw:proxy_symbol]
+                                                                    [introduced] temp___216))
+                                                                   assert
+                                                                   { ([sloc:example.ads:24] 
+                                                                    ([GP_Shape:pragargs__forall__cmp__sub__ixdcomp]
+                                                                    [GP_Id:16]
+                                                                    [vc:annotation]
+                                                                    [GP_Reason:VC_INDEX_CHECK]
+                                                                    [comment:                  V1'Old(i) = V1(i) - V2(i));                                  ^ example.ads:24:34:VC_INDEX_CHECK]
+                                                                    [GP_Sloc:example.ads:24:34] (
+                                                                    ((Example__increment__S1b.first
+                                                                    ([mlw:proxy_symbol]
+                                                                    [introduced] temp___216))
+                                                                    <= i) /\
+                                                                    (i
+                                                                    <= (
+                                                                    Example__increment__S1b.last
+                                                                    ([mlw:proxy_symbol]
+                                                                    [introduced] temp___216)))))) };
+                                                                   i)))
+                                                               - (Standard__integer__rep.to_rep
+                                                                    (
+                                                                    Array__Int__Standard__integer.get
+                                                                    (Example__t_vector.to_array
+                                                                    Example__increment__v2.v2)
+                                                                    assert
+                                                                    { ([sloc:example.ads:24] 
+                                                                    ([GP_Shape:pragargs__forall__cmp__sub__ixdcomp]
+                                                                    [GP_Id:17]
+                                                                    [vc:annotation]
+                                                                    [comment:                  V1'Old(i) = V1(i) - V2(i));                                          ^ example.ads:24:42:VC_INDEX_CHECK]
+                                                                    [GP_Sloc:example.ads:24:42]
+                                                                    [GP_Reason:VC_INDEX_CHECK] (
+                                                                    ((Example__t_vector.first
+                                                                    Example__increment__v2.v2)
+                                                                    <= i) /\
+                                                                    (i
+                                                                    <= (
+                                                                    Example__t_vector.last
+                                                                    Example__increment__v2.v2))))) };
+                                                                    i)))))))
+                              in ())  end
+               ));
+               ( any  pre {} post
+               {((result = True) <-> --pp_universal_quantif NOT IMPLEMENTED)}
+               return bool) in
+())  end)
+
+end

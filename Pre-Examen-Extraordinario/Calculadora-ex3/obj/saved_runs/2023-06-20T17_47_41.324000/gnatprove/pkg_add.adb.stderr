@@ -1,0 +1,1 @@
+pkg_add.ads:18:76: warning: conjunct in postcondition does not check the outcome of calling "Add" [-gnatw.t]
