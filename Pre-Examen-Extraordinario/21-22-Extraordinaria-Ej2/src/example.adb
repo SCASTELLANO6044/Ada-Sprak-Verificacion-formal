@@ -9,8 +9,8 @@ package body Example with SPARK_Mode is
          pragma Loop_Invariant(for all j in From .. i =>
                                  V1(j) = V1'Loop_Entry(j) + V2(j));
 
-         pragma Loop_Invariant (for all j in i + 1  .. to => V1(j) = V1'Loop_Entry(j));
-         pragma Loop_Invariant(i in From .. To);
+         pragma Loop_Invariant (for all j in i + 1  .. To => V1(j) = V1'Loop_Entry(j));
+         pragma Loop_Invariant(i in From .. To + 1);
          pragma Loop_Variant(increases => i);
          i := i + 1;
       end loop;

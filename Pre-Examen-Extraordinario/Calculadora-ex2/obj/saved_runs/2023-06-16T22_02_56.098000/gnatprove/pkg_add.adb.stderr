@@ -1,2 +1,0 @@
-pkg_add.ads:18:45: medium: overflow check might fail [reason for check: result of multiplication must fit in a 32-bits machine integer][#0]
-pkg_add.ads:25:26: medium: overflow check might fail [reason for check: result of multiplication must fit in a 32-bits machine integer][#1]

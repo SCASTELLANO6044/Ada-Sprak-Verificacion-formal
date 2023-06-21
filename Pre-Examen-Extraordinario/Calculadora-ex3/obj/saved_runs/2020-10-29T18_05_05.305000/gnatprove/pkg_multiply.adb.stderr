@@ -1,1 +1,0 @@
-pkg_multiply.ads:22:14: medium: postcondition might fail, cannot prove Result = First_Operand * Second_Operand (e.g. when First_Operand = -1 and Result = 0 and Second_Operand = -1)[#0]

@@ -1,7 +1,6 @@
 <?xml version="1.0"?>
 <Locations >
-  <Project>
-    <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\default.gpr</vfs_file>
+  <Project >
     <file_marker column=" 1" line=" 1" >
       <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\default.gpr</vfs_project>
       <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\src\example.adb</vfs_file>
@@ -10,7 +9,7 @@
       <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\default.gpr</vfs_project>
       <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\src\example.ads</vfs_file>
     </file_marker>
-    <file_marker column=" 40" line=" 20" >
+    <file_marker column=" 8" line=" 8" >
       <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\default.gpr</vfs_project>
       <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\src\example.ads</vfs_file>
     </file_marker>
@@ -30,11 +29,11 @@
       <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\default.gpr</vfs_project>
       <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\src\example.ads</vfs_file>
     </file_marker>
-    <file_marker column=" 32" line=" 17" >
+    <file_marker column=" 8" line=" 8" >
       <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\default.gpr</vfs_project>
       <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\src\example.ads</vfs_file>
     </file_marker>
-    <file_marker column=" 51" line=" 22" >
+    <file_marker column=" 8" line=" 8" >
       <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\default.gpr</vfs_project>
       <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\src\example.ads</vfs_file>
     </file_marker>
@@ -42,7 +41,7 @@
       <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\default.gpr</vfs_project>
       <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\src\example.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 57" line=" 12" >
+    <file_marker column=" 56" line=" 12" >
       <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\default.gpr</vfs_project>
       <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\src\example.adb</vfs_file>
     </file_marker>
@@ -50,15 +49,15 @@
       <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\default.gpr</vfs_project>
       <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\src\example.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 57" line=" 12" >
+    <file_marker column=" 56" line=" 12" >
       <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\default.gpr</vfs_project>
       <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\src\example.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 10" line=" 11" >
+    <file_marker column=" 1" line=" 11" >
       <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\default.gpr</vfs_project>
       <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\src\example.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 57" line=" 12" >
+    <file_marker column=" 56" line=" 12" >
       <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\default.gpr</vfs_project>
       <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\src\example.adb</vfs_file>
     </file_marker>
@@ -66,19 +65,55 @@
       <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\default.gpr</vfs_project>
       <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\src\example.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 57" line=" 12" >
+    <file_marker column=" 56" line=" 12" >
       <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\default.gpr</vfs_project>
       <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\src\example.adb</vfs_file>
     </file_marker>
-    <file_marker column=" 1" line=" 25" >
+    <file_marker column=" 1" line=" 22" >
       <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\default.gpr</vfs_project>
       <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\src\example.ads</vfs_file>
     </file_marker>
-    <file_marker column=" 19" line=" 24" >
+    <file_marker column=" 8" line=" 8" >
       <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\default.gpr</vfs_project>
       <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\src\example.ads</vfs_file>
     </file_marker>
-    <file_marker current="true" column=" 57" line=" 12" >
+    <file_marker column=" 56" line=" 12" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\src\example.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 61" line=" 18" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\src\example.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 22" line=" 21" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\src\example.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 24" line=" 17" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\src\example.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 33" line=" 18" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\src\example.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 24" line=" 15" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\src\example.ads</vfs_file>
+    </file_marker>
+    <file_marker column=" 51" line=" 13" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\src\example.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 17" line=" 15" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\src\example.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 39" line=" 20" >
+      <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\default.gpr</vfs_project>
+      <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\src\example.ads</vfs_file>
+    </file_marker>
+    <file_marker current="true" column=" 17" line=" 15" >
       <vfs_project>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\default.gpr</vfs_project>
       <vfs_file>D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\src\example.adb</vfs_file>
     </file_marker>

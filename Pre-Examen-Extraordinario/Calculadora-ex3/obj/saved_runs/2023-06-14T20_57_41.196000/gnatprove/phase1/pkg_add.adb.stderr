@@ -1,3 +1,0 @@
-pkg_add.ads:9:08: error: parameter "First_Operand" is missing from input dependence list
-pkg_add.ads:9:08: error: add "null => First_Operand" dependency to ignore this input
-pkg_add.ads:9:49: error: item must denote parameter, variable, state or current instance of concurrent type

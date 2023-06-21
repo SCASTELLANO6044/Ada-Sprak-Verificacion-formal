@@ -19,27 +19,30 @@ RV NO_IMPLEMENTATION_ATTRIBUTES
 RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_ELABORATION_CODE
 
-U example%b		example.adb		dfaaad9f OO PK
+U example%b		example.adb		1f5e6264 OO PK
 
-U example%s		example.ads		6647294e OO PK
+U example%s		example.ads		664b614f OO PK
 
-D example.ads		20230619173014 6647294e example%s
-D example.adb		20230619173200 b9ed84d1 example%b
+D example.ads		20230621193326 664b614f example%s
+D example.adb		20230621193202 7915032b example%b
 D system.ads		20210520051134 2ffa5114 system%s
 G a Z
 X 1 example.ads
-1K9*Example 26l5 26e12 2|1b14 19l5 19t12
+1K9*Example 23l5 23e12 2|1b14 19l5 19t12
 3A9*T_Vector(integer)<integer> 5r37 5r51 2|3r37 3r51
 5U14*Increment 5=25 5>47 6>25 6>41 2|3b14 17l8 17t17
-5a25 V1{3A9} 10r20 10r27 11r16 13r20 14r32 14r44 16r30 17r32 18r32 19r34
-. 21r32 22r34 24r19 24r31 2|3b25 8m10 8r19 10r34 10r42 12r62 12r70
-5a47 V2{3A9} 10r31 12r18 13r32 15r34 15r46 21r43 22r44 24r39 2|3b47 8r27
-. 10r61
-6i25 From{natural} 10r35 16r22 17r24 20r30 23r30 2|4b25 5r19 9r45 13r37
-6i41 To{natural} 10r41 18r26 19r28 20r38 23r38 2|4b41 7r18 12r56 13r45
-14i27 i{integer} 14r47
-15i29 i{integer} 15r49
-23i25 i{integer} 24r26 24r34 24r42
+5a25 V1{3A9} 9r20 9r27 10r15 11r8 13r16 14r14 15r16 16r14 17r22 17r34 17r45
+. 18r34 19r44 19r52 20r22 20r43 20r51 21r33 21r44 21r52 2|3b25 8m10 8r19
+. 10r34 10r42 12r62 12r70
+5a47 V2{3A9} 9r31 10r27 11r19 18r22 18r44 19r64 2|3b47 8r27 10r61
+6i25 From{natural} 9r35 12r8 13r8 15r8 19r30 20r34 21r22 2|4b25 5r19 9r45
+. 13r37
+6i41 To{natural} 9r41 12r16 14r8 16r8 19r38 2|4b41 7r18 12r56 13r45
+17i17 i{integer} 17r48
+18i17 i{integer} 18r47
+19i25 i{integer} 19r47 19r59 19r67
+20i17 i{integer} 20r46 20r58
+21i17 i{integer} 21r47 21r59
 X 2 example.adb
 5i4 i{natural} 7r13 8r13 8r22 8r30 9r53 12r46 13r32 14r43 15m10 15r15
 9i40 j{integer} 10r37 10r56 10r64

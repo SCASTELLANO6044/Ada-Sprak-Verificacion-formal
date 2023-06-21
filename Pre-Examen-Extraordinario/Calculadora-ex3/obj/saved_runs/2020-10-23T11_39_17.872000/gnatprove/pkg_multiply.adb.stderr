@@ -1,5 +1,0 @@
-pkg_multiply.adb:15:24: medium: overflow check might fail (e.g. when Second_Operand = Integer'First) [possible explanation: precondition of subprogram at pkg_multiply.ads:3 should mention Second_Operand][#1]
-pkg_multiply.adb:16:23: medium: precondition might fail, cannot prove First_Operand >= Integer'First - Second_Operand (e.g. when First_Operand = -1 and Result = Integer'First) [possible explanation: loop at line 15 should mention Result in a loop invariant][#0]
-pkg_multiply.adb:20:23: medium: overflow check might fail (e.g. when Result = Integer'First) [possible explanation: loop at line 15 should mention Result in a loop invariant][#2]
-pkg_multiply.ads:13:17: medium: postcondition might fail, cannot prove Result = First_Operand * Second_Operand (e.g. when First_Operand = -2 and Result = Integer'First and Second_Operand = 2)[#4]
-pkg_multiply.ads:13:40: medium: overflow check might fail (e.g. when First_Operand = Integer'First+4 and Second_Operand = 3) [possible explanation: precondition of subprogram at line 3 should mention Second_Operand][#3]

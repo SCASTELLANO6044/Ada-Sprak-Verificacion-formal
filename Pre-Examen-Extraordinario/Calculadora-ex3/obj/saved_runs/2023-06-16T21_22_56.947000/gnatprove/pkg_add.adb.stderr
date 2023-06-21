@@ -1,6 +1,0 @@
-pkg_add.adb:9:17: medium: overflow check might fail [reason for check: result of multiplication must fit in a 32-bits machine integer][#0]
-pkg_add.adb:9:22: medium: divide by zero might fail[#1]
-pkg_add.ads:17:43: medium: divide by zero might fail[#3]
-pkg_add.ads:24:22: medium: overflow check might fail [reason for check: result of multiplication must fit in a 32-bits machine integer][#4]
-pkg_add.ads:24:25: medium: divide by zero might fail[#5]
-pkg_add.ads:25:34: medium: divide by zero might fail[#2]

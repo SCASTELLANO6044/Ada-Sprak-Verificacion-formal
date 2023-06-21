@@ -1,4 +1,4 @@
-'2023-06-19T18:30:19.752000':
+'2023-06-21T19:59:49.110000':
   category: GNATprove
   files:
   - D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\obj\gnatprove
@@ -11,8 +11,8 @@
 
     '
   output_parser: GNATprove_Parser
-  timestamp: '2023-06-19T18:30:19.752000'
-'2023-06-19T18:30:26.517000':
+  timestamp: '2023-06-21T19:59:49.110000'
+'2023-06-21T19:59:56.760000':
   category: GNATprove
   files:
   - D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\obj\gnatprove
@@ -21,21 +21,42 @@
 
     Phase 2 of 2: flow analysis and proof ...
 
-    example.adb:12:57: medium: loop invariant might not be preserved by an arbitrary
-    iteration, cannot prove V1(j) = V1''Loop_Entry(j)[#0]
-
-    example.adb:12:57: medium: loop invariant might fail in first iteration, cannot
-    prove V1(j) = V1''Loop_Entry(j)[#1]
-
-    example.ads:24:19: medium: postcondition might fail, cannot prove V1''Old(i) =
-    V1(i) - V2(i)[#2]
-
     Summary logged in D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\obj\gnatprove\gnatprove.out
 
     '
   output_parser: GNATprove_Parser
-  timestamp: '2023-06-19T18:30:26.517000'
-'2023-06-19T18:31:10.906000':
+  timestamp: '2023-06-21T19:59:56.760000'
+'2023-06-21T20:07:31.933000':
+  category: GNATprove
+  files:
+  - D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\obj\gnatprove
+  label: Examine Single File
+  output: 'Phase 1 of 2: generation of Global contracts ...
+
+    example.ads:21:25: error: unrecognized attribute "From"
+
+    gnatprove: error during generation of Global contracts
+
+    '
+  output_parser: GNATprove_Parser
+  timestamp: '2023-06-21T20:07:31.933000'
+'2023-06-21T20:07:44.733000':
+  category: GNATprove
+  files:
+  - D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\obj\gnatprove
+  label: Examine Single File
+  output: 'Phase 1 of 2: generation of Global contracts ...
+
+    example.ads:17:24: error: expect attribute ''Range
+
+    example.ads:18:24: error: expect attribute ''Range
+
+    gnatprove: error during generation of Global contracts
+
+    '
+  output_parser: GNATprove_Parser
+  timestamp: '2023-06-21T20:07:44.733000'
+'2023-06-21T20:08:16.457000':
   category: GNATprove
   files:
   - D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\obj\gnatprove
@@ -48,8 +69,8 @@
 
     '
   output_parser: GNATprove_Parser
-  timestamp: '2023-06-19T18:31:10.906000'
-'2023-06-19T18:31:17.574000':
+  timestamp: '2023-06-21T20:08:16.457000'
+'2023-06-21T20:08:23.729000':
   category: GNATprove
   files:
   - D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\obj\gnatprove
@@ -58,18 +79,17 @@
 
     Phase 2 of 2: flow analysis and proof ...
 
-    example.adb:12:57: medium: loop invariant might not be preserved by an arbitrary
-    iteration, cannot prove V1(j) = V1''Loop_Entry(j)[#0]
+    example.ads:15:24: medium: overflow check might fail [reason for check: result
+    of subtraction must fit in a 32-bits machine integer][#0]
 
-    example.adb:12:57: medium: loop invariant might fail in first iteration, cannot
-    prove V1(j) = V1''Loop_Entry(j)[#1]
+    example.ads:20:46: medium: postcondition might fail, cannot prove V1(i) = V1''Old(i)[#1]
 
     Summary logged in D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\obj\gnatprove\gnatprove.out
 
     '
   output_parser: GNATprove_Parser
-  timestamp: '2023-06-19T18:31:17.574000'
-'2023-06-19T18:32:05.206000':
+  timestamp: '2023-06-21T20:08:23.729000'
+'2023-06-21T20:29:45.931000':
   category: GNATprove
   files:
   - D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\obj\gnatprove
@@ -82,8 +102,8 @@
 
     '
   output_parser: GNATprove_Parser
-  timestamp: '2023-06-19T18:32:05.206000'
-'2023-06-19T18:32:09.351000':
+  timestamp: '2023-06-21T20:29:45.931000'
+'2023-06-21T20:29:52.779000':
   category: GNATprove
   files:
   - D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\obj\gnatprove
@@ -92,8 +112,80 @@
 
     Phase 2 of 2: flow analysis and proof ...
 
+    example.adb:15:17: medium: overflow check might fail [reason for check: result
+    of addition must fit in a 32-bits machine integer][#0]
+
+    example.ads:15:24: medium: overflow check might fail [reason for check: result
+    of subtraction must fit in a 32-bits machine integer][#1]
+
+    example.ads:20:46: medium: postcondition might fail, cannot prove V1(i) = V1''Old(i)[#2]
+
     Summary logged in D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\obj\gnatprove\gnatprove.out
 
     '
   output_parser: GNATprove_Parser
-  timestamp: '2023-06-19T18:32:09.351000'
+  timestamp: '2023-06-21T20:29:52.779000'
+'2023-06-21T20:30:50.284000':
+  category: GNATprove
+  files:
+  - D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\obj\gnatprove
+  label: Examine Single File
+  output: 'Phase 1 of 2: generation of Global contracts ...
+
+    Phase 2 of 2: analysis of data and information flow ...
+
+    Summary logged in D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\obj\gnatprove\gnatprove.out
+
+    '
+  output_parser: GNATprove_Parser
+  timestamp: '2023-06-21T20:30:50.284000'
+'2023-06-21T20:30:58.461000':
+  category: GNATprove
+  files:
+  - D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\obj\gnatprove
+  label: Prove File
+  output: 'Phase 1 of 2: generation of Global contracts ...
+
+    Phase 2 of 2: flow analysis and proof ...
+
+    example.adb:15:17: medium: overflow check might fail [reason for check: result
+    of addition must fit in a 32-bits machine integer][#0]
+
+    example.ads:15:24: medium: overflow check might fail [reason for check: result
+    of subtraction must fit in a 32-bits machine integer][#1]
+
+    example.ads:20:43: medium: postcondition might fail, cannot prove V1(i) = V1''Old(i)[#2]
+
+    Summary logged in D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\obj\gnatprove\gnatprove.out
+
+    '
+  output_parser: GNATprove_Parser
+  timestamp: '2023-06-21T20:30:58.461000'
+'2023-06-21T20:33:30.951000':
+  category: GNATprove
+  files:
+  - D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\obj\gnatprove
+  label: Examine Single File
+  output: 'Phase 1 of 2: generation of Global contracts ...
+
+    Phase 2 of 2: analysis of data and information flow ...
+
+    Summary logged in D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\obj\gnatprove\gnatprove.out
+
+    '
+  output_parser: GNATprove_Parser
+  timestamp: '2023-06-21T20:33:30.951000'
+'2023-06-21T20:33:33.986000':
+  category: GNATprove
+  files:
+  - D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\obj\gnatprove
+  label: Examine Single File
+  output: 'Phase 1 of 2: generation of Global contracts ...
+
+    Phase 2 of 2: analysis of data and information flow ...
+
+    Summary logged in D:\ULPGC\Cuarto\Semestre1\P3\Modulo1\Ada\Ada-Sprak-Verificacion-formal\Pre-Examen-Extraordinario\21-22-Extraordinaria-Ej2\obj\gnatprove\gnatprove.out
+
+    '
+  output_parser: GNATprove_Parser
+  timestamp: '2023-06-21T20:33:33.986000'

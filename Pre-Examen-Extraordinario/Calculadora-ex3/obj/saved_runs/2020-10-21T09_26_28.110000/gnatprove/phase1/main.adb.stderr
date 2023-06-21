@@ -1,3 +1,0 @@
-pkg_add.ads:10:19: expected type "Standard.Boolean"
-pkg_add.ads:10:19: found type "Standard.Integer"
-pkg_add.ads:10:33: missing ";"

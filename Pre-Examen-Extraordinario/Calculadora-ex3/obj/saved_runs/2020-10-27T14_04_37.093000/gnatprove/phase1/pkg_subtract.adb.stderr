@@ -1,4 +1,0 @@
-pkg_subtract.ads:11:58: "=>" expected (positional association cannot follow named association)
-pkg_subtract.ads:13:34: missing ":="
-pkg_subtract.ads:15:34: missing ":="
-pkg_subtract.ads:18:01: "end if;" expected for "if" at line 12

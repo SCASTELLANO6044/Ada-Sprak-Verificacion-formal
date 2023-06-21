@@ -18,25 +18,21 @@ RV NO_IMPLEMENTATION_ASPECT_SPECIFICATIONS
 RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_ELABORATION_CODE
 
-U pkg_add%b		pkg_add.adb		d2ace93f OO PK
+U pkg_add%b		pkg_add.adb		6a76060d OO PK
 
-U pkg_add%s		pkg_add.ads		c3dbe20c OO PK
+U pkg_add%s		pkg_add.ads		7b010d3e OO PK
 
-D pkg_add.ads		20230618201714 c3dbe20c pkg_add%s
+D pkg_add.ads		20230621183216 7b010d3e pkg_add%s
 D pkg_add.adb		20230618201732 11770b33 pkg_add%b
 D system.ads		20210520051134 2ffa5114 system%s
 G a Z
 X 1 pkg_add.ads
-1K9*Pkg_Add 28l5 28e12 2|1b14 12l5 12t12
-3V13*Add{natural} 4>7 5>7 6>7 7>7 11r20 26r16 2|3b13 10l8 10t11
-4i7 A{natural} 11r35 17r21 18r23 19r22 20r30 21r36 22r30 23r22 24r30 25r22
-. 26r30 2|4b7 9r15
-5i7 B{natural} 11r38 12r30 13r42 14r40 15r47 18r39 19r39 20r46 21r24 22r46
-. 23r38 24r46 25r39 26r45 2|5b7 9r29
-6i7 C{natural} 11r41 16r18 17r25 18r25 19r24 20r32 21r38 22r32 23r24 24r32
-. 25r24 26r35 2|6b7 9r19
-7i7 D{natural} 11r44 12r20 13r22 14r30 15r26 18r37 19r37 20r44 21r22 22r44
-. 23r36 24r44 25r37 26r41 2|7b7 9r25
+1K9*Pkg_Add 21l5 21e12 2|1b14 12l5 12t12
+3V13*Add{natural} 4>7 5>7 6>7 7>7 11r20 19r16 19r57 2|3b13 10l8 10t11
+4i7 A{natural} 11r35 15r21 16r23 17r22 18r16 19r30 2|4b7 9r15
+5i7 B{natural} 11r38 12r30 13r42 16r39 17r48 18r24 19r45 2|5b7 9r29
+6i7 C{natural} 11r41 14r18 15r25 16r25 17r24 18r18 19r35 2|6b7 9r19
+7i7 D{natural} 11r44 12r20 13r22 16r37 17r46 18r22 19r41 2|7b7 9r25
 
 QQ SPARKVERSION SPARK Community 2021 (20210519)
 GG EK_DIRECT_CALLS pkg_add__add 0
